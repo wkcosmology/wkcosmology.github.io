@@ -1,0 +1,77 @@
+<!doctype html>
+<!--
+Design by Free Responsive Templates
+http://www.free-responsive-templates.com
+Released for free under a Creative Commons Attribution 3.0 Unported License (CC BY 3.0)
+Coder: lsa, free.responsive.templates@gmail.com
+Created: 13 September 2012 
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kai's homepage</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<script src="jquery.min.js"></script>
+	<script>
+	 // DOM ready
+	 $(function() {
+	   
+      // Create the dropdown base
+      $("<select />").appendTo("nav");
+      
+      // Create default option "Go to..."
+      $("<option />", {
+         "selected": "selected",
+         "value"   : "",
+         "text"    : "Menu"
+      }).appendTo("nav select");
+      
+      // Populate dropdown with menu items
+      $("nav a").each(function() {
+       var el = $(this);
+       $("<option />", {
+           "value"   : el.attr("href"),
+           "text"    : el.text()
+       }).appendTo("nav select");
+      });
+      
+	   // To make dropdown actually work
+      $("nav select").change(function() {
+        window.location = $(this).find("option:selected").val();
+      });
+	 
+	 });
+	</script>
+</head>
+<body>
+<div class="wrapper">
+	<header>
+    	<h1><a href="">Kai Wang</a></h1>
+        <span>personal page</span>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="publication.html">Publication</a></li>
+                <li><a href="talks.html">Talks</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li class="active"><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="link.html">Links</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="clearfloat"></div>
+    </header>
+    <section>
+    	<h2>Galaxy Formation</h2>
+        <p class="galaxyformation">
+        ...
+        <p>
+        
+    </footer>
+</div>
+
+</body>
+</html>

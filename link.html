@@ -1,0 +1,104 @@
+<!doctype html>
+<!--
+Design by Free Responsive Templates
+http://www.free-responsive-templates.com
+Released for free under a Creative Commons Attribution 3.0 Unported License (CC BY 3.0)
+Coder: lsa, free.responsive.templates@gmail.com
+Created: 13 September 2012 
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kai's homepage</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<script src="jquery.min.js"></script>
+	<script>
+	 // DOM ready
+	 $(function() {
+	   
+      // Create the dropdown base
+      $("<select />").appendTo("nav");
+      
+      // Create default option "Go to..."
+      $("<option />", {
+         "selected": "selected",
+         "value"   : "",
+         "text"    : "Select a page"
+      }).appendTo("nav select");
+      
+      // Populate dropdown with menu items
+      $("nav a").each(function() {
+       var el = $(this);
+       $("<option />", {
+           "value"   : el.attr("href"),
+           "text"    : el.text()
+       }).appendTo("nav select");
+      });
+      
+	   // To make dropdown actually work
+      $("nav select").change(function() {
+        window.location = $(this).find("option:selected").val();
+      });
+	 
+	 });
+	</script>
+</head>
+<body>
+<div class="wrapper">
+	<header>
+    	<h1><a href="">Kai Wang</a></h1>
+        <span>personal page</span>
+        <nav>
+            <ul>
+                <li ><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="publication.html">Publication</a></li>
+                <li><a href="talks.html">Talks</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li class="active"><a href="link.html">Links</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="clearfloat"></div>
+    </header>
+    <section>
+    	<h2>Personal homepages</h2>
+        <p class="homepage">
+
+        <ol type="1" start="1">
+        <li>Wayne Hu's homepage(Good introduction to CMB physics)
+          <p><a href="http://background.uchicago.edu/~whu/">http://background.uchicago.edu/~whu/</a></li></p>
+        <li>Max Tagmark's homepage(Good introduction to CMB and LSS)
+          <p><a href="http://space.mit.edu/home/tegmark/index.html">http://space.mit.edu/home/tegmark/index.html</a></li></p>
+        <li>Hou-Jun Mo's homepage<p><a href="http://people.umass.edu/hjmo/">http://people.umass.edu/hjmo/</a></li></p>
+        <li>Hannu Kurki-Suonio's homepage(Great lecture on cosmology and perturbation theory)
+          <p><a href="http://www.helsinki.fi/~hkurkisu/">http://www.helsinki.fi/~hkurkisu/</a></li></p>
+        <li>Frank van den Bosch's homepage(Great slide on galaxy formation)<p><a href="http://www.astro.yale.edu/vdbosch/Home.html">http://www.astro.yale.edu/vdbosch/Home.html</a></li></p>
+        <li>Chung-Pei Ma's homepage<p><a href="http://w.astro.berkeley.edu/~cpma/">http://w.astro.berkeley.edu/~cpma/</a></li></p>
+        <li>Wen Zhao's homepage(A lot of sources on CMB)
+          <p><a href="http://staff.ustc.edu.cn/~wzhao7/">http://staff.ustc.edu.cn/~wzhao7/</a></li></p>
+        <li>Yi-Fu Cai's homepage<p><a href="http://staff.ustc.edu.cn/~yifucai/">http://staff.ustc.edu.cn/~yifucai/</a></li></p>
+        
+        <li>Donghui Jeong's homepage(Good lectures on galaxy formation)
+          <p><a href="http://www.personal.psu.edu/duj13/">http://www.personal.psu.edu/duj13/</a></li></p>
+        
+        </ol>
+    </footer>
+    <h2>Scholar Links</h2>
+      <p class="scholar">
+      <ol type="1" start="1">
+      <li>arXiv
+        <p><a href="https://arxiv.org/">https://arxiv.org/</a></li></p>
+      <li>ADS
+        <p><a href="https://adsabs.harvard.edu/">https://adsabs.harvard.edu/</a></li></p>
+      <li>Google Scholar
+        <p><a href="https://scholar.google.com/">https://scholar.google.com/</a></li></p>
+      <li>ARAA
+        <p><a href="http://www.annualreviews.org/journal/astro">http://www.annualreviews.org/journal/astro</a></li></p>
+    </footer>
+</div>
+</body>
+</html>
