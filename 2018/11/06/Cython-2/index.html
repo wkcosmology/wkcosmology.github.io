@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Comic Sans MS:300,300italic,400,400italic,700,700italic|monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,Cython,note,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这里我们通过几个简单的例子来看一看如何编译和运行Cython代码，最后又是如何从Python中调用这些代码的。">
+<meta name="keywords" content="Python,Cython,note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Cython》第二章：编译和运行Cython代码">
+<meta property="og:url" content="http://wkcosmology.github.io/2018/11/06/Cython-2/index.html">
+<meta property="og:site_name" content="kosmos">
+<meta property="og:description" content="这里我们通过几个简单的例子来看一看如何编译和运行Cython代码，最后又是如何从Python中调用这些代码的。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-11-24T05:56:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Cython》第二章：编译和运行Cython代码">
+<meta name="twitter:description" content="这里我们通过几个简单的例子来看一看如何编译和运行Cython代码，最后又是如何从Python中调用这些代码的。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wkcosmology.github.io/2018/11/06/Cython-2/">
+
+
+
+
+
+  <title>《Cython》第二章：编译和运行Cython代码 | kosmos</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kosmos</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            links
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wkcosmology.github.io/2018/11/06/Cython-2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kosmos">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《Cython》第二章：编译和运行Cython代码</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-06T18:25:46+08:00">
+                2018-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/" itemprop="url" rel="index">
+                    <span itemprop="name">Note</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/Cython/" itemprop="url" rel="index">
+                    <span itemprop="name">Cython</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  这里我们通过几个简单的例子来看一看如何编译和运行Cython代码，最后又是如何从Python中调用这些代码的。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Cython-编译流程"><a href="#Cython-编译流程" class="headerlink" title="Cython 编译流程"></a>Cython 编译流程</h1><ul>
+<li>Cython是Python的超集，所以Python不能直接运行Cython代码，而是需要通过Cython编译流程来生成可以被Python识别并使用的拓展模块；</li>
+<li>这个编译流程分为两步：第一步是用Cython编译器将Cython代码转化成为优化的、平台无关的C/C++代码；第二步是将C/C++代码编译成为共享库；</li>
+</ul>
+<h1 id="标准方法：使用distutils和cythonize"><a href="#标准方法：使用distutils和cythonize" class="headerlink" title="标准方法：使用distutils和cythonize"></a>标准方法：使用distutils和cythonize</h1><ul>
+<li>Python标准库中含有一个distutils库，这个库是用于建立、打包和分发Python项目，我们需要使用它能够将C代码编译成为共享库的功能；</li>
+<li>Cython中含有一个cythonize命令，这个命令可以将cython代码转化成为优化之后的C/C++代码；</li>
+</ul>
+<h2 id="distutils脚本及其编译"><a href="#distutils脚本及其编译" class="headerlink" title="distutils脚本及其编译"></a>distutils脚本及其编译</h2><ul>
+<li><p>一般会将distutils脚本放在一个<code>setup.py</code>文件中，然后进行编译<br>  比如之前的<code>fib.pyx</code>程序</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file: fib.pyx</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(int n)</span>:</span></span><br><span class="line">    cdef int i</span><br><span class="line">    cdef double a=<span class="number">0.0</span>, b=<span class="number">1.0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        a, b = a + b, a</span><br><span class="line">    <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
+<p>  对于的<code>setup.py</code>，我们可以这样写</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file: setup.py</span></span><br><span class="line"><span class="keyword">from</span> distutils.core <span class="keyword">import</span> setup</span><br><span class="line"><span class="keyword">from</span> Cython.Build <span class="keyword">import</span> cythonize</span><br><span class="line"></span><br><span class="line">setup(ext_modules=cythonize(<span class="string">"fib.pyx"</span>))</span><br></pre></td></tr></table></figure>
+<p>  之后的编译命令是</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py build_ext --inplace</span><br></pre></td></tr></table></figure>
+<p>  编译选项中的<code>build_ext</code>是指引将<code>cythonize</code>产生的文件编译成为拓展模块，<code>--inpalce</code>是将拓展模块产生在<code>.pyx</code>文件旁边。</p>
+</li>
+<li>在distutils编译过程中，gcc起到了两处作用：第一处是将C/C++文件编译成为<code>.o</code>目标文件；第二处是将<code>.o</code>目标文件链接起来，产生一个<code>.so</code>动态库；</li>
+<li><p>我们也可以利用distutils将C代码包装成一个python拓展模块，这时候需要四个文件：C代码源文件<code>cfib.c</code>，C代码头文件<code>cfib.h</code>，cython包装代码文件<code>wrap_fib.pyx</code>和setup文件<code>setup_wrap.py</code><br>  C代码源文件</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file: cfib.c</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">cfib</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">double</span> a=<span class="number">0.0</span>, b=<span class="number">1.0</span>, tmp;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">        tmp = a;</span><br><span class="line">        a = a + b;</span><br><span class="line">        b = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  C代码头文件</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">cfib</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>  Cython代码包装文件</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cdef extern <span class="keyword">from</span> <span class="string">"cfib.h"</span>:</span><br><span class="line">    double cfib(int n)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> cfib(n)</span><br></pre></td></tr></table></figure>
+<p>  对应的<code>setup_wrap.py</code>文件是</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file: setup_wrap.py</span></span><br><span class="line"><span class="keyword">from</span> distutils.core <span class="keyword">import</span> setup, Extension</span><br><span class="line"><span class="keyword">from</span> cython.Build <span class="keyword">import</span> cythonize</span><br><span class="line"></span><br><span class="line">ext = Extension(name=<span class="string">"wrap_fib"</span>, sources=[<span class="string">"cfib.c"</span>, <span class="string">"wrap_fib.pyx"</span>])</span><br><span class="line"></span><br><span class="line">setup(ext_modules=cythonize(ext))</span><br></pre></td></tr></table></figure>
+<p>  如果你直接提供了C代码编译好了的动态库<code>.so</code>文件，那么对应的setup文件是</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> distutils.core <span class="keyword">import</span> setup, Extension</span><br><span class="line"><span class="keyword">from</span> Cython.Build <span class="keyword">import</span> cythonize</span><br><span class="line"></span><br><span class="line">ext = Extension(</span><br><span class="line">    name=<span class="string">"wrap_fib"</span>,</span><br><span class="line">    sources=[<span class="string">"wrap_fib.pyx"</span>],</span><br><span class="line">    library_dirs=[<span class="string">"/path/to/libfib.so"</span>],</span><br><span class="line">    libraries=[<span class="string">"fib"</span>])</span><br><span class="line"></span><br><span class="line">setup(ext_modules=cythonize(ext))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="使用-cython魔法方法和ipython交互"><a href="#使用-cython魔法方法和ipython交互" class="headerlink" title="使用%%cython魔法方法和ipython交互"></a>使用%%cython魔法方法和ipython交互</h1><ul>
+<li>利用以上的distutils方法需要每个代码都有个编译的过程，这个很难用在交互式Python代码中</li>
+<li>IPython提供了一组仅仅针对于IPython的命令，一般以%或者%%开头，这个称为魔法命令</li>
+<li><p>我们需要在使用前先加载cython包，然后在使用cython的函数之前以类似装饰器的方式加入cython编译指令，如下</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">%load_ext cythonmagic</span><br><span class="line"></span><br><span class="line">%%cython</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(int n)</span>:</span></span><br><span class="line">    cdef int i</span><br><span class="line">    cdef double a=<span class="number">0.0</span>, b=<span class="number">1.0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        a, b = a+b, a</span><br><span class="line">    <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
+<p>  这样运行之后就可以使用cython编译后的fib函数了</p>
+</li>
+<li>在IPython中运行的cython其实是在幕后自动完成了各种编译指令，我们可以通过一些方式指定产生其中间文件，这里就不再叙述了</li>
+</ul>
+<h1 id="使用pyximport进行On-The-Fly编译"><a href="#使用pyximport进行On-The-Fly编译" class="headerlink" title="使用pyximport进行On-The-Fly编译"></a>使用pyximport进行On-The-Fly编译</h1><ul>
+<li>我们之前使用的是先将cython代码编译成为拓展对象，但是我们希望有一种更简洁的方式，最好能够直接import使用cython编写的<code>.pyx</code>模块，就像我们以前直接import <code>.py</code>文件那样简单，这个是可以通过<code>pyximport</code>模块实现的</li>
+<li><p>在文件目录下只有<code>fib.pyx</code>文件的时候，运行</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pyximport</span><br><span class="line">pyximport.install()</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> fib</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pyximport可以自动探测到<code>.pyx</code>文件的改变，从而重新进行编译</p>
+</li>
+<li>pyximport基于cython和C编译器的自动运行，这个用起来很方便，但是在产品中就不适合这么做，因为我们不清楚在其他机器上的环境</li>
+</ul>
+<h2 id="控制pyximport以及管理依赖"><a href="#控制pyximport以及管理依赖" class="headerlink" title="控制pyximport以及管理依赖"></a>控制pyximport以及管理依赖</h2><ul>
+<li>如果<code>.pyx</code>文件依赖于其他的文件，比如其他的C源文件或者头文件，这时候依赖文件改变了，我们也需要一个机制来提醒pyximport重新编译。这时候我们可以利用<code>.pyxdeps</code>文件，其中每一行列出一个依赖文件的地址，那么pyximport每次会自动检测对应的文件是否有修改，如果有就会重新编译</li>
+<li>如果<code>.pyx</code>文件中引用了其他的未编译的文件，我们也需要一个机制来告诉pyximport对这些文件进行编译，这时候我们就需要使用<code>.pyxbld</code>文件，这个文件需要放在和<code>.pyx</code>文件同样的地址位置，其内容包括两个python函数<ul>
+<li><code>make_ext(modname, pyxfilename)</code>：<br>  这个函数的返回值是一个distutils.extension.Extension对象，通过这个对象，我们可以把<code>.pyx</code>文件和所依赖的库全部返回；或者你也可以让这个函数返回<code>Cython.Build.cythonize()</code>函数的返回结果。</li>
+<li><code>make_setup_args</code>:<br>  如果这个函数定义了，那么pyximport会将这个函数返回的参数字典输入到<code>distutils.core.setup</code>中，通过这种方式，我们可以控制setup过程</li>
+</ul>
+</li>
+</ul>
+<h2 id="pyximport示例和外部依赖"><a href="#pyximport示例和外部依赖" class="headerlink" title="pyximport示例和外部依赖"></a>pyximport示例和外部依赖</h2><ul>
+<li><p>我们之前利用cython包装过一个C函数，在这里，我们也可以使用pyximport来做同样的事情，这时候我们需要添加两个额外的文件，<code>.pyxdeps</code>和<code>.pyxbld</code>。为了和之前的区分，我们使用<code>_fib.c</code>，<code>_fib.h</code>和<code>_wrap_fib.pyx</code>，这里只是文件名变了而已（同样文件里面引用的文件名也需要改变）</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file: _wrap_fib.pyxdeps</span></span><br><span class="line">_fib.*</span><br></pre></td></tr></table></figure>
+<p>  和</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file: _wrap_fib.pyxbld</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_ext</span><span class="params">(modname, pyxfilename)</span>:</span></span><br><span class="line">    <span class="keyword">from</span> distutils.extension <span class="keyword">import</span> Extension</span><br><span class="line">    <span class="keyword">return</span> Extension(modname,</span><br><span class="line">        sources=[pyxfilename, <span class="string">"_fib.c"</span>],</span><br><span class="line">        include_dirs=[<span class="string">'.])</span></span><br></pre></td></tr></table></figure>
+<p>  这样pyximport就能自动编译<code>_fib.c</code>文件，并且自动探测到这些文件的改变从而重新编译了。</p>
+</li>
+</ul>
+<h1 id="我们自己手动一步步编译"><a href="#我们自己手动一步步编译" class="headerlink" title="我们自己手动一步步编译"></a>我们自己手动一步步编译</h1><blockquote>
+<p>这一块暂时无法在我的机器上运行</p>
+</blockquote>
+<h1 id="使用其他的编译系统来配合cython"><a href="#使用其他的编译系统来配合cython" class="headerlink" title="使用其他的编译系统来配合cython"></a>使用其他的编译系统来配合cython</h1><ul>
+<li>目前有很多其他的编译系统能够很好地编译C/C++源码，这些系统往往很强大，很适合大型项目的编译，当我们遇到一些cython内置的编译系统无法解决的问题的时候，我们可以求助于这些系统</li>
+</ul>
+<h1 id="编译命令"><a href="#编译命令" class="headerlink" title="编译命令"></a>编译命令</h1><ul>
+<li><p>Cython在编译过程中可以指定一些编译命令，而这些编译命令可以在四个作用域层次上进行：</p>
+<ul>
+<li>全局：即在编译的命令中指定，如<br>  <code>cython --directive nonecheck=False source.pyx</code></li>
+<li><p>模块：即在这个模块所在的文件中以注释的方式声明</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ctyhon: nonecheck=True</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数：我们可以使用装饰器的形式对函数进行相应的cython编译命令指定</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cimport cython</span><br><span class="line"></span><br><span class="line"><span class="meta">@cython.boundscheck(False)</span></span><br><span class="line"><span class="meta">@cython.wraparound(False)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fast_indexing</span><span class="params">()</span>:</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>局部作用域：这时候我们用<code>with</code>语法通过上下文管理的形式加入</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cimport cython</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fast_indexing</span><span class="params">(a)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> cython.boundscheck(<span class="keyword">False</span>), cython.wraparound(<span class="keyword">False</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(a)):</span><br><span class="line">            sum += a[i]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>以上编译命令的适用规则是，现在局部查找编译指令，查到就使用，否则往上层作用域查找，即局部作用域的编译指令可以覆盖上层作用域的编译指令。</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Cython/" rel="tag"># Cython</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/18/fits/" rel="next" title="天文中的FITS文件的特性与使用">
+                <i class="fa fa-chevron-left"></i> 天文中的FITS文件的特性与使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/20/Cython-3/" rel="prev" title="《Cython》第三章：深入理解Cython">
+                《Cython》第三章：深入理解Cython <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Kai Wang">
+            
+              <p class="site-author-name" itemprop="name">Kai Wang</p>
+              <p class="site-description motion-element" itemprop="description">Hi! Here is Kai's cosmos, Kosmos!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wkcosmology/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wkcosmology@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Cython-编译流程"><span class="nav-number">1.</span> <span class="nav-text">Cython 编译流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标准方法：使用distutils和cythonize"><span class="nav-number">2.</span> <span class="nav-text">标准方法：使用distutils和cythonize</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#distutils脚本及其编译"><span class="nav-number">2.1.</span> <span class="nav-text">distutils脚本及其编译</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-cython魔法方法和ipython交互"><span class="nav-number">3.</span> <span class="nav-text">使用%%cython魔法方法和ipython交互</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用pyximport进行On-The-Fly编译"><span class="nav-number">4.</span> <span class="nav-text">使用pyximport进行On-The-Fly编译</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#控制pyximport以及管理依赖"><span class="nav-number">4.1.</span> <span class="nav-text">控制pyximport以及管理依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyximport示例和外部依赖"><span class="nav-number">4.2.</span> <span class="nav-text">pyximport示例和外部依赖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我们自己手动一步步编译"><span class="nav-number">5.</span> <span class="nav-text">我们自己手动一步步编译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用其他的编译系统来配合cython"><span class="nav-number">6.</span> <span class="nav-text">使用其他的编译系统来配合cython</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译命令"><span class="nav-number">7.</span> <span class="nav-text">编译命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
