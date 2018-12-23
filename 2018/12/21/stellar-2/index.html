@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="kosmos">
 <meta property="og:description" content="本文主要介绍恒星的形成过程以及相关的物理。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-22T12:06:57.000Z">
+<meta property="og:updated_time" content="2018-12-23T12:11:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《恒星物理》第二章：恒星形成">
 <meta name="twitter:description" content="本文主要介绍恒星的形成过程以及相关的物理。">
@@ -415,219 +415,84 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><strong>什么是恒星：</strong></p>
-<p>恒星可以被定义为一个自引力天体，其内部核心具有或者曾经具有持续的氢燃烧的热核聚变反应。在恒星中，热核反应一般只存在于恒星的核心出，因为热核反应存在一个最小的临界温度，所以恒星只有一小部分质量被转换成为能量。</p>
-<p><strong>恒星的形成：</strong></p>
-<p>恒星是由冷分子云的引力坍缩形成的，坍缩过程中，一半的能量转化为粒子运动的热能，剩余的能量被辐射出去。如果坍缩云的质量足够大($\ge 0.08M_{\odot}$)，中心温度可以达到让氢聚变需要的温度，这将导致恒星的形成。</p>
-<p><strong>恒星的辐射：</strong></p>
-<p>恒星发光是因为它具有很高的表面温度，主要的辐射来源是温度决定的黑体辐射。恒星内部的温度梯度导致中心核反应产生的能量传递到恒星表面。作为观测者，我们一般只能看到恒星表面的区域，这被称为光球或者恒星大气。</p>
-<p><strong>恒星内部的能量传输：</strong></p>
-<p>恒星内部的能量传输主要有三种方式：辐射，对流，传导。一般来说辐射最重要的的能量传输方式，不透明度或者温度梯度比较大的情况下，对流的能量传递效应会变得重要，传导一般不起重要作用。</p>
-<h1 id="电磁辐射基本知识"><a href="#电磁辐射基本知识" class="headerlink" title="电磁辐射基本知识"></a>电磁辐射基本知识</h1><p>现代天文学中获取信息的渠道：电磁辐射，宇宙线，中微子，引力波。其中电磁波谱是目前主要的观测方式。光子的能量和它的频率或者波长有如下的关系：</p>
-<script type="math/tex; mode=display">E = h\nu=hc/\lambda</script><p>其动量为</p>
-<script type="math/tex; mode=display">p=E/c=h/\lambda</script><h1 id="黑体辐射"><a href="#黑体辐射" class="headerlink" title="黑体辐射"></a>黑体辐射</h1><p>黑体是能吸收所有入射到其表面的辐射的物体，黑体的辐射完全由它的热能或者温度决定。黑体辐射公式是</p>
-<script type="math/tex; mode=display">B_{\nu}(T) = \frac{2h\nu^3}{c^2}\frac{1}{\exp(\frac{h\nu}{kT}) - 1}</script><p>或者写成波长的函数</p>
-<script type="math/tex; mode=display">B_{\lambda}(T) = \frac { 2 h c ^ { 2 } } { \lambda ^ { 5 } } \frac { 1 } { \exp ( \frac { h c } { \lambda k T } ) - 1 }</script><p>在长波和短波极限下，黑体辐射有以下的近似形式</p>
-<ul>
-<li>维恩公式($\lambda T &lt;&lt; hc/k$)：<script type="math/tex">B_{\lambda}=\frac{2hc^2}{\lambda^5}\exp(\frac{hc}{k\lambda T})</script></li>
-<li>瑞利-金斯公式($\lambda T &gt;&gt; hc/k$)：<script type="math/tex">B_{\lambda} = \frac{2\nu^2 kT}{c^2}</script></li>
-</ul>
-<p>我们如果对频率或者波长积分，就会得到流量和温度的关系，也就是Stefan-Boltzmann定律</p>
-<script type="math/tex; mode=display">F=\sigma T^4</script><p>另外，黑体辐射有一个峰值，这个峰值的位置和温度之间有一个简单的关系，也被称为维恩位移定律</p>
-<script type="math/tex; mode=display">\lambda_{\rm max}T = 0.29({\rm cm}\cdot K)</script><p>该定律也解释了为什么热的恒星看起来更蓝而冷的恒星看起来更红。</p>
-<h1 id="恒星光谱形成"><a href="#恒星光谱形成" class="headerlink" title="恒星光谱形成"></a>恒星光谱形成</h1><p>Kirhoff定律：在一定波长、一定温度下，一个物体的吸收率等于该物理同温度、同波长下的发射率。所以我们可以得到：热的、致密的固体、液体和气体产生连续谱；热的、稀薄的其他产生发射线；连续谱通过冷的、稀薄的气体后产生吸收线。不同元素的原子具有不同的结构，因而有不同的特征谱线。</p>
-<p>Doppler谱线位移<script type="math/tex">\Delta\lambda = \frac{v_r}{c}\lambda_0</script><br>谱线致宽:</p>
-<ul>
-<li>没有外界因素的影响时，原子谱线的自然宽度非常窄</li>
-<li>Doppler致宽：辐射源内部原子的无规热运动、辐射源的整体运动也会造成谱线致宽</li>
-</ul>
-<p>我们可以从恒星的光谱特征中得到以下信息</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>观测谱特征</th>
-<th>信息</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>峰值位置</td>
-<td>温度</td>
-</tr>
-<tr>
-<td>谱线的存在</td>
-<td>化学组成，温度</td>
-</tr>
-<tr>
-<td>线的强度</td>
-<td>化学组成，温度</td>
-</tr>
-<tr>
-<td>线的宽度</td>
-<td>温度，湍动，密度，磁场</td>
-</tr>
-<tr>
-<td>线的移动</td>
-<td>旋转速度</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="恒星的星等，流量，有效温度和光度"><a href="#恒星的星等，流量，有效温度和光度" class="headerlink" title="恒星的星等，流量，有效温度和光度"></a>恒星的星等，流量，有效温度和光度</h1><h2 id="恒星的光度和流量"><a href="#恒星的光度和流量" class="headerlink" title="恒星的光度和流量"></a>恒星的光度和流量</h2><p>恒星的光度(luminosity)定义为天体在单位时间内辐射的总能量，是恒星的固有量，与观测者的距离无关</p>
-<script type="math/tex; mode=display">L=4\pi R^2\sigma T^4</script><p>定义流量(flux)为在恒星表面上单位时间，单位面积接收到的天体的辐射量</p>
-<script type="math/tex; mode=display">F = \frac{L}{4\pi R^2}</script><p>一颗光度为L的恒星在距离r处时，它的流量是</p>
-<script type="math/tex; mode=display">F = \frac{L}{4\pi r^2}</script><h2 id="星等-apparent-magnitude"><a href="#星等-apparent-magnitude" class="headerlink" title="星等(apparent magnitude)"></a>星等(apparent magnitude)</h2><p>天文中常常用星等来描述光度和流量，定义星等分别为$m_1$和$m_2$的恒星流量之比为</p>
-<script type="math/tex; mode=display">F_1/F_2 = 10^{-0.4(m_1 - m_2)}</script><p>或者</p>
-<script type="math/tex; mode=display">m_1 - m_2 = -2.5\log(F_1 / F_2)</script><h2 id="星等系统"><a href="#星等系统" class="headerlink" title="星等系统"></a>星等系统</h2><p>上面定义了星等之间的相对值，但是我们还需要一个星等的定标系统，目前人们经常采用的有两个星等系统：</p>
-<ol>
-<li>Vega星等：织女星在所有波段的星等都为0<script type="math/tex; mode=display">{\rm mag} = -2.5\times \ln\frac{\int F_{\nu}({\rm Obj})~S_{\nu}d\nu}{\int F_{\nu}({\rm Vega})~S_{\nu}d\nu}</script></li>
-<li>AB星等：取一个绝对的流量为所有波段星等为0的参考点<script type="math/tex; mode=display">{\rm mag} = -2.5\times \ln\frac{\int F_{\nu}({\rm Obj})~S_{\nu}d\nu}{\int S_{\nu}d\nu} - 48.6</script></li>
-</ol>
-<p>我们在测量一个天体的星等的时候，很难测量其在全波段的信息，所以我们采用的方法是定义其在某一个波长范围的光度或者流量的积分。这种波长范围的选择是通过滤波片来实现的，目前存在很多的测光系统：UBV测光系统，ubvy窄带测光系统，UBVRI测光系统，SDSS的ugriz测光系统</p>
-<p>上面定义的是我们看到一个天体的亮度，这个成为相对星等，因为这个星等不是这个天体的本征量，它还和天体离我们的距离有关。为了定义天体的本征量度，我们引入绝对星等，即一颗恒星的绝对星等等于它位于10pc距离处的视星等。若一颗恒星位于距离$D$处</p>
-<script type="math/tex; mode=display">m - M = 5\log\left(\frac{D}{10{\rm pc}}\right)</script><p>我们同样可以距离模数</p>
-<script type="math/tex; mode=display">\mathcal{D} = m-M = 5\log\left(\frac{D}{10{\rm pc}}\right)</script><h2 id="尘埃的吸收和散射"><a href="#尘埃的吸收和散射" class="headerlink" title="尘埃的吸收和散射"></a>尘埃的吸收和散射</h2><p>我们观测距离较远的天体时，观测到的辐射往往是已经被尘埃吸收了之后的。尘埃对辐射的吸收特征是：尘埃对长波的吸收和散射较弱，对短波较强。所以我们做观测时需要做一些改正，包括大气消光改正，星际红化改正，星际消光改正</p>
-<h1 id="恒星的光谱分类"><a href="#恒星的光谱分类" class="headerlink" title="恒星的光谱分类"></a>恒星的光谱分类</h1><h2 id="恒星光谱"><a href="#恒星光谱" class="headerlink" title="恒星光谱"></a>恒星光谱</h2><p>恒星的光谱特征除了接近黑体的连续谱之外，还有一些吸收线和发射线，具有以下的特点：</p>
-<ul>
-<li>典型的恒星光谱由连续谱和吸收线构成，一般没有发射线</li>
-<li>连续谱来自相对较热、致密的恒星内部</li>
-<li>吸收线来自稀薄的较冷的恒星大气</li>
-<li>恒星的特征谱线强度提供了恒星的表面温度的信息</li>
-<li>氢巴尔末线对温度很敏感：温度低的时候，电子大部分处于n=1的态，则n=2的态就少了，那么巴尔末线的强度就会低</li>
-</ul>
-<h2 id="Harvard光谱分类"><a href="#Harvard光谱分类" class="headerlink" title="Harvard光谱分类"></a>Harvard光谱分类</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>光谱型</th>
-<th>表面温度（K）</th>
-<th>颜色</th>
-<th>特征谱线</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>O</td>
-<td>30,000</td>
-<td>蓝</td>
-<td>强电离He线，重元素多次电离线</td>
-</tr>
-<tr>
-<td>B</td>
-<td>20,000</td>
-<td>蓝白</td>
-<td>中性He线，重元素一次电离线，H线</td>
-</tr>
-<tr>
-<td>A</td>
-<td>10,000</td>
-<td>白</td>
-<td>H线，重元素一次电离线</td>
-</tr>
-<tr>
-<td>F</td>
-<td>7,000</td>
-<td>黄白</td>
-<td>重元素一次电离线，H线和中性金属线</td>
-</tr>
-<tr>
-<td>G</td>
-<td>6,000</td>
-<td>黄</td>
-<td>重元素一次电离线，中性金属线</td>
-</tr>
-<tr>
-<td>K</td>
-<td>4,000</td>
-<td>红橙</td>
-<td>中性金属线，重元素一次电离线</td>
-</tr>
-<tr>
-<td>M</td>
-<td>3,000</td>
-<td>红</td>
-<td>中性金属线，分子带</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>每一种光谱型可以继续分为0-9十个次型</p>
-<h2 id="恒星的二元光谱分类"><a href="#恒星的二元光谱分类" class="headerlink" title="恒星的二元光谱分类"></a>恒星的二元光谱分类</h2><p>在Harvard光谱分类的基础上，结合恒星的光度级分类得到恒星的二元光谱分类。如太阳的光谱型为G2V。由恒星的光谱型可以确定恒星的表面温度和光度，即恒星在赫罗图上的位置。</p>
-<h2 id="Yerkes光谱分类"><a href="#Yerkes光谱分类" class="headerlink" title="Yerkes光谱分类"></a>Yerkes光谱分类</h2><p>上面介绍的Harvard的光谱分类不能唯一确定恒星在HR图上的位置，而Yerkes光谱分类根据谱线宽度的变化，对谱线进行分类。这样分类的因为谱线的压力（碰撞）致宽，如主序星，体积小，大气密度高，压力高，碰撞频繁，谱线较宽；巨星，体积大，密度低，压力小，谱线尖锐。</p>
-<p>根据恒星光度的高低，将恒星分为I –VII七个光度级，光度级数值越小，表明恒星的光度越高。比如</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Ia</th>
-<th>最亮超巨星</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Ib</td>
-<td>次亮超巨星</td>
-</tr>
-<tr>
-<td>II</td>
-<td>亮巨星</td>
-</tr>
-<tr>
-<td>III</td>
-<td>巨星</td>
-</tr>
-<tr>
-<td>IV</td>
-<td>亚巨星</td>
-</tr>
-<tr>
-<td>V</td>
-<td>矮星</td>
-</tr>
-<tr>
-<td>VI</td>
-<td>亚矮星</td>
-</tr>
-<tr>
-<td>VII</td>
-<td>白矮星</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="赫罗图"><a href="#赫罗图" class="headerlink" title="赫罗图"></a>赫罗图</h1><p>由丹麦天文学家E. Hertzsprung和美国天文学家H. R. Russell创制的恒星的光度-温度分布图。</p>
-<p>恒星的质量决定了恒星在H-R图上的位置：高质量的恒星明亮且高温，位于主序带的上部；低质量的恒星黯淡且低温，位于主序带的下部。</p>
-<h1 id="玻尔兹曼分布和萨哈方程"><a href="#玻尔兹曼分布和萨哈方程" class="headerlink" title="玻尔兹曼分布和萨哈方程"></a>玻尔兹曼分布和萨哈方程</h1><p>恒星内部的物态，近似于热动力学平衡状态。因此计算恒星内部的物态方程，通常需要应用热动力学平衡状态下粒子能态的一些分布规律。</p>
-<h2 id="Maxwell速度分布公式"><a href="#Maxwell速度分布公式" class="headerlink" title="Maxwell速度分布公式"></a>Maxwell速度分布公式</h2><p>由经典统计物理可以得到，在热动平衡状态下粒子的速度分布遵从Maxwell速度公式:</p>
-<script type="math/tex; mode=display">\frac { d n } { n } = 4 \pi v ^ { 2 } \left( \frac { m } { 2 \pi k T } \right) ^ { 3 / 2 } e ^ { - m v ^ { 2 } / 2 k T } d v</script><h2 id="Boltzmann公式"><a href="#Boltzmann公式" class="headerlink" title="Boltzmann公式"></a>Boltzmann公式</h2><p>统计物理显示给定离子的原子能级占居数与它们的能量成指数反比关系：较低能级的占居数要比高能级的占居数多。这一关系可以通过Boltzmann公式定量描述</p>
-<script type="math/tex; mode=display">\frac { n _ { i } } { n _ { j } } = \frac { g _ { i } } { g _ { j } } \exp\left[ - \frac { \left( E _ { i } - E _ { j } \right) } { k T } \right]</script><p>其中k是玻尔兹曼常数，$n_i$是离子在能级i处的单位体积的原子数，$g$是这一能级的简并度（具有同样能级的量子态）,$E_i$是能级i相对于基态(假设为0)的能量。Boltzmann方程的另外一种形式是</p>
-<script type="math/tex; mode=display">\frac { n _ { i } } { n _ {\rm i o n } } = \frac { g _ { i } } { U _ { \rm i o n } } e ^ { - \frac { E _ { i } } { k T } } , ~~~~~U _ {\rm i o n } = \sum _ { n = 1 } ^ { \infty } g _ { n } e ^ { - \frac { E _ { i } } { k T } }</script><p>其中$U_{\rm ion}$是离子的配分函数（状态和），$n_{\rm ion}$是总的数目。</p>
-<h2 id="Saha公式"><a href="#Saha公式" class="headerlink" title="Saha公式"></a>Saha公式</h2><p>把玻耳兹曼分布应用于原子在不同电离度的占据数分布，我们就能得到Saha公式。首先我们考虑一个从第r电离态基态到第r+1电离态基态的过程</p>
-<script type="math/tex; mode=display">A _ { r ,0} \rightleftharpoons A _ { r + 1 ,0} + e ^ { - }</script><p>根据Boltzmann方程，我们有</p>
-<script type="math/tex; mode=display">\frac { d n _ { r + 1.0 } } { n _ { r , 0 } } = \frac { d g \left( p _ { e } \right) } { g _ { r , 0 } } e ^ { - \left( \chi _ { r } + p _ { e } ^ { 2 } / 2 m _ { e } \right) / k T }</script><p>其中$\chi _ { r }$是第r电离态的离子电离到第r+1电离态的电离能，$p_e$是电离出来自由电子的动量，$dg(p_e)$是第r+1电离态的离子的简并度和被电离出来的电子的简并度的乘积，所以我们有</p>
-<script type="math/tex; mode=display">d g \left( p _ { e } \right) = g _ { r + 1,0 } \left( \frac { \Delta V \cdot \Delta ^ { 3 } p _ { e } } { h ^ { 3 } } \cdot 2 \right)</script><p>将这个代入上面的Boltzmann方程，并且对动量积分，可以得到</p>
-<script type="math/tex; mode=display">\frac { n _ { r + 1,0 } } { n _ { r , 0 } } = \frac { g _ { r + 1,0 } } { g _ { r , 0 } } \cdot \frac { 2 } { n _ { e } h ^ { 3 } } e ^ { - \chi _ { r } / k T } \int _ { 0 } ^ { \infty } 4 \pi p _ { e } ^ { 2 } e ^ { - p _ { e } ^ { 2 } / 2 m _ { e } k T } d p _ { e }</script><p>再利用积分公式</p>
-<script type="math/tex; mode=display">\int _ { 0 } ^ { \infty } x ^ { 2 } e ^ { - a ^ { 2 } x ^ { 2 } } d x = \frac { \sqrt { \pi } } { 4 a ^ { 3 } } \quad ( a > 0 )</script><p>我们有</p>
-<script type="math/tex; mode=display">\frac { n _ { r + 1,0 } } { n _ { r , 0 } }  = \frac{1}{n _ { e }} \frac { g _ { r + 1,0 } } { g _ { r , 0 } } \cdot 2 \cdot \frac { \left( 2 \pi m _ { e } k T \right) ^ { 3 / 2 } } { h ^ { 3 } } e ^ { - \chi _ { r } / k T }</script><p>该式给出了碰撞占主导时同一元素相邻离子的布居数的关系，这个公式描述的是不同电离态的基态对应的分布，如果我们想要得到不同电离态的分布，我们只需要把简并度参数换成配分函数即可，即</p>
-<script type="math/tex; mode=display">\frac { n _ { r + 1 } } { n _ { r } }   = \frac{1}{n _ { e }} \frac { U _ { r + 1 } } { U _ { r } } \cdot 2 \cdot \frac { \left( 2 \pi m _ { e } k T \right) ^ { 3 / 2 } } { h ^ { 3 } } e ^ { - \chi _ { r } / k T }</script><p>最后说一下<strong>电离度</strong>，其定义为</p>
-<script type="math/tex; mode=display">f _ { i } = \frac { n _ { i } } { n _ { 1 } + n _ { 2 } + n _ { 3 } + n _ { 4 } + \ldots }</script><p>利用Saha方程，我们可以有</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>恒星形成是由于足够质量的星际分子云在引力作用下坍缩而形成的。当下落的物质质量超过0.08个太阳质量，它的引力能足够使得气体的中心温度达到使得氢聚变燃烧的温度，因而恒星就可以诞生。形成过程的恒星通常被称为原恒星。</p>
+<h1 id="流体静力学平衡"><a href="#流体静力学平衡" class="headerlink" title="流体静力学平衡"></a>流体静力学平衡</h1><p>流体静力学平衡的基本思想就是“压强差带来的力=外力（比如引力）”，所以我们有</p>
+<script type="math/tex; mode=display">P ( r ) d A - [ P ( r ) + d P ] d A - \rho ( r ) d A d r g ( r ) = 0</script><p>也就是</p>
+<script type="math/tex; mode=display">\frac { d P ( r ) } { d r } = - \rho ( r ) g ( r )</script><h1 id="位力定理"><a href="#位力定理" class="headerlink" title="位力定理"></a>位力定理</h1><p>从流体静力学平衡方程出发</p>
+<script type="math/tex; mode=display">\frac { d P ( r ) } { d r } = - \frac { \rho ( r ) G M ( r ) } { r ^ { 2 } }</script><p>两边乘以体积$V(r)=4\pi r^3/3$，得到</p>
 <script type="math/tex; mode=display">\begin{align}
-f _ { i } &= \frac { \frac { n _ { i } } { n _ { 1 } } } { 1 + \left(\frac { n _ { 2 } } { n _ { 1 } } \right) + \left( \frac { n _ { 3 } } { n _ { 1 } } \right) + \left( \frac { n _ { 4 } } { n _ { 1 } } \right) + \ldots }\\
-&= \frac { \left( \frac { n _ { i } } { n _ { i - 1 } } \right) \left( \frac { n _ { i - 1 } } { n _ { i - 2 } } \right) \dots \left( \frac { n _ { 2 } } { n _ { 1 } } \right) } { 1 + \left( \frac { n _ { 3 } } { n _ { 2 } } \right) \left( \frac { n _ { 2 } } { n _ { 1 } } \right) + \left( \frac { n _ { 4 } } { n _ { 3 } } \right) \left( \frac { n _ { 3 } } { n _ { 2 } } \right) \left( \frac { n _ { 2 } } { n _ { 1 } } \right) \left( \frac { n _ { 2 } } { n _ { 1 } } \right) }
-\end{align}</script><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>黑体辐射分布<script type="math/tex; mode=display">B_{\lambda} = \frac{2hc^2}{\lambda^5}\frac{1}{\exp(\frac{hc}{\lambda kT}) - 1}</script></li>
-<li>Stefan-Boltzmann定律<script type="math/tex; mode=display">F = \sigma T^4</script></li>
-<li>Wien位移定律<script type="math/tex; mode=display">\lambda_{\rm max} = \frac{0.290 {\rm K\cdot cm}}{T}</script></li>
-<li>黑体辐射下恒星光度<script type="math/tex; mode=display">L_* = 4\pi R_*^2\sigma T_{\rm eff}^4</script></li>
-<li>流量(对于 $r \ge R_*$)<script type="math/tex; mode=display">F(r) = \sigma T_{\rm eff}^4\left(\frac{R_*}{r}\right)^2</script></li>
-<li>星等<script type="math/tex; mode=display">m_1 - m_2 = 2.5\log\left(\frac{F_2}{F_1}\right)</script></li>
-<li>距离模数<script type="math/tex; mode=display">m-M=5\log\left(\frac{d}{10}\right)</script></li>
-<li>Boltzmann方程<script type="math/tex; mode=display">\frac{n_i}{n_{\rm ion}} = \frac{g_i}{U_{\rm ion}}\exp(-\frac{E_i}{kT})</script></li>
-<li>Saha方程<script type="math/tex; mode=display">\frac{n_{i+1}}{n_i} = \frac{1}{n_e}\left(\frac{2\pi m_e kT}{h^2}\right)^{\frac32}\frac{2U_{i+1}}{U_i}\exp(-\frac{E_{\rm ion}}{kT})</script></li>
-<li>密度<script type="math/tex; mode=display">\rho = \sum\limits_i n_im_i</script></li>
-<li>平均分子量<script type="math/tex; mode=display">\mu = \frac{\rho}{m_Hn_{\rm tot}}</script></li>
-<li>电离度<script type="math/tex; mode=display">f_i = \frac{(n_i/n_{i-1})(n_{i-1}/n_{i-2})...(n_2/n_1)}{1 + (n_2/n_1) + (n_3/n_2)(n_2/n_1) + (n_4/n_3)(n_3/n_2)(n_2/n_1) + ...}</script></li>
+\frac { 4 } { 3 } \pi r ^ { 3 } d P &= - \frac { 4 } { 3 } \pi r \rho ( r ) G M ( r ) d r\\
+\rightarrow V d P &= - \frac { G M ( r ) } { 3 r } d M
+\end{align}</script><p>方程两边对整个体积积分，其中方程左边利用分部积分可以得到</p>
+<script type="math/tex; mode=display">\int V d P = P \left. V \right| _ {\rm c e n t r e } ^ {\rm  surface }  - \int P d V</script><p>右边第一项由于$V(r=0)=0$和$P(r=R_*)=0$，所以为零。所以方程被化简为</p>
+<script type="math/tex; mode=display">\int _ { 0 } ^ { V _ { * } } P d V = \frac { 1 } { 3 } \int _ { 0 } ^ { M * } \frac { G M ( r ) } { r } d M</script><p>其中方程右边的积分恰好是引力势能的负值，所以我们有</p>
+<script type="math/tex; mode=display">3 \int _ { 0 } ^ { V _ { * } } P d V = - \Omega, ~~~~~{\rm 其中~}\Omega = - \int _ { 0 } ^ { M } \frac { G M ( r ) } { r } d M</script><p>在统计物理中，根据能均分定理，处于温度为T的热平衡状态下的每个粒子的动能是$3kT/2$，如果N是恒星中的粒子总数，那么恒星中粒子随机运动动能（也就是热能）密度是</p>
+<script type="math/tex; mode=display">\varepsilon = \frac { N } { V } \frac { 3 } { 2 } k T=\frac{3}{2}P</script><p>其中第二个等号用到了理想气体物态方程，所以我们可以得到恒星总的热能是</p>
+<script type="math/tex; mode=display">U = \int _ { 0 } ^ { V _ { : } } \varepsilon d V</script><p>代入上面推导的方程，我们就有</p>
+<script type="math/tex; mode=display">U=\frac{\Omega}{2}，{\rm ~~或者~~} 2U + \Omega=0</script><p>这就是位力定理，它描述了引力势能和热能之间的关系。</p>
+<p>恒星在收缩的时候$-\Omega$增加，因此$U$也增加，并且有</p>
+<script type="math/tex; mode=display">\Delta U = - \frac { \Delta \Omega } { 2 }</script><p>这表示引力势能的一半转化成为了热能，而另一半被辐射出去了。这一点应该这样来理解，因为位力定理描述的是一个稳定的状态，所以初始状态就是一个稳定的状态，而收缩的原因就是因为存在一个释放能量的机制，并且收缩产生的引力势能的差就是通过其他途径（比如辐射）释放出的能量的两倍。</p>
+<h1 id="金斯判据"><a href="#金斯判据" class="headerlink" title="金斯判据"></a>金斯判据</h1><p>我们前面介绍了稳定状态下引力势能和热能之间的关系，如果这个关系不满足，那么就会收缩或者膨胀，收缩的情形也就对应着恒星形成所需要的条件，我们用常密度下恒星的引力势能作为近似，有</p>
+<script type="math/tex; mode=display">\Omega = - \frac { 3 } { 5 } \frac { G M ^ { 2 } } { R }</script><p>假设星际气体云是理想气体</p>
+<script type="math/tex; mode=display">U = \frac { 3 } { 2 } N k T</script><p>当$-\Omega &gt; 2U$的时候，气体云会坍缩，也就是</p>
+<script type="math/tex; mode=display">\frac { 3 } { 5 } \frac { G M ^ { 2 } } { R } > \frac { 3 M k T } { \mu m _ { H } }</script><p>即</p>
+<script type="math/tex; mode=display">M > \left( \frac { 5 k T } { \mu m _ { H } G } \right) ^ { 3 / 2 } \left( \frac { 3 } { 4 \pi \rho } \right) ^ { 1 / 2 } = M _ { J }</script><p>其中我们用到了</p>
+<script type="math/tex; mode=display">R = \left( \frac { M } { 4 \pi \rho/3 } \right)^{1/3}</script><p>其中$M_J$定义为金斯质量。因此气体要塌缩，其质量必须要大于金斯质量。这定义了气体云稳定性的一个定量判据。Jeans质量判据给出了<strong>非相对论、无磁场</strong>星云坍缩的必要条件(并不是所有的星云都可以形成恒星)。<br>同样的，我们也可以定义金斯密度</p>
+<script type="math/tex; mode=display">\rho _ { J } = \left( \frac { 5 k T } { \mu m _ { H } G } \right) \left( \frac { 3 } { 4 \pi M ^ { 2 } } \right)</script><p>和金斯半径</p>
+<script type="math/tex; mode=display">R _ { J } = \left( \frac { 15 k T } { 4 \pi \rho \mu m _ { H } G } \right) ^ { 1 / 2 }</script><p>当星际气体云密度超过金斯密度，或者尺度超过金斯半径的时候，星云就会坍缩。</p>
+<h1 id="自由下落时间"><a href="#自由下落时间" class="headerlink" title="自由下落时间"></a>自由下落时间</h1><p>有了星际气体云坍缩的判据，我们再来探讨一下星际气体云坍缩的时标，这个时标称之为<strong>动力学时标</strong>，近似估算为物体从只在引力作用下从半径处下落到中心的时间。利用能量守恒公式</p>
+<script type="math/tex; mode=display">\frac { 1 } { 2 } m \left( \frac { d r } { d t } \right) ^ { 2 } = \frac { G M m } { r } - \frac { G M m } { R }</script><p>得到粒子的速度</p>
+<script type="math/tex; mode=display">\frac { d r } { d t } = - \left( \frac { 2 G M } { r } - \frac { 2 G M } { R } \right) ^ { 1 / 2 }</script><p>我们对半径从R到0进行积分，得到</p>
+<script type="math/tex; mode=display">\begin{align}
+t _ { f f } &= - \int _ { R } ^ { 0 } \left( \frac { 2 G M } { r } - \frac { 2 G M } { R } \right) ^ { - 1 / 2 } d r\\
+&= \frac { \pi } { 2 } \left( \frac { R ^ { 3 } } { 2 G M } \right) ^ { 1 / 2 } \\
+&= \left( \frac { 3 \pi } { 32 G \rho } \right) ^ { 1 / 2 }
+\end{align}</script><h1 id="恒星形成的主要过程"><a href="#恒星形成的主要过程" class="headerlink" title="恒星形成的主要过程"></a>恒星形成的主要过程</h1><ol>
+<li>宇宙空间中存在大量的星际物质</li>
+<li>由于密度不均匀性，形成了一些密度较大的区域</li>
+<li>星际物质收到引力作用，聚集起来，形成星云</li>
+<li>星云不断收缩，势能转化成为内部热能和辐射能</li>
+<li>星云温度不断提高，向外辐射能量，从而形成原始恒星</li>
+</ol>
+<h2 id="低质量恒星的形成过程"><a href="#低质量恒星的形成过程" class="headerlink" title="低质量恒星的形成过程"></a>低质量恒星的形成过程</h2><ol>
+<li>星际云（interstellar cloud）<br>星云坍缩，分裂成小云块（密度上升，金斯质量下降）；</li>
+<li>星云团块（cloud fragment）<br>星云仍十分稀薄，热量可以不受阻碍地散逸，星云内温度没有明显升高；</li>
+<li>团块/原恒星（fragment/protostar）<br>星云进一步坍缩和分裂，密度上升；核心区域变得不透明，温度迅速上升，金斯质量上升；星云停止分裂，云块开始坍缩；</li>
+<li>原恒星(protostar)<br>原恒星以Kelvin-Helmhotz时标收缩，温度进一步升高</li>
+<li>主序前星（pre-main-sequence star）<br>原恒星向主序演化成为主序前星，但内部温度还没有升到氢的点火温度</li>
+</ol>
+<blockquote>
+<p>大质量的恒星主序前的演化也较快，更大质量的原恒星具有更多的引力能因而坍缩也更快；所以大质量恒星的主序前阶段很难观测到。</p>
+<p>代表性例子：<br>T Tauri，金牛座T型星是主序前的恒星（$M &lt; 2M_{\odot}$）， 主要在分子云或者附近发现。T Tauri周围环绕吸积盘并表现有发射线。 它们的光谱显示出红外超，主要来自围绕恒星的星周物质。<br>Herbig Ae/Be：质量范围在$2-10M_{\odot}$， 有效温度在8000K-20000K之间，吸积盘有发射线，故不同于一般的B型星。一些Herbig Ae/Be星表现出随时间变化的恒星脉动</p>
+</blockquote>
+<ol>
+<li>零龄主序(zeor-age-main-sequence star)<br> 恒星达到主序，热核反应开始进行，成为零龄主序，光度约为$2/3L_{\odot}$</li>
+<li>主序星(main-sequence star)<br> 恒星略微收缩，达到流体静力学平衡</li>
+</ol>
+<p>具有不同质量恒星的形成有以下几点特征：</p>
+<ol>
+<li>不同质量的恒星在形成过程中，在H-R图上沿不同的路径演化；</li>
+<li>小质量原恒星内部对流发展充分，温差小，收缩时表面温度几乎不变；大质量原恒星对流层浅，温度变低；</li>
+<li>质量越高的恒星，其原恒星演化到主序的时间越短，在主序上的位置越高。</li>
+</ol>
+<p>我们上面介绍的模型都过于简化了，影响恒星形成还有几个重要因素</p>
+<ol>
+<li>能量的有效辐射：由于辐射压会抵抗引力，阻止原恒星进一步坍缩，所以能量是否能有效释放出去很关键；</li>
+<li>星系潮汐力影响；</li>
+<li>星云原初角动量；</li>
+<li>原始星云的磁场：原始星云一般具有微弱的磁场。随着星云收缩，磁场强度变大。 磁场将阻止星云收缩，特别是垂直于磁场方向的收缩。</li>
+</ol>
+<p>触发星云坍缩有以下几种机制：</p>
+<ol>
+<li>激波压缩：超新星爆发、热星辐射或银河系旋臂转动等过程产生激波。激波压缩附近的星云，使其密度增大，触发恒星的形成，恒星形成过程可能类似于链式反应；</li>
+<li>星云碰撞：星系自转，它的组成物质在运动中穿旋臂而过，恒星偕同星际物质在这样的过程中都是由弯曲旋臂的内侧进去，再从外侧出来。星系物质穿越密度较大的旋臂，引起产星过程。</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>流体静力学平衡<script type="math/tex; mode=display">\frac{dP(r)}{dr} = -\rho(r)g(r)</script></li>
+<li>V位力定理<script type="math/tex; mode=display">2U +  \Omega = 0</script></li>
+<li>引力势能<script type="math/tex; mode=display">\Omega = -\int_0^{M_*}\frac{GM(r)}{r}dM</script></li>
+<li>金斯判据<script type="math/tex; mode=display">M > \left(\frac{5kT}{\mu m_H G}\right)^{3/2}\left(\frac{3}{4\pi\rho}\right)^{1/2} = M_J</script></li>
+<li>自由下落时间<script type="math/tex; mode=display">t_{ff} = \left(\frac{3\pi}{32G\rho}\right)^{1/2}</script></li>
 </ul>
 
       
@@ -835,7 +700,7 @@ f _ { i } &= \frac { \frac { n _ { i } } { n _ { 1 } } } { 1 + \left(\frac { n _
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#电磁辐射基本知识"><span class="nav-number">2.</span> <span class="nav-text">电磁辐射基本知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#黑体辐射"><span class="nav-number">3.</span> <span class="nav-text">黑体辐射</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恒星光谱形成"><span class="nav-number">4.</span> <span class="nav-text">恒星光谱形成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恒星的星等，流量，有效温度和光度"><span class="nav-number">5.</span> <span class="nav-text">恒星的星等，流量，有效温度和光度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#恒星的光度和流量"><span class="nav-number">5.1.</span> <span class="nav-text">恒星的光度和流量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#星等-apparent-magnitude"><span class="nav-number">5.2.</span> <span class="nav-text">星等(apparent magnitude)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#星等系统"><span class="nav-number">5.3.</span> <span class="nav-text">星等系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尘埃的吸收和散射"><span class="nav-number">5.4.</span> <span class="nav-text">尘埃的吸收和散射</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恒星的光谱分类"><span class="nav-number">6.</span> <span class="nav-text">恒星的光谱分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#恒星光谱"><span class="nav-number">6.1.</span> <span class="nav-text">恒星光谱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Harvard光谱分类"><span class="nav-number">6.2.</span> <span class="nav-text">Harvard光谱分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恒星的二元光谱分类"><span class="nav-number">6.3.</span> <span class="nav-text">恒星的二元光谱分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yerkes光谱分类"><span class="nav-number">6.4.</span> <span class="nav-text">Yerkes光谱分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#赫罗图"><span class="nav-number">7.</span> <span class="nav-text">赫罗图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#玻尔兹曼分布和萨哈方程"><span class="nav-number">8.</span> <span class="nav-text">玻尔兹曼分布和萨哈方程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Maxwell速度分布公式"><span class="nav-number">8.1.</span> <span class="nav-text">Maxwell速度分布公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Boltzmann公式"><span class="nav-number">8.2.</span> <span class="nav-text">Boltzmann公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Saha公式"><span class="nav-number">8.3.</span> <span class="nav-text">Saha公式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流体静力学平衡"><span class="nav-number">2.</span> <span class="nav-text">流体静力学平衡</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#位力定理"><span class="nav-number">3.</span> <span class="nav-text">位力定理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#金斯判据"><span class="nav-number">4.</span> <span class="nav-text">金斯判据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自由下落时间"><span class="nav-number">5.</span> <span class="nav-text">自由下落时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恒星形成的主要过程"><span class="nav-number">6.</span> <span class="nav-text">恒星形成的主要过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#低质量恒星的形成过程"><span class="nav-number">6.1.</span> <span class="nav-text">低质量恒星的形成过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
