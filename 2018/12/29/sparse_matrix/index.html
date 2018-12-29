@@ -106,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="astronomy,book,">
+  <meta name="keywords" content="Python,note,">
 
 
 
@@ -117,18 +117,18 @@
 
 
 
-<meta name="description" content="这篇文章主要介绍一些天文类的书籍以及相关的一些书评，也作为督促自己读书的一种方式，以后会不断更新。">
-<meta name="keywords" content="astronomy,book">
+<meta name="description" content="这里介绍了稀疏矩阵在空间数据处理中的应用以及相关的Python包。">
+<meta name="keywords" content="Python,note">
 <meta property="og:type" content="article">
-<meta property="og:title" content="天文书籍推荐">
-<meta property="og:url" content="http://wkcosmology.github.io/2018/09/14/astrobooks/index.html">
+<meta property="og:title" content="稀疏矩阵及其在空间数据处理中的应用">
+<meta property="og:url" content="http://wkcosmology.github.io/2018/12/29/sparse_matrix/index.html">
 <meta property="og:site_name" content="kosmos">
-<meta property="og:description" content="这篇文章主要介绍一些天文类的书籍以及相关的一些书评，也作为督促自己读书的一种方式，以后会不断更新。">
+<meta property="og:description" content="这里介绍了稀疏矩阵在空间数据处理中的应用以及相关的Python包。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-20T07:04:55.000Z">
+<meta property="og:updated_time" content="2018-12-29T07:44:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="天文书籍推荐">
-<meta name="twitter:description" content="这篇文章主要介绍一些天文类的书籍以及相关的一些书评，也作为督促自己读书的一种方式，以后会不断更新。">
+<meta name="twitter:title" content="稀疏矩阵及其在空间数据处理中的应用">
+<meta name="twitter:description" content="这里介绍了稀疏矩阵在空间数据处理中的应用以及相关的Python包。">
 
 
 
@@ -158,13 +158,13 @@
 
 
 
-  <link rel="canonical" href="http://wkcosmology.github.io/2018/09/14/astrobooks/">
+  <link rel="canonical" href="http://wkcosmology.github.io/2018/12/29/sparse_matrix/">
 
 
 
 
 
-  <title>天文书籍推荐 | kosmos</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>稀疏矩阵及其在空间数据处理中的应用 | kosmos</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wkcosmology.github.io/2018/09/14/astrobooks/">
+    <link itemprop="mainEntityOfPage" href="http://wkcosmology.github.io/2018/12/29/sparse_matrix/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kai Wang">
@@ -328,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">天文书籍推荐</h1>
+          <h1 class="post-title" itemprop="name headline">稀疏矩阵及其在空间数据处理中的应用</h1>
         
 
         <div class="post-meta">
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-14T10:29:32+08:00">
-                2018-09-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-29T03:41:47+08:00">
+                2018-12-29
               </time>
             
 
@@ -363,8 +363,19 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/RecommendList/" itemprop="url" rel="index">
-                    <span itemprop="name">RecommendList</span>
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/ComputerScience/" itemprop="url" rel="index">
+                    <span itemprop="name">ComputerScience</span>
                   </a>
                 </span>
 
@@ -387,7 +398,7 @@
 
           
               <div class="post-description">
-                  这篇文章主要介绍一些天文类的书籍以及相关的一些书评，也作为督促自己读书的一种方式，以后会不断更新。
+                  这里介绍了稀疏矩阵在空间数据处理中的应用以及相关的Python包。
               </div>
           
 
@@ -404,21 +415,48 @@
       
 
       
-        <h2 id="Galaxies"><a href="#Galaxies" class="headerlink" title="Galaxies"></a>Galaxies</h2><ul>
-<li>[ ] Galactic dynamics</li>
-<li>[ ] <font color="green"> Galaxy formation and evolution </font></li>
-<li>[x] <font color="red"> Galaxies in the Universe </font></li>
+        <p>稀疏矩阵一般指大部分元素为0的矩阵，我们在这里使用稀疏矩阵更合理的解释是指需要用到一个矩阵中的一小部分元素。</p>
+<p>在星系的空间分布以及大尺度结构的研究中，我们的研究对象的大小，也就是星系的数目，一般是$N=10^{5}-10^{9}$这个数量级。而我们经常需要研究近邻的星系或者粒子的性质，这就要求我们获得一个距离矩阵$\mathcal{D}$，矩阵元素$d_{i,j}$是第$i$个点和第$j$个点之间的距离。如果我们使用暴力算法，计算量将会是$N^2$，这是一个非常大的数，同时算出来的绝大多数大距离的数值是我们不需要的，因为我们认为只要当两个粒子距离足够近的时候，它们才会有关联，所以我们不会去研究距离非常远的两个粒子，也就不需要这个距离。所以我们需要的是一个距离矩阵$\mathcal{D}$，同时我们只需要这个矩阵中的很小一部分元素，所以距离矩阵就派上了用场。</p>
+<h1 id="计算小尺度距离矩阵"><a href="#计算小尺度距离矩阵" class="headerlink" title="计算小尺度距离矩阵"></a>计算小尺度距离矩阵</h1><p>首先我们来说明一下如果计算小尺度的距离矩阵，即对于一堆粒子，只需要计算距离矩阵中小于$d$的元素。这个目前已经有很多成熟的算法了，比如KDTree或者BallTree等，这里我们介绍一种原理简单，并且在星系分布这种维度不高（三维），分布较为均匀的情况下表现很好的方法。</p>
+<p>对于三维空间中的例子，先将所有粒子放在一个大box中，边长为$(L_1, L_2, L_3)$，以大box的一角为原点，这个box的其余部分在第一象限。然后将这个box分为$p\times q\times r$个小box，这样每个小box有一个唯一的坐标</p>
+<script type="math/tex; mode=display">(i, j, k)</script><p>其中，$0 \le i\lt p $, $0 \le j\lt q $, $0 \le k\lt r $，并且每个box的边长是</p>
+<script type="math/tex; mode=display">(l_1, l_2, l_3) = (\frac{L_1}{p},~\frac{L_2}{q},~\frac{L_3}{r})</script><p>对于坐标在$(x,y,z)$的点$r$，若我们想要其周围距离小于$d$的所有点，我们只需要先确定该点在box</p>
+<script type="math/tex; mode=display">(r_x, r_y, r_z)=\left({\rm floor}(\frac{x}{l_1}), {\rm floor}(\frac{x}{l_2}), {\rm floor}(\frac{x}{l_3})\right)</script><p>内，其中floor是向下取整运算。然后我们只需要去计算这个box周围几个box中的点的距离就行，因为剩余的box中的点的距离肯定大于我们要求的距离。</p>
+<h1 id="计算稀疏距离矩阵的Python包"><a href="#计算稀疏距离矩阵的Python包" class="headerlink" title="计算稀疏距离矩阵的Python包"></a>计算稀疏距离矩阵的Python包</h1><p>实现上述算法的包是<code>halotools.mock_observables.pair_counters.pairwise_distance_3d</code>和<br><code>halotools.mock_observables.pair_counters.pairwise_distance_xy_z</code>。这两个包是用Cython实现并且实现了并行的，所以效率很高。他们的API分别是<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pairwise_distance_3d(data1, data2, r_max, <span class="attribute">period</span>=None, <span class="attribute">verbose</span>=<span class="literal">False</span>, <span class="attribute">num_threads</span>=1, <span class="attribute">approx_cell1_size</span>=None, <span class="attribute">approx_cell2_size</span>=None)</span><br><span class="line"></span><br><span class="line">pairwise_distance_xy_z(data1, data2, rp_max, pi_max, <span class="attribute">period</span>=None, <span class="attribute">verbose</span>=<span class="literal">False</span>, <span class="attribute">num_threads</span>=1, <span class="attribute">approx_cell1_size</span>=None, <span class="attribute">approx_cell2_size</span>=None)</span><br></pre></td></tr></table></figure></p>
+<p>其中<code>data1</code>是$M\times 3$的数组，<code>data2</code>是$N\times 3$的数组，<code>r_max</code>是所要求的最大距离，<code>rp_max</code>和<code>pi_max</code>是同样的含义，详见下面说明：</p>
+<ol>
+<li><code>pairwise_distance_3d</code>是计算三维空间中的欧氏距离的，也就是只返回满足条件<script type="math/tex; mode=display">\sqrt{\Delta x^2 + \Delta y^2 + \Delta z^2}\lt {\rm r\_max}</script>的点，其返回值是一个$M\times N$的稀疏矩阵；</li>
+<li><code>pairwise_distance_xy_z</code>是计算2+1维空间的欧式距离，也就是只返回满足条件<script type="math/tex; mode=display">\sqrt{\Delta x^2 + \Delta y^2 }\lt {\rm rp\_max}~~{\rm .and.}~~|\Delta z| < {\rm pi\_max}</script>的点，其返回值是一个tuple，包含两个$M\times N$的稀疏矩阵。</li>
+</ol>
+<h1 id="scipy中的稀疏矩阵"><a href="#scipy中的稀疏矩阵" class="headerlink" title="scipy中的稀疏矩阵"></a>scipy中的稀疏矩阵</h1><p>scipy.sparse中包含稀疏矩阵，这里介绍3中我常用的形式，<code>coo_matix</code>，<code>csr_matrix</code>和<code>csc_matrix</code>。这三个类的类方法基本上一致，但是成员变量不一样，因为他们索引数据的方式不一样。</p>
+<h2 id="csr-matrix索引数据的方式"><a href="#csr-matrix索引数据的方式" class="headerlink" title="csr_matrix索引数据的方式"></a><code>csr_matrix</code>索引数据的方式</h2><p>假设我们有一个类型为<code>csr_matrx</code>的$M\times N$稀疏矩阵$A$，那么</p>
+<ul>
+<li><code>A.nnz</code>是稀疏矩阵里面存储的有效数据的个数；</li>
+<li><code>A.data</code>是长度为<code>A.nnz</code>的数组，储存了所有的有效数据；</li>
+<li><code>A.indices</code>是长度为<code>A.nnz</code>的数组，存储了列指标；</li>
+<li><code>A.indptr</code>是一个长度为$M+1$的数组。</li>
 </ul>
-<h2 id="Stellar-astrophysics"><a href="#Stellar-astrophysics" class="headerlink" title="Stellar astrophysics"></a>Stellar astrophysics</h2><h2 id="Observational-astrophysics"><a href="#Observational-astrophysics" class="headerlink" title="Observational astrophysics"></a>Observational astrophysics</h2><ul>
-<li>[ ] <font color="red"> Measuring the Universe </font><h2 id="Cosmology"><a href="#Cosmology" class="headerlink" title="Cosmology"></a>Cosmology</h2></li>
-<li>[ ] <font color="red"> Modern cosmology </font></li>
+<p>稀疏矩阵第$i$行$(0\le i \lt M)$的所有数据就是<code>A.data[A.indptr[i]:A.indptr[i+1]]</code>，这些数据对应的列指标就是<code>A.indices[A.indptr[i]:A.indptr[i+1]]</code></p>
+<h2 id="csc-matrix索引数据的方式"><a href="#csc-matrix索引数据的方式" class="headerlink" title="csc_matrix索引数据的方式"></a><code>csc_matrix</code>索引数据的方式</h2><p>假设我们有一个类型为<code>csc_matrx</code>的$M\times N$稀疏矩阵$B$，那么</p>
+<ul>
+<li><code>B.nnz</code>是稀疏矩阵里面存储的有效数据的个数；</li>
+<li><code>B.data</code>是长度为<code>B.nnz</code>的数组，储存了所有的有效数据；</li>
+<li><code>B.indices</code>是长度为<code>B.nnz</code>的数组，存储了列指标；</li>
+<li><code>B.indptr</code>是一个长度为$N+1$的数组。</li>
 </ul>
-<h2 id="Astrophysical-spectroscopy"><a href="#Astrophysical-spectroscopy" class="headerlink" title="Astrophysical spectroscopy"></a>Astrophysical spectroscopy</h2><ul>
-<li>[ ] Astronomical Spectroscopy</li>
+<p>稀疏矩阵第$j$列$(0\le j \lt N)$的所有数据就是<br><code>B.data[B.indptr[j]:B.indptr[j+1]]</code><br>，这些数据对应的列指标就是<br><code>B.indices[B.indptr[j]:B.indptr[j+1]]</code></p>
+<h2 id="coo-matrix索引数据的方式"><a href="#coo-matrix索引数据的方式" class="headerlink" title="coo_matrix索引数据的方式"></a><code>coo_matrix</code>索引数据的方式</h2><p>假设我们有一个类型为<code>coo_matrx</code>的$M\times N$稀疏矩阵$C$，那么</p>
+<ul>
+<li><code>C.nnz</code>是稀疏矩阵里面存储的有效数据的个数；</li>
+<li><code>C.data</code>是长度为<code>B.nnz</code>的数组，储存了所有的有效数据；</li>
+<li><code>C.row</code>是长度为<code>B.nnz</code>的数组，存储了所有有效数据的行指标；</li>
+<li><code>C.col</code>是长度为<code>B.nnz</code>的数组，存储了所有有效数据的列指标；</li>
 </ul>
-<h2 id="Active-galactic-nuclei"><a href="#Active-galactic-nuclei" class="headerlink" title="Active galactic nuclei"></a>Active galactic nuclei</h2><font color="red"> **必须要精读的书** </font>
-<font color="green"> **作为手册时常翻一翻的参考书** </font>
-<font color="blue"> **读一读有利于身心健康自我提升的书** </font>
+<p>上面的<code>C.data</code>，<code>C.row</code>和<code>C.col</code>的指标都是一一对应的。</p>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><ol>
+<li>对于一个<code>csr_matrx</code>的$M\times N$稀疏矩阵$A$，我们希望对每一行进行特定的操作，比如加权重，或者做比较。为了效率，我们希望可以在<code>A.data</code>中进行操作，这样就需要一个长度为<code>A.nnz</code>的行指标，能够和<code>A.data</code>中的数据一一对应起来，我们可以用<code>np.sort(A.tocoo().row)</code>。</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>利用稀疏矩阵存储小尺度距离矩阵是一个很好的做法，即节省了空间，也保持了数据的结构性，对后续操作带来了很大的便捷，本来一个两重循环的问题可以简化为零个循环问题（这个循环个数是Python层面的，因为Python层面的循环很慢，所以很多性能瓶颈都在这）。</p>
 
       
     </div>
@@ -436,9 +474,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/astronomy/" rel="tag"># astronomy</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
-            <a href="/tags/book/" rel="tag"># book</a>
+            <a href="/tags/note/" rel="tag"># note</a>
           
         </div>
       
@@ -451,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/14/csbooks/" rel="next" title="计算机书籍推荐">
-                <i class="fa fa-chevron-left"></i> 计算机书籍推荐
+              <a href="/2018/12/23/stellar-7-2/" rel="next" title="《恒星物理》第七章：恒星演化及致密天体II--中大质量恒星演化">
+                <i class="fa fa-chevron-left"></i> 《恒星物理》第七章：恒星演化及致密天体II--中大质量恒星演化
               </a>
             
           </div>
@@ -460,10 +498,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/23/git/" rel="prev" title="版本管理工具git的使用">
-                版本管理工具git的使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -625,7 +659,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Galaxies"><span class="nav-number">1.</span> <span class="nav-text">Galaxies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stellar-astrophysics"><span class="nav-number">2.</span> <span class="nav-text">Stellar astrophysics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observational-astrophysics"><span class="nav-number">3.</span> <span class="nav-text">Observational astrophysics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cosmology"><span class="nav-number">4.</span> <span class="nav-text">Cosmology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Astrophysical-spectroscopy"><span class="nav-number">5.</span> <span class="nav-text">Astrophysical spectroscopy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Active-galactic-nuclei"><span class="nav-number">6.</span> <span class="nav-text">Active galactic nuclei</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计算小尺度距离矩阵"><span class="nav-number">1.</span> <span class="nav-text">计算小尺度距离矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算稀疏距离矩阵的Python包"><span class="nav-number">2.</span> <span class="nav-text">计算稀疏距离矩阵的Python包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#scipy中的稀疏矩阵"><span class="nav-number">3.</span> <span class="nav-text">scipy中的稀疏矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#csr-matrix索引数据的方式"><span class="nav-number">3.1.</span> <span class="nav-text">csr_matrix索引数据的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#csc-matrix索引数据的方式"><span class="nav-number">3.2.</span> <span class="nav-text">csc_matrix索引数据的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#coo-matrix索引数据的方式"><span class="nav-number">3.3.</span> <span class="nav-text">coo_matrix索引数据的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小技巧"><span class="nav-number">3.4.</span> <span class="nav-text">小技巧</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -779,7 +813,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -832,6 +866,27 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {equationNumbers: { autoNumber: "AMS" }}
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
