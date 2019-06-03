@@ -125,12 +125,12 @@
 <meta property="og:site_name" content="kosmos">
 <meta property="og:description" content="这里主要是总结一下常用的git命令和使用方式">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://wkcosmology.github.io/source/image/gittest-1.png">
-<meta property="og:updated_time" content="2019-06-03T13:53:44.484Z">
+<meta property="og:image" content="http://wkcosmology.github.io/image/gittest-1.png">
+<meta property="og:updated_time" content="2019-06-03T13:57:46.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="版本管理工具git的使用">
 <meta name="twitter:description" content="这里主要是总结一下常用的git命令和使用方式">
-<meta name="twitter:image" content="http://wkcosmology.github.io/source/image/gittest-1.png">
+<meta name="twitter:image" content="http://wkcosmology.github.io/image/gittest-1.png">
 
 
 
@@ -446,7 +446,7 @@
 <p>这时候提示文件已经提交到暂存区，我们通过<code>git reset HEAD &lt;file&gt;</code>来用版本库中<code>HEAD</code>指针指向的版本来替代暂存区的文件，但是修改的文件还在文件夹中，但是处于为添加到暂存区的状态。<br>我们提交这个修改再查看一下状态<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m "modify the readme"</span><br><span class="line">git status</span><br></pre></td></tr></table></figure></p>
 <p>这时候的结果是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure></p>
 <p>显示一切正常。</p>
-<p>我们添加文件到文本库分为两步：第一步使用<code>git add &lt;file&gt;</code>将文件添加到暂存区，第二部使用<code>git commit -m &quot;some comments&quot;</code>将文件添加到版本库。<br><img src="/source/image/gittest-1.png"></p>
+<p>我们添加文件到文本库分为两步：第一步使用<code>git add &lt;file&gt;</code>将文件添加到暂存区，第二部使用<code>git commit -m &quot;some comments&quot;</code>将文件添加到版本库。<br><img src="/image/gittest-1.png"></p>
 <p>并且我们可以使用<code>git status</code>来查看目前没有添加到暂存区的文件或者添加到暂存区但是没有提交到版本库的文件。除此之外，我们还可以使用<code>git log</code>来查看版本库历史，看到的记过是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">commit e0ac9aeb4ddf50418d18cafcb732b0d8af733564 (HEAD -&gt; master)</span><br><span class="line">Author: Kai Wang &lt;wangk@KaideMacBook-Pro.local&gt;</span><br><span class="line">Date:   Sun Sep 23 10:38:21 2018 +0800</span><br><span class="line"></span><br><span class="line">    modify the readme</span><br><span class="line"></span><br><span class="line">commit 6ba82de8a66b265c1d43bffdd684e2233545f210</span><br><span class="line">Author: Kai Wang &lt;wangk@KaideMacBook-Pro.local&gt;</span><br><span class="line">Date:   Sun Sep 23 10:27:33 2018 +0800</span><br><span class="line"></span><br><span class="line">    add the readme file</span><br></pre></td></tr></table></figure></p>
 <p>为了让结果更清晰，我们可以对log格式进行一些配置，我们在<code>~/.gitconfig</code>里面添加如下命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[alias]</span><br><span class="line">	st = status</span><br><span class="line">	co = checkout</span><br><span class="line">	ci = commit</span><br><span class="line">	br = branch</span><br><span class="line">	last = log -1</span><br><span class="line">	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit</span><br><span class="line">	unstage = reset HEAD</span><br><span class="line">[credential]</span><br><span class="line">	helper = store</span><br></pre></td></tr></table></figure></p>
 <p>这时候，使用<code>git lg</code>命令显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* e0ac9ae - (HEAD -&gt; master) modify the readme (30 minutes ago) &lt;Kai Wang&gt;</span><br><span class="line">* 6ba82de - add the readme file (41 minutes ago) &lt;Kai Wang&gt;</span><br></pre></td></tr></table></figure></p>
@@ -522,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/14/blog-python/method_compare/" rel="next" title="instance method, static method and classmethod 的区别">
-                <i class="fa fa-chevron-left"></i> instance method, static method and classmethod 的区别
+              <a href="/2018/09/14/csbooks/" rel="next" title="计算机书籍推荐">
+                <i class="fa fa-chevron-left"></i> 计算机书籍推荐
               </a>
             
           </div>

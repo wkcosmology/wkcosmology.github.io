@@ -125,16 +125,16 @@
 <meta property="og:site_name" content="kosmos">
 <meta property="og:description" content="这里讲解了一些Numpy中index的基本操作。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://wkcosmology.github.io/2019/06/03/image/56B446CAD8E025B0535DF2E5E7BDAC92.jpg">
-<meta property="og:image" content="http://wkcosmology.github.io/2019/06/03/image/5DD6695F205758B502C7AF5DCB75AE14.jpg">
-<meta property="og:image" content="http://wkcosmology.github.io/2019/06/03/image/51BE191D12A235FDF3B78C33304D4C7D.jpg">
-<meta property="og:image" content="http://wkcosmology.github.io/2019/06/03/image/8B6F3CF453DE7BB50ECE9B08037D9B3F.jpg">
-<meta property="og:image" content="http://wkcosmology.github.io/2019/06/03/image/88D8B41D9EC57C2CC8DA5097C525C93F.jpg">
-<meta property="og:updated_time" content="2019-06-03T13:27:10.355Z">
+<meta property="og:image" content="http://wkcosmology.github.io/image/56B446CAD8E025B0535DF2E5E7BDAC92.jpg">
+<meta property="og:image" content="http://wkcosmology.github.io/image/5DD6695F205758B502C7AF5DCB75AE14.jpg">
+<meta property="og:image" content="http://wkcosmology.github.io/image/51BE191D12A235FDF3B78C33304D4C7D.jpg">
+<meta property="og:image" content="http://wkcosmology.github.io/image/8B6F3CF453DE7BB50ECE9B08037D9B3F.jpg">
+<meta property="og:image" content="http://wkcosmology.github.io/image/88D8B41D9EC57C2CC8DA5097C525C93F.jpg">
+<meta property="og:updated_time" content="2019-06-03T13:58:31.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Numpy中的index方法入门">
 <meta name="twitter:description" content="这里讲解了一些Numpy中index的基本操作。">
-<meta name="twitter:image" content="http://wkcosmology.github.io/2019/06/03/image/56B446CAD8E025B0535DF2E5E7BDAC92.jpg">
+<meta name="twitter:image" content="http://wkcosmology.github.io/image/56B446CAD8E025B0535DF2E5E7BDAC92.jpg">
 
 
 
@@ -435,23 +435,23 @@
 <p>举例：</p>
 <ol>
 <li><p>M = 1</p>
-<p> <img src="../../image/56B446CAD8E025B0535DF2E5E7BDAC92.jpg"></p>
+<p> <img src="/image/56B446CAD8E025B0535DF2E5E7BDAC92.jpg"></p>
 </li>
 <li><p>M = 2</p>
-<p> <img src="../../image/5DD6695F205758B502C7AF5DCB75AE14.jpg"></p>
+<p> <img src="/image/5DD6695F205758B502C7AF5DCB75AE14.jpg"></p>
 </li>
 </ol>
 <h2 id="高级索引的返回值"><a href="#高级索引的返回值" class="headerlink" title="高级索引的返回值"></a>高级索引的返回值</h2><ol>
 <li><p>高级索引的返回值在等号左边的时候，可以看做引用，也就是直接对高级索引进行修改会影响原数组，举例</p>
-<p> <img src="../../image/51BE191D12A235FDF3B78C33304D4C7D.jpg"></p>
+<p> <img src="/image/51BE191D12A235FDF3B78C33304D4C7D.jpg"></p>
 </li>
 <li><p>当把高级索引赋值给另外一个变量的时候，会发生拷贝，举例</p>
-<p> <img src="../../image/8B6F3CF453DE7BB50ECE9B08037D9B3F.jpg"></p>
+<p> <img src="/image/8B6F3CF453DE7BB50ECE9B08037D9B3F.jpg"></p>
 </li>
 </ol>
 <h1 id="高级索引-基本索引"><a href="#高级索引-基本索引" class="headerlink" title="高级索引+基本索引"></a>高级索引+基本索引</h1><p>这个情况比较复杂，不建议使用。如果有需要，请参考文档，并且自己多试试。</p>
 <h1 id="boolean索引"><a href="#boolean索引" class="headerlink" title="boolean索引"></a>boolean索引</h1><p>这是一种特殊的高级索引方式，使用方式是<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x[mask]</span><br></pre></td></tr></table></figure></p>
-<p>其中mask是只含True或者False的ndarray（如果是list，那么将会按照上面的高级索引的方式进行，跟这里的行为不一样）。<br>我们一般使用的情形是<code>x.shape == mask.shape</code>的，这时候会返回一个一维的ndarray，其中包含了所有True对应位置的元素，排列顺序是行优先（C语言中数组的排列方式），举例<br><img src="../../image/88D8B41D9EC57C2CC8DA5097C525C93F.jpg"></p>
+<p>其中mask是只含True或者False的ndarray（如果是list，那么将会按照上面的高级索引的方式进行，跟这里的行为不一样）。<br>我们一般使用的情形是<code>x.shape == mask.shape</code>的，这时候会返回一个一维的ndarray，其中包含了所有True对应位置的元素，排列顺序是行优先（C语言中数组的排列方式），举例<br><img src="/image/88D8B41D9EC57C2CC8DA5097C525C93F.jpg"></p>
 
       
     </div>
