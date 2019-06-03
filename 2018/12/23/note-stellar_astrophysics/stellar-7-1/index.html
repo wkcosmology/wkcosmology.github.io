@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Comic Sans MS:300,300italic,400,400italic,700,700italic|monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="astronomy,note,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文主要介绍了小质量恒星从形成之后的演化过程。">
+<meta name="keywords" content="astronomy,note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《恒星物理》第七章：恒星演化及致密天体I--小质量恒星的演化">
+<meta property="og:url" content="http://wkcosmology.github.io/2018/12/23/note-stellar_astrophysics/stellar-7-1/index.html">
+<meta property="og:site_name" content="kosmos">
+<meta property="og:description" content="本文主要介绍了小质量恒星从形成之后的演化过程。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-14T15:49:10.367Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《恒星物理》第七章：恒星演化及致密天体I--小质量恒星的演化">
+<meta name="twitter:description" content="本文主要介绍了小质量恒星从形成之后的演化过程。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wkcosmology.github.io/2018/12/23/note-stellar_astrophysics/stellar-7-1/">
+
+
+
+
+
+  <title>《恒星物理》第七章：恒星演化及致密天体I--小质量恒星的演化 | kosmos</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kosmos</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            links
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wkcosmology.github.io/2018/12/23/note-stellar_astrophysics/stellar-7-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kosmos">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《恒星物理》第七章：恒星演化及致密天体I--小质量恒星的演化</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T07:28:29+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/" itemprop="url" rel="index">
+                    <span itemprop="name">Note</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/StellarAstrophysics/" itemprop="url" rel="index">
+                    <span itemprop="name">StellarAstrophysics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  本文主要介绍了小质量恒星从形成之后的演化过程。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="主序前演化"><a href="#主序前演化" class="headerlink" title="主序前演化"></a>主序前演化</h1><h2 id="Hayashi线"><a href="#Hayashi线" class="headerlink" title="Hayashi线"></a>Hayashi线</h2><p>我们在第二章中介绍过恒星时从星际气体云坍缩过来的，形成了原恒星。在恒星赫罗图中大约有效温度3000-5000K范围内，有一条与主序几乎垂直的线，称为Hayashi线。 Hayashi线有两个特征：</p>
+<ol>
+<li>由星际云凝聚坍缩形成的原恒星，当它的内部建立起流体静力学平衡，并且完全对流，可以称为主序前恒星时，它在HR图上将落在Hayashi线上；</li>
+<li>在给定恒星的质量和化学组成时，HR图将以Hayashi线为界，按照天体是否满足流体静力学平衡条件，划分为“禁止“和”允许“两个区域，Hayashi右边的区域，不满足流体静力学平衡条件，称为”禁止“区域。</li>
+</ol>
+<p>下面给出上面两个特征的物理推导：</p>
+<p>如果整个恒星处于完全对流状态时，恒星内部各处的温度梯度与绝热梯度的差很小，$\left| \nabla - \nabla _ { \text { ad } } \right| &lt; 10 ^ { - 7 }$，因此，在整个恒星内部有</p>
+<script type="math/tex; mode=display">\nabla \equiv \frac { d \ln T } { d \ln P } = \nabla _ { \mathrm { ad } }</script><p>对于完全电离气体，$\nabla _ { \mathrm { ad } } = 0.4$，上式积分可得</p>
+<script type="math/tex; mode=display">P \propto \cdot T ^ { 1 / \nabla _ { \mathrm { ad } } }</script><p>再代入理想气体物态方程</p>
+<script type="math/tex; mode=display">P \propto \rho ^ { 1 + \frac { 1 } { n } }, ~~~n = \frac { 1 } { \nabla _ { \mathrm { ad } } } - 1</script><p>所以这个可以用多方模型来描述，我们利用多方模型的公式$P = K \rho ^ { 1 + 1 / n }$和理想气体物态方程$P \propto \rho T/\mu$，可以得到</p>
+<script type="math/tex; mode=display">P\propto \mu^{-n-1}K ^ { - n } T ^ { n + 1 }</script><p>在代入多方模型的结论</p>
+<script type="math/tex; mode=display">K\propto\mathcal { M } ^ { 1 - 1 / n }\mathcal { R } ^ { - 1 + 3 / n }</script><p>我们就能得到</p>
+<script type="math/tex; mode=display">P \propto \mu ^ { - n - 1 } \mathcal{M} ^ { 1 - n } \mathcal{R} ^ { 3 n - 3 } T ^ { 1 + n }</script><p>由于整个恒星除大气层外都是对流的，上式适用于由恒星中心到光球层。若用光球层$(\tau=2/3)$处的$P_{ \tau=2/3}$ ,$ T_{\rm eff}$ 带入上式，则有</p>
+<script type="math/tex; mode=display">P _ { \tau = 2 / 3 } \propto \mu ^ { - n - 1 } \mathcal{M} ^ { 1 - n } \mathcal{R} ^ { 3 n - 3 } T _ { e f f } ^ { 1 + n }</script><p>到这里，我们还有一个量$P _ { \tau = 2 / 3 }$是未知的，我们可以利用灰大气模型来得到另一个方程。</p>
+<p>在灰大气近似中，我们得到了</p>
+<script type="math/tex; mode=display">T ^ { 4 } = \frac { 3 } { 4 } T _ { e f f } ^ { 4 } \left( \tau + \frac { 2 } { 3 } \right)</script><p>其中的不透明度$\tau$我们有方程</p>
+<script type="math/tex; mode=display">\frac{d \tau}{dr} = - \kappa \rho</script><p>我们还需要把压强$P$同$r$联系起来，我们连续性方程和流体静力学平衡方程</p>
+<script type="math/tex; mode=display">\begin{align}
+\frac { d r } { d M } & = \frac { 1 } { 4 \pi r ^ { 2 } \rho } \\
+\frac { d P } { d M (r) } & = - \frac { G M (r) } { 4 \pi r ^ { 4 } }
+\end{align}</script><p>再假定不透明度$\kappa = \kappa _ 0 P ^ { a } T ^ { b }$，综合上面的方程，我们可以得到</p>
+<script type="math/tex; mode=display">\frac { d \tau } { d P } = \frac { \kappa \mathcal{R} ^ { 2 } } { G M } = \frac { \kappa _ { 0 } P ^ { a } T ^ { b } \mathcal{R} ^ { 2 } } { G M }</script><p>进而</p>
+<script type="math/tex; mode=display">T ^ { 4 - b } = \frac { 3 T _ { e f f } ^ { 4 } } { 16 ( a + 1 ) } \frac { \kappa _ { o } \mathcal{R} ^ { 2 } } { G M } P ^ { a + 1 }</script><p>应用在$\tau=2/3$处，我们可以得到</p>
+<script type="math/tex; mode=display">P_ {\tau = 2/3 } \propto \left( \frac { M } { \mathcal{R} ^ { 2 } T _ { e f f } ^ { b } } \right) ^ { \frac { 1 } { 1 + a } }</script><p>结合两个$P_ {\tau = 2/3 }$的表达式，再加上$\mathcal{R} ^ { 2 } \sim L / T _ { e f f} ^ { 4 } $，我们就可以得到</p>
+<script type="math/tex; mode=display">\log T _ { e f f } = \frac { 0.75 a - 0.25 } { b + 5.5 a + 1.5 } \log L + \frac { 0.5 a + 1.5 } { b + 5.5 a + 1.5 } \log \mathcal{M} + \text { const }</script><p>这个公式给出了对于一个确定质量$\mathcal{M}$和化学组成、内部完全靠对流传热的恒星在HR图中的位置，即Hayashi线。</p>
+<p>我们可以进而得到以下性质：</p>
+<ol>
+<li>$\mathcal{M}$增加时，Hayashi线往有效温度高的地方移动；</li>
+<li>完全对流的恒星，大气是冷的，所以Hayashi线一定处于低温的区域；</li>
+<li>$T&lt;5000K$时，不透明度主要来自于金属电离吸收，粗略有$a \approx 1 , b \approx 3$，代入以上的式子，我们有<script type="math/tex; mode=display">\log T _ { \mathrm { eff } } = 0.05 \times \log L + 0.2 \times \log M + \mathrm { const }</script>$\log T _ { \mathrm { eff } }$受光度影响很小，也就是说温度很低是，Hayashi线在HR图中几乎是垂直的，同时它的位置与恒星的质量相关。</li>
+<li>以上推导中，我们假定了整个恒星内部满足$\frac { d \ln T } { d \ln P } = \nabla _ { \mathrm { ad } }$，实际上恒星外壳靠近光球层的区域存在H和He的部分电离区，在这个区域是不满足这个假定的，所以实际的Hayashi线不是直线，而是曲线。</li>
+<li>在给定恒星的质量和化学组成时，HR图将以Hayashi线为界，按照天体是否满足流体静力学平衡条件，划分为“禁止“和”允许“两个区域，Hayashi右边的区域，不满足流体静力学平衡条件，称为”禁止“区域。（这个推导请参见黄润乾《恒星物理》）</li>
+</ol>
+<h2 id="从Hayashi线到主序的演化"><a href="#从Hayashi线到主序的演化" class="headerlink" title="从Hayashi线到主序的演化"></a>从Hayashi线到主序的演化</h2><p>恒星在主序之前还没有发生核反应，所以主要靠释放出来的引力势能来维持光度，所以恒星会不断收缩，我们这里就研究一下恒星收缩过程中各个物理量的变化。我们这里使用多方模型来描述恒星的内部结构，所以我们有</p>
+<script type="math/tex; mode=display">r = \alpha \xi, ~~~\mathcal{R} = a \xi _ 1</script><p>其中$\mathcal{R}$是恒星半径。我们研究恒星内部某一$\xi$处的变化，而$\xi_1$只依赖于多方指数$n$，所以我们有</p>
+<script type="math/tex; mode=display">\frac { \dot { r } } { r } = \frac { \dot { \mathcal{R} } } { \mathcal{R} } = \text { const } ,~~~ \dot { r } = \frac { \partial r } { \partial t }</script><p>另外还有</p>
+<script type="math/tex; mode=display">\frac { \partial } { \partial M _ { r } } \left( \frac { \dot { r } } { r } \right) = \frac { \partial } { \partial t } \left( \frac { 1 } { r } \frac { 1 } { 4 \pi r ^ { 2 } \rho } \right) = \frac { 1 } { 4 \pi r ^ { 3 } \rho } \left( - 3 \frac { \dot { r } } { r } - \frac { \dot { \rho } } { \rho } \right) = 0</script><p>利用$\frac { d P } { d M _ { r } }=-\frac { G M _ { r } } { 4 \pi r ^ { 4 } }$，我们可以得到</p>
+<script type="math/tex; mode=display">\dot { P } = \int _ { \mathcal{M} } ^ { M} \frac { G M} { 4 \pi } \frac { - 4 } { r ^ { 5 } } \dot { r } d M  = - 4 \frac { \dot { r } } { r } \int _ { \mathcal{M} } ^ { M  } \frac { G M  } { 4 \pi r ^ { 4 } } d M  = - 4 \frac { \dot { r } } { r } P</script><p>[注，我们用$M$表示函数$M(r)$，用$\mathcal{M}$和$\mathcal{R}$表示恒星的总质量和半径]<br>综上，我们可以得到</p>
+<script type="math/tex; mode=display">\begin{align}
+\frac { \dot { P } } { P } & = - 4 \frac { \dot { r } } { r } = \text { const } \\
+\frac { \dot { \rho } } { \rho } & = - 3 \frac { \dot { r } } { r } = \text { const }
+\end{align}</script><p>如果我们假设理想气体物态方程，我们就可以得到</p>
+<script type="math/tex; mode=display">\frac { \dot { T } } { T } \sim \frac { \dot { P } } { P } - \frac { \dot { \rho } } { \rho } = \frac { \dot { r } } { r } ( - 4 + 3 ) = \text { const }</script><p>我们在看一下恒星内部热能的变化</p>
+<script type="math/tex; mode=display">\begin{align}
+\varepsilon _ { g } &= - \frac { d Q } { d t } = - c _ { \rho } \dot { T } + \frac { \delta } { \rho } \dot { P }\\
+&=c _ { P } T \left( \nabla _ { \text { ad } } \frac { \dot { P } } { P } - \frac { \dot { T } } { T } \right)\\
+&=c _ { P } T \left( \frac { \dot { R } } { R } - 4 \nabla _ { a d } \frac { \dot { R } } { R } \right)\\
+&=- \frac { 3 } { 5 } c _ { p } T \frac { \dot { \mathcal{R} } } { \mathcal{R} }
+\end{align}</script><p>其中，Q是向外部释放的能量，我们用到了$\nabla _ { \mathrm { ad } } = \frac { \delta P } { c _ { p } \rho T } = 0.4$。从内部热能的变化我们可以看到随着半径缩小$\dot{\mathcal{R}} &lt; 0$，恒星内部热能在增加。再研究光度变化特性</p>
+<script type="math/tex; mode=display">L _ { r } = \int _ { 0 } ^ { M } \varepsilon _ { g } d M = - \frac { 3 } { 5 } c _ { p } \frac { \dot { \mathcal{R} } } { \mathcal{R} } \int _ { 0 } ^ { M  } T d M</script><p>对于恒星表面，则有</p>
+<script type="math/tex; mode=display">L = \int _ { 0 } ^ { \mathcal{M} } \varepsilon _ {g } d M  = - \frac { 3 } { 5 } c _ { p } \frac { \dot { \mathcal{R} } } { \mathcal{R} } \int _ { 0 } ^ { \mathcal{M} } T d M</script><p>我们能够得到</p>
+<script type="math/tex; mode=display">\frac { \dot { L } _ { r } } { L _ { r } } = \frac { \dot { L } } { L } = \mathrm { const }</script><p>即恒星收缩时，内部各层相对变化是相同的，并且等于恒星表面光度变化。</p>
+<p>定性描述恒星从Hayashi线到主序的演化：</p>
+<ol>
+<li>由引力能补充辐射掉的热能并提高中心温度；</li>
+<li>演化的时标是：$t _ { K H } = \frac { G M ^ { 2 } } { R L }$；</li>
+<li>沿Hayashi线住下走，半径减小，光度减小；</li>
+<li>内部出现辐射平衡区后，Hayashi线向左移动，中心温度持续增高；</li>
+</ol>
+<h1 id="主序"><a href="#主序" class="headerlink" title="主序"></a>主序</h1><p>恒星第一次达到主序并开始平衡的氢燃烧阶段叫做零龄主序(ZAMS)。达到零龄主序的时间与恒星的质量成反比。通过观测，我们发现绝大部分恒星在HR图中的位置落在一条窄带上，这条窄带被称为主序带。主序星一般有如下性质：</p>
+<ol>
+<li>均匀的化学组成；</li>
+<li>核心氢燃烧，完全流体静力学平衡；</li>
+<li>质量范围：$0.08 M _ { \odot } &lt; M &lt; 100 M _ { \odot }$；</li>
+<li>质光关系：$L \sim M ^ { 2.5 - 4 }$；</li>
+<li>质量-半径关系：$R \sim M ^ { 0.5 - 1 }$。</li>
+</ol>
+<h2 id="主序星的内部结构"><a href="#主序星的内部结构" class="headerlink" title="主序星的内部结构"></a>主序星的内部结构</h2><p>主序星内部一般有三个区域：<strong>核反应燃烧核</strong>, <strong>对流区</strong>以及<strong>辐射区</strong>。对于<strong>大质量恒星</strong>，能量主要来自对温度很敏感的CNO循环。因为能量产生率随半径快速变化，辐射不能有效地将能量传递出去，所以会导致对流的产生，而在外部，能量传输变得有效起来，就是辐射区。对于<strong>小质量恒星</strong>，PP链是能量的主要来源，这时候内部就是辐射区，而在表面，由于氢电离区的存在，会导致不透明度增加，所以表面会是对流区。对于<strong>更小质量的恒星</strong>而言，对流区的范围逐渐扩大，直到核反应燃烧核之外就全是对流区。</p>
+<p>主序阶段的演化时标就是核反应时标</p>
+<script type="math/tex; mode=display">t _ { \mathrm { n } } = \eta \Delta M c ^ { 2 } / L</script><p>因为质光关系的幂指数大于1，所以恒星质量越大，这个时标越短，也就越快离开主序。主序阶段终止的标志有两种：</p>
+<ol>
+<li>核心产生一个等温氦核；</li>
+<li>氢燃烧继续在环绕着氦核的壳层进行。</li>
+</ol>
+<h1 id="亚巨星阶段"><a href="#亚巨星阶段" class="headerlink" title="亚巨星阶段"></a>亚巨星阶段</h1><p>亚巨星阶段也就是恒星从主序到巨星过度的一个中间状态，其主要特征：</p>
+<ol>
+<li>核心氢烧完、枯竭，形成氦中心核和氢丰富的外层；</li>
+<li>中心温度降低，氦尚没点燃，而外壳氢燃烧，中心氦核增大；</li>
+<li>氦核收缩，壳层氢燃烧，体积膨胀，表面温度降低。</li>
+<li>在H-R图表现为恒星逐渐向右脱离主序。</li>
+</ol>
+<h1 id="红巨星支"><a href="#红巨星支" class="headerlink" title="红巨星支"></a>红巨星支</h1><p>红巨星阶段的主要特征：</p>
+<ol>
+<li>He核进一步收缩,中心温度上升，核区电子简并；</li>
+<li>半径增大，壳层H燃烧，光度增加，膨胀使得温度下降；</li>
+<li>恒星包层产生对流（类似Hayashi线）对流区不断向恒星内部扩展；</li>
+<li>对流不断将内部的He搬运到外层，He核质量不断增大；</li>
+<li>在HR图上向右上方攀升成为红巨星；</li>
+<li>在红巨星分支的顶端，核心的电子完全简并，压强P主要是简并的电子压强, 它与温度T无关；</li>
+</ol>
+<p>红巨星的一个特点是外层氢燃烧壳层的温度和光度是由内部氦核的质量和半径决定的，即</p>
+<script type="math/tex; mode=display">T  \sim \frac { M _ { c } } { R _ { c } } , \quad L \sim M _ { c } ^ { 7 } R _ { c } ^ { - \frac { 16 } { 3 } }</script><p>我们可以看到</p>
+<ol>
+<li>小质量恒星的光度L仅仅与氦核的质量以及半径有关，而与恒星的总质量无关，因此它们不遵守主序的质光关系；</li>
+<li>当壳层源燃烧使中心核$M_c$增大时，$R_c$减小，$T_c$增大，造成L增大又使$M_c$增加得更快；</li>
+<li>中心核收缩释放引力能，加热了壳源及中心核。</li>
+</ol>
+<p>当He核达到$10^8K$的时候就会点燃。根据温度和He核质量和半径的关系，通过理论计算可以得到，当$M_c &gt; 0.45M_{\odot}$的时候就会发生He的核反应。</p>
+<blockquote>
+<p>质量$&lt; 0.5 M_{\odot}$的恒 星永远不会达到$M = 0.45 M_{\odot}$,故不会发生He燃烧，在丢失 掉全部外壳后变成He白矮星。</p>
+</blockquote>
+<p>He的核反应是3$\alpha$反应，发生在非常致密的核心区，是一个非常快速和剧烈的反应，称为氦闪。在氦闪的过程中，核心温度在几秒内上升，使得电子不再保持简并，而是遵从Maxwell分布律。</p>
+<h1 id="水平分支"><a href="#水平分支" class="headerlink" title="水平分支"></a>水平分支</h1><p>水平分支具有以下特点：</p>
+<ol>
+<li>He $\rightarrow$ C $\rightarrow$ O 在核心发生聚变；</li>
+<li>壳层的氢发生燃烧；</li>
+<li>在HR图上表现为恒星向左下方移动至水平支；</li>
+<li>星核膨胀、吸热，光度剧减</li>
+</ol>
+<h1 id="渐进巨星支-AGB"><a href="#渐进巨星支-AGB" class="headerlink" title="渐进巨星支(AGB)"></a>渐进巨星支(AGB)</h1><p>渐进巨星分支的特点是：</p>
+<ol>
+<li>中心氦耗尽，变成C、O核，核反应停止，开始收缩；</li>
+<li>收缩升高外层压力和温度，核心外层又有一层氦点火；</li>
+<li>氦燃烧壳层外的氢壳层在继续燃烧；</li>
+<li>双壳层产能使得恒星光度大增，外包层膨胀；</li>
+<li>在HR图上表现为恒星向右上方再次攀升成为红巨星。</li>
+</ol>
+<h1 id="行星状星云"><a href="#行星状星云" class="headerlink" title="行星状星云"></a>行星状星云</h1><p>行星状星云是低质量恒星在死亡时抛出的气体包层，受到中心高温的白矮星发射的紫外光子电离辐射而发光而产生的。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/astronomy/" rel="tag"># astronomy</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/note-stellar_astrophysics/stellar-6/" rel="next" title="《恒星物理》第六章：恒星内部核反应和核合成">
+                <i class="fa fa-chevron-left"></i> 《恒星物理》第六章：恒星内部核反应和核合成
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/23/note-stellar_astrophysics/stellar-7-2/" rel="prev" title="《恒星物理》第七章：恒星演化及致密天体II--中大质量恒星演化">
+                《恒星物理》第七章：恒星演化及致密天体II--中大质量恒星演化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Kai Wang">
+            
+              <p class="site-author-name" itemprop="name">Kai Wang</p>
+              <p class="site-description motion-element" itemprop="description">Hi! Here is Kai's cosmos, Kosmos!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wkcosmology/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wkcosmology@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/wkcosmology" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:wkcosmology?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主序前演化"><span class="nav-number">1.</span> <span class="nav-text">主序前演化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hayashi线"><span class="nav-number">1.1.</span> <span class="nav-text">Hayashi线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从Hayashi线到主序的演化"><span class="nav-number">1.2.</span> <span class="nav-text">从Hayashi线到主序的演化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主序"><span class="nav-number">2.</span> <span class="nav-text">主序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主序星的内部结构"><span class="nav-number">2.1.</span> <span class="nav-text">主序星的内部结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚巨星阶段"><span class="nav-number">3.</span> <span class="nav-text">亚巨星阶段</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#红巨星支"><span class="nav-number">4.</span> <span class="nav-text">红巨星支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#水平分支"><span class="nav-number">5.</span> <span class="nav-text">水平分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渐进巨星支-AGB"><span class="nav-number">6.</span> <span class="nav-text">渐进巨星支(AGB)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#行星状星云"><span class="nav-number">7.</span> <span class="nav-text">行星状星云</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {equationNumbers: { autoNumber: "AMS" }}
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Comic Sans MS:300,300italic,400,400italic,700,700italic|monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="note,Python,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文主要介绍了Cython中的基本类型和函数的使用方法">
+<meta name="keywords" content="note,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Cython》第三章：深入理解Cython">
+<meta property="og:url" content="http://wkcosmology.github.io/2018/11/20/note-cython/Cython-3/index.html">
+<meta property="og:site_name" content="kosmos">
+<meta property="og:description" content="本文主要介绍了Cython中的基本类型和函数的使用方法">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://wkcosmology.github.io/2018/image/5198F94FD368E02C0FC61F24B25985D6.jpg">
+<meta property="og:image" content="http://wkcosmology.github.io/2018/image/2F19E73B786B374D4C9286ACCDEB648E.jpg">
+<meta property="og:updated_time" content="2018-11-24T06:21:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Cython》第三章：深入理解Cython">
+<meta name="twitter:description" content="本文主要介绍了Cython中的基本类型和函数的使用方法">
+<meta name="twitter:image" content="http://wkcosmology.github.io/2018/image/5198F94FD368E02C0FC61F24B25985D6.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wkcosmology.github.io/2018/11/20/note-cython/Cython-3/">
+
+
+
+
+
+  <title>《Cython》第三章：深入理解Cython | kosmos</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kosmos</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            links
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wkcosmology.github.io/2018/11/20/note-cython/Cython-3/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kosmos">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《Cython》第三章：深入理解Cython</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-20T15:22:46+08:00">
+                2018-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/" itemprop="url" rel="index">
+                    <span itemprop="name">Note</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/Cython/" itemprop="url" rel="index">
+                    <span itemprop="name">Cython</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  本文主要介绍了Cython中的基本类型和函数的使用方法
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>Cython提升效率主要基于两点：<ol>
+<li>使用提前编译而不是运行时解释；</li>
+<li>使用静态类型而不是动态类型；</li>
+</ol>
+</li>
+</ul>
+<h1 id="解释器VS编译执行"><a href="#解释器VS编译执行" class="headerlink" title="解释器VS编译执行"></a>解释器VS编译执行</h1><ul>
+<li>Python执行代码的方式：先将Python代码编译成为字节码，然后通过虚拟机将字节码翻译成为机器语言。这里的字节码是机器无关的，而虚拟机负责和底层机器的交互；</li>
+<li>C语言是直接将代码编译成为机器可识别的语句，直接与底层交互；</li>
+<li>有一种方式可以连接执行字节码的虚拟机和直接机器码的底层：那就是让Python解释器直接运行编译好的C代码，也成为拓展模块。当Python解释器直接运行拓展模块时，它不再去使用字节码转换；</li>
+<li>通常将代码提前编译好能够使程序获得10%-30%的性能提升</li>
+</ul>
+<h1 id="动态类型VS静态类型"><a href="#动态类型VS静态类型" class="headerlink" title="动态类型VS静态类型"></a>动态类型VS静态类型</h1><ul>
+<li>Python是一门动态语言，所以我们在使用Python的时候，程序花费的大部分时间是在想搞清楚每一个变量的类型；</li>
+<li>Cython带来性能提升的核心是它使用了静态类型，所以省去了Python去推断变量类型的步骤</li>
+</ul>
+<h1 id="使用cdef进行静态声明"><a href="#使用cdef进行静态声明" class="headerlink" title="使用cdef进行静态声明"></a>使用<code>cdef</code>进行静态声明</h1><ul>
+<li>在Cython中，没有静态声明类型的语句和在Python中运行的情况一样</li>
+<li><p>如果我们想静态声明类型，可以利用<code>cdef</code>关键字，如</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cdef int i</span><br><span class="line">cdef float m</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用了<code>cdef</code>的语句的变量就是C语言中的变量，同样也遵守C语言中的类型转换规则</p>
+</li>
+<li>在Cython的函数中，<code>cdef</code>语句和python语句一样使用缩进表示，并且拥有局部作用域</li>
+<li><p>我们也可以批量声明C类型变量</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">integrate</span><span class="params">(a, b, f)</span>:</span></span><br><span class="line">    cdef:</span><br><span class="line">        int i</span><br><span class="line">        int N=<span class="number">2000</span></span><br><span class="line">        float dx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Cython中没有延用C语言中的<code>static</code>关键字，但是有<code>const</code>关键字</p>
+</li>
+<li>不同C类型在Cython中的声明</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">C type</th>
+<th style="text-align:left">Cython def statesment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Pointers</td>
+<td style="text-align:left"><code>cdef int *p</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Stack-allocated array</td>
+<td style="text-align:left"><code>cdef int arr[10]</code></td>
+</tr>
+<tr>
+<td style="text-align:left">typedef aliasedtypes</td>
+<td style="text-align:left"><code>cdef size_t a</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Compound types</td>
+<td style="text-align:left"><code>cdef tm time_struct</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Function pointer</td>
+<td style="text-align:left"><code>cdef (void*)f(int, double)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Cython基本上实现了所有的C类型，这个也对我们直接包装C库很有利</li>
+</ul>
+<h2 id="Cython中的自动类型推断"><a href="#Cython中的自动类型推断" class="headerlink" title="Cython中的自动类型推断"></a>Cython中的自动类型推断</h2><ul>
+<li>Cython中在不带来歧义的情况下，为了提升效率，会进行一些类型推断；</li>
+<li>我们需要注意的一点是，Python中的整数、浮点类型是无限精度的，也不会溢出的，所以Cython不会主动将可能是Python中的这些对象转化为C类型；</li>
+<li><p>有一个Cython编译指令可以使Cython拥有更多的类型推断权力</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cimport cython</span><br><span class="line"><span class="meta">@cython.infer_types(True)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">more_inference</span><span class="params">()</span>:</span></span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line">    d = <span class="number">2.0</span></span><br><span class="line">    c = <span class="number">3</span>+<span class="number">4j</span></span><br><span class="line">    r = i * d + c</span><br><span class="line">    <span class="keyword">return</span> r</span><br></pre></td></tr></table></figure>
+<p>  这时候就需要我们自己来检测数值是否溢出了</p>
+</li>
+</ul>
+<h2 id="Cython中的C指针"><a href="#Cython中的C指针" class="headerlink" title="Cython中的C指针"></a>Cython中的C指针</h2><ul>
+<li>Cython中的指针声明方式和C中类似，值得强调的是，<code>*</code>运算符是绑定在变量上的，而不是类型关键字上的，这一点和C中的一样；</li>
+<li>Cython中不使用<code>*</code>解引用，因为Python中用<code>*</code>和<code>**</code>来指定不定数目的位置参数和关键字参数；</li>
+<li><p>Cython中指针解引用有两种方式：</p>
+<ul>
+<li><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cdef double *p</span><br><span class="line">p[<span class="number">0</span>] = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> cython cimport operator</span><br><span class="line">cdef double *p</span><br><span class="line">print(operator.dereference(p))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>我们在C中使用<code>-&gt;</code>来表示一个结构体指针中的成员变量，在Cython中，我们不使用这种方式，而是只有一个<code>.</code>运算符，无论是对于结构体本身还是结构体指针</p>
+</li>
+</ul>
+<h2 id="混合使用静态和动态类型"><a href="#混合使用静态和动态类型" class="headerlink" title="混合使用静态和动态类型"></a>混合使用静态和动态类型</h2><ul>
+<li><p>Cython允许静态类型变量和动态类型变量相互赋值，比如</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cdef int a, b, c</span><br><span class="line">tuple_of_ints = (a, b, c)</span><br></pre></td></tr></table></figure>
+<p>  应该注意的是，如果a,b,c是指针，上面的表达式就没有意义了，因为Python中没有指针变量，我们应该先解引用成为int类型，再组成tuple</p>
+</li>
+<li>Python类型和C/C++类型的对应</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Python type</th>
+<th style="text-align:left">C type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">bool</td>
+<td style="text-align:left">bint</td>
+</tr>
+<tr>
+<td style="text-align:left">int/long</td>
+<td style="text-align:left">char/short/int/long/long long</td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:left">float/double/long double</td>
+</tr>
+<tr>
+<td style="text-align:left">complex</td>
+<td style="text-align:left">float complex/double complex</td>
+</tr>
+<tr>
+<td style="text-align:left">bytes/str/unicode</td>
+<td style="text-align:left">char */std::string</td>
+</tr>
+<tr>
+<td style="text-align:left">dict</td>
+<td style="text-align:left">struct</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>- 在Python2中，Python int对应于C long，而Python long对应于无限精度；在Python3中，二者都拥有无限精度。当我们把Python中的整数类型转化成为C类型的时候，Cython会检查是否溢出。我们可以使用`overflowcheck`和`overflowcheck.fold`控制这种检查行为。
+    - 当`overflowcheck`打开的时候，转换过程中发生溢出会发出异常，否则不会；
+    - 当`overflowcheck.fold`打开的时候，Cython会移除溢出的部分；[?]
+- Python的float类型对应于C中的double类型
+- Python中的complex类型对应于C中一个拥有两个double的结构体，而这种类型也和C99中的_complex和C++中的std::complex自洽
+- Python中的bytes类型可以和C/C++中的char *和std::string相互转化
+- 使用`c_string_type`和`c_string_encoding`编译指令可以使Python中的str和unicode和C/C++中的char *和std::string相互转化
+</code></pre><h2 id="使用Python类型进行静态类型声明"><a href="#使用Python类型进行静态类型声明" class="headerlink" title="使用Python类型进行静态类型声明"></a>使用Python类型进行静态类型声明</h2><ul>
+<li><p>我们不仅可以在Cython中静态声明C类型，也可以静态声明Python类型，比如</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cdef list particles, modified_particles</span><br><span class="line">cdef dict name_for_particles</span><br><span class="line">cdef str pname</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>但不是所有的Python类型都可以进行静态声明：它们必须在C中有实现，并且Cython有声明这些类型的权限</p>
+</li>
+<li>静态声明Python类型的内部机制就是声明一个C指针，指向这个Python对象</li>
+<li>静态声明之后，这个变量名就只能绑定这种类型的值</li>
+<li>对于int或者float这种在Python和C中关键字重名的类型而言，声明的时候是当做C变量来声明的</li>
+<li>当一个变量是静态声明成为C类型的时候，它拥有C语言的语义；如果声明成为Python类型，那么它拥有Python类型的语义</li>
+<li><p>对于整数除法而言，C和Python的一个重要区别是，C是向0取的，Python是向无穷大取的。所以Cython延用了Python中的语义，向无穷大取。同样的，我们也可以通过一个编译指令来是它使用C的语义</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cimport cython</span><br><span class="line"></span><br><span class="line"><span class="meta">@cython.cdivision(True)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">divides</span><span class="params">(int a, int b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a / b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Cython中还有一个<code>cdivision_warnings</code>的编译指令，如果打开这个，一旦发生整数出发，便会发出警告</p>
+</li>
+</ul>
+<h2 id="为了速度而使用静态声明"><a href="#为了速度而使用静态声明" class="headerlink" title="为了速度而使用静态声明"></a>为了速度而使用静态声明</h2><ul>
+<li>基于我们之前的分析，静态声明有助于减少python解释器的工作，从而提高效率，这个不仅仅针对于Cython中的C类型，对Python类型也适用</li>
+<li>Cython目前支持一下的Python内置类型进行静态声明</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">type, object</td>
+</tr>
+<tr>
+<td style="text-align:left">bool</td>
+</tr>
+<tr>
+<td style="text-align:left">complex</td>
+</tr>
+<tr>
+<td style="text-align:left">basestring, str, unicode, bytes, bytearray</td>
+</tr>
+<tr>
+<td style="text-align:left">list, tuple, dict, set, frozenset</td>
+</tr>
+<tr>
+<td style="text-align:left">array</td>
+</tr>
+<tr>
+<td style="text-align:left">slice</td>
+</tr>
+<tr>
+<td style="text-align:left">date, time, datetime, timedelta, tzinfo</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Python中有<code>PyLongObject</code>来对应于无限长度的整数</li>
+<li>在Cython中，无论是动态的还是静态的Python变量，内部的处理方式都和Python中的一样，包括引用计数</li>
+</ul>
+<h2 id="引用计数和静态字符串类型"><a href="#引用计数和静态字符串类型" class="headerlink" title="引用计数和静态字符串类型"></a>引用计数和静态字符串类型</h2><ul>
+<li><p>Python的一个重要特性就是自动内存管理。这种特性是通过引用计数和垃圾回收机制实现的，但是如果使用C和Python结合的语言，很可能就会C指针不计入引用计数而导致资源被回收，例如</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b1 = <span class="string">b"All men are mortal."</span></span><br><span class="line">b2 = <span class="string">b"Socrates is a man."</span></span><br><span class="line">cdef char *buf = b1 + b2</span><br></pre></td></tr></table></figure>
+<p>  这个语句的前两句和第三句的<code>b1 + b2</code>部分是Python语义的，但是赋值部分是C语义的，这时候Python会创建一个临时变量来存储<code>b1 + b2</code>的值，然后C指针buf指向这个临时变量。但是，由于没有Python对象指向这个临时变量，垃圾回收机制会自动回收这块内存，从而导致危险行为。正确的做法应该是</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b1 = <span class="string">b"All men are mortal."</span></span><br><span class="line">b2 = <span class="string">b"Socrates is a man."</span></span><br><span class="line">tmp = b1 + b2</span><br><span class="line">cdef char *buf = tmp</span><br></pre></td></tr></table></figure>
+<p>  使用一个Python对象<code>tmp</code>来指向这个对象，然后再将C指针指向这里。这时候，需要保证有Python对象指向这个对象，否则，这块内存还是会被回收。</p>
+</li>
+</ul>
+<h1 id="Cython中的三种函数"><a href="#Cython中的三种函数" class="headerlink" title="Cython中的三种函数"></a>Cython中的三种函数</h1><ul>
+<li>Python中的函数拥有很灵活的性质，同时Python中的函数也具有一等函数的性质，但是Python函数同时也具有很大的调用开销</li>
+<li>C中的函数具有最小的调用开销，但是它的灵活性也比较差<ul>
+<li>不能在其他函数中定义函数</li>
+<li>拥有一个静态声明的名称，运行时无法改变</li>
+<li>只接受位置参数</li>
+<li>不接受参数默认值</li>
+</ul>
+</li>
+<li>Cython同时支持Python函数和C函数，它们可以位于同一个文件中之内，也可以相互调用</li>
+</ul>
+<h2 id="Cython中的Python函数：使用def关键字"><a href="#Cython中的Python函数：使用def关键字" class="headerlink" title="Cython中的Python函数：使用def关键字"></a>Cython中的Python函数：使用<code>def</code>关键字</h2><ul>
+<li><p>我们可以在一个<code>.py</code>文件中写一个普通的python函数，如下</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file: fact.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">py_fact</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> n * py_fact(n<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<p>  如果我们把这个函数写在一个<code>.pyx</code>文件中，并且用pyximport导入，那么我们得到的函数将比在<code>/py</code>文件中的函数快一点点，这一点性能提升主要是省略了编译的过程。二者的不同之处还有如下：</p>
+<ul>
+<li><code>.py</code>版本的函数type是function；<code>.pyx</code>版本的函数type是builtin_function_or_method</li>
+<li><code>.py</code>版本的函数有很多附加的属性，比如<code>__name__</code>等，这些属性都是可以修改的，但是<code>.pyx</code>版本的这些属性不可修改</li>
+<li>调用<code>.py</code>版本的时候，是使用python解释器编译字节码；调用<code>.pyx</code>版本的时候是调用编译好了的C代码</li>
+</ul>
+</li>
+<li><p>我们也可以尝试对参数进行静态类型声明</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file: typed_fact.pyx</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">typed_fact</span><span class="params">(long n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> n * py_fact(n<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<p>  这样基本上不会对性能带来多少提升，因为最后return的时候是一个long类型和一个Python对象的乘法，结果还是要返回一个Python对象，这样的开销还是比较大的</p>
+</li>
+</ul>
+<h2 id="Cython中的C函数：使用cdef关键字"><a href="#Cython中的C函数：使用cdef关键字" class="headerlink" title="Cython中的C函数：使用cdef关键字"></a>Cython中的C函数：使用<code>cdef</code>关键字</h2><ul>
+<li><p>在Cython中，我们可以通过<code>cdef</code>关键字来用Python语法写C函数，上面的函数就可以被写成</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file: c_fact.pyx</span></span><br><span class="line">cdef long c_fact(long n):</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> n * py_fact(n<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<p>  这个代码没有使用任何的Python对象，所以这个代码经过Cython编译之后的效率和直接用C写差不多</p>
+</li>
+<li><code>cdef</code>的函数可以被同一个源文件里面的<code>def</code>或者<code>cdef</code>定义的函数调用，但是不能被外部的函数调用</li>
+<li><p>我们可以用一个Python函数来包装上面的函数，使之可以被外部调用</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wrap_c_fact</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> c_fact(n)</span><br></pre></td></tr></table></figure>
+<p>  这样的方式的缺陷在于，因为内部还是C函数，所以其中的整数不拥有无限的精度</p>
+</li>
+</ul>
+<h2 id="利用cpdef来结合def和cdef关键字"><a href="#利用cpdef来结合def和cdef关键字" class="headerlink" title="利用cpdef来结合def和cdef关键字"></a>利用<code>cpdef</code>来结合<code>def</code>和<code>cdef</code>关键字</h2><ul>
+<li><p>我们上面利用一个Python函数来包装<code>cdef</code>函数，实际上Cython中有一个<code>cpdef</code>关键字来实现这个功能</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cpdef long cp_fact(n):</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> n * cp_fact(n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>由于<code>cpdef</code>函数实际上是利用Python包装了一个C函数，所以它的参数必须要是Python和C类型中都兼容的形式，比如C中的void类型、指针或者数组就不适用了</p>
+</li>
+</ul>
+<h2 id="Cython中的inline函数"><a href="#Cython中的inline函数" class="headerlink" title="Cython中的inline函数"></a>Cython中的inline函数</h2><ul>
+<li>Cython中也支持inline函数，比如：  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cdef inline long c_fact(long a):</span><br><span class="line">    <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="函数和异常处理"><a href="#函数和异常处理" class="headerlink" title="函数和异常处理"></a>函数和异常处理</h2><ul>
+<li><p>Cython中的<code>cdef</code>和<code>cpdef</code>会返回非Python类型对象，所以在异常处理上面需要做一些特别处理，比如下面的例子</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cpdef int divide_ints(int i, int j):</span><br><span class="line">    <span class="keyword">return</span> i / j</span><br></pre></td></tr></table></figure>
+<p>  我们运行的时候则会出现<img src="../../../../image/5198F94FD368E02C0FC61F24B25985D6.jpg" alt=""><br>  即它会显示出异常，但是并不能捕捉到这个异常，并且它也能返回一个值（虽然是个错误的值）</p>
+</li>
+<li><p>Cython中为<code>cdef</code>和<code>cpdef</code>提供了一个异常分句，能够让Python的异常处理机制捕捉到这个异常，语法如下</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cpdef int divide_ints(int i, int j) except? -1:</span><br><span class="line">    <span class="keyword">return</span> i / j</span><br></pre></td></tr></table></figure>
+<p>  运行结果如下<img src="../../../../image/2F19E73B786B374D4C9286ACCDEB648E.jpg" alt=""><br>  注意到这里的<code>except</code>是使得异常能够被捕捉，<code>-1</code>是异常返回值(这一块还不清楚)</p>
+</li>
+</ul>
+<h2 id="函数和embedsignature编译指令"><a href="#函数和embedsignature编译指令" class="headerlink" title="函数和embedsignature编译指令"></a>函数和<code>embedsignature</code>编译指令</h2><ul>
+<li>Cython中的<code>def</code>和<code>cpdef</code>函数一般可以有函数文档，但是一般没有函数签名，我们可以通过<code>embedsignature</code>编译指令来让Cython把函数签名加载函数文档的开头</li>
+</ul>
+<h1 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h1><ul>
+<li><p>Cython中提供和C中非常相似的类型转换方式，只是语法稍有不同，比如</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdef int *ptr_i = &lt;int *&gt;v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>比如我们可以利用类型转换来打印内存地址</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_address</span><span class="params">(a)</span>:</span></span><br><span class="line">    cdef void *v = &lt;void*&gt;a</span><br><span class="line">    cdef long addr = &lt;long&gt;v</span><br><span class="line">    print(<span class="string">"Cython address:"</span>, addr)</span><br><span class="line">    print(<span class="string">"Python id"</span>, id(a))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Cython也支持强制类型转化为Python里面的类型，比如list类型</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cast_to_list</span><span class="params">(a)</span>:</span></span><br><span class="line">    cdef list cast_list = &lt;list&gt;a</span><br><span class="line">    print(type(a))</span><br><span class="line">    print(type(cast_list))</span><br><span class="line">    cast_list.append(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>  上述例子中，如果a是list或者list的子类，那么Cython会针对最后一个<code>append</code>操作调用<code>PyList_SET_ITEM</code>或者<code>PyList_Append</code>方法，否则很可能会产生系统错误</p>
+</li>
+<li><p>如果我们不确定我们要进行的类型转换是否正确，我们可以采取下面的方式</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">safe_cast_to_list</span><span class="params">(a)</span>:</span></span><br><span class="line">    cdef list cast_list = &lt;list?&gt;a</span><br><span class="line">    print(type(a))</span><br><span class="line">    print(type(cast_list))</span><br><span class="line">    cast_list.append(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>  由于加了一个<code>?</code>，如果不能进行类型转换，Python会报错<code>TypeError</code></p>
+</li>
+</ul>
+<h1 id="使用structs-unions和enums进行类型声明"><a href="#使用structs-unions和enums进行类型声明" class="headerlink" title="使用structs, unions和enums进行类型声明"></a>使用structs, unions和enums进行类型声明</h1><ul>
+<li><p>Cython中声明structs和unions</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cdef struct mycpx:</span><br><span class="line">    float real</span><br><span class="line">    float imag</span><br><span class="line">    </span><br><span class="line">cdef union uu:</span><br><span class="line">    int a</span><br><span class="line">    short b, c</span><br></pre></td></tr></table></figure>
+<p>  我们注意到Cython中使用了cdef关键字，并且用缩进代替了花括号</p>
+</li>
+<li><p>我们可以结合struct和union的声明和<code>ctypedef</code>别名关键字，我们可以得到</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ctypedef struct mycpx:</span><br><span class="line">    float real</span><br><span class="line">    float imag</span><br><span class="line">    </span><br><span class="line">ctypedef union uu:</span><br><span class="line">    int a</span><br><span class="line">    short b, c</span><br><span class="line">    </span><br><span class="line">cdef mycpx zz</span><br></pre></td></tr></table></figure>
+<p>  并且我们就可以用我们声明的struct和union来定义变量了。其实上面的<code>cdef</code>和<code>ctypedef</code>在struct和union的声明中作用是一样的</p>
+</li>
+<li><p>Cython中允许三种方式初始化一个struct</p>
+<ul>
+<li><p>字面常量</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cdef mycpx a = mycpx(<span class="number">3.14</span>, <span class="number">-1</span>)</span><br><span class="line">cdef mycpx b = mycpx(real=<span class="number">2.71</span>, imag=<span class="number">1.61</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>成员变量的方式</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cdef mycpx zz</span><br><span class="line">zz.real = <span class="number">3.1415</span></span><br><span class="line">zz.imag = <span class="number">-1.0</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用Python字典</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdef mycpx zz = &#123;<span class="string">"real"</span>: <span class="number">3.14</span>, <span class="string">"imag"</span>: <span class="number">-1.0</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Cython中不允许直接使用嵌套的struct或者union声明（这个在C中是允许的），比如在C中</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">nested</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> outer_a;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">inner</span>&#123;</span></span><br><span class="line">        <span class="keyword">int</span> inner_a;</span><br><span class="line">    &#125; inner;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>  在Cython中的对应形式应该是</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cdef struct _inner:</span><br><span class="line">    int inner_a</span><br><span class="line"></span><br><span class="line">cdef struct nested:</span><br><span class="line">    int outer_a</span><br><span class="line">    _inner inner</span><br></pre></td></tr></table></figure>
+<p>  这种嵌套结构，我们可以逐个赋值，也可以使用嵌套字典赋值</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdef nested n = &#123;<span class="string">'outer_a'</span>: <span class="number">1</span>, <span class="string">'inner'</span>: &#123;<span class="string">'inner_a'</span>: <span class="number">2</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Cython中也允许声明enum，可以在不同行声明，或者在同一行用逗号隔开</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cdef enum PRIMARIES:</span><br><span class="line">    RED = <span class="number">1</span></span><br><span class="line">    YELLOW = <span class="number">3</span></span><br><span class="line">    BLUE = <span class="number">5</span></span><br><span class="line">    </span><br><span class="line">cdef enum SECONDARIES:</span><br><span class="line">    ORANGE, GREEN, PURPLE</span><br></pre></td></tr></table></figure>
+<p>  我们也可以将上面的<code>cdef</code>替换成为<code>ctypedef</code></p>
+</li>
+<li>我们可以使用匿名的enum来定义一些全局常量  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cdef enum:</span><br><span class="line">    GLOBAL_SEED = <span class="number">37</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="使用ctypedef的类型别名"><a href="#使用ctypedef的类型别名" class="headerlink" title="使用ctypedef的类型别名"></a>使用<code>ctypedef</code>的类型别名</h1><ul>
+<li><p>Cython支持使用<code>ctypedef</code>来进行别名，比如</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctypedef double real</span><br><span class="line">ctypedef long integral</span><br></pre></td></tr></table></figure>
+<p>  别名的好处在于我们可以通过更改一行代码来改变所有使用这个别名的变量的类型，比如来控制精度；另外，我们也可以用别名来避免写C++中很长的模板类型</p>
+</li>
+<li>需要注意的是，<code>ctypedef</code>必须是在文件的全局作用域，不能在局部作用域声明，换句话说，就是不准缩进</li>
+</ul>
+<h1 id="Cython中的for循环和while循环"><a href="#Cython中的for循环和while循环" class="headerlink" title="Cython中的for循环和while循环"></a>Cython中的for循环和while循环</h1><ul>
+<li><p>我们先看一个Python中的for循环</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">100</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+<p>  这个即使卸载Cython中也不会有很大的性能提升，为了能够获得性能提升，我们可以先静态声明i和n的类型</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cdef unsigned int i, n = <span class="number">100</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+<p>  这样的话，Cython会转化成为高效的C代码。</p>
+</li>
+<li><p>高效循环的准则</p>
+<ul>
+<li><p>当通过一个<code>range</code>函数来做循环的时候，一个要把函数参数声明成为C函数的整型</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cdef int N</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">    <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+<p>  如果我们不在循环体中使用变量i，Cython会自动把i当做C整型来处理；如果我们在循环体中使用了i，为了保证i具有Python中整型的特点，Cython会把它当做一个Python整型，这时候效率就会下降一些。如果我们非常确定i不会溢出，我们应该也静态声明变量i，如下</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cdef int i, N</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">    a[i] = i + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果我们对Python中的容器进行循环（list, tuple, dict等），如果使用静态声明的指标变量，可能会带来更大的开销；</p>
+</li>
+<li>为了更高效的循环，我们可以考虑把Python中的容器转化为C++中等价容器（第八章会讲怎么做）或者使用内存映射（第九章会讲）</li>
+<li>为了使while循环更高效，我们应该尽量使判断条件更高效，使用<code>while True</code>配合内部的<code>break</code>语句可以转化为高效的C代码</li>
+</ul>
+</li>
+<li><p>循环的例子</p>
+<ul>
+<li><p>我们想对一个数组中的每个元素用附近的三个元素的平均值替代，可以写成</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cdef unsigned int i, n = len(a) - <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">    a[i] = (a[i<span class="number">-1</span>] + a[i] + a[i+<span class="number">1</span>]) / <span class="number">3.0</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当i已经静态声明类型之后，是否静态声明n就不重要了，下面的代码也有同样的效率</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cdef unsigned int i</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(a) - <span class="number">1</span>):</span><br><span class="line">        a[i] = (a[i<span class="number">-1</span>] + a[i] + a[i+<span class="number">1</span>]) / <span class="number">3.0</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这样的静态声明可以把运行速度提升两到三倍（循环内部消耗不大的情况下）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Cython预编译器"><a href="#Cython预编译器" class="headerlink" title="Cython预编译器"></a>Cython预编译器</h1><ul>
+<li><p>Cython有一个<code>DEF</code>关键字可以定义宏，这个和C语言中的<code>#define</code>效果一样，通过定义宏，我们可以对很多magic number进行命名，比如</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DEF E = <span class="number">2.718281828459045</span></span><br><span class="line">DEF PI = <span class="number">3.141592653589793</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Cython中内置了一些系统级的宏</p>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">macro</th>
+<th style="text-align:left">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">UNAME_SYSNAME</td>
+<td style="text-align:left">Operating system name</td>
+</tr>
+<tr>
+<td style="text-align:left">UNAME_RELEASE</td>
+<td style="text-align:left">Operating system release</td>
+</tr>
+<tr>
+<td style="text-align:left">UNAME_VERSION</td>
+<td style="text-align:left">Operating system version</td>
+</tr>
+<tr>
+<td style="text-align:left">UNAME_MACHINE</td>
+<td style="text-align:left">Machine hardware name</td>
+</tr>
+<tr>
+<td style="text-align:left">UNAME_NODENAME</td>
+<td style="text-align:left">Name on network</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Cython的宏中可以使用一些常数或者函数，但是仅仅局限于以下的</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Constants</td>
+<td style="text-align:left">None, True, False</td>
+</tr>
+<tr>
+<td style="text-align:left">Built-in functions</td>
+<td style="text-align:left">abs, chr, cmp, divmod, enumerate, hash, hex, len, map, max, min, oct ord pow range, reduce, repr, round, sum, xrange, zip</td>
+</tr>
+<tr>
+<td style="text-align:left">Built-in types</td>
+<td style="text-align:left">bool, complex, dict, float, int, list, long, slice, str, tuple</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Cython中的宏支持条件判断，这个可以出现在程序的任何部分出现，并且可以嵌套，如下  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">IF UNAME_SYSNAME == <span class="string">"Windows"</span>:</span><br><span class="line">    <span class="comment"># ...Windows-specific code...</span></span><br><span class="line">ELIF UNAME_SYSNAME == <span class="string">"Darwin"</span>:</span><br><span class="line">    <span class="comment"># ...Mac-specific code... </span></span><br><span class="line">ELIF UNAME_SYSNAME == <span class="string">"Linux"</span>:</span><br><span class="line">    <span class="comment"># ...Linux-specific code... </span></span><br><span class="line">ELSE:</span><br><span class="line">    <span class="comment"># ...other OS...</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="利用Cython来连接Python2和Python3代码"><a href="#利用Cython来连接Python2和Python3代码" class="headerlink" title="利用Cython来连接Python2和Python3代码"></a>利用Cython来连接Python2和Python3代码</h1><ul>
+<li>Python2和Python3的代码在很多地方是不兼容的，但是Cython产生的C代码和二者都是兼容的，所以我们可以利用Cython来连接Python2和Python3代码</li>
+<li><strong>Cython编译的时候默认的是使用python2的语法和语言的</strong>，但是我们可以通过在编译的时候使用<code>-2</code>或者<code>-3</code>的flag来控制<blockquote>
+<p>Python2和Python3的不同之处，比如print在Python3中是一个函数，在Python2中是一个类似于关键字的东西</p>
+</blockquote>
+</li>
+<li><p>我们利用Cython来连接Python2和Python3的步骤如下</p>
+<ul>
+<li><p>先使用Cython来将Python2或者Python3的代码转化为c代码</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cython -2 python2.py</span><br><span class="line">cython -3 python3.py</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后利用distuils把生成的C代码编译成为与Python2或者Python3兼容的拓展模块</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="str-unicode-bytes和其他的所有"><a href="#str-unicode-bytes和其他的所有" class="headerlink" title="str, unicode, bytes和其他的所有"></a>str, unicode, bytes和其他的所有</h2><ul>
+<li>Python2和Python3中的字符串类型有一些共同点，也有很多区别<ul>
+<li>都表示一个8-bit字符的序列</li>
+<li>都表示一个和变量等宽的字符序列</li>
+<li>（不同之处很多，还在慢慢学）</li>
+</ul>
+</li>
+<li>（这一块等看完Python2和Python3中字节的区别之后再来看）</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/06/note-cython/Cython-2/" rel="next" title="《Cython》第二章：编译和运行Cython代码">
+                <i class="fa fa-chevron-left"></i> 《Cython》第二章：编译和运行Cython代码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/20/note-cython/Cython-5/" rel="prev" title="《Cython》第五章：Cython和拓展类型">
+                《Cython》第五章：Cython和拓展类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Kai Wang">
+            
+              <p class="site-author-name" itemprop="name">Kai Wang</p>
+              <p class="site-description motion-element" itemprop="description">Hi! Here is Kai's cosmos, Kosmos!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wkcosmology/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wkcosmology@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/wkcosmology" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:wkcosmology?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解释器VS编译执行"><span class="nav-number">1.</span> <span class="nav-text">解释器VS编译执行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态类型VS静态类型"><span class="nav-number">2.</span> <span class="nav-text">动态类型VS静态类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用cdef进行静态声明"><span class="nav-number">3.</span> <span class="nav-text">使用cdef进行静态声明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cython中的自动类型推断"><span class="nav-number">3.1.</span> <span class="nav-text">Cython中的自动类型推断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cython中的C指针"><span class="nav-number">3.2.</span> <span class="nav-text">Cython中的C指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合使用静态和动态类型"><span class="nav-number">3.3.</span> <span class="nav-text">混合使用静态和动态类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Python类型进行静态类型声明"><span class="nav-number">3.4.</span> <span class="nav-text">使用Python类型进行静态类型声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为了速度而使用静态声明"><span class="nav-number">3.5.</span> <span class="nav-text">为了速度而使用静态声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用计数和静态字符串类型"><span class="nav-number">3.6.</span> <span class="nav-text">引用计数和静态字符串类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cython中的三种函数"><span class="nav-number">4.</span> <span class="nav-text">Cython中的三种函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cython中的Python函数：使用def关键字"><span class="nav-number">4.1.</span> <span class="nav-text">Cython中的Python函数：使用def关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cython中的C函数：使用cdef关键字"><span class="nav-number">4.2.</span> <span class="nav-text">Cython中的C函数：使用cdef关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用cpdef来结合def和cdef关键字"><span class="nav-number">4.3.</span> <span class="nav-text">利用cpdef来结合def和cdef关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cython中的inline函数"><span class="nav-number">4.4.</span> <span class="nav-text">Cython中的inline函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数和异常处理"><span class="nav-number">4.5.</span> <span class="nav-text">函数和异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数和embedsignature编译指令"><span class="nav-number">4.6.</span> <span class="nav-text">函数和embedsignature编译指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类型转换"><span class="nav-number">5.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用structs-unions和enums进行类型声明"><span class="nav-number">6.</span> <span class="nav-text">使用structs, unions和enums进行类型声明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用ctypedef的类型别名"><span class="nav-number">7.</span> <span class="nav-text">使用ctypedef的类型别名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cython中的for循环和while循环"><span class="nav-number">8.</span> <span class="nav-text">Cython中的for循环和while循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cython预编译器"><span class="nav-number">9.</span> <span class="nav-text">Cython预编译器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#利用Cython来连接Python2和Python3代码"><span class="nav-number">10.</span> <span class="nav-text">利用Cython来连接Python2和Python3代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#str-unicode-bytes和其他的所有"><span class="nav-number">10.1.</span> <span class="nav-text">str, unicode, bytes和其他的所有</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

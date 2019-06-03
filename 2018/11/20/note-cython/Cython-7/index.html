@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Comic Sans MS:300,300italic,400,400italic,700,700italic|monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="note,Python,Cython,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文主要介绍了如何使用Cython来包装C代码">
+<meta name="keywords" content="note,Python,Cython">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Cython》第七章：用Cython包装C库">
+<meta property="og:url" content="http://wkcosmology.github.io/2018/11/20/note-cython/Cython-7/index.html">
+<meta property="og:site_name" content="kosmos">
+<meta property="og:description" content="本文主要介绍了如何使用Cython来包装C代码">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-03T13:21:06.451Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Cython》第七章：用Cython包装C库">
+<meta name="twitter:description" content="本文主要介绍了如何使用Cython来包装C代码">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wkcosmology.github.io/2018/11/20/note-cython/Cython-7/">
+
+
+
+
+
+  <title>《Cython》第七章：用Cython包装C库 | kosmos</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kosmos</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            links
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wkcosmology.github.io/2018/11/20/note-cython/Cython-7/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kosmos">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《Cython》第七章：用Cython包装C库</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-20T15:56:46+08:00">
+                2018-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/" itemprop="url" rel="index">
+                    <span itemprop="name">Note</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/Cython/" itemprop="url" rel="index">
+                    <span itemprop="name">Cython</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  本文主要介绍了如何使用Cython来包装C代码
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="比较Python中的类和拓展类型"><a href="#比较Python中的类和拓展类型" class="headerlink" title="比较Python中的类和拓展类型"></a>比较Python中的类和拓展类型</h1><ul>
+<li>在Python中，所有的都是对象，包括变量、函数等</li>
+<li>从最基本的角度，一个对象有三个最重要的东西组成：identity，value，type（这里延用了书中的说法）<ul>
+<li>identity是一个对象的唯一标识，可以理解成C中的指针</li>
+<li>value是一个对象的附属元素值</li>
+<li>type决定了一个对象拥有什么操作（所以这里更确切的说法是对象方法method）</li>
+</ul>
+</li>
+<li>Python中内置的类型（object, list, dict, file, int, float等） 是在底层中用C实现的，并且通过Python/C API与Python交互，它们的表现就跟在Python中定义的类一样</li>
+<li>我们把通过Python/C API在底层创建的，并且可以和python实现交互的类型称为拓展类型；<ul>
+<li>这些拓展类型的表现就和Python中定义的类型和内置类型一样；</li>
+<li>由于这些拓展类型是底层用C实现的，所以对它们的数据访问速度和方法调用都非常高效；</li>
+<li>直接通过Python/C API来实现拓展类型非常复杂，门槛比较高</li>
+</ul>
+</li>
+<li>通过Cython，我们就可以像在Python定义类一样简单地创建拓展类型，并且可以获得跟C一样的运行效率</li>
+</ul>
+<h1 id="Cython中的拓展类型"><a href="#Cython中的拓展类型" class="headerlink" title="Cython中的拓展类型"></a>Cython中的拓展类型</h1><ul>
+<li><p>我们在Python中定义一个类的语法如下</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Particle</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""Simple particle type"""</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, m, p, v)</span>:</span></span><br><span class="line">        self.mass = m</span><br><span class="line">        self.position = p</span><br><span class="line">        self.velocity = v</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_momentum</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.mass * self.velocity</span><br></pre></td></tr></table></figure>
+<p>  如果我们使用Cython编译上面的代码，那么在调用这些代码的时候，还是会有很多类型检查，并且数据结构的存储方式也还是和Python中一样（通过字典存储），所以性能并不会有多少提升</p>
+</li>
+<li><p>我们用静态类型声明的方式重新改写上面的代码</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cdef <span class="class"><span class="keyword">class</span> <span class="title">Particle</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""Simple particle extension type"""</span></span><br><span class="line">    cdef double mass, position, velocity</span><br><span class="line">    <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+<p>  我们注意到，</p>
+<ul>
+<li>我们用了cdef关键字</li>
+<li>这种声明方式类似于JAVA或者C++的类定义方式，在类中静态声明了所有变量，这个是为了能够在编译时就确定一个类所需要的内存空间，从而在栈中预置（像Python这种动态语言都是在堆中动态地添加属性的，这也是动态语言慢的一个原因）</li>
+<li>Python中直接在类的docstring之后声明的变量是类的属性（即所有对象都共享的属性），而不是对象的属性（每个对象独立拥有）；而这里声明的是对象属性</li>
+<li>Python中的对象属性是可以直接访问的，<code>cdef class</code>通过以上方式声明的属性是不能直接访问的，默认这些属性都是private的</li>
+<li>Python中可以在任何地方动态地添加属性；<code>cdef class</code>不能这样做</li>
+<li>Python中所有的对象属性都是通过字典存储在堆中；<code>cdef class</code>中声明的对象属性都是以结构体的方式存储在栈中</li>
+</ul>
+</li>
+</ul>
+<h1 id="类型attributes和访问权限"><a href="#类型attributes和访问权限" class="headerlink" title="类型attributes和访问权限"></a>类型attributes和访问权限</h1><ul>
+<li><p>如果我们希望直接访问<code>cdef class</code>中的对象属性，甚至修改这个属性，我们可以这样定义</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cdef <span class="class"><span class="keyword">class</span> <span class="title">Particle</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""Simple particle extension type"""</span></span><br><span class="line">    cdef readonly double mass</span><br><span class="line">    cdef double position, velocity</span><br><span class="line">    <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+<p>  通过这样的类声明的对象的<code>mass</code>属性就可以直接通过<code>.</code>运算符访问，但是不能修改；如果需要获得修改权限，我们应该按照下面的方式声明</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cdef <span class="class"><span class="keyword">class</span> <span class="title">Particle</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""Simple particle extension type"""</span></span><br><span class="line">    cdef public double mass</span><br><span class="line">    cdef readonly double position</span><br><span class="line">    cdef double velocity</span><br><span class="line">    <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+<p>  这样，<code>mass</code>属性不但可以通过<code>.</code>运算符访问，也可以进行修改</p>
+</li>
+</ul>
+<h1 id="C级别的初始化和析构"><a href="#C级别的初始化和析构" class="headerlink" title="C级别的初始化和析构"></a>C级别的初始化和析构</h1><ul>
+<li>我们在声明一个<code>class</code>或者<code>cdef class</code>对象的时候，它会自动调用<code>__init__</code>方法；在C层次上，调用<code>__init__</code>方法之前需要对象的属性都有确定的内存空间，进而我们可以再<code>__init__</code>方法里面对这些属性进行初始化，这也是我们需要静态声明所有属性的原因</li>
+<li><p>Cython中同时也有一个<code>__cinit__</code>方法，主要是为了调用一些C层次的方法，比如<code>malloc</code>方法，比如</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cdef <span class="class"><span class="keyword">class</span> <span class="title">Matrix</span>:</span></span><br><span class="line">    cdef:</span><br><span class="line">        unsigned int nrows, ncols</span><br><span class="line">        double *_matrix</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__cinit__</span><span class="params">(self, nr, nc)</span>:</span></span><br><span class="line">        self.nrows = nr</span><br><span class="line">        self.ncols = nc</span><br><span class="line">        self._matrix = &lt;double *&gt;malloc(nr * nc * sizeof(double))</span><br><span class="line">        <span class="keyword">if</span> self._matrix == NULL:</span><br><span class="line">            <span class="keyword">raise</span> MemoryError</span><br></pre></td></tr></table></figure>
+<p>  这里要注意一下问题</p>
+<ul>
+<li>这里用的事<code>def</code>关键字而不是<code>cdef</code>关键字，这个保证了这个方法可以被Python调用</li>
+<li>这里在堆中动态申请的内存空间，这个不会被Python的垃圾回收机制给回收掉（这一块是如何实现的？）</li>
+<li>如果<code>malloc</code>方法在<code>__init__</code>中定义，那么这个方法不会被调用，所以任何对<code>self._matix</code>的调用都会导致<code>segmentation fault</code></li>
+</ul>
+</li>
+<li>Cython也提供了析构方法  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cdef <span class="class"><span class="keyword">class</span> <span class="title">Matrix</span>:</span></span><br><span class="line">    cdef:</span><br><span class="line">        unsigned int nrows, ncols</span><br><span class="line">        double *_matrix</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__cinit__</span><span class="params">(self, nr, nc)</span>:</span></span><br><span class="line">        self.nrows = nr</span><br><span class="line">        self.ncols = nc</span><br><span class="line">        self._matrix = &lt;double *&gt;malloc(nr * nc * sizeof(double))</span><br><span class="line">        <span class="keyword">if</span> self._matrix == NULL:</span><br><span class="line">            <span class="keyword">raise</span> MemoryError</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__dealloc__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self._matrix != NULL:</span><br><span class="line">            free(self._matrix)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="cdef和cpdef方法"><a href="#cdef和cpdef方法" class="headerlink" title="cdef和cpdef方法"></a><code>cdef</code>和<code>cpdef</code>方法</h1><ul>
+<li><code>cdef class</code>类方法中也可以使用<code>cdef</code>或者<code>cpdef</code>关键字，但是在纯Python类中就不行，会引起报错</li>
+<li><code>cdef</code>的类方法可以被其他的cython文件内调用，但是不能在python文件中被调用</li>
+<li><code>cpdef</code>的类方法可以被python文件调用，如果被python文件调用，那么就会使用python里面的类型进行交互；它也可以被cython文件调用，这时候不会经过中间python变量的转换，所以开销很小。<ul>
+<li>我们之前引入<code>cpdef</code>函数的时候，使用了一个python函数包装一个<code>cdef</code>函数作为示例，这种情况下没有上述的优化（也就是无论是被谁调用都会先转换成为python变量），所以<code>cpdef</code>是比我们手动实现的包装更加优化的</li>
+<li>需要提醒的是，<code>cpdef</code>的函数的参数只能是C和Python中兼容的格式，比如C指针就不能作为参数</li>
+<li><code>def</code>关键字定义的函数内部也能静态声明类型，使用C方法（比如malloc），并且声明的函数也能被python文件调用（所以要<code>cpdef</code>关键字有什么用？<code>def</code>的函数一定以Python类型与外界交互，<code>cpdef</code>的函数被底层C调用的时候直接通过C类型交互，不会转化为python类型）</li>
+</ul>
+</li>
+</ul>
+<h1 id="继承和子类化"><a href="#继承和子类化" class="headerlink" title="继承和子类化"></a>继承和子类化</h1><ul>
+<li><p>拓展类型可以继承，但是基类必须是在C中实现的—其他的拓展类型(<code>cpdef</code>类型)或者内置类型，但是不能是在Python定义的类型。例子如下</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cdef <span class="class"><span class="keyword">class</span> <span class="title">CParticle</span><span class="params">(Particle)</span>:</span></span><br><span class="line">    cdef double monmentum</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, m, p, v)</span>:</span></span><br><span class="line">        super(CParticle, self).__init__(m, p, v)</span><br><span class="line">        self.momentum = self.mass * self.velocity</span><br><span class="line">    cpdef get_momentum(self):</span><br><span class="line">        <span class="keyword">return</span> self.momentum</span><br></pre></td></tr></table></figure>
+<ul>
+<li>因为CParticle继承自Particle，所以任何需要Particle类型的地方，我们都可以使用CParticle</li>
+</ul>
+</li>
+<li><p>我们也可以在python文件中去继承拓展类型，如下：</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PyParticle</span><span class="params">(Particle)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, m, p, v)</span>:</span></span><br><span class="line">        super(PyParticle, self).__init__(m, p, v):</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_momentum</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> super(Pyparticle, self).get_momentum()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在Python中继承拓展类型，我们不能去访问C级别的私有变量（即不是<code>readonly</code>或者<code>public</code>的变量），也不能去调用<code>cdef</code>方法</li>
+<li>我们可以通过继承来用python包装一下拓展类型中的方法，但是这样的函数调用开销很大</li>
+</ul>
+</li>
+</ul>
+<h2 id="类型转换和子类化"><a href="#类型转换和子类化" class="headerlink" title="类型转换和子类化"></a>类型转换和子类化</h2><ul>
+<li>当处理动态类型的时候，Cython不能直接访问C级别的成员变量，只能通过Python/C API来访问，这时候效率就很低；更有效的方法是明确声明变量类型或者用类型强制转换。</li>
+<li><p>举例，如果我们有一个对象<code>p</code>，我们知道它是Particle类型，这时候如果我们直接动态调用它的方法，比如</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.get_momentum()</span><br></pre></td></tr></table></figure>
+<p>  这时候将会按照Python里面调用方法的流程走，调用开销就很大；更有效的方法是使用一个静态声明类型的变量接收这个值再调用或者使用类型强制转换</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1</span></span><br><span class="line">cdef Particle static_p = p</span><br><span class="line">static_p.get_momentum()</span><br><span class="line"><span class="comment"># 2</span></span><br><span class="line">(&lt;Particle&gt; p).get_momentum()</span><br><span class="line"><span class="comment"># 3</span></span><br><span class="line">(&lt;Particle?&gt; p).get_momentum()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第一种方法是安全的，因为如果p不是Particle类型或者其子类，会报错</li>
+<li>第二种方法不安全，因为即使p不是Particle类型或者其子类，也不会报错</li>
+<li>第三种方法安全，因为如果p不是Particle类型或者其子类，会报错</li>
+</ul>
+</li>
+</ul>
+<h2 id="拓展类型对象和None"><a href="#拓展类型对象和None" class="headerlink" title="拓展类型对象和None"></a>拓展类型对象和None</h2><ul>
+<li><p>在Cython中，如果一个函数的接收参数类型是拓展类型，这时候你传一个None过去也不会报错，这时候需要手动检测传进来的参数是否是None，或者通过下面的方式</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dispatch</span><span class="params">(Particle p not None)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> p.get_momentum()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Ctyhon中也提供了一个编译指令<code>nonecheck</code>，当它设置为<code>True</code>的时候，会自动检查传进函数的参数是否是None</p>
+</li>
+</ul>
+<h1 id="Cython中的拓展类型properties"><a href="#Cython中的拓展类型properties" class="headerlink" title="Cython中的拓展类型properties"></a>Cython中的拓展类型properties</h1><ul>
+<li><p>Python中有一个property内置方法</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Particle</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_get_momentum</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._mass * self.velocity</span><br><span class="line">    momentum = property(_get_momentum)</span><br></pre></td></tr></table></figure>
+<p>  这时候，我们可以通过<code>p.momentum</code>来访问momentum，这是把一个函数的返回值当做一个属性来使用，并且如果<code>p._mass</code>或者<code>p._velocity</code>更新之后，<code>p.momentum</code>就自动更新了</p>
+</li>
+<li><p>在Cython中也有类似的语法</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cdef <span class="class"><span class="keyword">class</span> <span class="title">Particle</span>:</span></span><br><span class="line">    cdef double mass, position, velocity</span><br><span class="line">    </span><br><span class="line">    property momentum:</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">__get__</span><span class="params">(self)</span>:</span></span><br><span class="line">            <span class="keyword">return</span> self.mass * self.velocity</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">__set__</span><span class="params">(self, m)</span>:</span></span><br><span class="line">            self.velocity = self.momentum / m</span><br></pre></td></tr></table></figure>
+<p>  我们需要注意几点</p>
+<ul>
+<li><code>momentum</code>这个属性是无法在内部进行修改的，它一定是某些成员变量的函数，它自己是不能存储值的，所以我们不能够使用类似<code>self.momentum</code>之类的值</li>
+<li><code>property</code>里面的<code>def</code>是不需要定义返回类型的，它实际上可以自行推导出来类型</li>
+</ul>
+</li>
+</ul>
+<h1 id="特殊方法更特殊"><a href="#特殊方法更特殊" class="headerlink" title="特殊方法更特殊"></a>特殊方法更特殊</h1><ul>
+<li>我们如果想再Cython中实现运算符重载，我们应该需要使用特殊方法</li>
+</ul>
+<h2 id="算数方法"><a href="#算数方法" class="headerlink" title="算数方法"></a>算数方法</h2><ul>
+<li>在Python中，加法运算符对应的特殊方法有两个<code>__add__(self, other)</code>和<code>__radd__(self, other)</code>，<code>a+b</code>会先调用<code>a.__add__(a, b)</code>，如果<code>a</code>对应的类型没有实现<code>__add__</code>特殊方法，就再调用<code>b</code>对应类型的<code>__radd__(b, a)</code>，如果也没有实现，则报错<code>NotImplemented</code></li>
+<li><p>在Cython中，只有<code>__add__</code>特殊方法，所以我们要在这个特殊方法里实现上述的功能</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">cdef <span class="class"><span class="keyword">class</span> <span class="title">E</span>:</span></span><br><span class="line">    cdef int data</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, v)</span>:</span></span><br><span class="line">        self.data = v</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(x, y)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> isinstance(x, E):</span><br><span class="line">            <span class="keyword">if</span> isinstance(y, int):</span><br><span class="line">                <span class="keyword">return</span> (&lt;E&gt;x).data + y</span><br><span class="line">        <span class="keyword">elif</span> isinstance(y, E):</span><br><span class="line">            <span class="keyword">if</span> isinstance(x, int):</span><br><span class="line">                <span class="keyword">return</span> (&lt;E&gt;y).data + x</span><br><span class="line">        <span class="keyword">return</span> NotImplement</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这时候由于第一个参数并不一定是类本身对应的对象，所以使用self就很误导了</li>
+</ul>
+</li>
+</ul>
+<h2 id="富比较"><a href="#富比较" class="headerlink" title="富比较"></a>富比较</h2><ul>
+<li>Cython中不支持<code>__eq__</code>, <code>__lt__</code>等方法，只支持<code>__richcmp__(x, y, op)</code>一种方法，其中<code>opf</code>参数决定了比较的类型，如下表</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Py_LT</td>
+<td>&lt;</td>
+</tr>
+<tr>
+<td>Py_LE</td>
+<td>&lt;=</td>
+</tr>
+<tr>
+<td>Py_EQ</td>
+<td>==</td>
+</tr>
+<tr>
+<td>Py_NE</td>
+<td>!=</td>
+</tr>
+<tr>
+<td>Py_GT</td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td>Py_GE</td>
+<td>&gt;=</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>举例如下
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> cpython.object <span class="keyword">import</span> Py_LT, Py_LE, Py_EQ, Py_GE, Py_GT, Py_NE</span><br><span class="line"></span><br><span class="line">cdef <span class="class"><span class="keyword">class</span> <span class="title">R</span>:</span></span><br><span class="line">    cdef double data</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, d)</span>:</span></span><br><span class="line">        self.data = d</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__richcmp__</span><span class="params">(x, y, op)</span>:</span></span><br><span class="line">        cdef:</span><br><span class="line">            R r</span><br><span class="line">            double data</span><br><span class="line">        r, y = (x, y) <span class="keyword">if</span> isinstance(x, R) <span class="keyword">else</span> (y, x)</span><br><span class="line">        data = r.data</span><br><span class="line">        <span class="keyword">if</span> op == Py_LT:</span><br><span class="line">            <span class="keyword">return</span> data &lt; y</span><br><span class="line">        <span class="keyword">elif</span> op == Py_LE:</span><br><span class="line">            <span class="keyword">return</span> data &lt;= y</span><br><span class="line">        <span class="keyword">elif</span> op == Py_EQ:</span><br><span class="line">            <span class="keyword">return</span> data == y</span><br><span class="line">        <span class="keyword">elif</span> op == Py_NE:</span><br><span class="line">            <span class="keyword">return</span> data != y</span><br><span class="line">        <span class="keyword">elif</span> op == Py_GT:</span><br><span class="line">            <span class="keyword">return</span> data &gt; y</span><br><span class="line">        <span class="keyword">elif</span> op == Py_GE:</span><br><span class="line">            <span class="keyword">return</span> data &gt;= y <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">assert</span></span><br><span class="line">            <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="迭代器支持"><a href="#迭代器支持" class="headerlink" title="迭代器支持"></a>迭代器支持</h2><ul>
+<li>（这一块先看流畅的Python把迭代器学清楚，这个基本上和Python中的差不多）</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Cython/" rel="tag"># Cython</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/20/note-cython/Cython-6/" rel="next" title="《Cython》第六章：组织你的Cython代码">
+                <i class="fa fa-chevron-left"></i> 《Cython》第六章：组织你的Cython代码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/23/blog-python/configparser/" rel="prev" title="Python内置库--configparser的使用">
+                Python内置库--configparser的使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Kai Wang">
+            
+              <p class="site-author-name" itemprop="name">Kai Wang</p>
+              <p class="site-description motion-element" itemprop="description">Hi! Here is Kai's cosmos, Kosmos!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wkcosmology/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wkcosmology@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/wkcosmology" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:wkcosmology?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#比较Python中的类和拓展类型"><span class="nav-number">1.</span> <span class="nav-text">比较Python中的类和拓展类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cython中的拓展类型"><span class="nav-number">2.</span> <span class="nav-text">Cython中的拓展类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类型attributes和访问权限"><span class="nav-number">3.</span> <span class="nav-text">类型attributes和访问权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C级别的初始化和析构"><span class="nav-number">4.</span> <span class="nav-text">C级别的初始化和析构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cdef和cpdef方法"><span class="nav-number">5.</span> <span class="nav-text">cdef和cpdef方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承和子类化"><span class="nav-number">6.</span> <span class="nav-text">继承和子类化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换和子类化"><span class="nav-number">6.1.</span> <span class="nav-text">类型转换和子类化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展类型对象和None"><span class="nav-number">6.2.</span> <span class="nav-text">拓展类型对象和None</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cython中的拓展类型properties"><span class="nav-number">7.</span> <span class="nav-text">Cython中的拓展类型properties</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特殊方法更特殊"><span class="nav-number">8.</span> <span class="nav-text">特殊方法更特殊</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算数方法"><span class="nav-number">8.1.</span> <span class="nav-text">算数方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#富比较"><span class="nav-number">8.2.</span> <span class="nav-text">富比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器支持"><span class="nav-number">8.3.</span> <span class="nav-text">迭代器支持</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {equationNumbers: { autoNumber: "AMS" }}
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

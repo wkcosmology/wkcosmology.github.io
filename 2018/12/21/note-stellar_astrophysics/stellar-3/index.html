@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Comic Sans MS:300,300italic,400,400italic,700,700italic|monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="astronomy,note,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文主要介绍了辐射场的描述，辐射转移的过程以及在恒星中辐射转移方程的应用。">
+<meta name="keywords" content="astronomy,note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《恒星物理》第三章：恒星中的辐射转移">
+<meta property="og:url" content="http://wkcosmology.github.io/2018/12/21/note-stellar_astrophysics/stellar-3/index.html">
+<meta property="og:site_name" content="kosmos">
+<meta property="og:description" content="本文主要介绍了辐射场的描述，辐射转移的过程以及在恒星中辐射转移方程的应用。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-12-22T03:23:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《恒星物理》第三章：恒星中的辐射转移">
+<meta name="twitter:description" content="本文主要介绍了辐射场的描述，辐射转移的过程以及在恒星中辐射转移方程的应用。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wkcosmology.github.io/2018/12/21/note-stellar_astrophysics/stellar-3/">
+
+
+
+
+
+  <title>《恒星物理》第三章：恒星中的辐射转移 | kosmos</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kosmos</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            links
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wkcosmology.github.io/2018/12/21/note-stellar_astrophysics/stellar-3/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kosmos">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《恒星物理》第三章：恒星中的辐射转移</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-21T18:35:46+08:00">
+                2018-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/" itemprop="url" rel="index">
+                    <span itemprop="name">Note</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/StellarAstrophysics/" itemprop="url" rel="index">
+                    <span itemprop="name">StellarAstrophysics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  本文主要介绍了辐射场的描述，辐射转移的过程以及在恒星中辐射转移方程的应用。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="辐射不透明度"><a href="#辐射不透明度" class="headerlink" title="辐射不透明度"></a>辐射不透明度</h1><p>光子在恒星内部传输的时候会与物质进行相互作用，主要是吸收和散射的过程，这些过程都会导致光线强度的衰减，统称为不透明度。如果不透明度随着波长缓慢变化，它就会影响恒星的连续谱；叠加在连续谱上的暗线是由于特定波长处的不透明度急剧变化造成的</p>
+<h2 id="辐射与物质的相互作用"><a href="#辐射与物质的相互作用" class="headerlink" title="辐射与物质的相互作用"></a>辐射与物质的相互作用</h2><p>辐射转移机制种类</p>
+<ul>
+<li>光子被吸收，原子被激发到高能态，然后退激发，释放出光子，这个过程称为<strong>共振散射</strong></li>
+<li>激发态原子自发地放出光子的过程叫<strong>自发辐射</strong></li>
+<li>激发态原子与其他粒子碰撞并且将能量传递给它，转化为动能，随之退激发到低能态</li>
+<li>处于高能态的粒子可以分几次退激发，从而释放出多个光子</li>
+<li>粒子之间通过碰撞将动能转化为能级跃迁所需要的能量，并且退激发释放出光子</li>
+</ul>
+<blockquote>
+<p>在恒星内部，电子主导着与碰撞相关的过程，因为能均分定理以及电子的质量很小，所以电子速度更大，碰撞更频繁</p>
+<p>在恒星内部，大多数物理条件下，碰撞过程比辐射过程（激发和光致电离）更重要，因此原子的能量和电离态分布可以分别通过玻尔兹曼方程和萨哈方程得到</p>
+</blockquote>
+<h2 id="光子吸收、不透明度和光深"><a href="#光子吸收、不透明度和光深" class="headerlink" title="光子吸收、不透明度和光深"></a>光子吸收、不透明度和光深</h2><p>若设光子被吸收的量$dl_{\lambda}$，光束原初辐射强度$I_{\lambda 0}$，气体密度$\rho$，气体的吸收系数$k_{\lambda}$，那么我们可以得到光线在穿过距离ds之后的强度衰减表示为</p>
+<script type="math/tex; mode=display">dI_{\lambda} = -\kappa_{\lambda}\rho I_{\lambda}ds</script><p>对上式进行积分，我们就会得到光线强度关于路径长度的函数</p>
+<script type="math/tex; mode=display">I_{\lambda}(s) = I_{\lambda_0}\exp(-\int_0^s\kappa_{\lambda}\rho ds)</script><p>为了表示方便，我们引入<strong>光深</strong>的概念</p>
+<script type="math/tex; mode=display">d\tau_{\lambda} = -\kappa_{\lambda}\rho ds \longrightarrow \tau_{\lambda}=-\int_0^s\kappa_{\lambda}\rho ds</script><p>这里光深就是直接表示光线通过某一路径之后的强度衰减，一般我们定义$\tau_{\lambda} &gt;&gt;1 $为光学厚，$\tau_{\lambda} &lt;&lt; 1$为光学薄。</p>
+<h2 id="恒星大气的不透明度来源"><a href="#恒星大气的不透明度来源" class="headerlink" title="恒星大气的不透明度来源"></a>恒星大气的不透明度来源</h2><p>恒星大气中吸收和散射光的过程：</p>
+<ul>
+<li>束缚-束缚跃迁<ul>
+<li>这个跃迁会导致谱线的形成</li>
+</ul>
+</li>
+<li>束缚-自由跃迁（光致电离）<ul>
+<li>这个会产生连续谱</li>
+<li>能级为n的氢原子的光致电离截面<script type="math/tex; mode=display">\sigma_{\rm bf}  = 1.31\times 10^{-19} \frac{1}{n^5}\left(\frac{\lambda}{500{\rm nm}}\right){\rm m}^{2}</script></li>
+<li>光致电离的散射截面对于刚刚过阈值的光子来说是最大的，随着光子能量增加，散射截面也急剧下降</li>
+<li>光致电离吸收截面具有吸收边缘，如巴尔末跳跃和莱曼极限</li>
+<li>巴尔末跳跃：在很高温的恒星中，巴尔末跳跃的迹象不明显，是因为氢原子都被电离了，没有n=2的态</li>
+</ul>
+</li>
+<li>自由-自由跃迁<ul>
+<li>离子附近的电子可以吸收光子导致速度增加</li>
+<li>孤立电子不能吸收光子</li>
+</ul>
+</li>
+<li>散射过程<ul>
+<li>光子被自由电子散射叫汤姆逊散射，被原子、分子散射叫瑞利散射</li>
+<li>电子散射的截面远小于氢原子光致电离的截面，所以只有电子密度非常高的时候，电子散射才对不透明度有重要贡献</li>
+<li>汤姆逊散射<script type="math/tex; mode=display">\kappa_{es} = \frac{\sigma_T n_e}{\rho}</script></li>
+<li>康普顿散射指光子波长小于原子尺度的散射，主要适用于X-ray或者Gamma-ray</li>
+<li>在冷星中，分子是主要的不透明度来源，因为它们能被解离并产生光子的束缚-束缚以及束缚-自由吸收</li>
+<li>分子吸收产生大量的空间相近的线，像是一个带</li>
+<li>在光致瓦解过程中，分子吸收光子变成原子，这个在行星大气中有重要作用</li>
+<li>瑞利散射正比于$\lambda^{-4}$</li>
+</ul>
+</li>
+<li>恒星大气不透明度的其他来源<ul>
+<li>太阳大气中的H$^-$不透明度：当额外的电子被较弱地吸附在氢原子周围，氢能形成负离子，电子能为0.754eV，很容易被电离</li>
+</ul>
+</li>
+</ul>
+<h1 id="辐射场描述"><a href="#辐射场描述" class="headerlink" title="辐射场描述"></a>辐射场描述</h1><p>上面一节中我们描述了恒星大气中光线和物质的相互作用机制，为了定量地研究这些相互作用，我们需要一些描述辐射场的工具。</p>
+<p><strong>辐射强度：</strong></p>
+<p>我们定义辐射强度为单位时间通过单位面积沿着某一方向的单位立体角在单位频率间隔中的能量为：</p>
+<script type="math/tex; mode=display">\Delta E_{\nu} = I(\vec r, \vec n, t)dA \cos\theta d\Omega d\nu dt</script><p>辐射强度既可以依赖于频率，也可以依赖于波长，二者的关系可以很容易推导出，</p>
+<script type="math/tex; mode=display">I_{\nu} d\nu = I_{\lambda}d\lambda \Rightarrow I_{\lambda} = \frac{c}{\lambda^2}d_{\nu}</script><p><strong>平均辐射强度：</strong></p>
+<p>我们可以定义辐射强度对各个方向的平均为平均辐射强度</p>
+<script type="math/tex; mode=display">J_{\nu} = <I_{\nu}> = \frac{1}{4\pi}\int I_{\nu}d\Omega</script><p>对于各向同性的辐射场，我们有$J_{\nu} = I_{\nu}$<br>对于各向同性的黑体辐射，我们有$I_{\nu} = B_{\nu}$</p>
+<p><strong>辐射流量：</strong></p>
+<p>辐射强度是对辐射场的一个完整的描述，在实际应用中，我们也会关心光线通过某一个表面的强度（比如望远镜接收的光线强度）。我们定义辐射流量为单位时间、单位频率间隔内，通过单位面积的净辐射能量流</p>
+<script type="math/tex; mode=display">F_{\nu} = \int I_{\nu}\hat n\cdot\hat k d\Omega</script><p>其中$\hat n$是所选取的单位面元的法向，$\hat k$是intensity的方向。辐射强度有以下几点性质：</p>
+<ol>
+<li>如果辐射各向同性，那么辐射流量为0</li>
+<li>对于只通过半球的能流而言$F_{\nu} = \pi I_{\nu}$</li>
+<li>辐射流量与辐射源距离的平方成反比</li>
+</ol>
+<p><strong>辐射场的能量密度：</strong></p>
+<p>辐射场的能量密度定义为辐射强度对各个方向的积分，也就是正比于平均辐射强度</p>
+<script type="math/tex; mode=display">u_{\nu}d\nu = \frac1c \int I_{\nu}d\nu d\Omega = \frac{4\pi}{c}<I_{\nu}>d\nu</script><p>我们也可以定义总的辐射密度，也就是把频率依赖也积分掉</p>
+<script type="math/tex; mode=display">u = \int u_{\nu}d\nu</script><p>对于黑体辐射，我们可以得到</p>
+<script type="math/tex; mode=display">u_{BB} = \frac{4\pi}{c}\int B_{\nu}d\nu = aT^4</script><p><strong>辐射压：</strong></p>
+<p>辐射压的物理图像可以想象成为一个光子打到一个平面之后，将动量传输过去，然后对面也会有辐射传输过来，这个可以想象会光子反弹之后的，所以两者的动量之差决定了压强</p>
+<script type="math/tex; mode=display">P _ { \mathrm { rad }}(\nu) d \nu = \frac { 1 } { c } \int _ { \phi = 0 } ^ { 2 \pi } \int _ { \theta = 0 } ^ { \pi} I _ { \nu } d \nu \cos ^ { 2 } \theta \sin \theta d \theta d \phi</script><p>其中第一个$\cos\theta$是表示光子动量在垂直于平面方向的分量，第二个$\cos\theta$是面积元$dA$的有效分量（这两个并不是重复计算，第一个是光子的动量方向，第二个分量是因为平面倾斜的话，有效光子数目会减少）</p>
+<p><strong>辐射场的moments：</strong></p>
+<p>我们可以数学上对辐射场进行多极展开：</p>
+<script type="math/tex; mode=display">M_{\nu}(z, n) = \frac12 \int_{0}^{\pi}I_{\nu}(z, n)\cos^n\theta d\cos\theta</script><p>我们上面定义的一些量也对应于这些多极展开</p>
+<ol>
+<li>$J_{\nu}(z) = M_{\nu}(z, 0)$</li>
+<li>$H_{\nu}(z) = M_{\nu}(z, 1) = \frac{F_{\nu}(z)}{4\pi}$</li>
+<li>$K_{\nu}(z) = M_{\nu}(z, 2) = \frac{c}{4\pi}P_{\rm rad}$</li>
+</ol>
+<h1 id="辐射转移方程"><a href="#辐射转移方程" class="headerlink" title="辐射转移方程"></a>辐射转移方程</h1><p>在前面的几节中，我们定性描述了辐射场和物质的相互作用，并且介绍了一些描述辐射场的量，下面我们可以引入一套定量化的方法来描述辐射场合物质之间的相互关系了。</p>
+<h2 id="光子的随机行走"><a href="#光子的随机行走" class="headerlink" title="光子的随机行走"></a>光子的随机行走</h2><p>光子在恒星内部的传播过程可以看做一个随机行走，每次相互作用改变一次方向。若一个光子的平均自由程为 $l$，那个一个光子经历N次随机游走，其净移动距离为</p>
+<script type="math/tex; mode=display">\vec d = \vec l_1 + \vec l_2 + ... + \vec l_N</script><p>我们关心的是光子能移动的位移的值，所以我们对上面的量求平方</p>
+<script type="math/tex; mode=display">\vec d\cdot \vec d = Nl^2 + l^2(\cos\theta_{1,2} + ... + \cos\theta_{N-1. N}) \sim Nl^2</script><p>这样我们可以得到，光子经过N次随机行走之后的平均位移为$d\sim \sqrt{N}l$。</p>
+<p>平均自由程定义为粒子平均位移多少才会进行一次碰撞，这个很容易得到是反比与数密度和散射截面，也就是</p>
+<script type="math/tex; mode=display">l = \frac{1}{\rho\kappa_{\lambda}} = \frac{1}{n\sigma_{\lambda}}</script><p>光深<script type="math/tex">\tau_{\lambda} = d\rho \kappa_{\lambda} = \sqrt{N}</script><br>上面我们很容易看出光深的另外一种意义，比如光深为1意味着平均上光子在离开恒星之前只受到一次散射</p>
+<blockquote>
+<p>临边昏暗现象：太阳的边缘比中间暗<br>相同的光深情况下，看太阳中心，可以看到径向更深的地方</p>
+</blockquote>
+<h2 id="辐射转移方程-1"><a href="#辐射转移方程-1" class="headerlink" title="辐射转移方程"></a>辐射转移方程</h2><p>我们容易知道辐射由于吸收过程减少的能量正比于辐射原来的强度和物质的吸收能力，也就是</p>
+<script type="math/tex; mode=display">dE_{\nu} = -\kappa_{\nu}\rho I_{\nu}d\Omega d\nu dt dA ds</script><p>我们辐射的发射过程与上面类似，主要区别一个是符号，另外一个是自发辐射不依赖于辐射场</p>
+<script type="math/tex; mode=display">dE_{\nu} = j_{\nu}\rho d\Omega d\nu dt dA ds</script><p>为了进一步简化方程，我们定义源函数</p>
+<script type="math/tex; mode=display">S_{\nu} = \frac{j_{\nu}}{k_{\nu}}</script><p>通过源函数，我们可以改写辐射转移方程</p>
+<script type="math/tex; mode=display">\begin{align}
+\frac{-1}{\kappa_{\nu}\rho}\frac{dI_{\nu}}{ds} = I_{\nu} - S_{\nu}\\
+\frac{dI_{\nu}}{d\tau_{\nu}} = I_{\nu} - S_{\nu}
+\end{align}</script><p>（散射是怎么加入的?）</p>
+<script type="math/tex; mode=display">S_{\nu} = \frac{j_{\nu}}{k_{\nu}}\approx \frac{\kappa_{\nu}B_{\nu}}{\kappa_{\nu} + \sigma_{\nu}} + \frac{\sigma_{\nu} J_{\nu}}{\kappa_{\nu} + \sigma_{\nu}}</script><h1 id="局部热动平衡（LTE）"><a href="#局部热动平衡（LTE）" class="headerlink" title="局部热动平衡（LTE）"></a>局部热动平衡（LTE）</h1><p>恒星的整体是一个非均匀各向同性的，为了简化模型，我们可以引入局部热动平衡。热动力学平衡也就是体系内的气体粒子和黑体辐射达到平衡状态，即光子的吸收过程和发射过程发生率相同。处于热动平衡状态的恒星内部，各种温度均相同；如果产生显著温度变化的距离远大于粒子的平均自由程，那么局部热动平衡是一个很好的近似。</p>
+<h2 id="LTE的三种定义"><a href="#LTE的三种定义" class="headerlink" title="LTE的三种定义"></a>LTE的三种定义</h2><ul>
+<li>最弱的一种定义：假设等离子体中的原子能级和电离比例仅仅由碰撞决定</li>
+<li>局部热动平衡的严格定义：$S_{\nu} = B_{\nu}$</li>
+<li>局部热动平衡第三个更严格的定义是：$I_{\nu} = B_{\nu}$</li>
+</ul>
+<h2 id="恒星内部温度定义"><a href="#恒星内部温度定义" class="headerlink" title="恒星内部温度定义"></a>恒星内部温度定义</h2><ul>
+<li>有效温度$T_{\rm eff}$：由斯塔范-玻尔兹曼定律得到</li>
+<li>激发温度$T_{\rm ex}$：由玻尔兹曼方程得到</li>
+<li>电离温度$T_{\rm ion}$：萨哈方程得到</li>
+<li>$T_{\rm kin}$：麦克斯韦-玻尔兹曼得到的温度</li>
+<li>黑体温度$T_{\rm BB}$：拟合黑体函数得到的</li>
+</ul>
+<h1 id="辐射转移方程的解"><a href="#辐射转移方程的解" class="headerlink" title="辐射转移方程的解"></a>辐射转移方程的解</h1><h2 id="平面平行近似"><a href="#平面平行近似" class="headerlink" title="平面平行近似"></a>平面平行近似</h2><p>由于我们研究恒星大气中的辐射转移，而恒星大气一般相对于恒星半径来说非常薄，所以我们可以采用平面平行近似，即在大气的局域表面建立笛卡尔坐标系，z轴是$\hat r$方向，那么这时候的变量就只有$(z, \theta)$，其中$\theta$是某矢量与z轴的夹角。在平面平行近似下，光深定义为</p>
+<script type="math/tex; mode=display">\tau_{\nu}(z) = -\int_{R_*}^zk_{\nu}\rho dz</script><p>其中，$u=\cos\theta$，我们要注意，在这里及以下的推导中，光深定义为对径向的积分，而不是对路径的积分，所以方程中会产生一个几何量$u$。</p>
+<p>利用平面平行近似，我们可以改写辐射转移方程</p>
+<script type="math/tex; mode=display">u\frac{dI_{\nu}(\tau_{\nu}, u)}{d\tau_{\nu}} = I_{\nu}(\tau_{\nu}, u) - S_{\nu}(\tau_{\nu})</script><p>我们可以得到辐射方程的形式解</p>
+<script type="math/tex; mode=display">I_{\nu}(\tau_{\nu,1},u) = I_{\nu}(\tau_{\nu,2},u)\exp\left(\frac{\tau_{\nu,1}-\tau_{\nu,2}}{u}\right) + \int_{\tau_{\nu,1}}^{\tau_{\nu,2}}S_{\nu}(t)\exp\left(\frac{\tau_{\nu, 1}-t}{u}\right)\frac{dt}{u}</script><p>我们可以分析几个特殊情形：</p>
+<ul>
+<li>对于向外辐射的情况(u&gt;0)，并且$\tau_{\nu,2}\rightarrow\infty$<script type="math/tex; mode=display">I_{\nu}(\tau_{\nu},u) = \int_{\tau_{\nu}}^{\infty}S_{\nu}(t)\exp\left(\frac{\tau_{\nu}-t}{u}\right)\frac{dt}{u}</script></li>
+<li>对于向内辐射的情况(u&lt;0)，我们有$\tau_{\nu,2}=0$<script type="math/tex; mode=display">I_{\nu}(\tau_{\nu},u) = -\int_0^{\tau_{\nu}}S_{\nu}(t)\exp\left(\frac{\tau_{\nu}-t}{u}\right)\frac{dt}{u}</script></li>
+<li>平面平行近似下，恒星表面的辐射强度<script type="math/tex; mode=display">I_{\nu}(0,u) = \int_{0}^{\infty}S_{\nu}(t)e^{-\frac{t}{u}}\frac{dt}{u}</script>这个可以理解为恒星表面的辐射强度是不同深度的源函数的加权平均，其中光深越大的地方权重越小，所以我们能看到的光都来自于光深比较小的地方。</li>
+</ul>
+<h1 id="大光深的辐射转移"><a href="#大光深的辐射转移" class="headerlink" title="大光深的辐射转移"></a>大光深的辐射转移</h1><p>在光深比较大的情况下，也就是$\tau_{\nu}&gt;&gt;1$，光子的平均自由程很小，粒子之间碰撞频繁，辐射转移过程中散射的成分不重要，源函数近似于普朗克函数，即$S_{\nu}\approx B_{\nu}$，我们可以利用普朗克函数将源函数展开，即</p>
+<script type="math/tex; mode=display">\begin{align}
+S_{\nu}(t) &= B_{\nu}(\tau_{\nu}) + (t - \tau_{\nu})\frac{dB_{\nu}}{d\tau_{\nu}}\Bigg|_{\tau_{\nu}} + \frac{(t-\tau_{\nu})^2}{2!}\frac{d^2B_{\nu}}{d\tau_{\nu}^2}\Bigg|_{\tau_{\nu}}+...\\
+&=\sum\limits_{n=1}^{\infty}\frac{(t-\tau_{\nu})^n}{n!}\frac{d^nB_{\nu}}{d\tau_{\nu}^n}\Bigg|_{\tau_{\nu}}
+\end{align}</script><p>所以光深$\tau_{\nu}$处的辐射强度是</p>
+<script type="math/tex; mode=display">\begin{align}
+I_{\nu}(\tau_{\nu},u) &= \int_{\tau_{\nu}}^{\infty}S_{\nu}(t)\exp\left(\frac{\tau_{\nu}-t}{u}\right)\frac{dt}{u}\\
+&= \sum\limits_{n=1}^{\infty}\frac{1}{n!}\frac{d^nB_{\nu}}{d\tau_{\nu}^n}\Bigg|_{\tau_{\nu}}\int_{\tau_{\nu}}^{\infty}(t-\tau_{\nu})^n\exp\left(\frac{\tau_{\nu}-t}{u}\right)\frac{dt}{u}\\
+&= \sum\limits_{n=1}^{\infty}\frac{1}{n!}\frac{d^nB_{\nu}}{d\tau_{\nu}^n}\Bigg|_{\tau_{\nu}}u^n\int_{\tau_{\nu}}^{\infty}x^ne^{-x}dx\\
+&= \sum\limits_{n=1}^{\infty}n^n\frac{d^nB_{\nu}}{d\tau_{\nu}^n}\Bigg|_{\tau_{\nu}}
+\end{align}</script><p>其中我们做了变量代换$x = \frac{t-\tau_{\nu}}{u}$以及$\int_0^{\infty}x^ne^{-x}dx=n!$</p>
+<p>上面的式子求解会很繁琐，我们不妨做一个量级估计</p>
+<script type="math/tex; mode=display">\left(\frac{d^{n+2}B_{\nu}}{d\tau_{\nu}^{n+2}}\right)\Big/\left(\frac{d^{n}B_{\nu}}{d\tau_{\nu}^{n}}\right)\approx \frac{1}{\tau_\nu^2}</script><p>我们如果保留到前几阶</p>
+<script type="math/tex; mode=display">\begin{align}
+I_{\nu}&\approx B_{\nu} + u\frac{dB_{\nu}}{d\tau_{\nu}} \\
+J_{\nu} &\approx B_{\nu} \\
+H_{\nu} &\approx \frac13 \frac{dB_{\nu}}{d\tau_{\nu}} \\
+K_{\nu} &\approx \frac{B_{\nu}}{3}
+\end{align}</script><p>从上面我们可以看到在光深比较大的时候，辐射强度可以用黑体辐射来近似。</p>
+<p>利用光深的表达式，爱丁顿辐射流量可以写作温度梯度的函数</p>
+<script type="math/tex; mode=display">H_{\nu}\approx \frac13\frac{dB_{\nu}}{d\tau_{\nu}} = -\frac{1}{3k_{\nu}\rho}\frac{dB_{\nu}}{dz} = -\frac{1}{3k_{\nu}\rho}\frac{dB_{\nu}}{dT}\frac{dT}{dz}</script><h1 id="Rosseland和其他的平均不透明度"><a href="#Rosseland和其他的平均不透明度" class="headerlink" title="Rosseland和其他的平均不透明度"></a>Rosseland和其他的平均不透明度</h1><p>恒星大气中的不透明度是各种不透明源的总和</p>
+<script type="math/tex; mode=display">\kappa_{\nu} = \kappa_{\nu}(bb) + \kappa_{\nu}(bf) + \kappa_{\nu}(ff) + \kappa(es) + \kappa(H^{-})</script><p>实际研究中很难考虑到所有的物理过程，所以我们采用一个所有波长平均的不透明度，与密度、温度及化学组成有关，这称为罗斯兰平均。<br>从爱丁顿流量出发</p>
+<script type="math/tex; mode=display">\begin{align}
+H &= \int_0^{\infty}H_{\nu}d\nu \\
+&= -\frac{1}{3\rho}\frac{dT}{dz}\int_0^{\infty}\frac{1}{k_{\nu}}\frac{dB_{\nu}}{dT}d\nu \\
+&\equiv -\frac{1}{3k_R\rho}\frac{dT}{dz}\frac{dB}{dT}
+\end{align}</script><p>再利用$\frac{dB_{\nu}}{dT} = \frac{4\sigma T^3}{\pi}$，我们可以得到</p>
+<script type="math/tex; mode=display">\frac{1}{k_R} = \frac{\pi}{4\sigma T^3}\int_0^{\infty}\frac{1}{k_{\nu}}\frac{dB_{\nu}}{dT}d\nu</script><p>引入Rosseland平均有以下的性质</p>
+<ul>
+<li>罗斯兰平均具有类似单色不透明度的性质，取决于等离子体的局部物理条件及元素丰度</li>
+<li>当Rosseland不透明度升高，辐射传输能量效率降低，将会驱使大的温度梯度通过对流的方式传递能量</li>
+<li>计算罗斯兰不透明度很费时，所以可以通过查表来获得（Opacity Project）, OP计算了H，He和15中金属的不透明度</li>
+<li>高温区域：电子都被电离了，电子散射主导，$\kappa$较小并保持常数</li>
+<li>低温区域：不透明度随温度增加而增加，只有很少的电子能散射，其余只产生自由—自由散射</li>
+<li>在中等温度，$\kappa$达到峰值</li>
+</ul>
+<h1 id="Schwarzschild-Milne-方程"><a href="#Schwarzschild-Milne-方程" class="headerlink" title="Schwarzschild-Milne 方程"></a>Schwarzschild-Milne 方程</h1><p>我们在之前把恒星内部的辐射流量分解成了向外和向内的两个成分，这样就能建立起辐射流量$F$和辐射强度$I$之间的关系了。推导如下：</p>
+<script type="math/tex; mode=display">\begin{align}
+I_{\nu}(\tau_{\nu},u) &= \int_{\tau_{\nu}}^{\infty}S_{\nu}(t)\exp\left(\frac{\tau_{\nu}-t}{u}\right)\frac{dt}{u},~~u>0\\
+I_{\nu}(\tau_{\nu},u) &= -\int^{\tau_{\nu}}_{0}S_{\nu}(t)\exp\left(\frac{\tau_{\nu}-t}{u}\right)\frac{dt}{u},~~u<0
+\end{align}</script><p>这时候对u进行积分</p>
+<script type="math/tex; mode=display">\begin{align}
+J_{\nu}(\tau_{\nu}) &= \frac12\int_{-1}^1 I_{\nu}(\tau_{\nu}, u)du \\
+&= \frac12\int_0^1du\int_{\tau_{\nu}}^{\infty}S_{\nu}(t)\exp\left(\frac{\tau_{\nu}-t}{u}\right)\frac{dt}{u}
+-\frac12\int_0^1du\int^{\tau_{\nu}}_{0}S_{\nu}(t)\exp\left(\frac{\tau_{\nu}-t}{u}\right)\frac{dt}{u} \\
+&= \frac12\int_0^{\tau_{\nu}}S_{\nu}(t)dt\int_0^{\infty}e^{-y(\tau_{\nu}-t)}\frac{dy}{y}+\frac12\int_{\tau_{\nu}}^{\infty}S_{\nu}(t)dt\int_1^{\infty}e^{-y(t-\tau_{\nu})}\frac{dy}{y} \\
+&= \frac12 \int_0^{\tau_{\nu}}S_{\nu}(t)E_1(\tau_{\nu}-t)dt + \frac12\int_{\tau_{\nu}}^{\infty}S_{\nu}(t)E_1(t-\tau_{\nu})dt \\ 
+&= \frac12\int_0^{\infty}S_{\nu}(t)E_1(|t-\tau_{\nu}|)dt \\
+&= \Lambda_{\nu}(S_{\nu}(t))
+\end{align}</script><p>我们就能得到</p>
+<script type="math/tex; mode=display">\begin{equation}
+J_{\nu}(\tau_{\nu}) = \Lambda_{\nu}(S_{\nu}(t))
+\end{equation}</script><p>上述推导中用到了几个代换</p>
+<script type="math/tex; mode=display">\begin{align}
+y &= -1/u \\
+E_n &= \int_1^{\infty}e^{-xy}\frac{dy}{y^n} \\
+\Lambda_{\nu}(f(t)) &= \frac12 \int_0^{\infty}f(t)E_1(|t-\tau_{\nu}|)dt
+\end{align}</script><p>同样的还有对Eddington流量的方程</p>
+<script type="math/tex; mode=display">H_{\nu}(\tau_{\nu}) = \frac12\int_0^{\infty}S_{\nu}(t)E_2(|t-\tau_{\nu}|)dt</script><h1 id="物质的辐射加速与辐射压"><a href="#物质的辐射加速与辐射压" class="headerlink" title="物质的辐射加速与辐射压"></a>物质的辐射加速与辐射压</h1><h2 id="物质的辐射加速度"><a href="#物质的辐射加速度" class="headerlink" title="物质的辐射加速度"></a>物质的辐射加速度</h2><p>我们前面提到光子在传输的过程中会被吸收，这样光子的动量就会被转移到该物质上面，这样会带来对这个物质的加速度，我们称之为辐射加速度。</p>
+<p>辐射场在单位时间穿过体积(dV=dAds，其中dA垂直于$\hat I$，对于general的dA，需要加一个u)被吸收的光子能量是</p>
+<script type="math/tex; mode=display">dE_{\nu}=\kappa_{\nu}\rho I_{\nu}d\Omega d\nu dtdAds</script><p>对应的动量改变量，由$p=E/c$</p>
+<script type="math/tex; mode=display">\begin{align}
+dp_{\nu}(\vec x, \hat n, t) &= \frac{udE_{\nu}}{c} = \frac{u}{c}\kappa_{\nu}\rho I_{\nu}d\Omega d\nu dt dA ds\\
+dp_{\nu}(\vec x, t) &= \frac{4\pi}{c}\kappa_{\nu}\rho H_{\nu} d\nu dt dA ds\\
+dp(\vec x, t) &= \frac{4\pi}{c}dtdAds\int_{0}^{\infty}\kappa_{\nu}\rho H_{\nu} d\nu
+\end{align}</script><p>我们上面的推导先对方向积分，将辐射强度转化成为辐射流量，再对频率积分。所以辐射力就是</p>
+<script type="math/tex; mode=display">F_{\rm rad} = \frac{dp}{dt} = \frac{4\pi}{c}\rho dAds\int_{0}^{\infty}\kappa_{\nu}\rho H_{\nu} d\nu = \rho dAds g_{\rm rad}</script><p>其中，辐射加速度是</p>
+<script type="math/tex; mode=display">g_{\rm rad} = \frac{dp}{dm} = \frac{dp}{\rho dA ds} = \frac{4\pi}{c}\int_{0}^{\infty}\kappa_{\nu}\rho H_{\nu} d\nu</script><p>我们注意到，辐射加速度依赖于物质的不透明度和辐射场的流量。</p>
+<h2 id="辐射压"><a href="#辐射压" class="headerlink" title="辐射压"></a>辐射压</h2><p>我们上面推导的辐射加速度也可以表现在辐射压中</p>
+<script type="math/tex; mode=display">\begin{align}
+\frac{dP_{\rm rad}(r)}{dr} &= -\rho(r)g_{\rm rad}(r)\\
+&= -\rho(r)\frac{4\pi}{c}\int_0^{\infty}k_{\nu}H_{\nu}d\nu \\ 
+&= -\rho(r)\frac{4\pi}{c}\int_0^{\infty}k_{\nu}\frac{dK_{\nu}}{d\tau_{\nu}}d\nu \\ 
+&= -\rho(r)\frac{4\pi}{c}\int_0^{\infty}k_{\nu}\frac{dK_{\nu}}{k_{\nu}\rho dr}d\nu \\ 
+&= \frac{d}{dr}\left[\frac{4\pi}{c}\int_0^{\infty}K_{\nu}d\nu\right]
+\end{align}</script><p>我们以另外一种方式推导除了辐射压的表达式</p>
+<script type="math/tex; mode=display">P_{\rm rad}(\nu) = \frac{4\pi}{c}K_{\nu}</script><p>这里我们用到了$H_{\nu} = dK_{\nu}/d\tau_{\nu}$，这是大光深近似中的结论。再次利用大光深近似，我们有$K_{\nu}\approx B_{\nu}/3$，则辐射压就是</p>
+<script type="math/tex; mode=display">P_{\rm rad} = \frac{4\sigma T^4}{3c}</script>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/astronomy/" rel="tag"># astronomy</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/21/note-stellar_astrophysics/stellar-2/" rel="next" title="《恒星物理》第二章：恒星形成">
+                <i class="fa fa-chevron-left"></i> 《恒星物理》第二章：恒星形成
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/21/note-stellar_astrophysics/stellar-4/" rel="prev" title="《恒星物理》第四章：恒星大气">
+                《恒星物理》第四章：恒星大气 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Kai Wang">
+            
+              <p class="site-author-name" itemprop="name">Kai Wang</p>
+              <p class="site-description motion-element" itemprop="description">Hi! Here is Kai's cosmos, Kosmos!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wkcosmology/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wkcosmology@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/wkcosmology" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:wkcosmology?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#辐射不透明度"><span class="nav-number">1.</span> <span class="nav-text">辐射不透明度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#辐射与物质的相互作用"><span class="nav-number">1.1.</span> <span class="nav-text">辐射与物质的相互作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光子吸收、不透明度和光深"><span class="nav-number">1.2.</span> <span class="nav-text">光子吸收、不透明度和光深</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恒星大气的不透明度来源"><span class="nav-number">1.3.</span> <span class="nav-text">恒星大气的不透明度来源</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#辐射场描述"><span class="nav-number">2.</span> <span class="nav-text">辐射场描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#辐射转移方程"><span class="nav-number">3.</span> <span class="nav-text">辐射转移方程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#光子的随机行走"><span class="nav-number">3.1.</span> <span class="nav-text">光子的随机行走</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#辐射转移方程-1"><span class="nav-number">3.2.</span> <span class="nav-text">辐射转移方程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#局部热动平衡（LTE）"><span class="nav-number">4.</span> <span class="nav-text">局部热动平衡（LTE）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LTE的三种定义"><span class="nav-number">4.1.</span> <span class="nav-text">LTE的三种定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恒星内部温度定义"><span class="nav-number">4.2.</span> <span class="nav-text">恒星内部温度定义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#辐射转移方程的解"><span class="nav-number">5.</span> <span class="nav-text">辐射转移方程的解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#平面平行近似"><span class="nav-number">5.1.</span> <span class="nav-text">平面平行近似</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#大光深的辐射转移"><span class="nav-number">6.</span> <span class="nav-text">大光深的辐射转移</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rosseland和其他的平均不透明度"><span class="nav-number">7.</span> <span class="nav-text">Rosseland和其他的平均不透明度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Schwarzschild-Milne-方程"><span class="nav-number">8.</span> <span class="nav-text">Schwarzschild-Milne 方程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物质的辐射加速与辐射压"><span class="nav-number">9.</span> <span class="nav-text">物质的辐射加速与辐射压</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#物质的辐射加速度"><span class="nav-number">9.1.</span> <span class="nav-text">物质的辐射加速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#辐射压"><span class="nav-number">9.2.</span> <span class="nav-text">辐射压</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {equationNumbers: { autoNumber: "AMS" }}
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
