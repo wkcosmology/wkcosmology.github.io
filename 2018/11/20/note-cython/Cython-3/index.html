@@ -125,13 +125,13 @@
 <meta property="og:site_name" content="kosmos">
 <meta property="og:description" content="本文主要介绍了Cython中的基本类型和函数的使用方法">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://wkcosmology.github.io/2018/image/5198F94FD368E02C0FC61F24B25985D6.jpg">
-<meta property="og:image" content="http://wkcosmology.github.io/2018/image/2F19E73B786B374D4C9286ACCDEB648E.jpg">
-<meta property="og:updated_time" content="2018-11-24T06:21:40.000Z">
+<meta property="og:image" content="http://wkcosmology.github.io/image/5198F94FD368E02C0FC61F24B25985D6.jpg">
+<meta property="og:image" content="http://wkcosmology.github.io/image/2F19E73B786B374D4C9286ACCDEB648E.jpg">
+<meta property="og:updated_time" content="2019-06-03T13:59:45.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Cython》第三章：深入理解Cython">
 <meta name="twitter:description" content="本文主要介绍了Cython中的基本类型和函数的使用方法">
-<meta name="twitter:image" content="http://wkcosmology.github.io/2018/image/5198F94FD368E02C0FC61F24B25985D6.jpg">
+<meta name="twitter:image" content="http://wkcosmology.github.io/image/5198F94FD368E02C0FC61F24B25985D6.jpg">
 
 
 
@@ -675,11 +675,11 @@
 <h2 id="函数和异常处理"><a href="#函数和异常处理" class="headerlink" title="函数和异常处理"></a>函数和异常处理</h2><ul>
 <li><p>Cython中的<code>cdef</code>和<code>cpdef</code>会返回非Python类型对象，所以在异常处理上面需要做一些特别处理，比如下面的例子</p>
   <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cpdef int divide_ints(int i, int j):</span><br><span class="line">    <span class="keyword">return</span> i / j</span><br></pre></td></tr></table></figure>
-<p>  我们运行的时候则会出现<img src="../../../../image/5198F94FD368E02C0FC61F24B25985D6.jpg" alt=""><br>  即它会显示出异常，但是并不能捕捉到这个异常，并且它也能返回一个值（虽然是个错误的值）</p>
+<p>  我们运行的时候则会出现<img src="/image/5198F94FD368E02C0FC61F24B25985D6.jpg" alt=""><br>  即它会显示出异常，但是并不能捕捉到这个异常，并且它也能返回一个值（虽然是个错误的值）</p>
 </li>
 <li><p>Cython中为<code>cdef</code>和<code>cpdef</code>提供了一个异常分句，能够让Python的异常处理机制捕捉到这个异常，语法如下</p>
   <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cpdef int divide_ints(int i, int j) except? -1:</span><br><span class="line">    <span class="keyword">return</span> i / j</span><br></pre></td></tr></table></figure>
-<p>  运行结果如下<img src="../../../../image/2F19E73B786B374D4C9286ACCDEB648E.jpg" alt=""><br>  注意到这里的<code>except</code>是使得异常能够被捕捉，<code>-1</code>是异常返回值(这一块还不清楚)</p>
+<p>  运行结果如下<img src="/image/2F19E73B786B374D4C9286ACCDEB648E.jpg" alt=""><br>  注意到这里的<code>except</code>是使得异常能够被捕捉，<code>-1</code>是异常返回值(这一块还不清楚)</p>
 </li>
 </ul>
 <h2 id="函数和embedsignature编译指令"><a href="#函数和embedsignature编译指令" class="headerlink" title="函数和embedsignature编译指令"></a>函数和<code>embedsignature</code>编译指令</h2><ul>
