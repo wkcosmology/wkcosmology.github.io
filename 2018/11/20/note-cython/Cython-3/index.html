@@ -127,7 +127,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://wkcosmology.github.io/image/5198F94FD368E02C0FC61F24B25985D6.jpg">
 <meta property="og:image" content="http://wkcosmology.github.io/image/2F19E73B786B374D4C9286ACCDEB648E.jpg">
-<meta property="og:updated_time" content="2019-06-03T13:59:45.761Z">
+<meta property="og:updated_time" content="2019-07-04T03:14:46.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Cython》第三章：深入理解Cython">
 <meta name="twitter:description" content="本文主要介绍了Cython中的基本类型和函数的使用方法">
@@ -669,7 +669,8 @@
 </li>
 </ul>
 <h2 id="Cython中的inline函数"><a href="#Cython中的inline函数" class="headerlink" title="Cython中的inline函数"></a>Cython中的inline函数</h2><ul>
-<li>Cython中也支持inline函数，比如：  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cdef inline long c_fact(long a):</span><br><span class="line">    <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+<li><p>Cython中也支持inline函数，比如：</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cdef inline long c_fact(long a):</span><br><span class="line">    <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="函数和异常处理"><a href="#函数和异常处理" class="headerlink" title="函数和异常处理"></a>函数和异常处理</h2><ul>
@@ -734,7 +735,8 @@
   <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cdef enum PRIMARIES:</span><br><span class="line">    RED = <span class="number">1</span></span><br><span class="line">    YELLOW = <span class="number">3</span></span><br><span class="line">    BLUE = <span class="number">5</span></span><br><span class="line">    </span><br><span class="line">cdef enum SECONDARIES:</span><br><span class="line">    ORANGE, GREEN, PURPLE</span><br></pre></td></tr></table></figure>
 <p>  我们也可以将上面的<code>cdef</code>替换成为<code>ctypedef</code></p>
 </li>
-<li>我们可以使用匿名的enum来定义一些全局常量  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cdef enum:</span><br><span class="line">    GLOBAL_SEED = <span class="number">37</span></span><br></pre></td></tr></table></figure>
+<li><p>我们可以使用匿名的enum来定义一些全局常量</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cdef enum:</span><br><span class="line">    GLOBAL_SEED = <span class="number">37</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="使用ctypedef的类型别名"><a href="#使用ctypedef的类型别名" class="headerlink" title="使用ctypedef的类型别名"></a>使用<code>ctypedef</code>的类型别名</h1><ul>
@@ -844,7 +846,8 @@
 </table>
 </div>
 <ul>
-<li>Cython中的宏支持条件判断，这个可以出现在程序的任何部分出现，并且可以嵌套，如下  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">IF UNAME_SYSNAME == <span class="string">"Windows"</span>:</span><br><span class="line">    <span class="comment"># ...Windows-specific code...</span></span><br><span class="line">ELIF UNAME_SYSNAME == <span class="string">"Darwin"</span>:</span><br><span class="line">    <span class="comment"># ...Mac-specific code... </span></span><br><span class="line">ELIF UNAME_SYSNAME == <span class="string">"Linux"</span>:</span><br><span class="line">    <span class="comment"># ...Linux-specific code... </span></span><br><span class="line">ELSE:</span><br><span class="line">    <span class="comment"># ...other OS...</span></span><br></pre></td></tr></table></figure>
+<li><p>Cython中的宏支持条件判断，这个可以出现在程序的任何部分出现，并且可以嵌套，如下</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">IF UNAME_SYSNAME == <span class="string">"Windows"</span>:</span><br><span class="line">    <span class="comment"># ...Windows-specific code...</span></span><br><span class="line">ELIF UNAME_SYSNAME == <span class="string">"Darwin"</span>:</span><br><span class="line">    <span class="comment"># ...Mac-specific code... </span></span><br><span class="line">ELIF UNAME_SYSNAME == <span class="string">"Linux"</span>:</span><br><span class="line">    <span class="comment"># ...Linux-specific code... </span></span><br><span class="line">ELSE:</span><br><span class="line">    <span class="comment"># ...other OS...</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="利用Cython来连接Python2和Python3代码"><a href="#利用Cython来连接Python2和Python3代码" class="headerlink" title="利用Cython来连接Python2和Python3代码"></a>利用Cython来连接Python2和Python3代码</h1><ul>
@@ -995,7 +998,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
