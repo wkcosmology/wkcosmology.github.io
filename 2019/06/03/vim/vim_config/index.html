@@ -132,7 +132,7 @@
 <meta property="og:image" content="http://wkcosmology.github.io/image/15631606429989.jpg">
 <meta property="og:image" content="http://wkcosmology.github.io/image/15631634208734.jpg">
 <meta property="og:image" content="http://wkcosmology.github.io/image/15631634373212.jpg">
-<meta property="og:updated_time" content="2019-07-15T04:22:40.584Z">
+<meta property="og:updated_time" content="2019-07-15T06:37:42.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的vim配置">
 <meta name="twitter:description" content="这篇文章主要介绍我是如何配置我的vim的，也是警戒自己以后不要再随便折腾vim了，现在已经很好了。">
@@ -432,17 +432,13 @@
 <li>在YCM的文件夹中执行<code>git submodule update --init</code>（注意没有<code>recursive</code>）；</li>
 <li><p>编辑YCM包中<code>third_party/ycmd/.gitmodules</code>文件，在<code>[submodule &quot;third_party/go/src/golang.org/x/tools&quot;]</code>位置处，将</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span> = https://go.googlesource.com/tools</span><br><span class="line"><span class="attr">ignore</span> = dirty</span><br></pre></td></tr></table></figure>
+<p>修改成为</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = https:<span class="regexp">//gi</span>thub.com<span class="regexp">/golang/</span>tools</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再执行<code>git submodule update --init --recursive</code>，这次加上<code>recursive</code></p>
 </li>
 </ul>
 </li>
-</ol>
-<pre><code>修改成为
-
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span> = https://github.com/golang/tools</span><br></pre></td></tr></table></figure>
-
-
-- 再执行`git submodule update --init --recursive`，这次加上`recursive`
-</code></pre><ol>
 <li>YCM是需要编译的，所以我们在YCM的文件夹中执行<code>python3 install.py --clang-completer</code>，其中<code>--clang-completer</code>是为了支持c-family的支持，其他如go语言的补全支持是其他命令。这里需要注意的一点是YCM和Anaconda的python之间好像有点不融洽，所以如果你用Anaconda的Python编译出来YCM不能用的话，建议使用系统的Python（如果你已经在Anaconda的环境中，可以使用<code>conda deactivate</code>来退出环境。）</li>
 <li>我们需要在vim配置文件加入YCM的配置文件路径，即<code>let g:ycm_global_ycm_extra_conf = &quot;/Users/wangk/.ycm_extra_conf.py&quot;</code>，对于Spacevim用户来说，我们是加在<code>~/.Spacevim.d/autoload/myspacevim.vim</code>文件中；</li>
 <li><p>为了使得YCM能够补全第三方库，比如numpy，pandas，甚至你自己编写的库，我们需要在YCM的配置文件，也就是上面提到的文件，中加入一些路径设置。我们在YCM配置文件<code>.ycm_extra_conf.py</code>中<code>interpreter_path</code>变量所在的位置中加入python解释器的位置，并且也加入第三方库的位置，比如对于我而言是</p>
