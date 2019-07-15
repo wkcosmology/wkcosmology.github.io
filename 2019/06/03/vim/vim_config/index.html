@@ -433,7 +433,7 @@
 <li><p>编辑YCM包中<code>third_party/ycmd/.gitmodules</code>文件，在<code>[submodule &quot;third_party/go/src/golang.org/x/tools&quot;]</code>位置处，将</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span> = https://go.googlesource.com/tools</span><br><span class="line"><span class="attr">ignore</span> = dirty</span><br></pre></td></tr></table></figure>
 <p>修改成为</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = https:<span class="regexp">//gi</span>thub.com<span class="regexp">/golang/</span>tools</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span> = https://github.com/golang/tools</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>再执行<code>git submodule update --init --recursive</code>，这次加上<code>recursive</code></p>
 </li>
