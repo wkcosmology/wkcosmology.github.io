@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="kosmos">
 <meta property="og:description" content="这里主要简单介绍一下欧拉坐标和拉格朗日坐标">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-28T04:37:29.030Z">
+<meta property="og:updated_time" content="2019-12-28T04:39:25.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="欧拉坐标和拉格朗日坐标">
 <meta name="twitter:description" content="这里主要简单介绍一下欧拉坐标和拉格朗日坐标">
@@ -744,7 +744,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -797,6 +797,27 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {equationNumbers: { autoNumber: "AMS" }}
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
