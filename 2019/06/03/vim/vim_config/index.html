@@ -132,7 +132,7 @@
 <meta property="og:image" content="http://wkcosmology.github.io/image/15631606429989.jpg">
 <meta property="og:image" content="http://wkcosmology.github.io/image/15631634208734.jpg">
 <meta property="og:image" content="http://wkcosmology.github.io/image/15631634373212.jpg">
-<meta property="og:updated_time" content="2019-07-15T06:37:42.381Z">
+<meta property="og:updated_time" content="2019-07-18T02:58:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的vim配置">
 <meta name="twitter:description" content="这篇文章主要介绍我是如何配置我的vim的，也是警戒自己以后不要再随便折腾vim了，现在已经很好了。">
@@ -348,7 +348,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-03T21:50:49+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-03T21:50:49-04:00">
                 2019-06-03
               </time>
             
@@ -433,7 +433,7 @@
 <li><p>编辑YCM包中<code>third_party/ycmd/.gitmodules</code>文件，在<code>[submodule &quot;third_party/go/src/golang.org/x/tools&quot;]</code>位置处，将</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span> = https://go.googlesource.com/tools</span><br><span class="line"><span class="attr">ignore</span> = dirty</span><br></pre></td></tr></table></figure>
 <p>修改成为</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span> = https://github.com/golang/tools</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = https:<span class="regexp">//gi</span>thub.com<span class="regexp">/golang/</span>tools</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>再执行<code>git submodule update --init --recursive</code>，这次加上<code>recursive</code></p>
 </li>
@@ -493,7 +493,7 @@
 <li><p>easymotion后：<br> <img src="/image/15631634373212.jpg" alt=""></p>
 </li>
 </ol>
-<h1 id="本文章持续更新中。。。"><a href="#本文章持续更新中。。。" class="headerlink" title="本文章持续更新中。。。"></a>本文章持续更新中。。。</h1><h1 id="附录：我在Spacevim上的配置和改动"><a href="#附录：我在Spacevim上的配置和改动" class="headerlink" title="附录：我在Spacevim上的配置和改动"></a>附录：我在Spacevim上的配置和改动</h1><p>Spacevim在两个地方提供了可供用户自行配置：</p>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h1 id="本文章持续更新中。。。"><a href="#本文章持续更新中。。。" class="headerlink" title="本文章持续更新中。。。"></a>本文章持续更新中。。。</h1><h1 id="附录：我在Spacevim上的配置和改动"><a href="#附录：我在Spacevim上的配置和改动" class="headerlink" title="附录：我在Spacevim上的配置和改动"></a>附录：我在Spacevim上的配置和改动</h1><p>Spacevim在两个地方提供了可供用户自行配置：</p>
 <h2 id="toml个人配置"><a href="#toml个人配置" class="headerlink" title="toml个人配置"></a>toml个人配置</h2><p>第一个添加个人配置的地方在：<code>~/.Spacevim.d/init.toml</code></p>
 <blockquote>
 <p> TOML是一种旨在成为一个小规模、易于使用的语义化的配置文件格式，它被设计为可以无二义性的转换为一个哈希表。<br>“TOML”这个名字是“Tom’s Obvious, Minimal Language（汤姆的浅显的、极简的语言）”的首字母略写词[2]。“Tom”指它的作者Tom Preston-Werner。<br>TOML的语法广泛地由key = “value”、[节名]与#注释构成。<br>它支持以下数据类型：字符串、整形、浮点型、布尔型、日期时间、数组和图表。 </p>
@@ -540,6 +540,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/11/blog-python/matplotlib_by_examples/" rel="prev" title="Matplotlib by examples">
+                Matplotlib by examples <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -618,7 +622,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -629,7 +633,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -701,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插件介绍"><span class="nav-number">1.</span> <span class="nav-text">插件介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动补全插件：YouCompleteMe"><span class="nav-number">1.1.</span> <span class="nav-text">自动补全插件：YouCompleteMe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数签名显示插件-Shougo-echodoc-vim"><span class="nav-number">1.2.</span> <span class="nav-text">函数签名显示插件-Shougo/echodoc.vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模糊搜索插件-FZF"><span class="nav-number">1.3.</span> <span class="nav-text">模糊搜索插件-FZF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件管理插件-vimfiler"><span class="nav-number">1.4.</span> <span class="nav-text">文件管理插件-vimfiler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#框架管理插件-tagbar"><span class="nav-number">1.5.</span> <span class="nav-text">框架管理插件-tagbar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#括号快捷操作插件-vim-surround"><span class="nav-number">1.6.</span> <span class="nav-text">括号快捷操作插件-vim-surround</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速跳转插件-vim-easymotion"><span class="nav-number">1.7.</span> <span class="nav-text">快速跳转插件-vim-easymotion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本文章持续更新中。。。"><span class="nav-number">2.</span> <span class="nav-text">本文章持续更新中。。。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录：我在Spacevim上的配置和改动"><span class="nav-number">3.</span> <span class="nav-text">附录：我在Spacevim上的配置和改动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#toml个人配置"><span class="nav-number">3.1.</span> <span class="nav-text">toml个人配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim个人配置"><span class="nav-number">3.2.</span> <span class="nav-text">vim个人配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插件介绍"><span class="nav-number">1.</span> <span class="nav-text">插件介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动补全插件：YouCompleteMe"><span class="nav-number">1.1.</span> <span class="nav-text">自动补全插件：YouCompleteMe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数签名显示插件-Shougo-echodoc-vim"><span class="nav-number">1.2.</span> <span class="nav-text">函数签名显示插件-Shougo/echodoc.vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模糊搜索插件-FZF"><span class="nav-number">1.3.</span> <span class="nav-text">模糊搜索插件-FZF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件管理插件-vimfiler"><span class="nav-number">1.4.</span> <span class="nav-text">文件管理插件-vimfiler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#框架管理插件-tagbar"><span class="nav-number">1.5.</span> <span class="nav-text">框架管理插件-tagbar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#括号快捷操作插件-vim-surround"><span class="nav-number">1.6.</span> <span class="nav-text">括号快捷操作插件-vim-surround</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速跳转插件-vim-easymotion"><span class="nav-number">1.7.</span> <span class="nav-text">快速跳转插件-vim-easymotion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.8.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本文章持续更新中。。。"><span class="nav-number">2.</span> <span class="nav-text">本文章持续更新中。。。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录：我在Spacevim上的配置和改动"><span class="nav-number">3.</span> <span class="nav-text">附录：我在Spacevim上的配置和改动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#toml个人配置"><span class="nav-number">3.1.</span> <span class="nav-text">toml个人配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim个人配置"><span class="nav-number">3.2.</span> <span class="nav-text">vim个人配置</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Comic Sans MS:300,300italic,400,400italic,700,700italic|monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="astronomy,note,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文主要介绍了描述恒星内部结构的方程组，以及多方模型下恒星结构方程的求解，最后还简单介绍了变星和星震的相关知识。">
+<meta name="keywords" content="astronomy,note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《恒星物理》第五章：恒星内部结构">
+<meta property="og:url" content="http://wkcosmology.github.io/2018/12/21/note-stellar_astrophysics/stellar-5/index.html">
+<meta property="og:site_name" content="kosmos">
+<meta property="og:description" content="本文主要介绍了描述恒星内部结构的方程组，以及多方模型下恒星结构方程的求解，最后还简单介绍了变星和星震的相关知识。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-12-22T03:24:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《恒星物理》第五章：恒星内部结构">
+<meta name="twitter:description" content="本文主要介绍了描述恒星内部结构的方程组，以及多方模型下恒星结构方程的求解，最后还简单介绍了变星和星震的相关知识。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wkcosmology.github.io/2018/12/21/note-stellar_astrophysics/stellar-5/">
+
+
+
+
+
+  <title>《恒星物理》第五章：恒星内部结构 | kosmos</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kosmos</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            links
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wkcosmology.github.io/2018/12/21/note-stellar_astrophysics/stellar-5/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kosmos">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《恒星物理》第五章：恒星内部结构</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-21T22:20:41-05:00">
+                2018-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/" itemprop="url" rel="index">
+                    <span itemprop="name">Note</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/StellarAstrophysics/" itemprop="url" rel="index">
+                    <span itemprop="name">StellarAstrophysics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  本文主要介绍了描述恒星内部结构的方程组，以及多方模型下恒星结构方程的求解，最后还简单介绍了变星和星震的相关知识。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我们在这一章将研究恒星内部的结构，在此之前，我们需要作出以下几条假设</p>
+<ol>
+<li>我们现在研究的恒星处于一个稳定的阶段，各个参数都不随着时间而改变；</li>
+<li>我们研究的恒星是一个球对称体系；</li>
+<li>我们研究的恒星是一个孤立的简单体系，没有与外界的相互作用</li>
+</ol>
+<h1 id="恒星的结构方程"><a href="#恒星的结构方程" class="headerlink" title="恒星的结构方程"></a>恒星的结构方程</h1><p>恒星内部的结构主要由四个方程决定，它们分别是流体静力学平衡方程、质量守恒方程、能量传输方程和能量守恒方程。</p>
+<h2 id="四个基本方程"><a href="#四个基本方程" class="headerlink" title="四个基本方程"></a>四个基本方程</h2><p><strong>流体静力学平衡方程：</strong></p>
+<p>我们首先将牛顿第二定律应用在恒星体系上</p>
+<script type="math/tex; mode=display">\rho\frac{d^2r}{dt^2} = -\frac{\rho GM}{r^2} - \frac{dP}{dr}</script><p>然后在利用我们的稳态假设，所有对时间的导数都为0，那么我们就得到了流体静力学平衡方程：</p>
+<script type="math/tex; mode=display">\frac{dP(r)}{dr} = -\frac{\rho(r)GM(r)}{r^2}</script><p><strong>质量守恒方程：</strong></p>
+<p>质量守恒方程实际上就给出了密度的定义而已：</p>
+<script type="math/tex; mode=display">\frac{dM(r)}{dr} = 4\pi r^2\rho(r)</script><p><strong>能量传输方程：</strong><br>在第三章中，我们研究了大光深处的辐射转移方程，得到了Eddington流量和黑体辐射之间的关系：</p>
+<script type="math/tex; mode=display">H(r) = -\frac{1}{3k_R\rho}\frac{dB}{dT}\frac{dT}{dr}</script><p>同时，Eddington流量的定义与光度有关系：</p>
+<script type="math/tex; mode=display">H(r) = \frac{1}{4\pi}\frac{L(r)}{4\pi r^2}</script><p>（我们应该注意到，这时候$H(r)$不再是常数，因为我们研究的是恒星内部）黑体辐射的积分是依赖于温度的函数</p>
+<script type="math/tex; mode=display">B(r) = \frac{\sigma T^4}{\pi}</script><p>综合以上，我们可以得到</p>
+<script type="math/tex; mode=display">\frac{dT(r)}{dr} = -\frac{3k_R\rho}{64\pi r^2\sigma T^3}L(r)</script><p>上面的公式只是考虑了辐射传热的能量传输方程。我们可以定义温度梯度来改写能量传输方程</p>
+<script type="math/tex; mode=display">\nabla=\frac{d\ln T}{d\ln P}</script><p>对于辐射传热来说</p>
+<script type="math/tex; mode=display">\nabla_{\rm rad}=\frac{d\ln T}{d\ln P} = \frac{3k_R}{64\pi r^2g}\frac{P}{\sigma T^4}L(r)</script><p>其中，$g=GM/r^2$，我们注意到，上面的推导用到了流体静力学平衡方程。能量传输方程描述了由于能量传输机制导致的温度，也可以理解为不同的温度梯度会导致不同的能量传输机制。另外一点需要注意的是，我们用到了大光深近似下的Eddington流量的表达式，这时候表示辐射基本上是全部被物质吸收再重新发射出来的，如果我们考虑光深很小的情况下，就会发现温度梯度为零，这时候就是一个全局热平衡的状态了。</p>
+<p><strong>能量守恒方程：</strong></p>
+<p>我们定义单位质量的产能率为$\epsilon$，那么我们有能量守恒方程</p>
+<script type="math/tex; mode=display">\frac{dL(r)}{dr} = 4\pi r^2\rho(r)\epsilon(r)</script><h2 id="其他需要的方程"><a href="#其他需要的方程" class="headerlink" title="其他需要的方程"></a>其他需要的方程</h2><p>以上我们得到了四个微分方程</p>
+<script type="math/tex; mode=display">\begin{align}
+\frac{dP(r)}{dr} &= -\frac{\rho(r)GM(r)}{r^2} \\
+\frac{dM(r)}{dr} &= 4\pi r^2\rho(r) \\
+\frac{dT(r)}{dr} &= -\frac{3k_R\rho}{64\pi r^2\sigma T^3}L(r) \\
+\frac{dL(r)}{dr} &= 4\pi r^2\rho(r)\epsilon(r)
+\end{align}</script><p>总共有$P, \rho, M, T, L$五个未知量，所以我们还需要其他的方程</p>
+<ul>
+<li>状态方程：$P(\rho, T, X)$</li>
+<li>不透明度方程：$k_R(\rho, T, X_i)$</li>
+<li>产能方程：$\epsilon(\rho, T, X_i)$</li>
+</ul>
+<p>为了求解方程，我们还需要边界条件</p>
+<ul>
+<li>$L(r\rightarrow 0) = 0$</li>
+<li>$M(r\rightarrow 0) = 0$</li>
+<li>$P(r\rightarrow R_*) = 0$</li>
+<li>$\rho(r\rightarrow R_*) = 0$</li>
+<li>$T(r\rightarrow R_*) = T_{\rm eff}$</li>
+</ul>
+<p>为了方便，有时候我们会讲上述四个方程写成质量的函数</p>
+<script type="math/tex; mode=display">\begin{align}
+\frac{dP(M)}{dM} &= -\frac{GM}{r^4(M)} \\
+\frac{dr(M)}{dM} &= \frac{1}{4\pi r^2\rho(M)} \\
+\frac{dT(M)}{dM} &= -\frac{3k_R}{256\pi^2 r^4\sigma T^3}L(M) \\
+\frac{dL(M)}{dM} &= \epsilon(M)
+\end{align}</script><h1 id="恒星中的能量传输"><a href="#恒星中的能量传输" class="headerlink" title="恒星中的能量传输"></a>恒星中的能量传输</h1><p>恒星中的四种能量传输方式：辐射，对流，传导和中微子。其中，中微子传输能量认为可以直接是一个能量sink，因为中微子能量传输的过程中很难同其他物质相互作用</p>
+<h2 id="恒星内部的单色辐射能流"><a href="#恒星内部的单色辐射能流" class="headerlink" title="恒星内部的单色辐射能流"></a>恒星内部的单色辐射能流</h2><p>恒星内部的产能部分一般是位于恒星的核心部分，当我们研究外围的时候，由于没有产能，所以光度$L(r)=4\pi R^2\sigma T^4_{\rm eff}$是个常数，能量传输方程可以写成</p>
+<script type="math/tex; mode=display">\frac{dT}{dr} = -\frac{3k_R\rho R^2T^4_{\rm eff}}{16 r^2 T^3}</script><p>另外，对于普朗克函数，我们有</p>
+<script type="math/tex; mode=display">\frac{dB_{\nu}}{dT} = \frac{2k^3T^2}{h^2c^2}\left[\frac{u^4e^u}{(e^u - 1)^2}\right]</script><p>其中$u\equiv h\nu/kT$。所以，我们可以写出爱丁顿流量表达式</p>
+<script type="math/tex; mode=display">H_{\nu} = -\frac{1}{3k_R\rho}\frac{dB}{dT}\frac{dT}{dr} =\frac{k^3}{8h^2c^2}\frac{k_R}{k_{\nu}}\frac{T_{\rm eff}^4}{T^3}\left(\frac{R}{r}\right)^2\mathcal{P}(u)</script><p>其中</p>
+<script type="math/tex; mode=display">\mathcal{P}(u) = \frac{u^4e^u}{(e^u - 1)^2}</script><p>$\mathcal{P}(u)$的最大值在$u\approx 3.83$左右<br>$H_{\nu}$对光子频率的依赖体现在不透明度$k_{\nu}$</p>
+<h2 id="传导"><a href="#传导" class="headerlink" title="传导"></a>传导</h2><p>只有在电子的平均自由程和温度变化的尺度能提并论的时候，热传导才会显得重要，所以热传导一般在白矮星中更重要。热传导的正比于温度梯度，其对应的Eddington流量可以写成</p>
+<script type="math/tex; mode=display">H_{\rm cond} = -\frac{4\sigma T^3}{3\pi k_{\rm cond}\rho}\frac{dT}{dr}</script><p>同样的，辐射传热的Eddington流量是</p>
+<script type="math/tex; mode=display">H_{\rm rad} = -\frac{4\sigma T^3}{3\pi k_{\rm rad}\rho}\frac{dT}{dr}</script><p>所以，二者的总和是</p>
+<script type="math/tex; mode=display">H_{\rm tot} = -\frac{4\sigma T^3}{3\pi k_{\rm tot}\rho}\frac{dT}{dr}</script><p>其中</p>
+<script type="math/tex; mode=display">\frac{1}{k_{\rm tot}}= \frac{1}{k_{\rm rad}} + \frac{1}{k_{\rm cond}}</script><p>我们注意到考虑了传导之后，总的不透明度减小了，因为能量传输效率提升了。</p>
+<h2 id="对流"><a href="#对流" class="headerlink" title="对流"></a>对流</h2><p>当恒星内部的温度梯度或者不透明度过大，那么辐射传热的效率就不足以将热量传送出去，这时候就需要对流机制来进行热量传输，对应的条件称之为Schwarzschild criteria。</p>
+<p>从定性角度考虑，当某种元素是部分电离的（也就是没有完全被电离），这时候能级跃迁较为丰富，不透明度也会更大，那么也就更容易发生对流，比如在冷的恒星的电离区；对于热的恒星而言，它的部分电离区在恒星外围的地方，这些地方的温度梯度一般很小，所以很难发生对流。</p>
+<h3 id="对流的Schwarzschild判据"><a href="#对流的Schwarzschild判据" class="headerlink" title="对流的Schwarzschild判据"></a>对流的Schwarzschild判据</h3><p>假设有一个在$r$处的流体元，它运动到$r+\Delta r$处，这个流体元为了和周围环境保持静力学平衡，必须压强和周围环境一样，这时候它的密度会发生变化，并且它周围环境的密度也变化了。如果这两个密度的变化使得流体元返回原来的位置，那么这就是一个稳定的状态，也就不会发生对流，如果流体元会继续向一个方向移动，那么就是一个run away过程，那么就会发生对流。我们近似地认为上升或者下降的体积元在运动的过程中没有与外界的热量交换，所以我们认为这是一个绝热过程。</p>
+<p>我们可以计算得到体积元的密度变化</p>
+<script type="math/tex; mode=display">\Delta\rho_{\rm cell} = \left(\frac{d\rho}{dr}\right)_{\rm adi}\Delta r < 0</script><p>同样，周围介质的密度变化（我们近似地认为周围物质的能量传递主要是通过辐射）</p>
+<script type="math/tex; mode=display">\Delta\rho_{\rm med} = \left(\frac{d\rho}{dr}\right)_{\rm rad}\Delta r < 0</script><p>所以对流发生的条件是</p>
+<script type="math/tex; mode=display">\left(\frac{d\rho}{dr}\right)_{\rm rad} > \left(\frac{d\rho}{dr}\right)_{\rm adi}</script><p>我们假设可以用理想气体状态方程来描述介质</p>
+<script type="math/tex; mode=display">P\propto \rho T</script><p>对于体积元，我们认为它经过了一个绝热过程，所以我们有</p>
+<script type="math/tex; mode=display">P\propto \rho^{\gamma}, ~~~~~\gamma=c_p/c_v</script><p>我们现在再来看一下对流发生的条件</p>
+<script type="math/tex; mode=display">\begin{align}
+\left(\frac{d\ln\rho}{dr}\right)_{\rm rad} &= \left( \frac { d \ln P } { \mathrm { d } r } \right) _ { \mathrm { rad } } - \left( \frac { \mathrm { d } \ln T } { \mathrm { d } r } \right) _ { \mathrm { rad } }\\
+\left( \frac { \mathrm { d } \ln \rho } { \mathrm { d } r } \right) _ { \mathrm { adi } } &= \frac { 1 } { \gamma } \left( \frac { \mathrm { d } \ln P } { \mathrm { d } r } \right) _ { \mathrm { adi } }
+\end{align}</script><p>我们认为对流的体积元运动得足够慢，所以它与外界的压强是一样的，那么压强梯度也是一样的</p>
+<script type="math/tex; mode=display">\left(\frac{d\ln P}{dr}\right)_{\rm adi} = \left(\frac{d\ln P}{dr}\right)_{\rm rad}</script><p>将上面几个公式代入对流发生的条件，我们有</p>
+<script type="math/tex; mode=display">\frac{\gamma - 1}{\gamma} < \frac{\left(\frac{d\ln T}{dr}\right)_{\rm rad}}{\left(\frac{d\ln P}{dr}\right)_{\rm rad}} = \left(\frac{d\ln T}{d\ln P}\right)_{\rm rad}=\nabla_{\rm rad}</script><p>我们可以计算出绝热条件下的温度梯度</p>
+<script type="math/tex; mode=display">\begin{align}
+\nabla_{\rm adi} &\equiv \left(\frac{d\ln T}{d\ln P}\right)_{\rm adi}\\
+&= \left(\frac{\partial\ln T}{\partial\ln P}\right)_{\rm adi} + \left(\frac{\partial\ln T}{\partial\ln \rho}\right)_{\rm adi}\left(\frac{d\ln \rho}{d\ln P}\right)_{\rm adi}\\
+&= \frac{\gamma - 1}{\gamma}
+\end{align}</script><p>所以我们可以将对流条件写成</p>
+<script type="math/tex; mode=display">\nabla_{\rm adi} < \nabla_{\rm rad}</script><p>这个公式表示对流发生的条件是辐射传热条件下的温度梯度大于绝热条件下的温度梯度。</p>
+<p>利用之前推导的$\nabla_{\rm rad}的形式$，我们可以得到</p>
+<script type="math/tex; mode=display">\nabla_{\rm rad} = \frac{3k_R}{64\pi r^2g}\frac{P}{\sigma T^4}L(r) > \nabla_{\rm adi} = \frac{\gamma - 1}{\gamma}</script><p>从上面的公式，我们可以看出，增加不透明度或者光度都会增加对流发生的可能性</p>
+<h3 id="mixing-length-理论"><a href="#mixing-length-理论" class="headerlink" title="mixing-length 理论"></a>mixing-length 理论</h3><p>对流是一个非常复杂的物理过程，我们这里介绍一个非常粗糙的描述对流的理论—mixing-length理论。我们需要注意的是mixing-length理论是一个非常近似的理论，基本上都不能称之为一个理论，而是一种类似于量纲分析的方法。</p>
+<p>如果我们能够得到一个对对流传热的定量描述，我们就可以把Eddington流量写成辐射传热和对流传热的和的形式</p>
+<script type="math/tex; mode=display">H(r) = \frac{1}{4\pi}\left(\frac{L(r)}{4\pi r^2}\right) = H_{\rm rad}(r) + H_{\rm conv}(r)</script><p>我们在前面将体积元认为是绝热的，实际上并非如此，体积元在上升的过程中有一部分能量损失，所以我们有$\nabla_{\rm cell} \ge \nabla_{\rm adi}$，另外，实际上周围介质并不是仅仅通过辐射传热，还有对流，所以有$\nabla_{\rm rad} \ge \nabla_{\rm med}$。所以，我们有</p>
+<script type="math/tex; mode=display">\nabla_{\rm rad} \ge \nabla_{\rm med} \ge \nabla_{\rm cell} \ge \nabla_{\rm adi}</script><p>所以，对流发生的更严格的条件是</p>
+<script type="math/tex; mode=display">\nabla_{\rm med} \ge \nabla_{\rm cell}</script><p>下面开始利用mixing-length理论来推导对流产生的能量流。我们认为对流传能的过程是这样的：一个流体元在满足Schwarzschild条件下向外运动，这个过程是一个绝热过程，运动一段距离之后，不再满足Schwarzschild条件了，这时候这个流体元与周围介质有一个温度差，然后就可以通过一个等压过程将能量传递给周围介质。</p>
+<p>我们可以得到流体元运动到终点的时候，其温度和周围介质的温度差别是</p>
+<script type="math/tex; mode=display">\Delta T = T_{\rm cell} - T_{\rm med}\approx\left[\left(-\frac{dT}{dr}\right)_{\rm med} - \left(-\frac{dT}{dr}\right)_{\rm cell}\right]\Delta r</script><p>而体积元在解离的时候释放出来的能量（等压过程）</p>
+<script type="math/tex; mode=display">E = \rho c_p\Delta T</script><p>所以我们可以得到对流产生的能量流量是</p>
+<script type="math/tex; mode=display">\begin{align}
+F_{\rm conv} &= 4\pi H_{\rm conv} \\
+&= \rho c_p\bar V\Delta T \\
+&= \rho c_p\bar V\left[\left(-\frac{dT}{dr}\right)_{\rm med} - \left(-\frac{dT}{dr}\right)_{\rm cell}\right]\Delta r
+\end{align}</script><p>接下来我们需要计算上面公式中的未知量，首先是温度梯度，我们有</p>
+<script type="math/tex; mode=display">\frac{dT}{dr} = T\frac{d\ln T}{dr} = T\frac{d\ln T}{d\ln P}\frac{d\ln P}{dr}</script><p>利用流体静力学平衡，我们可以有</p>
+<script type="math/tex; mode=display">\frac{d\ln P}{dr} =-\frac{\rho g}{P} = - \frac{1}{\mathcal{H}}</script><p>其中引入压力标高$\mathcal{H} = \frac{P}{\rho g}$。所以我们可以得到温度梯度</p>
+<script type="math/tex; mode=display">\begin{align}
+\left(\frac{dT}{dr}\right)_{\rm med} &= -\frac{T}{\mathcal H}\nabla_{\rm med} \\
+\left(\frac{dT}{dr}\right)_{\rm cell} &= -\frac{T}{\mathcal H}\nabla_{\rm cell}
+\end{align}</script><p>同时，我们引入mixing-length $l = 2\Delta r$，这个参数描述了一个流体元在消散之前走过的路程。这时候，对流的Eddington流量是</p>
+<script type="math/tex; mode=display">H_{\rm conv} = \frac{\rho c_p \bar V T}{8\pi}\left(\frac{l}{\mathcal H}\right)(\nabla_{\rm med} - \nabla_{\rm cell})</script><p>接下来我们还需要对平均速度$\bar V$作一个估算，一个流体元单位体积受到的力是浮力减去引力，也就是</p>
+<script type="math/tex; mode=display">f = (\rho_{\rm med} - \rho_{\rm cell})g =-\Delta\rho g</script><p>由理想气体状态方程$P\propto \rho T\rightarrow \Delta P =\rho\Delta T + \Delta\rho T$，再由于压强不变，$\Delta P=0$，我们可以得到$\Delta\rho = -\rho\Delta T / T$，再结合温度梯度公式，我们可以得到单位体积受力</p>
+<script type="math/tex; mode=display">f = \frac{\rho g}{\mathcal{H}}(\nabla_{\rm med} - \nabla_{\rm cell})\Delta r</script><p>我们假设体积元被加速的路程是$l/2$，所以做功</p>
+<script type="math/tex; mode=display">W = \int_0^{l/2}f(\Delta r)d\Delta r</script><p>我们再次假设做功的$1/2$都被用于推进体积元（另一半是损耗掉了）</p>
+<script type="math/tex; mode=display">\frac12\rho\bar V^2 = \frac{W}{2}</script><p>所以，我们得到平均速度</p>
+<script type="math/tex; mode=display">\bar V = \left(\frac{\rho\mathcal{H}}{8}\right)^{1/2} \left(\frac{l}{\mathcal{H}}\right) (\nabla_{\rm med} - \nabla_{\rm cell})^{1/2}</script><p>则mixing length theory对对流流量的估计是</p>
+<script type="math/tex; mode=display">H_{\rm conv} = \frac{\rho c_pT}{8\pi}\left(\frac{g\mathcal{H}}{8}\right)^{1/2}\left(\frac{l}{\mathcal{H}}\right)^{2}(\nabla_{\rm med} - \nabla_{\rm cell})^{3/2}</script><p>我们需要指出的是，这里面$l/\mathcal{H}$是一个自由参数，需要通过与观测比较得到，由于我们在推导的过程中用到了很多的近似，所以很难用一个简单的常数就能拟合得很好的。</p>
+<h3 id="对流平衡"><a href="#对流平衡" class="headerlink" title="对流平衡"></a>对流平衡</h3><p>在前面我们引入了当所有能量都通过辐射传递的传输方程，当能量主要由对流过程传递的时候，我们称之为对流平衡，这时候有</p>
+<script type="math/tex; mode=display">\frac{d\ln T}{d\ln P} = \frac{\gamma - 1}{\gamma}</script><p>对应的温度梯度就是</p>
+<script type="math/tex; mode=display">\frac{dT}{dr} =  \left(\frac{\gamma -1 }{\gamma}\right)\frac{\rho g T}{P}</script><p>这个方程描述了辐射传热可以忽略也就是主要以对流传热的情况下，恒星的温度梯度。</p>
+<h1 id="多方模型"><a href="#多方模型" class="headerlink" title="多方模型"></a>多方模型</h1><p>我们前面已经引入了描述恒星内部结构的7个方程以及若干个边界条件，结合这些方程，我们就能得到所有的解，但是求解这一系列方程很困难。</p>
+<p>我们可以<strong>假设恒星的压强和密度之间有一个很简单的关系</strong>，即</p>
+<script type="math/tex; mode=display">P = K\rho^{\frac{n+1}{n}}</script><p>利用欧拉方程和质量守恒方程，我们可以得到</p>
+<script type="math/tex; mode=display">\frac{d}{dr}\left(\frac{r^2}{\rho(r)}\frac{dP(r)}{dr}\right) = -G\frac{dM(r)}{dr} = -4\pi G\rho r^2</script><p>这就是Possion方程，利用这个方程和上面的多方模型假设，我们就可以求解恒星的内部结构。</p>
+<h2 id="Lane-Emden方程"><a href="#Lane-Emden方程" class="headerlink" title="Lane-Emden方程"></a>Lane-Emden方程</h2><p>我们可以做变量代换</p>
+<script type="math/tex; mode=display">\begin{align}
+\rho(r) &= \rho_c\theta^n \\
+P(r) &= K\rho_c^{\frac{n+1}{n}}\theta^{\frac{n+1}{n}} = P_c\theta^{\frac{n+1}{n}} \\
+\alpha^2 &= \frac{(n+1)P_c}{4\pi G\rho_c^2} \\
+\xi &= \frac{r}{\alpha} \\
+\end{align}</script><p>我们就能推导出Lane-Emden方程</p>
+<script type="math/tex; mode=display">\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta(\xi)}{d\xi}\right) = -\theta^n(\xi)</script><p>或者可以写成</p>
+<script type="math/tex; mode=display">\frac{d^2\theta(\xi)}{d\xi^2} + \frac{2}{\xi}\frac{d\theta(\xi)}{d\xi} + \theta^n(\xi) = 0</script><h2 id="Lane-Emden方程的解是"><a href="#Lane-Emden方程的解是" class="headerlink" title="Lane-Emden方程的解是"></a>Lane-Emden方程的解是</h2><script type="math/tex; mode=display">\begin{align}
+\theta(\xi) &= 1 - \xi^2/6, ~~~n=0 \\
+\theta(\xi) &= \sin(\xi) / \xi, ~~~ n=1 \\
+\theta(\xi) &= \frac{1}{(1+ \xi^2/3)^{1/2}},~~~n=2
+\end{align}</script><h1 id="状态方程"><a href="#状态方程" class="headerlink" title="状态方程"></a>状态方程</h1><h2 id="理想气体的状态方程"><a href="#理想气体的状态方程" class="headerlink" title="理想气体的状态方程"></a>理想气体的状态方程</h2><p>气体内部的总压强是由气体运动产生的气体压强和光子贡献的辐射压强之和，而气体压强又可以分为离子贡献的和电子贡献的</p>
+<script type="math/tex; mode=display">P = P_g + P_R = P_I + P_e + P_R</script><p>其中辐射压为$P_R=aT^4/3$，气体压强是$P_g=n_gkT$。</p>
+<p>我们用$\mu_i$, $Z_i$, $\rho_i$和$X_i$分别表示第i种元素的平均分子量，电子总数，分密度和元素丰度，显然有$X_i=\rho_i/\rho$。第$i$种元素的原子核总数为</p>
+<script type="math/tex; mode=display">n_{K,i} = \frac{\rho_i}{\mu_im_p}=\frac{X_i\rho}{\mu_im_p}</script><p>完全电离情况下，单位体积下的电子和离子总数为</p>
+<script type="math/tex; mode=display">n_g=n_I + n_e = \sum_i(1+Z_i)\frac{X_i\rho}{\mu_im_p}</script><p>所以气体压强是</p>
+<script type="math/tex; mode=display">P _ { g } = n _ { g } k T = R \sum _ { i } \frac { X _ { i } \left( 1 + Z _ { i } \right) } { \mu _ { i } } \rho T</script><p>其中</p>
+<script type="math/tex; mode=display">\mu = \frac { 1 } { \sum _ { i } \frac { \left( 1 + Z _ { i } \right) } { \mu _ { i } } X _ { i } }=\frac { 1 } { 2 X _ { \mathrm { H } } + \frac { 3 } { 4 } X _ { \mathrm { He } } + \frac { 1 } { 2 } X _ { z } }</script><p>这里假设了比He重的元素都是有相同数目的中子和质子。</p>
+<h2 id="简并气体"><a href="#简并气体" class="headerlink" title="简并气体"></a>简并气体</h2><p>简并是修正气体状态方程的一种量子力学效应，一般在低温高密度的环境下简并效应才会显著起来。由于量子力学中的泡利不相容原理（对一个费米子组成的系统,不能有两个或两个以上的粒子处在同一量子态），粒子会被迫进入高能态，从而产生很大的压强。</p>
+<p><strong>简并条件：</strong></p>
+<p>系统中粒子的分布需要考虑简并的条件是：粒子的德布罗意波长大于等于粒子之间的平均距离，也就是</p>
+<script type="math/tex; mode=display">\bar\lambda_Dn^{1/3}\ge 1</script><p>其中粒子的德布罗意波长是</p>
+<script type="math/tex; mode=display">\bar\lambda_D = \frac{\int _ { 0 } ^ { \infty } ( h / p ) f _ { e } ( p ) d p}{\int _ { 0 } ^ { \infty } f _ { e } ( p ) d p}</script><p>其中$f_e$是Fermi-Dirac分布。对于相对论情况，我们有</p>
+<script type="math/tex; mode=display">2 \left( \frac { h } { 2 \pi m _ { e } k T } \right) ^ { 1 / 2 } \cdot n ^ { 1 / 3 } \geq 1</script><p>对于非相对论情况，我们有</p>
+<script type="math/tex; mode=display">\left( \frac { h c } { 2 k T } \right) \cdot n ^ { 1 / 3 } \geq 1</script><p>我们能得到以下几点性质：</p>
+<ol>
+<li>温度、粒子质量不变，密度越高越容易简并；</li>
+<li>密度、粒子质量不变，温度越低越容易简并；</li>
+<li>温度、密度不变，粒子质量越低越容易简并。</li>
+</ol>
+<p><strong>电子的简并度：</strong></p>
+<p>我们有Fermi-Dirac分布</p>
+<script type="math/tex; mode=display">d n _ { e } = \frac { 8 \pi p _ { e } ^ { 2 } } { h ^ { 3 } } \frac { 1 } { e ^ { - \psi } e ^ { \varepsilon _ { e } / k T } + 1 } d p _ { e }</script><p>其中$\epsilon_e$是动量为$p_e$的电子的能量，$\psi$是依赖于密度的简并参数。我们可以观察到</p>
+<ol>
+<li>当$\psi \ll 0$时，这个分布退化成为Maxwell分布；</li>
+<li>当$\psi \gg 0$时，这个分布描述了高度简并状态下的气体；</li>
+</ol>
+<p>在非相对论情况下，我们对这个分布的动量分量积分，并且利用$\epsilon_e=p_e^2/2m_e$，我们有</p>
+<script type="math/tex; mode=display">n _ { e } =\frac { \rho } { \mu _ { e } m _ { p } }= \frac { 8 \pi } { h ^ { 3 } } \int _ { 0 } ^ { \infty } \frac { p _ { e } ^ { 2 } } { e ^ { - \varphi } e ^ { \varepsilon _ { e } / k T } + 1 } d p _ { e }</script><p>令$x = \frac { p _ { e } } { \left( 2 m _ { e } k T \right) ^ { 1 / 2 } }$，我们有</p>
+<script type="math/tex; mode=display">f ( \varphi ) = \frac { h ^ { 3 } } { 8 \pi \mu _ { e } m _ { p } \left( 2 m _ { e } k \right) ^ { 3 / 2 } } \frac { \rho } { T ^ { 3 / 2 } },~~~~~{\rm 其中~~}f ( \varphi ) = \int \frac { x ^ { 2 } } { e ^ { - \varphi } e ^ { x ^ { 2 } } + 1 } d x</script><p>这里$f(\psi)\propto e^{\psi}$。我们能得到以下性质：</p>
+<ol>
+<li>当$\psi$是常数时，$\rho\propto T^{3/2}$；</li>
+<li>T减小或者$\rho$增大都会使得$\psi$增大，从而增加简并度；</li>
+<li>离子比电子更难简并，因为质量更大。</li>
+</ol>
+<p><strong>完全简并条件下的物态方程：</strong></p>
+<ol>
+<li>在非相对论情形下，$P_e\propto \rho^{5/3}$</li>
+<li>在相对论情形下，$P_e\propto \rho^{4/3}$</li>
+</ol>
+<h1 id="变星和星震"><a href="#变星和星震" class="headerlink" title="变星和星震"></a>变星和星震</h1><h2 id="变星"><a href="#变星" class="headerlink" title="变星"></a>变星</h2><p>变星是测光和光谱会随时间变化的恒星，主要分为四类：</p>
+<ol>
+<li><strong>旋转变星：</strong> 可以是由于黑子进入或离开观测者视线造成的，也可以是由于伴星的潮汐作用；</li>
+<li><strong>爆发变星：</strong> 是能非周期性地抛射物质的星；</li>
+<li><strong>爆炸变星：</strong> 是展现出周期性（如再发新星）或者非周期性的爆炸特征（如超新星）；</li>
+<li><strong>脉动变星：</strong> 由于恒星半径或者表面温度的周期性物理变化引起测光和光谱的变化。</li>
+</ol>
+<p><strong>造父变星：</strong></p>
+<p>造父变星是一种重要的脉动变星，其分为</p>
+<ol>
+<li>I型造父变星（或经典造父变星）：位于不稳定带中温度$T_{\rm eff} =6000-8000K$的演化恒星，具有高的金属丰度，这种变星可以作为标准珠光；</li>
+<li>II型造父变星：是在不稳定带发现的演化恒星。它们的典型质量低于I型造父变星，为$0.5M_{\odot}，$它们具有较低的金属丰度（它们是年老的星族II恒星），光变周期为1-50天。</li>
+</ol>
+<p><strong>周光关系的基本物理：</strong></p>
+<p>造成脉动的原因是从表面反射到深层的声波，所以我们可以把将周期近似表示为声波从深层到表面的一个来回，即</p>
+<script type="math/tex; mode=display">P = 2 \int _ { 0 } ^ { R } \frac { d r } { v _ { s } ( r ) }</script><p>其中绝热声速为</p>
+<script type="math/tex; mode=display">v _ { s } ( r ) = \sqrt { \frac { \gamma P } { \rho } }</script><p>我们假设恒星是一个常密度的球体，并且利用流体静力学方程，我们可以得到</p>
+<script type="math/tex; mode=display">P ( r ) = - \frac { 2 \pi G \rho ^ { 2 } } { 3 } \left( R _ { * } ^ { 2 } - r ^ { 2 } \right)</script><p>我们就可以得到脉动周期</p>
+<script type="math/tex; mode=display">P=2 \int _ { 0 } ^ { R } \frac { d r } { v _ { s } ( r ) } = 2 \int _ { 0 } ^ { R } \frac { d r } { \sqrt { \frac { 2 \pi G \gamma \rho } { 3 } \left( R _ { * } ^ { 2 } - r ^ { 2 } \right) } } = \sqrt { \frac { 3 \pi } { 2 G \gamma \rho } }</script><p>我们可以得到密度更小的恒星周期更长。而在观测中，我们发现更亮的恒星脉动周期更长，这是因为亮的恒星大，所以密度小。</p>
+<h2 id="星震学"><a href="#星震学" class="headerlink" title="星震学"></a>星震学</h2><p>星震学是利用脉动或者震动手段获得恒新内部结构信息的天体物理研究领域。由于恒星一般可以看作由压缩流体组成的球体，它们在适当的条件下会脉动。目前用于解释星震的物理机制主要有三种：</p>
+<ol>
+<li><strong>不透明度/kappa-机制：</strong> 这一机制主要用于解释白矮星, 大质量主序星, 热亚矮星的星震。Eddington提出的不透明度机制主要是恒星中处于脉动压缩阶段的层会变得非常不透明，这会导致下面的层的热量的积压，最终导致压强增大并且将物质往外推；一旦物质被向外推出，不透明度就会减小，能量就能够通过辐射的形式向外传播，那原来被向外推出的物质也会因为下层压强减小而回落，进而开始一个新的周期。He II电离区也被认为是天琴座RR变星光变的驱动机制，而氢电离区被认为是解释Mira变星，roAp和ZZ Ceti变星脉动的来源。</li>
+<li><strong>外部对流机制：</strong> 这个机制主要解释太阳,红巨星的脉动，这是由对流随机激发出来的振动模式，幅度小，周期短。</li>
+<li><strong>动力学潮汐机制：</strong> 这个主要是在密近双星系统中会发生。</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/astronomy/" rel="tag"># astronomy</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/21/note-stellar_astrophysics/stellar-4/" rel="next" title="《恒星物理》第四章：恒星大气">
+                <i class="fa fa-chevron-left"></i> 《恒星物理》第四章：恒星大气
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/22/note-stellar_astrophysics/stellar-6/" rel="prev" title="《恒星物理》第六章：恒星内部核反应和核合成">
+                《恒星物理》第六章：恒星内部核反应和核合成 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Kai Wang">
+            
+              <p class="site-author-name" itemprop="name">Kai Wang</p>
+              <p class="site-description motion-element" itemprop="description">Hi! Here is Kai's cosmos, Kosmos!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wkcosmology/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wkcosmology@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/wkcosmology" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:wkcosmology?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#恒星的结构方程"><span class="nav-number">1.</span> <span class="nav-text">恒星的结构方程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#四个基本方程"><span class="nav-number">1.1.</span> <span class="nav-text">四个基本方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他需要的方程"><span class="nav-number">1.2.</span> <span class="nav-text">其他需要的方程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恒星中的能量传输"><span class="nav-number">2.</span> <span class="nav-text">恒星中的能量传输</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#恒星内部的单色辐射能流"><span class="nav-number">2.1.</span> <span class="nav-text">恒星内部的单色辐射能流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传导"><span class="nav-number">2.2.</span> <span class="nav-text">传导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对流"><span class="nav-number">2.3.</span> <span class="nav-text">对流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对流的Schwarzschild判据"><span class="nav-number">2.3.1.</span> <span class="nav-text">对流的Schwarzschild判据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mixing-length-理论"><span class="nav-number">2.3.2.</span> <span class="nav-text">mixing-length 理论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对流平衡"><span class="nav-number">2.3.3.</span> <span class="nav-text">对流平衡</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多方模型"><span class="nav-number">3.</span> <span class="nav-text">多方模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lane-Emden方程"><span class="nav-number">3.1.</span> <span class="nav-text">Lane-Emden方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lane-Emden方程的解是"><span class="nav-number">3.2.</span> <span class="nav-text">Lane-Emden方程的解是</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态方程"><span class="nav-number">4.</span> <span class="nav-text">状态方程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#理想气体的状态方程"><span class="nav-number">4.1.</span> <span class="nav-text">理想气体的状态方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简并气体"><span class="nav-number">4.2.</span> <span class="nav-text">简并气体</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变星和星震"><span class="nav-number">5.</span> <span class="nav-text">变星和星震</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变星"><span class="nav-number">5.1.</span> <span class="nav-text">变星</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#星震学"><span class="nav-number">5.2.</span> <span class="nav-text">星震学</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {equationNumbers: { autoNumber: "AMS" }}
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
