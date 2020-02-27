@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Comic Sans MS:300,300italic,400,400italic,700,700italic|monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="astronomy,programming,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="How to install Gadget2 on Mac OS">
+<meta name="keywords" content="astronomy,programming">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Install Gadget2 on Mac OS">
+<meta property="og:url" content="http://wkcosmology.github.io/2020/02/26/blog-programming/gadget2_install/index.html">
+<meta property="og:site_name" content="kosmos">
+<meta property="og:description" content="How to install Gadget2 on Mac OS">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-27T04:39:38.833Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Install Gadget2 on Mac OS">
+<meta name="twitter:description" content="How to install Gadget2 on Mac OS">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wkcosmology.github.io/2020/02/26/blog-programming/gadget2_install/">
+
+
+
+
+
+  <title>Install Gadget2 on Mac OS | kosmos</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kosmos</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            links
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wkcosmology.github.io/2020/02/26/blog-programming/gadget2_install/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kosmos">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Install Gadget2 on Mac OS</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-26T22:32:02-05:00">
+                2020-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/ComputerScience/" itemprop="url" rel="index">
+                    <span itemprop="name">ComputerScience</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  How to install Gadget2 on Mac OS
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p>To install the Gadget2, you need to install MPI, fftw2, gsl and hdf5. Here I install all of these by compiling the source code. To avoiding mixing with the system’s library, I put all these in a specified folder, and the structure is</p>
+<p>/Users/wangk/Documents/Project/library/<br>├── bin<br>├── etc<br>├── include<br>├── lib<br>├── libsource<br>└── share</p>
+<p>where the <code>libsource</code> is for the source code.</p>
+<p>Another thing is that the default c/c++ compiler on Mac is clang/clang++, but I prefer gcc/g++. So I install gcc/g++ using Homebrew. In the following content, I will redirect the c/c++ compiler to gcc/g++.</p>
+<h2 id="Open-MPI"><a href="#Open-MPI" class="headerlink" title="Open MPI"></a>Open MPI</h2><p>I chose Open MPI instead of MPICH because the later does not work on my computer after installing. You can download it from <a href="https://www.open-mpi.org/software/ompi/v4.0/" target="_blank" rel="noopener">Here</a>. There are three steps to install<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure CC=/usr/<span class="built_in">local</span>/bin/gcc-9 CXX=/usr/<span class="built_in">local</span>/bin/g++-9 --prefix=/Users/wangk/Documents/Project/library</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p>
+<p>Here <code>CC</code> should link to the executable gcc and <code>CXX</code> should be executable g++. The <code>--prefix</code> is tell the installing program where to put the products(it will put the header file in /location_of_prefix/include/, the library in /location_of_prefix/lib/ and executable in /location_of_prefix/bin/)</p>
+<blockquote>
+<p>It will take a while to install Open MPI, since it is a big program.</p>
+</blockquote>
+<h2 id="fftw2"><a href="#fftw2" class="headerlink" title="fftw2"></a>fftw2</h2><p>Gadget2 requires fftw2, and you can download it from <a href="http://www.fftw.org/download.html" target="_blank" rel="noopener">here</a>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">./configure CC=/usr/<span class="built_in">local</span>/bin/gcc-9  --includedir=/Users/wangk/Documents/Project/library/include/fftw2 --libdir=/Users/wangk/Documents/Project/library/lib/fftw2 --<span class="built_in">enable</span>-mpi --<span class="built_in">enable</span>-type-prefix MPICC=/Users/wangk/Documents/Project/library/bin/mpicc</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">make clean</span><br><span class="line"></span><br><span class="line">./configure CC=/usr/<span class="built_in">local</span>/bin/gcc-9  --includedir=/Users/wangk/Documents/Project/library/include/fftw2 --libdir=/Users/wangk/Documents/Project/library/lib/fftw2 --<span class="built_in">enable</span>-mpi --<span class="built_in">enable</span>-float --<span class="built_in">enable</span>-type-prefix MPICC=/Users/wangk/Documents/Project/library/bin/mpicc</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<p>There are several tricky things here.</p>
+<ol>
+<li>Gadget2 needs fftw2, but the newest is fftw3. Since I do not want to mess them up, I specify the include path and lib separately using <code>--includedir</code> and <code>--libdir</code>. And fftw will not generate anything in <code>etc/</code> and <code>share/</code>, so I do not need to specify their directory.</li>
+<li><p>There are two kinds of precision for fftw, single and double. <code>--enable-type-prefix</code> is telling the installing program to distinguish them by adding a character, then you can install both the single version and the double version, separately. After the above installation, you can see the header file in <code>location_of_prefix/include/fftw2/</code> as</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dfftw<span class="selector-class">.h</span>  dfftw_mpi<span class="selector-class">.h</span>  drfftw<span class="selector-class">.h</span>  drfftw_mpi<span class="selector-class">.h</span>  sfftw<span class="selector-class">.h</span>  sfftw_mpi<span class="selector-class">.h</span>  srfftw<span class="selector-class">.h</span>  srfftw_mpi.h</span><br></pre></td></tr></table></figure>
+<p>The first installation will install the double version by default, and the second is for single precision, where you need to <code>--enable-float</code>. Also, you need to <code>make clean</code> before the second installation. By the way, when you choose to enable type prefix, you can not <code>#include &lt;fftw.h&gt;</code> in your program, you need <code>#include &lt;sfftw.h&gt;</code> or <code>#include &lt;dfftw.h&gt;</code> to specify the precision. Also, you need change <code>-lfftw</code> to <code>-lsfftw</code> or <code>-ldfftw</code> when you are compiling the program.</p>
+</li>
+<li><p>You need to enable the MPI for fftw, so you need to specify the path the mpi executable, which, in my case, is <code>MPICC=/Users/wangk/Documents/Project/library/bin/mpicc</code></p>
+</li>
+</ol>
+<h2 id="gsl"><a href="#gsl" class="headerlink" title="gsl"></a>gsl</h2><p>You can download it from <a href="https://www.gnu.org/software/gsl/" target="_blank" rel="noopener">Here</a>. The installation is easy.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure CC=/usr/<span class="built_in">local</span>/bin/gcc-9 CXX=/usr/<span class="built_in">local</span>/bin/g++-9 --prefix=/Users/wangk/Documents/Project/library</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h2 id="HDF5"><a href="#HDF5" class="headerlink" title="HDF5"></a>HDF5</h2><p>You can download the source code <a href="https://www.hdfgroup.org/downloads/hdf5/source-code/" target="_blank" rel="noopener">Here</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure CC=/Users/wangk/Documents/Project/library/bin/mpicc CXX=/usr/<span class="built_in">local</span>/bin/g++-9  --includedir=/Users/wangk/Documents/Project/library/include/hdf5 --libdir=/Users/wangk/Documents/Project/library/lib/hdf5 --<span class="built_in">enable</span>-cxx</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<p>There are several thing need to be noted</p>
+<ol>
+<li>If you need the c++ interface, you need to <code>--enable-cxx</code> and you need to specify the c++ compiler, which in my case is <code>CXX=/usr/local/bin/g++-9</code>. </li>
+<li>You cannot specify <code>--enable-cxx</code> and <code>--enable-parallel</code> simultaneously. Since I will not use the parallel IO, so I just enable c++ interface.</li>
+</ol>
+<h2 id="Gadget2"><a href="#Gadget2" class="headerlink" title="Gadget2"></a>Gadget2</h2><p>After installing all the required package, it becomes quiet easy to install Gadget2, where you can download it from <a href="https://wwwmpa.mpa-garching.mpg.de/gadget/" target="_blank" rel="noopener">here</a>.</p>
+<p>I uncommented or modified the following things. (It works, but I am not sure if they are necessary, you should read the manual)</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">OPT   +=  -DDOUBLEPRECISION_FFTW      </span><br><span class="line"></span><br><span class="line">CC       =  /Users/wangk/Documents/Project/library/bin/mpicc               <span class="comment"># sets the C-compiler</span></span><br><span class="line">OPTIMIZE =  -O3 -Wall -g -DH5_USE_16_API <span class="comment"># sets optimization and warning flags</span></span><br><span class="line"></span><br><span class="line">SYSTYPE=<span class="string">"KAI"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ifeq</span> (<span class="variable">$(SYSTYPE)</span>,<span class="string">"KAI"</span>)</span><br><span class="line">CC       =  /Users/wangk/Documents/Project/library/bin/mpicc   </span><br><span class="line">OPTIMIZE =  -O3 -Wall -DH5_USE_16_API</span><br><span class="line">GSL_INCL =  -I/Users/wangk/Documents/Project/library/<span class="keyword">include</span></span><br><span class="line">GSL_LIBS =  -L/Users/wangk/Documents/Project/library/lib</span><br><span class="line">FFTW_INCL=  -I/Users/wangk/Documents/Project/library/<span class="keyword">include</span>/fftw2</span><br><span class="line">FFTW_LIBS=  -L/Users/wangk/Documents/Project/library/lib/fftw2</span><br><span class="line">MPICHLIB =  -L/Users/wangk/Documents/Project/library/lib</span><br><span class="line">HDF5INCL =  -I/Users/wangk/Documents/Project/library/<span class="keyword">include</span>/hdf5</span><br><span class="line">HDF5LIB  =  -L/Users/wangk/Documents/Project/library/lib/hdf5 -lhdf5 -lz</span><br><span class="line"><span class="keyword">endif</span></span><br></pre></td></tr></table></figure>
+<p>Then, you can run Gadget2 using the provided example and initial condition. Have fun!</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/astronomy/" rel="tag"># astronomy</a>
+          
+            <a href="/tags/programming/" rel="tag"># programming</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/28/blog-python/pairwise_distance_xy_z/" rel="next" title="halotools pairwise_distance_xy_z 实现">
+                <i class="fa fa-chevron-left"></i> halotools pairwise_distance_xy_z 实现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Kai Wang">
+            
+              <p class="site-author-name" itemprop="name">Kai Wang</p>
+              <p class="site-description motion-element" itemprop="description">Hi! Here is Kai's cosmos, Kosmos!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wkcosmology/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wkcosmology@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/wkcosmology" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:wkcosmology?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install"><span class="nav-number">1.</span> <span class="nav-text">Install</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Open-MPI"><span class="nav-number">1.1.</span> <span class="nav-text">Open MPI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fftw2"><span class="nav-number">1.2.</span> <span class="nav-text">fftw2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gsl"><span class="nav-number">1.3.</span> <span class="nav-text">gsl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDF5"><span class="nav-number">1.4.</span> <span class="nav-text">HDF5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gadget2"><span class="nav-number">1.5.</span> <span class="nav-text">Gadget2</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {equationNumbers: { autoNumber: "AMS" }}
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
