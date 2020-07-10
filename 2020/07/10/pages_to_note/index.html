@@ -106,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="note,Python,">
+  <meta name="keywords" content="note,tools,">
 
 
 
@@ -117,18 +117,20 @@
 
 
 
-<meta name="description" content="这里介绍天文中经常用来存储数据的一种文件格式，fits，的一些使用方法和特性。">
-<meta name="keywords" content="note,Python">
+<meta name="description" content="Pages is a powerful editing tool on Mac. In this post, I will introduce my config of the Pages for note taking.">
+<meta name="keywords" content="note,tools">
 <meta property="og:type" content="article">
-<meta property="og:title" content="天文中的FITS文件的特性与使用">
-<meta property="og:url" content="http://wkcosmology.github.io/2018/10/18/blog-python/fits/index.html">
+<meta property="og:title" content="Taking notes using Pages">
+<meta property="og:url" content="http://wkcosmology.github.io/2020/07/10/pages_to_note/index.html">
 <meta property="og:site_name" content="kosmos">
-<meta property="og:description" content="这里介绍天文中经常用来存储数据的一种文件格式，fits，的一些使用方法和特性。">
+<meta property="og:description" content="Pages is a powerful editing tool on Mac. In this post, I will introduce my config of the Pages for note taking.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-22T03:26:28.000Z">
+<meta property="og:image" content="http://wkcosmology.github.io/2020/07/10/pages_to_note/media/15944077441145.jpg">
+<meta property="og:updated_time" content="2020-07-10T19:56:44.801Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="天文中的FITS文件的特性与使用">
-<meta name="twitter:description" content="这里介绍天文中经常用来存储数据的一种文件格式，fits，的一些使用方法和特性。">
+<meta name="twitter:title" content="Taking notes using Pages">
+<meta name="twitter:description" content="Pages is a powerful editing tool on Mac. In this post, I will introduce my config of the Pages for note taking.">
+<meta name="twitter:image" content="http://wkcosmology.github.io/2020/07/10/pages_to_note/media/15944077441145.jpg">
 
 
 
@@ -158,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://wkcosmology.github.io/2018/10/18/blog-python/fits/">
+  <link rel="canonical" href="http://wkcosmology.github.io/2020/07/10/pages_to_note/">
 
 
 
 
 
-  <title>天文中的FITS文件的特性与使用 | kosmos</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Taking notes using Pages | kosmos</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -311,7 +313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wkcosmology.github.io/2018/10/18/blog-python/fits/">
+    <link itemprop="mainEntityOfPage" href="http://wkcosmology.github.io/2020/07/10/pages_to_note/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kai Wang">
@@ -328,7 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">天文中的FITS文件的特性与使用</h1>
+          <h1 class="post-title" itemprop="name headline">Taking notes using Pages</h1>
         
 
         <div class="post-meta">
@@ -340,8 +342,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-18T10:49:40-04:00">
-                2018-10-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-10T14:36:00-04:00">
+                2020-07-10
               </time>
             
 
@@ -374,8 +376,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Blog/ComputerScience/" itemprop="url" rel="index">
-                    <span itemprop="name">ComputerScience</span>
+                  <a href="/categories/Blog/Tools/" itemprop="url" rel="index">
+                    <span itemprop="name">Tools</span>
                   </a>
                 </span>
 
@@ -398,7 +400,7 @@
 
           
               <div class="post-description">
-                  这里介绍天文中经常用来存储数据的一种文件格式，fits，的一些使用方法和特性。
+                  Pages is a powerful editing tool on Mac. In this post, I will introduce my config of the Pages for note taking.
               </div>
           
 
@@ -415,12 +417,53 @@
       
 
       
-        <h1 id="什么是FITS"><a href="#什么是FITS" class="headerlink" title="什么是FITS"></a>什么是FITS</h1><p>在Astropy中，fits文件是通过<code>astropy.io.fits.open()</code>函数打开的，这个函数默认的打开方式是只读的，并且返回一个一个<code>HDUList</code>类型的对象。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> astropy.io <span class="keyword">import</span> fits</span><br><span class="line">fits_image_filename = fits.util.get_testdata_filepath(<span class="string">'test0.fits'</span>) <span class="comment"># 这是astropy中自带的fits文件，用作演示和测试</span></span><br><span class="line"></span><br><span class="line">hdul = fits.open(fits_image_filename)</span><br></pre></td></tr></table></figure></p>
-<p>这个对象<code>hdul</code>是一个包含’HDU’类型的对象的list。其中HDU(Header Data Unit)是FITS文件中最高级的结构，一般是由一个头文件<code>hdul[1].header</code>和一个数据数据或者表格<code>hdul[1].data</code>组成。我们一般在头文件中存储数据的说明（名称，单位，类型等），在后面存储数据。</p>
-<h1 id="FITS的头文件"><a href="#FITS的头文件" class="headerlink" title="FITS的头文件"></a>FITS的头文件</h1><p>FITS头文件是一个card类型对象的list，每个card对象由一个key(str类型)，一个values(str, int, float, complex number, True/False 类型)和一个comment(str类型)组成。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hdr = hdul[<span class="number">0</span>].header</span><br><span class="line"></span><br><span class="line">hdr[<span class="string">'targname'</span>] = (<span class="string">'NGC121-a'</span>, <span class="string">'the observation target'</span>) <span class="comment"># 赋值一个tuple，其中第一个就是value，第二个就是comment</span></span><br><span class="line"></span><br><span class="line">hdr[<span class="string">'targname'</span>]</span><br><span class="line"><span class="comment"># output: 'NGC121-a'</span></span><br><span class="line">hdr.comments[<span class="string">'targname'</span>]</span><br><span class="line"><span class="comment"># output: 'the observation target'</span></span><br></pre></td></tr></table></figure></p>
-<p>在astropy的头文件中，有两个特殊的card：COMMENTS和HISTORY，这两个card的值并不是str，而是一个list，对这两个card进行赋值并不会覆盖原有的值，而是append到这个list之后。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">hdr[<span class="string">'history'</span>] = <span class="string">'I updated this file 2/26/09'</span></span><br><span class="line">hdr[<span class="string">'comment'</span>] = <span class="string">'Edwin Hubble really knew his stuff'</span></span><br><span class="line">hdr[<span class="string">'comment'</span>] = <span class="string">'I like using HST observations'</span></span><br><span class="line">hdr[<span class="string">'history'</span>]</span><br><span class="line"><span class="comment"># output: I updated this file 2/26/09</span></span><br><span class="line">hdr[<span class="string">'comment'</span>]</span><br><span class="line"><span class="comment"># output: Edwin Hubble really knew his stuff</span></span><br><span class="line">I like using HST observations</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在这种情况下，要对其进行修改需要先索引到list的一定位置</span></span><br><span class="line">hdr[<span class="string">'history'</span>][<span class="number">0</span>] = <span class="string">'I updated this file on 2/27/09'</span></span><br><span class="line">hdr[<span class="string">'history'</span>]</span><br><span class="line"><span class="comment"># output: I updated this file on 2/27/09</span></span><br><span class="line">hdr[<span class="string">'comment'</span>][<span class="number">1</span>] = <span class="string">'I like using JWST observations'</span></span><br><span class="line">hdr[<span class="string">'comment'</span>]</span><br><span class="line"><span class="comment"># output: Edwin Hubble really knew his stuff</span></span><br><span class="line"><span class="comment">#         I like using JWST observations</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="索引FITS的数据"><a href="#索引FITS的数据" class="headerlink" title="索引FITS的数据"></a>索引FITS的数据</h1><p>FITS中的数据部分一般是一个二维数组，其中每一行存储一个数据对象的不同性质，每一列存储这不同数据对象的某一性质。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 同样是astropy中内置的FITS数据</span></span><br><span class="line">fits_table_filename = fits.util.get_testdata_filepath(<span class="string">'tb.fits'</span>)</span><br><span class="line">hdul = fits.open(fits_table_filename)</span><br><span class="line">data = hdul[<span class="number">1</span>].data </span><br><span class="line"></span><br><span class="line">print(data[<span class="number">0</span>]) <span class="comment"># 索引某一行的数据</span></span><br><span class="line"><span class="comment"># output: (1, 'abc', 3.7000000715255736, False)</span></span><br><span class="line"></span><br><span class="line">data.field(<span class="string">'c1'</span>) <span class="comment"># 索引某一列的数据</span></span><br><span class="line"><span class="comment"># output: array([1, 2]...)</span></span><br><span class="line"></span><br><span class="line">data[<span class="string">'c1'</span>] <span class="comment"># 索引某一列的数据</span></span><br><span class="line"><span class="comment"># output: array([1, 2]...)</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="从numpy数组创建一个FITS格式文件"><a href="#从numpy数组创建一个FITS格式文件" class="headerlink" title="从numpy数组创建一个FITS格式文件"></a>从numpy数组创建一个FITS格式文件</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a1 = np.array([<span class="string">'NGC1001'</span>, <span class="string">'NGC1002'</span>, <span class="string">'NGC1003'</span>])</span><br><span class="line">a2 = np.array([<span class="number">11.1</span>, <span class="number">12.3</span>, <span class="number">15.2</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建HDU对象</span></span><br><span class="line">cols_ = []</span><br><span class="line">cols_.append(fits.Column(name=<span class="string">'target'</span>, format=<span class="string">'20A'</span>, array=a1))</span><br><span class="line">cols_.append(fits.Column(name=<span class="string">'V_mag'</span>, format=<span class="string">'E'</span>, array=a2))</span><br><span class="line">cols = fits.ColDefs(cols_)</span><br><span class="line"></span><br><span class="line">hdu = fits.BinTableHDU.from_columns(cols)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建PrimaryHDU对象</span></span><br><span class="line">hdr = fits.Header()</span><br><span class="line">hdr[<span class="string">'OBSERVER'</span>] = <span class="string">'Edwin Hubble'</span></span><br><span class="line">hdr[<span class="string">'COMMENT'</span>] = <span class="string">"Here's some commentary about this FITS file."</span></span><br><span class="line">primary_hdu = fits.PrimaryHDU(header=hdr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结合PrimaryHDU和HDU对象，并且写入FITS文件</span></span><br><span class="line">hdul = fits.HDUList([primary_hdu, hdu])</span><br><span class="line">hdul.writeto(<span class="string">'table4.fits'</span>)</span><br></pre></td></tr></table></figure>
+        <h1 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h1><p>As a PhD student, I need to take notes of the projects, i.e. literature reviews, motivations, results etc. The basic requirements are:</p>
+<ol>
+<li>support figure insertion and caption</li>
+<li>support link insertion</li>
+<li>support LaTex equation</li>
+</ol>
+<p>There are already many note taking software that supports the above criteria, like Evernote, OneNote etc. However, I already have DevonThink3 to organize the file, so I need a suitable file format for individual note. Markdown is a good choice(light, portable, support links and LaTex etc.). However, you need to put the figures out of the document and the figure will stay after deleting it in the markdown document. The same problem occurs to LaTex file. RTF support many functions, but it does not have a good editor. At last, I turn into Pages.</p>
+<h1 id="Config-to-Pages"><a href="#Config-to-Pages" class="headerlink" title="Config to Pages"></a>Config to Pages</h1><h2 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h2><p>First I need to download the Computer Modern Serif(CMU Serif) font(default font for LaTex), which I think the best choice for documents.</p>
+<h2 id="Text-format"><a href="#Text-format" class="headerlink" title="Text format"></a>Text format</h2><p>In the template, I defined several text format.</p>
+<ol>
+<li><code>Heading</code>: <ol>
+<li>Style: CMU Serif, 18, Bold</li>
+<li>Style: Bullets &amp; Lists: Numbers, Tiered Numbers, Continue from previous</li>
+<li>Layout: Borders &amp; Rules: lines above and below, offset 2pt, width 0.5pt, black</li>
+<li>Add page break before each <code>Heading</code></li>
+</ol>
+</li>
+<li><code>Heading 2</code>:<ol>
+<li>Style: CMU Serif, 16, Bold</li>
+<li>Style: Bullets &amp; Lists: Lines=1, Numbers, Tiered Numbers, Continue from previous</li>
+<li>Style: Spacing: Lines=1, Before Paragraph=8pt, After Paragraph=3pt</li>
+<li>Layout: Borders &amp; Rules: None</li>
+<li>Add tab before each <code>Heading 2</code></li>
+</ol>
+</li>
+<li><code>Heading 3</code>:<ol>
+<li>Style: CMU Serif, 12, Bold, underline</li>
+<li>Style: Bullets &amp; Lists: None</li>
+<li>Style: Spacing: Lines=1, Before Paragraph=3pt, After Paragraph=3pt</li>
+<li>Layout: Borders &amp; Rules: None</li>
+</ol>
+</li>
+<li><code>Body</code>:<ol>
+<li>Style: CMU Serif, 12</li>
+<li>Justify text</li>
+<li>Style: Spacing: Lines=1, Before Paragraph=0pt, After Paragraph=0pt</li>
+<li>Layout: Borders &amp; Rules: None</li>
+</ol>
+</li>
+</ol>
+<p>It looks like<br><img src="media/15944077441145.jpg" alt=""></p>
+<h2 id="Figure"><a href="#Figure" class="headerlink" title="Figure"></a>Figure</h2><p>There are two ways to insert figures. First is just inserting figure, which also support caption after version 10.1 and you can also use LaTex in it. The second way is insert image gallery, which can contain several figures in one place and you can switch them. The image gallery also support caption for each individual figure but no LaTex in the caption. In both way, you can just drag the figure files into Pages, even they are PDF file.</p>
+<h2 id="Equation"><a href="#Equation" class="headerlink" title="Equation"></a>Equation</h2><p>Pages after version 6.1 supports LaTex equation natively.</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p>Pages support three kinds of links, as website, bookmarks and email. I use website to link to the website or DevonThink3 or Zotero links(It cannot open local files though URL).</p>
+<h2 id="Table-of-content"><a href="#Table-of-content" class="headerlink" title="Table of content"></a>Table of content</h2><p>Pages also support TOC for convenient link to each headings(You can config the specific text format showed in TOC).</p>
+<h1 id="Last-Word"><a href="#Last-Word" class="headerlink" title="Last Word"></a>Last Word</h1><p>I choose Pages since I already have DevonThink3 as my organization system. And it is simple, fast and easy to use. If you want a note management system, I will recommend Evernote or OneNote.</p>
+<p> </p>
 
       
     </div>
@@ -440,7 +483,7 @@
           
             <a href="/tags/note/" rel="tag"># note</a>
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/tools/" rel="tag"># tools</a>
           
         </div>
       
@@ -453,8 +496,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/29/food/" rel="next" title="北京美食地图">
-                <i class="fa fa-chevron-left"></i> 北京美食地图
+              <a href="/2020/02/26/blog-programming/gadget2_install/" rel="next" title="Install Gadget2 on Mac OS">
+                <i class="fa fa-chevron-left"></i> Install Gadget2 on Mac OS
               </a>
             
           </div>
@@ -462,10 +505,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/06/note-cython/Cython-2/" rel="prev" title="《Cython》第二章：编译和运行Cython代码">
-                《Cython》第二章：编译和运行Cython代码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -627,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是FITS"><span class="nav-number">1.</span> <span class="nav-text">什么是FITS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FITS的头文件"><span class="nav-number">2.</span> <span class="nav-text">FITS的头文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引FITS的数据"><span class="nav-number">3.</span> <span class="nav-text">索引FITS的数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#从numpy数组创建一个FITS格式文件"><span class="nav-number">4.</span> <span class="nav-text">从numpy数组创建一个FITS格式文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Motivation"><span class="nav-number">1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Config-to-Pages"><span class="nav-number">2.</span> <span class="nav-text">Config to Pages</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Font"><span class="nav-number">2.1.</span> <span class="nav-text">Font</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-format"><span class="nav-number">2.2.</span> <span class="nav-text">Text format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Figure"><span class="nav-number">2.3.</span> <span class="nav-text">Figure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Equation"><span class="nav-number">2.4.</span> <span class="nav-text">Equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-number">2.5.</span> <span class="nav-text">Links</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Table-of-content"><span class="nav-number">2.6.</span> <span class="nav-text">Table of content</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Last-Word"><span class="nav-number">3.</span> <span class="nav-text">Last Word</span></a></li></ol></div>
             
 
           </div>
