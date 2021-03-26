@@ -1,0 +1,175 @@
+* {
+    font-family: "CMU Serif";
+    font-size: 18px;
+    color: #dadada;
+    background-color: transparent;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #20272d;
+}
+
+a {
+    padding: 2px;
+    color: cyan;
+    text-decoration: none;
+}
+
+a.toc_node0 {
+    padding: 10px;
+    margin-left: 0px;
+    font-size: 20px;
+    line-height: 35px;
+}
+
+a.toc_node1 {
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+    line-height: 35px;
+}
+
+a:hover {
+    color: white;
+    background: radial-gradient(
+        ellipse at center,
+        black,
+        #20272d,
+        #20272d 100%
+    );
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Raleway;
+    color: #e7f549;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+}
+
+h3 {
+    position: relative;
+    left: 20px;
+}
+
+p.publication {
+    color: white;
+    font-size: 20px;
+    font-family: Raleway;
+}
+
+.strong {
+    color: #e3e5e6;
+    font-weight: bold;
+}
+
+p.author {
+    color: #9c9b97;
+}
+
+p.pub_meta {
+    color: #9c9b97;
+}
+
+a {
+    color: #5fc5cf;
+}
+
+div.page {
+    padding-left: 30px;
+    position: relative;
+    margin-left: 280px;
+    margin-top: 10px;
+    width: 1100px;
+}
+
+div.toc {
+    margin-top: 50px;
+    margin-left: 20px;
+    position: fixed;
+    font-family: Iosevka;
+    width: 200px;
+}
+
+div.research_block {
+    background: linear-gradient(rgba(33, 39, 44, 0.8), rgba(33, 39, 44, 0.8)),
+        url("/image/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 10px;
+    height: 300px;
+    width: 1000px;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+div.research_block:hover {
+    zoom: 1;
+    transform: scale(1.02);
+    transition: transform 0.15s ease-in-out;
+}
+
+p.research_title {
+    background-color: transparent;
+    font-family: Raleway;
+    font-size: 20px;
+    color: #e7f549;
+}
+
+div.research_intro {
+    background-color: transparent;
+    font-family: "CMU Serif";
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+div.research {
+    position: relative;
+}
+
+div.project_img {
+    top: 10px;
+    margin-left: 40px;
+}
+
+div.project_intro {
+    font-family: "CMU Serif";
+    text-align: justify;
+    font-size: 18px;
+    width: auto;
+    margin-left: 20px;
+}
+
+.clear {
+    clear: left;
+}
+
+div.projects {
+    position: relative;
+    left: 40px;
+}
+
+div.research_intro p {
+    margin-left: 20px;
+}
+
+div.vertical-line {
+    margin-top: -100px;
+    width: 1px;
+    background-color: #78706f;
+    height: 1000%;
+    float: left;
+    position: fixed;
+    margin-left: 280px;
+}
