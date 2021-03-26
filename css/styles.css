@@ -10,6 +10,14 @@ body {
     background-color: #20272d;
 }
 
+footer{
+    font-size: 15px;
+    color: black;
+    position: fixed;
+    left: 20px;
+    bottom: 10px;
+}
+
 a {
     padding: 2px;
     color: cyan;
@@ -58,7 +66,28 @@ p.author {
     color: #9c9b97;
 }
 
-p.pub_meta {
+.aboutme {
+    height: 270px;
+}
+
+#portrait{
+    float:left;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: #d7d7d9;
+}
+
+#aboutme_mytag {
+    float: left;
+    margin-left: 20px;
+}
+
+#aboutme_mytag li {
+    line-height: 40px;
+}
+
+.fade {
     color: #9c9b97;
 }
 
@@ -74,7 +103,7 @@ div.page {
     width: 1100px;
 }
 
-div.toc {
+.toc {
     padding-top: 30px;
     padding-left: 20px;
     position: fixed;
@@ -146,17 +175,9 @@ div.research_intro p {
     margin-left: 20px;
 }
 
-div.vertical-line {
-    margin-top: -100px;
-    width: 1px;
-    background-color: #78706f;
-    height: 1000%;
-    float: left;
-    position: fixed;
-    margin-left: 240px;
-}
-
 div.toc_intro img{
+    height: 180px;
+    width: 180px;
     object-position: center center;
 }
 
@@ -180,8 +201,12 @@ div.toc_intro:hover{
     );
 }
 
-.toc_extern img{
+.toc_extern{
+    margin-left: 20px;
+}
 
+.toc_extern img{
+    height: 20px;
 }
 
 .toc_extern img:hover{
@@ -189,18 +214,40 @@ div.toc_intro:hover{
     transition: transform 0.05s ease-in-out;
 }
 
-div.toc_navi a{
+.toc_navi {
+    margin-top: 30px;
+}
+
+.toc_navi a{
     font-family: Raleway;
     color: #152a6e;
     font-size: 20px;
+    line-height: 0px;
+    display: block;
+    background-color: #babcbf;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    margin-left: 0px;
 }
 
-div.toc_navi:hover{
-    transform: scale(1.1);
+div.toc_navi a:hover{
+    transform: scale(1.1, 1.1);
     transition: transform 0.05s ease-in-out;
+    color: #babcbf;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #20272d;
 }
 
-div.toc_navi:hover a{
-    text-decoration: none;
-    background: Gray;
+.home_intro {
+    font-family: Raleway;
+    font-size: 20px;
+    line-height: 40px;
 }
+
+.home_intro a, li, li>a{
+    font-size: 20px;
+    line-height: 30px;
+}
+
