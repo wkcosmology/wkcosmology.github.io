@@ -16,28 +16,8 @@ a {
     text-decoration: none;
 }
 
-a.toc_node0 {
-    padding: 10px;
-    margin-left: 0px;
-    font-size: 20px;
-    line-height: 35px;
-}
-
-a.toc_node1 {
-    padding: 10px;
-    margin-left: 20px;
-    font-size: 20px;
-    line-height: 35px;
-}
-
 a:hover {
     color: white;
-    background: radial-gradient(
-        ellipse at center,
-        black,
-        #20272d,
-        #20272d 100%
-    );
     text-decoration: underline;
 }
 
@@ -87,19 +67,21 @@ a {
 }
 
 div.page {
-    padding-left: 30px;
+    padding-left: 40px;
+    padding-top: 10px;
     position: relative;
-    margin-left: 280px;
-    margin-top: 10px;
+    margin-left: 240px;
     width: 1100px;
 }
 
 div.toc {
-    margin-top: 50px;
-    margin-left: 20px;
+    padding-top: 30px;
+    padding-left: 20px;
     position: fixed;
     font-family: Iosevka;
-    width: 200px;
+    width: 220px;
+    height: 100%;
+    background-color: #babcbf;
 }
 
 div.research_block {
@@ -171,5 +153,54 @@ div.vertical-line {
     height: 1000%;
     float: left;
     position: fixed;
-    margin-left: 280px;
+    margin-left: 240px;
+}
+
+div.toc_intro img{
+    object-position: center center;
+}
+
+div.toc_intro p{
+    margin-left: -5px;
+    font-style: italic;
+    font-family: Raleway;
+    font-size: 16px;
+    color: black;
+}
+
+div.toc_intro:hover{
+    transform: scale(1);
+    transition: transform 0.15s ease-in-out;
+}
+
+
+.toc_intro:hover img{
+    text-decoration: none;
+    background: none
+    );
+}
+
+.toc_extern img{
+
+}
+
+.toc_extern img:hover{
+    transform: scale(1.6);
+    transition: transform 0.05s ease-in-out;
+}
+
+div.toc_navi a{
+    font-family: Raleway;
+    color: #152a6e;
+    font-size: 20px;
+}
+
+div.toc_navi:hover{
+    transform: scale(1.1);
+    transition: transform 0.05s ease-in-out;
+}
+
+div.toc_navi:hover a{
+    text-decoration: none;
+    background: Gray;
 }

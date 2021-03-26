@@ -11,12 +11,16 @@
             title="no title"
             charset="utf-8"
         />
+        <script charset="utf-8" src="/js/toc.js"></script>
+        <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
     </head>
     <body>
         <div class="vertical-line"></div>
         <div class="toc">
             <span id="toc"></span>
-            <script charset="utf-8" src="/js/toc.js"></script>
+            <script charset="utf-8">
+                display_toc();
+            </script>
         </div>
         <div class="page">
             <h1>Research interests</h1>
@@ -87,9 +91,17 @@
                     </p>
                     <strong>What do I want to learn?</strong>
                     <ul>
-                        <li>How to infer the statistical connection robustly?</li>
-                        <li>How to perform the statistical inference numerically fast?</li>
-                        <li>How to infer the causal relation from statistical connection?</li>
+                        <li>
+                            How to infer the statistical connection robustly?
+                        </li>
+                        <li>
+                            How to perform the statistical inference numerically
+                            fast?
+                        </li>
+                        <li>
+                            How to infer the causal relation from statistical
+                            connection?
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -143,12 +155,6 @@
                     </li>
                 </ul>
             </div>
-            <div class="project_img">
-                <img src="/image/avastar.jpeg" height="200" alt="" />
-                <img src="/image/avastar.jpeg" height="200" alt="" />
-                <img src="/image/avastar.jpeg" height="200" alt="" />
-            </div>
-            <p class="clear"></p>
 
             <!-- galaxy group -->
             <h3 class="projects_head">
@@ -159,14 +165,29 @@
                 <ul>
                     <li>
                         <strong>What is galaxy group?</strong><br />
-                        Galay group is
+                        Galay group is a collection of galaxies that are sharing
+                        a common dark matter halo.
                     </li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <strong>Why do we want to study galaxy group?</strong
+                        ><br />
+                        In LCDM paradigm, galaxies are formed and evolved in
+                        dark matter halos, so their properties are tightly
+                        correlated. Thus, by identifying galaxy groups in survey
+                        data, we can directly build the connection between their
+                        properties.
+                    </li>
+                    <li>
+                        <strong>
+                            How to find galaxy groups? </strong
+                        ><<br />
+                        Various group finding algorithms were proposed in the
+                        literature, and one of the most common one is called
+                        Friend-of-Friend (FoF) method. In this project, we
+                        succefully identify the galaxy groups using FoF method.
+                        (To be continue...)
+                    </li>
                 </ul>
-            </div>
-            <div class="project_img">
-                <img src="/image/avastar.jpeg" alt="" height="200" />
             </div>
             <p class="clear"></p>
         </div>

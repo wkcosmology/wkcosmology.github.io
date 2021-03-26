@@ -11,11 +11,16 @@
             title="no title"
             charset="utf-8"
         />
+        <script charset="utf-8" src="/js/toc.js"></script>
+        <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
     </head>
     <body>
+        <div class="vertical-line"></div>
         <div class="toc">
             <span id="toc"></span>
-            <script charset="utf-8" src="/js/toc.js"></script>
+            <script charset="utf-8">
+                display_toc();
+            </script>
         </div>
         <div class="page">
             <h1>Introduction</h1>
@@ -88,28 +93,24 @@
             </ul>
 
             <h2>More about me</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Q</th>
-                        <th scope="row" colspan="2">A</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Programming language</td>
-                        <td colspan="2">Python,C,C++,lua,VimL,HTML</td>
-                    </tr>
-                    <tr>
-                        <td>Editor</td>
-                        <td colspan="2">Neovim,Jupyterlab</td>
-                    </tr>
-                    <tr>
-                        <td>Operating system</td>
-                        <td colspan="2">MacOS</td>
-                    </tr>
-                </tbody>
-            </table>
+            <p>
+                <strong>Programming language:</strong><br />
+                <ui>
+                    <li>
+                        Python: Basic programming, OOP, Numpy, Pandas,
+                        Matplotlib
+                    </li>
+                    <li>
+                        C/C++: Basic programming, OOP
+                    </li>
+                    <li>
+                        Lua: Basic programming, mainly for neovim script
+                    </li>
+                    <li>
+                        HTML,CSS,JavaScript: As you can see here.
+                    </li>
+                </ui>
+            </p>
         </div>
     </body>
 </html>
