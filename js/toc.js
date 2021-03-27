@@ -4,5 +4,8 @@ function display_toc() {
         .then((response) => response.text())
         .then((response) => {
             toc.innerHTML += response;
+            let file = location.href.split("/").pop().split(".")[0];
+            let select = toc.querySelector("#" + file);
+            select.className = "select";
         });
 }
