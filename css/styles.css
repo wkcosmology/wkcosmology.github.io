@@ -13,9 +13,8 @@ body {
 footer{
     font-size: 15px;
     color: black;
-    position: fixed;
     left: 20px;
-    bottom: 10px;
+    margin-top: 90%;
 }
 
 a {
@@ -126,7 +125,7 @@ div.page {
     padding-left: 40px;
     position: relative;
     margin-left: 240px;
-    width: 100%;
+    width: 70%;
 }
 
 .toc {
