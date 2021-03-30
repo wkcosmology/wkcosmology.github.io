@@ -15,7 +15,7 @@ footer{
     font-size: 15px;
     color: black;
     left: 20px;
-    margin-top: 90%;
+    margin-top: 80%;
 }
 
 a {
@@ -283,16 +283,35 @@ div.toc_intro:hover{
 }
 
 #myChart {
-    margin-top: 30px;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 50px;
     height: 300px;
-    width: 900px;
+    width: 820px;
     min-height: 300px;
     border: 2px solid #050708;
     box-shadow: 10px 10px 10px #050708;
     border-radius: 10px 10px 10px 10px;
+    display: block;
 }
 
 .zc-ref {
     display: none;
+}
+
+a[target="_blank"]::after {
+  content: "";
+  width: 1em;
+  height: 1em;
+  margin: 0em 0.0em -0.1em 0.2em;
+  background: Url('/image/icon/external_link.png')  no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+
+#pub_ads_link {
+    font-family: Raleway;
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
 }
