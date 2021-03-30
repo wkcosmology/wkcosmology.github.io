@@ -125,7 +125,7 @@ div.page {
     padding-left: 40px;
     position: relative;
     margin-left: 240px;
-    width: 70%;
+    width: 60%;
 }
 
 .toc {
@@ -145,10 +145,10 @@ div.research_block {
     background-repeat: no-repeat;
     background-position: center center;
     margin-top: 10px;
-    height: 300px;
-    width: 1000px;
+    width: 800px;
     padding: 10px;
     border: 1px solid white;
+    border-radius: 10px 10px 10px 10px;
 }
 
 div.research_block:hover {

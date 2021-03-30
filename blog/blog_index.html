@@ -3,16 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <title>Resources</title>
+        <title>Resource</title>
         <link
             rel="stylesheet"
-            href="/css/styles.css"
+            href="../css/styles.css"
             type="text/css"
             title="no title"
             charset="utf-8"
         />
         <script charset="utf-8" src="/js/toc.js"></script>
+        <script charset="utf-8" src="/js/markdown.js"></script>
         <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
+        <script
+            charset="utf-8"
+            src="https://cdn.jsdelivr.net/npm/showdown@1.9.0/dist/showdown.min.js"
+        ></script>
     </head>
     <body>
         <div class="vertical-line"></div>
@@ -23,6 +28,12 @@
             </script>
         </div>
         <div class="page">
+            <div>
+                <span id="md"></span>
+                <script charset="utf-8">
+                    display_md();
+                </script>
+            </div>
         </div>
     </body>
 </html>
