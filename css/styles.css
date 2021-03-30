@@ -4,6 +4,7 @@
     color: #dadada;
     background-color: transparent;
 }
+
 body {
     margin: 0px;
     padding: 0px;
@@ -282,10 +283,14 @@ div.toc_intro:hover{
 }
 
 #myChart {
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-top: 30px;
     height: 300px;
-    width: 1000px;
+    width: 900px;
     min-height: 300px;
+    border: 2px solid #050708;
+    box-shadow: 10px 10px 10px #050708;
+    border-radius: 10px 10px 10px 10px;
 }
 
 .zc-ref {

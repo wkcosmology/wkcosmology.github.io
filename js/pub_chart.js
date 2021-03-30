@@ -1,13 +1,14 @@
+var background = "#20272d"
 var g3 = {
-    backgroundColor: "none",
+    backgroundColor: background,
     height: "100%",
-    width: "40%",
+    width: "50%",
     x: "0%",
     y: "0%",
     type: "ring",
     title: {
         text: "Publications",
-        "font-color": "yellow",
+        "font-color": "white",
         "font-size": 30,
         "font-family": "Raleway",
     },
@@ -15,9 +16,9 @@ var g3 = {
         "value-box": {
             text: "%pie-total-value",
             placement: "center",
-            "font-color": "yellow",
-            "font-size": 35,
-            "font-family": "Raleway",
+            "font-color": "white",
+            "font-size": 50,
+            "font-family": "Georgia",
             "font-weight": "bold",
             rules: [
                 {
@@ -49,42 +50,42 @@ var g3 = {
     series: [
         {
             values: [2],
-            "background-color": "#cc0000",
+            "background-color": "#937cb9",
             text: "MNRAS",
         },
         {
             values: [1],
-            "background-color": "#ff3300",
+            "background-color": "#3c5492",
             text: "ApJ",
         },
         {
             values: [3],
-            "background-color": "#ff6600",
+            "background-color": "#01b5ec",
             text: "JCAP",
         },
         {
             values: [1],
-            "background-color": "#ff9933",
+            "background-color": "#7cc9e7",
             text: "RAA",
         },
         {
             values: [3],
-            "background-color": "#ffcc00",
+            "background-color": "#79827b",
             text: "Others",
         },
     ],
 };
 
 var g4 = {
-    backgroundColor: "none",
+    backgroundColor: background,
     height: "100%",
     width: "40%",
-    x: "45%",
+    x: "50%",
     y: "0%",
     type: "ring",
     title: {
         text: "Citations",
-        "font-color": "yellow",
+        "font-color": "white",
         "font-size": 30,
         "font-family": "Raleway",
     },
@@ -92,9 +93,9 @@ var g4 = {
         "value-box": {
             text: "%pie-total-value",
             placement: "center",
-            "font-color": "yellow",
-            "font-size": 35,
-            "font-family": "Raleway",
+            "font-color": "white",
+            "font-size": 50,
+            "font-family": "Georgia",
             "font-weight": "bold",
             rules: [
                 {
@@ -125,28 +126,28 @@ var g4 = {
     },
     series: [
         {
-            values: [2],
-            "background-color": "#cc0000",
+            values: [4],
+            "background-color": "#937cb9",
             text: "MNRAS",
         },
         {
-            values: [1],
-            "background-color": "#ff3300",
+            values: [7],
+            "background-color": "#3c5492",
             text: "ApJ",
         },
         {
-            values: [3],
-            "background-color": "#ff6600",
+            values: [19],
+            "background-color": "#01b5ec",
             text: "JCAP",
         },
         {
-            values: [1],
-            "background-color": "#ff9933",
+            values: [3],
+            "background-color": "#7cc9e7",
             text: "RAA",
         },
         {
-            values: [3],
-            "background-color": "#ffcc00",
+            values: [15],
+            "background-color": "#79827b",
             text: "Others",
         },
     ],
@@ -154,7 +155,7 @@ var g4 = {
 
 
 var chartJSON = {
-    backgroundColor: "none",
+    backgroundColor: background,
     graphset: [g3, g4],
 };
 
