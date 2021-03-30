@@ -11,8 +11,11 @@
             title="no title"
             charset="utf-8"
         />
-        <script charset="utf-8" src="/js/toc.js"></script>
         <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
+        <!-- offline js script -->
+        <script charset="utf-8" src="/js/toc.js"></script>
+        <!-- online js script -->
+        <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
     </head>
     <body>
         <div class="vertical-line"></div>
@@ -23,7 +26,8 @@
             </script>
         </div>
         <div class="page">
-            <h1>Publication:</h1>
+            <div id="myChart" class="chart--container"></div>
+            <script charset="utf-8" src="/js/pub_chart.js"></script>
             <h2>First author:</h2>
             <ul>
                 <li>
@@ -71,10 +75,10 @@
                     </p>
                     <span class="fade">
                         Zhaoyu Wang, Haojie Xu, Xiaohu Yang, Y. P. Jing,
-                        <span class="strong">Kai Wang</span>,
-                        Hong Guo, Fuyu Dong, Min He <br />
-                        2021, accepted by SCIENCE
-                        CHINA Physics, Mechanics & Astronomy
+                        <span class="strong">Kai Wang</span>, Hong Guo, Fuyu
+                        Dong, Min He <br />
+                        2021, accepted by SCIENCE CHINA Physics, Mechanics &
+                        Astronomy
                     </span>
                 </li>
                 <li>

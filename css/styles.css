@@ -141,7 +141,7 @@ div.page {
 
 div.research_block {
     background: linear-gradient(rgba(33, 39, 44, 0.8), rgba(33, 39, 44, 0.8)),
-        url("/image/background.jpg");
+    url("/image/background.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     margin-top: 10px;
@@ -281,3 +281,13 @@ div.toc_intro:hover{
     line-height: 30px;
 }
 
+#myChart {
+    margin-top: 50px;
+    height: 300px;
+    width: 1000px;
+    min-height: 300px;
+}
+
+.zc-ref {
+    display: none;
+}
