@@ -121,6 +121,7 @@ p.author {
 }
 
 div.page {
+    display: block;
     padding-top: 10px;
     padding-left: 40px;
     position: relative;
