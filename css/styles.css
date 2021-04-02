@@ -76,6 +76,7 @@ p.author {
     background-color: #161b1f;
     box-shadow: 5px 5px 5px #161b1f;
     width: 100%;
+    min-width: 800px;
     display: block;
 }
 
@@ -147,6 +148,7 @@ div.research_block {
     background-position: center center;
     margin-top: 10px;
     width: 800px;
+    display:block;
     padding: 10px;
     border: 1px solid white;
     border-radius: 10px 10px 10px 10px;
