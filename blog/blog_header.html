@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Kosmos Blog</title>
+        <link
+            rel="stylesheet"
+            href="/css/styles.css"
+            type="text/css"
+            title="no title"
+            charset="utf-8"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/blog_styles.css"
+            type="text/css"
+            title="no title"
+            charset="utf-8"
+        />
+        <script charset="utf-8" src="/js/sidebar.js"></script>
+        <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
+        <script src="/js/mathjax.js" async></script>
+        <script charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        </script>
+    </head>
+    <body>
+        <div id="blog_sidebar">
+            <span id="blog_sidebar_header"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_header();
+            </script>
+            <span id="blog_sidebar_content"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_content();
+            </script>
+        </div>
+        <div class="page" id="blog_page">
+            <div class="blog_front"></div>
+            <span id="blog_content"></span>
+        </div>
+    </body>
+</html>

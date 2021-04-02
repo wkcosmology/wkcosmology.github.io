@@ -1,0 +1,224 @@
+#blog_sidebar {
+    padding-top: 30px;
+    padding-left: 20px;
+    position: fixed;
+    font-family: Iosevka;
+    width: 220px;
+    height: 100%;
+    background-color: #20272d;
+}
+
+#blog_sidebar_header .sidebar_intro p {
+    margin-left: -5px;
+    font-style: italic;
+    font-family: Raleway;
+    font-size: 16px;
+    color: #babcbf;
+}
+
+#blog_sidebar footer {
+    font-size: 15px;
+    color: #babcbf;
+    left: 20px;
+    position: fixed;
+    bottom: 20px;
+}
+
+#blog_sidebar_header .sidebar_navi a {
+    display: block;
+    font-weight: bold;
+    background-color: #babcbf;
+    font-size: 35;
+    line-height: 25px;
+    padding-left: 40px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.blog_front {
+    display: block;
+    margin-top: 5px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    border-top: 4px double #050708;
+    border-bottom: 4px double #050708;
+}
+
+.blog_title {
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.blog_annot {
+    list-style: none;
+}
+
+#blog_page .blog_annot li {
+    color: #555956;
+    font-family: Helvetica;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+#blog_page {
+    display: block;
+    background-color: #babcbf;
+    padding-right: calc(100vw - 800px);
+    margin-left: 240px;
+    width: 800px;
+    min-height: 100vh;
+    padding-left: 40px;
+    padding-bottom: 30px;
+}
+
+#blog_page * {
+    color: black;
+}
+
+#blog_page li {
+    margin-left: 20px;
+}
+
+#blog_page li p {
+    margin-left: 0px;
+}
+
+#blog_content a {
+    color: black;
+}
+
+#blog_content {
+    counter-reset: section;
+}
+
+#blog_content h1 {
+    counter-reset: sub-section;
+    color: black;
+    font-family: "Helvetica";
+    font-weight: "regular";
+}
+
+#blog_content h2 {
+    counter-reset: composite;
+    color: black;
+    font-family: "Helvetica";
+    font-weight: "regular";
+}
+
+#blog_content h3 {
+    counter-reset: detail;
+    color: black;
+    font-family: "Helvetica";
+    font-weight: "regular";
+}
+
+#blog_content h4 {
+    color: black;
+    font-family: "Helvetica";
+    font-weight: "regular";
+}
+
+#blog_content h1:before {
+    counter-increment: section;
+    content: counter(section) ". ";
+    font-size: 30px;
+    font-family: "Helvetica";
+    font-weight: "regular";
+}
+
+#blog_content h2:before {
+    counter-increment: sub-section;
+    content: counter(section) "." counter(sub-section) ". ";
+}
+
+#blog_content h3:before {
+    counter-increment: composite;
+    content: counter(section) "." counter(sub-section) "." counter(composite)
+        ". ";
+}
+
+#blog_content h4:before {
+    counter-increment: detail;
+    content: counter(section) "." counter(sub-section) "." counter(composite)
+        "." counter(detail) ". ";
+}
+
+#blog_content p {
+    margin-left: 20px;
+    font-family: "Helvetica";
+    color: black;
+    text-align: justify;
+}
+
+#blog_content a {
+    color: #2a4673;
+}
+
+#blog_content pre {
+    margin-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    background-color: #ccc7b6;
+    overflow-x: hidden;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid black;
+}
+
+#blog_content code {
+    color: #382d28;
+    font-family: Iosevka;
+}
+
+#blog_content pre code {
+    display: block;
+    font-family: Iosevka;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #382d28;
+}
+
+#blog_sidebar_content {
+    display: block;
+    margin-top: 50px;
+}
+
+#blog_sidebar_content ol > li {
+    counter-increment: item;
+    color: #828385;
+    font-family: Iosevka;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: -10px;
+    padding-left: 0px;
+}
+
+#blog_sidebar_content ol > ol {
+    padding-left: 25px;
+}
+
+#blog_sidebar_content ol > li a {
+    color: #babcbf;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: Iosevka;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    margin-left: -5px;
+}
+
+ol > li:first-child {
+    counter-reset: item;
+}
+
+ol ol > li {
+    display: block;
+}
+
+ol ol > li:before {
+    content: counters(item, ".") ". ";
+    margin-left: -40px;
+}
+
