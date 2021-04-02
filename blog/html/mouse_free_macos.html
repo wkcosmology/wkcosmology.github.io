@@ -1,0 +1,110 @@
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Kosmos Blog</title>
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/css/blog_styles.css" type="text/css" title="no title" charset="utf-8">
+        <script charset="utf-8" src="/js/sidebar.js"></script>
+        <link rel="shortcut icon" type="image/png" href="/image/favicon.png">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <script src="/js/mathjax.js" async=""></script>
+        <script charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        </script>
+    </head>
+    <body>
+        <div id="blog_sidebar">
+            <span id="blog_sidebar_header"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_header();
+            </script>
+            <span id="blog_sidebar_content"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_content();
+            </script>
+        </div>
+        <div class="page" id="blog_page">
+            <div class="blog_front"><p class="blog_title">Mouse-free mac OS</p><ul class="blog_annot"><li>Date: Apr. 01, 2021</li><li>Description: Share my configuration to achieve mouse-free mac OS</li></ul></div>
+            <span id="blog_content"><h1 id="why-mouse-free">Why mouse-free?</h1>
+<p>Mouse-free is a state that you can do almost all of you work by using only the
+keyboard, so it is meaningful when you are frequently switching between keyboard
+and mouse/trackpad, where keyboard for editing and mouse/trackpad for
+navigation. In my opinion, mouse-free is only useful for programmer or word
+editor, and it is useless for gamer or graphic designer.</p>
+<p>Mouse-free seems like a geek term, but its true intention is to refine your
+workflow, improve your productivity, and give more fun to your job. It is not
+necessary, but it is harmless to try.</p>
+<h1 id="what-do-we-need">What do we need?</h1>
+<p>First of all, there are many alternatives to my configuration. One should be
+open-mind and find the best way for yourself.</p>
+<h2 id="a-good-keyboard">A good keyboard</h2>
+<p>This is not necessary, but a good keyboard makes you want to use it more, and
+that is the motivation to mouse-free.</p>
+<h2 id="vim-mode-editor">Vim-mode editor</h2>
+<p>First of all, I saied <code>vim-mode editor</code> instead of a software call <code>vim</code>.
+Vim-mode is an powerful editting pattern, which uses the alphanumeric keys and a
+few function keys, like <code>ctrl</code>, <code>shift</code> or <code>tab</code>, to do all the work of editing,
+navigating, modifying, and searching by using different modes. With vim-mode,
+you can achieve mouse-free for your editting work.</p>
+<h2 id="quick-launch-apps">Quick Launch apps</h2>
+<p>During progrmming, maybe we want to google something, so we will switch to the
+browser. Or we want to take a note, loop up someting or chat with others, so we
+need to open other apps. My practise is to launch all the apps by searching and
+open, using spotlight or its alternative: Alfred. Furthermore, I defined some
+key combination for some commonly used apps, like</p>
+<table>
+<thead>
+<tr>
+<th id="key_stroke" style="text-align:left;">Key stroke</th>
+<th id="app" style="text-align:left;">App</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;"><code>Opt-Ctrl-F</code></td>
+<td style="text-align:left;">Browser</td>
+</tr>
+<tr>
+<td style="text-align:left;"><code>Opt-Ctrl-I</code></td>
+<td style="text-align:left;">Terminal</td>
+</tr>
+<tr>
+<td style="text-align:left;"><code>Opt-Ctrl-M</code></td>
+<td style="text-align:left;">Mail</td>
+</tr>
+<tr>
+<td style="text-align:left;"><code>Opt-Ctrl-e</code></td>
+<td style="text-align:left;">Finder</td>
+</tr>
+<tr>
+<td style="text-align:left;"><code>Opt-Ctrl-]</code></td>
+<td style="text-align:left;">PDF reader</td>
+</tr>
+</tbody>
+</table>
+<p>So I can quickly switch between these apps without any mouse click. This
+function can be achieved using the Alfred workflow or native Automator software.
+Here is the
+<a href="https://learn.adafruit.com/launch-deck-trellis-m4/app-launching">tutorial</a> for
+automator.</p>
+<h2 id="window-management">Window management</h2>
+<p>To someone who are still using mouse to resize your window, there is better
+choice now. Normally, we just want to resize our window to some specific layout.
+For example, left-half and right-half, or maybe a quarter. Here is a free
+software to do that, <a href="https://rectangleapp.com/">Rectangle</a> (Do not pay for
+these basic functions).</p>
+<p>If you want to split your finder window, here is a powerful alternative,
+<a href="https://qspace.awehunt.com/en-us/index.html">QSpace</a>. This software makes me
+like finder, so I think it deserves the money.</p>
+<h2 id="maximize-your-working-area">Maximize your working area</h2>
+<p>As I mentioned before, I do not need to click to open apps or any file, so I
+will hide the dock and this gives my extra working space. Another thing that
+annoys me is the menu bar, so I also hide it.</p>
+<pre><code class="text language-text">System preferences -&gt; Docks &amp; MenuBar -&gt; Automatically hide and show the Dock
+System preferences -&gt; Docks &amp; MenuBar -&gt; Automatically hide and show the menu bar</code></pre>
+<h1 id="last-word">Last word</h1>
+<p>This is one's personal preference to choose his/her workflow, and there is
+nothing right or wrong.</p></span>
+        </div>
+    
+
+</body>

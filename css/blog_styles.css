@@ -1,24 +1,50 @@
+:root {
+    --mono-font: Iosevka, monospace;
+    --sans-serif-font: Arial;
+    --header-font: Raleway, "Trebuchet MS";
+    --serif-font: Georgia;
+    --cmu-font: "CMU serif";
+    --black-basic: #20272d;
+    --blue-basic: #152a6e;
+    --blacker-basic: #161b1f;
+    --white-basic: #babcbf;
+    --whiter-basic: #dadada;
+    --header-color: #e7f549;
+    --dark-header-color: #eae486;
+    --gray-basic: #9c9b97;
+    --dark-gray-basic: #555956;
+    --pre-color: #ccc7b6;
+}
+
+#blog_sidebar #blog_sidebar_header .sidebar_intro p{
+    margin-left: -5px;
+    font-style: italic;
+    font-family: var(--header-font);
+    font-size: 15px;
+    color: var(--white-basic);
+}
+
 #blog_sidebar {
     padding-top: 30px;
     padding-left: 20px;
     position: fixed;
-    font-family: Iosevka;
+    font-family: var(--mono-font);
     width: 220px;
     height: 100%;
-    background-color: #20272d;
+    background-color: var(--black-basic);
 }
 
 #blog_sidebar_header .sidebar_intro p {
     margin-left: -5px;
     font-style: italic;
-    font-family: Raleway;
+    font-family: var(--header-font);
     font-size: 16px;
-    color: #babcbf;
+    color: var(--white-basic);
 }
 
 #blog_sidebar footer {
     font-size: 15px;
-    color: #babcbf;
+    color: var(--white-basic);
     left: 20px;
     position: fixed;
     bottom: 20px;
@@ -27,7 +53,7 @@
 #blog_sidebar_header .sidebar_navi a {
     display: block;
     font-weight: bold;
-    background-color: #babcbf;
+    background-color: var(--white-basic);
     font-size: 35;
     line-height: 25px;
     padding-left: 40px;
@@ -39,13 +65,12 @@
     margin-top: 5px;
     padding-top: 1px;
     padding-bottom: 5px;
-    border-top: 4px double #050708;
-    border-bottom: 4px double #050708;
+    border-top: 4px double var(--black-basic);
+    border-bottom: 4px double var(--black-basic);
 }
 
 .blog_title {
     text-align: center;
-    color: black;
     font-size: 30px;
     font-family: Helvetica;
     font-weight: bold;
@@ -56,15 +81,15 @@
 }
 
 #blog_page .blog_annot li {
-    color: #555956;
-    font-family: Helvetica;
+    color: var(--dark-gray-basic);
+    font-family: var(--sans-serif-font);
     font-size: 18px;
     line-height: 20px;
 }
 
 #blog_page {
     display: block;
-    background-color: #babcbf;
+    background-color: var(--white-basic);
     padding-right: calc(100vw - 800px);
     margin-left: 240px;
     width: 800px;
@@ -74,7 +99,7 @@
 }
 
 #blog_page * {
-    color: black;
+    color: var(--blacker-basic);
 }
 
 #blog_page li {
@@ -86,7 +111,7 @@
 }
 
 #blog_content a {
-    color: black;
+    color: var(--blacker-basic);
 }
 
 #blog_content {
@@ -95,28 +120,28 @@
 
 #blog_content h1 {
     counter-reset: sub-section;
-    color: black;
-    font-family: "Helvetica";
+    color: var(--blacker-basic);
+    font-family: var(--sans-serif-font);
     font-weight: "regular";
 }
 
 #blog_content h2 {
     counter-reset: composite;
-    color: black;
-    font-family: "Helvetica";
+    color: var(--blacker-basic);
+    font-family: var(--sans-serif-font);
     font-weight: "regular";
 }
 
 #blog_content h3 {
     counter-reset: detail;
-    color: black;
-    font-family: "Helvetica";
+    color: var(--blacker-basic);
+    font-family: var(--sans-serif-font);
     font-weight: "regular";
 }
 
 #blog_content h4 {
-    color: black;
-    font-family: "Helvetica";
+    color: var(--blacker-basic);
+    font-family: var(--sans-serif-font);
     font-weight: "regular";
 }
 
@@ -124,31 +149,37 @@
     counter-increment: section;
     content: counter(section) ". ";
     font-size: 30px;
-    font-family: "Helvetica";
+    font-family: var(--sans-serif-font);
     font-weight: "regular";
 }
 
 #blog_content h2:before {
     counter-increment: sub-section;
     content: counter(section) "." counter(sub-section) ". ";
+    font-family: var(--sans-serif-font);
+    font-weight: "regular";
 }
 
 #blog_content h3:before {
     counter-increment: composite;
     content: counter(section) "." counter(sub-section) "." counter(composite)
         ". ";
+    font-family: var(--sans-serif-font);
+    font-weight: "regular";
 }
 
 #blog_content h4:before {
     counter-increment: detail;
     content: counter(section) "." counter(sub-section) "." counter(composite)
         "." counter(detail) ". ";
+    font-family: var(--sans-serif-font);
+    font-weight: "regular";
 }
 
 #blog_content p {
     margin-left: 20px;
-    font-family: "Helvetica";
-    color: black;
+    font-family: var(--serif-font);
+    color: var(--blacker-basic);
     text-align: justify;
 }
 
@@ -161,23 +192,23 @@
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
-    background-color: #ccc7b6;
+    background-color: var(--pre-color);
     overflow-x: hidden;
     border-radius: 5px 5px 5px 5px;
-    border: 1px solid black;
+    border: 1px solid var(--blacker-basic);
 }
 
 #blog_content code {
     color: #382d28;
-    font-family: Iosevka;
+    font-family: var(--mono-font);
 }
 
 #blog_content pre code {
     display: block;
-    font-family: Iosevka;
+    font-family: var(--mono-font);
     font-size: 15px;
     line-height: 1.4;
-    color: #382d28;
+    color: var(--black-basic);
 }
 
 #blog_sidebar_content {
@@ -187,8 +218,8 @@
 
 #blog_sidebar_content ol > li {
     counter-increment: item;
-    color: #828385;
-    font-family: Iosevka;
+    color: var(--gray-basic);
+    font-family: var(--mono-font);
     font-size: 16px;
     line-height: 24px;
     margin-left: -10px;
@@ -200,10 +231,10 @@
 }
 
 #blog_sidebar_content ol > li a {
-    color: #babcbf;
+    color: var(--white-basic);
     font-size: 18px;
     line-height: 24px;
-    font-family: Iosevka;
+    font-family: var(--mono-font);
     overflow-wrap: break-word;
     word-wrap: break-word;
     margin-left: -5px;
@@ -222,3 +253,33 @@ ol ol > li:before {
     margin-left: -40px;
 }
 
+#blog_content table{
+    margin-left: 40px;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 2px solid var(--black-basic);
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid var(--black-basic);
+}
