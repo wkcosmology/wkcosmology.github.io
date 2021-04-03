@@ -143,7 +143,7 @@ div.page {
     padding-bottom: 60px;
     margin-left: 240px;
     padding-right: calc(100vw - 240px - 800px);
-    width: 800px;
+    width: 840px;
     min-height: 100vh;
     background-color: var(--black-basic);
 }
@@ -213,11 +213,6 @@ div.research {
     position: relative;
 }
 
-div.project_img {
-    top: 10px;
-    margin-left: 40px;
-}
-
 .clear {
     clear: left;
 }
@@ -231,9 +226,16 @@ div.research_intro p {
     margin-left: 20px;
 }
 
-.project_intro li{
+.project_intro>ul>li {
     font-family: var(--serif-font);
     text-align: justify;
+    padding-right: 40px;
+}
+
+.project_intro>ul>li>ul>li {
+    font-family: var(--serif-font);
+    text-align: justify;
+
 }
 
 div.sidebar_intro img{
