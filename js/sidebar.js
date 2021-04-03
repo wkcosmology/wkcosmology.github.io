@@ -1,3 +1,4 @@
+// display the sidebar for main page
 function display_sidebar() {
     let sidebar = document.querySelector("#sidebar");
     fetch("/sidebar.html")
@@ -10,9 +11,10 @@ function display_sidebar() {
         });
 }
 
+// display the sidebar header for blog page
 function display_blog_sidebar_header() {
     let header = document.querySelector("#blog_sidebar_header");
-    fetch("/blog_sidebar.html")
+    fetch("/blog/blog_sidebar.html")
         .then((response) => response.text())
         .then((response) => {
             header.innerHTML += response;
@@ -43,11 +45,11 @@ function read_sidebar(ol, sidebar, k, lvl_cur) {
     return [ol, i];
 }
 
-// display the sidebar content
+// display the sidebar content for the blog page
 function display_blog_sidebar_content() {
     let content = document.querySelector("#blog_sidebar_content");
     var entries = JSON.parse(
-        $.getJSON({ url: "/blog/blog_toc.json", async: false }).responseText
+        $.getJSON({ url: "/blog/blog_meta.json", async: false }).responseText
     );
     let blog_name = location.href.split("/").pop().split(".")[0] + ".md";
     var ol = document.createElement("ol");

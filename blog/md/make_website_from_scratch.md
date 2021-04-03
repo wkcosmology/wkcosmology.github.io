@@ -2,8 +2,8 @@
 title: Make your homepage from scratch
 date: 2021-04-01
 description: Share my experience of making this homepage from scratch.
-tags: [html, css, javascript]
-categories: [note]
+tags: [HTML, CSS, JavaScript]
+categories: [Programming]
 ---
 
 # Motivations

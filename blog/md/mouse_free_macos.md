@@ -2,8 +2,8 @@
 title: Mouse-free mac OS
 date: 2021-04-02
 description: Share my configuration to achieve mouse-free mac OS
-tags: [note]
-categories: [productivity]
+tags: [mac OS, Vim]
+categories: [Productivity]
 ---
 
 # Why mouse-free?

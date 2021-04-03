@@ -70,4 +70,4 @@ for (var i in files) {
     );
 }
 // write to json file
-fs.writeFileSync(homepage + "/blog/blog_toc.json", JSON.stringify(blog_json));
+fs.writeFileSync(homepage + "/blog/blog_meta.json", JSON.stringify(blog_json));

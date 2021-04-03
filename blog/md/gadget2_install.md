@@ -1,11 +1,9 @@
 ---
 title: Install Gadget2 on Mac OS
-date: 2020-02-26 22:32:02
-tags: [programming, astronomy]
-toc: true
-mathjax: true
-categories: [Blog, ComputerScience]
+date: 2021-04-02
 description: How to install Gadget2 on Mac OS
+tags: [Software, mac OS]
+categories: [Astrophysics, Programming]
 ---
 
 # Install

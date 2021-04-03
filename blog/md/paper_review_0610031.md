@@ -6,8 +6,8 @@ date: 2021-04-01
 description:
     This is THE first paper I will recommend for whoever is interesting in
     galaxy formation and evolution.
-tags: [review]
-categories: [astrophysics]
+tags: [Paper-reading]
+categories: [Astrophysics]
 ---
 
 Currently, there are many ways to understand the galaxy formation and evolution

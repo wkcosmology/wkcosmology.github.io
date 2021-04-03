@@ -31,10 +31,9 @@ body {
 footer{
     font-size: 15px;
     font-family: var(--mono-font);
-    color: var(--black-basic);
-    left: 20px;
-    position: fixed;
-    bottom: 20px;
+    color: var(--gray-basic);
+    display: block;
+    margin-top: 100px;
 }
 
 a {
@@ -142,6 +141,7 @@ div.page {
     display: block;
     padding-top: 10px;
     padding-left: 40px;
+    padding-bottom: 60px;
     position: relative;
     margin-left: 240px;
     width: min(800px, 60%);
@@ -154,7 +154,7 @@ div.page {
     position: fixed;
     font-family: var(--mono-font);
     width: 220px;
-    height: 100%;
+    height: 100vh;
     background-color: var(--white-basic);
 }
 
@@ -270,7 +270,7 @@ div.sidebar_intro:hover{
     font-family: var(--header-font);
     color: var(--blue-basic);
     font-size: 23px;
-    line-height: 12px;
+    line-height: 8px;
     display: block;
     background-color: var(--white-basic);
     padding-top: 20px;
@@ -421,4 +421,49 @@ a[target="_blank"]::after {
 #blogs_files .label_toggle{
     background-color: var(--blacker-basic);
     box-shadow: 8px 8px 8px var(--blacker-basic);
+}
+
+#blog_category, #blog_tag{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+#blog_category .blog_cate_title, #blog_tag .blog_tag_title{
+    display: block;
+    font-family: var(--mono-font);
+    font-size: 20px;
+    margin-left: -20px;
+}
+
+#blog_category .blog_cate_name, #blog_tag .blog_tag_name {
+    background-color: black;
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 10px;
+    padding: 4px 10px 4px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#blog_category .blog_cate_name, #blog_tag .blog_tag_name {
+    background-color: var(--blacker-basic);
+    color: var(--whiter-basic);
+    font-size: 18px;
+    margin-left: 6px;
+    margin-right: 6px;
+    padding: 4px 10px 4px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#blog_category .blog_cate_name.onclick, #blog_tag .blog_tag_name.onclick {
+    background-color: var(--whiter-basic);
+    color: var(--blacker-basic);
+    font-size: 18px;
+    margin-left: 6px;
+    margin-right: 6px;
+    padding: 4px 10px 4px 10px;
+    border-radius: 10px 10px 10px 10px;
 }
