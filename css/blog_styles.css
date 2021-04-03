@@ -16,6 +16,20 @@
     --pre-color: #ccc7b6;
 }
 
+#blog_page {
+    display: block;
+    position: relative;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-bottom: 60px;
+    margin-left: 240px;
+    /* 55px here is the extra padding, I do not know why */
+    padding-right: calc(100vw - 240px - 840px - 55px);
+    width: 840px;
+    min-height: 100vh;
+    background-color: var(--white-basic);
+}
+
 #blog_sidebar #blog_sidebar_header .sidebar_intro p {
     margin-left: -5px;
     font-style: italic;
@@ -72,12 +86,14 @@
 .blog_title {
     text-align: center;
     font-size: 30px;
+    line-height: 35px;
     font-family: Helvetica;
     font-weight: bold;
 }
 
 .blog_annot {
     list-style: none;
+    padding-right: 40px;
 }
 
 #blog_page .blog_annot li {
@@ -87,15 +103,10 @@
     line-height: 20px;
 }
 
-.page#blog_page {
-    display: block;
-    position: relative;
-    background-color: var(--white-basic);
-    padding-right: calc(100vw - 800px);
-}
 
 #blog_page * {
     color: var(--blacker-basic);
+    padding-right: 40px;
 }
 
 #blog_page li {

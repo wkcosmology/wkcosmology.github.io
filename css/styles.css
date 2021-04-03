@@ -15,6 +15,11 @@
     --dark-gray-basic: #555956;
 }
 
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
 p,li,div,span {
     font-family: var(--sans-serif-font);
     font-size: 18px;
@@ -22,11 +27,6 @@ p,li,div,span {
     background-color: transparent;
 }
 
-body {
-    margin: 0px;
-    padding: 0px;
-    background-color: var(--black-basic);
-}
 
 footer{
     font-size: 15px;
@@ -89,7 +89,6 @@ h3 {
 }
 
 .portrait {
-    position: fixed;
     height: 240px;
     padding-top: 30px;
     margin-top: -10px;
@@ -98,7 +97,6 @@ h3 {
     background-color: var(--blacker-basic);
     box-shadow: 5px 5px 5px var(--blacker-basic);
     width: 100%;
-    min-width: 800px;
     display: block;
 }
 
@@ -106,10 +104,6 @@ h3 {
     margin-top: 240px;
     margin-left: -50px;
     border: 1px solid var(--blacker-basic);
-}
-
-.aboutme {
-    margin-top:300px;
 }
 
 #portrait_mytag ul{
@@ -142,13 +136,15 @@ h3 {
 
 div.page {
     display: block;
+    position: relative;
     padding-top: 10px;
     padding-left: 40px;
     padding-bottom: 60px;
-    position: relative;
     margin-left: 240px;
-    width: calc(min(1020px, 60%) - 220px);
-    min-width: 800px;
+    padding-right: calc(100vw - 240px - 800px);
+    width: 800px;
+    min-height: 100vh;
+    background-color: var(--black-basic);
 }
 
 .sidebar {
