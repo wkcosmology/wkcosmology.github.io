@@ -29,6 +29,11 @@ function read_sidebar(ol, sidebar, k, lvl_cur) {
             var ret = read_sidebar(ol_next, sidebar, i, lvl_cur + 1);
             ol.appendChild(ret[0]);
             i = ret[1];
+            // add collapsable function
+            ol_next.classList.add("collapsed");
+            ret[0].previousElementSibling.addEventListener("click", function(){
+                this.nextElementSibling.classList.toggle("collapsed");
+            })
         } else if (sidebar[i]["lvl"] == lvl_cur) {
             var li_tmp = document.createElement("li");
             var a_tmp = document.createElement("a");

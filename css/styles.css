@@ -147,7 +147,7 @@ div.page {
     padding-bottom: 60px;
     position: relative;
     margin-left: 240px;
-    width: min(800px, 60%);
+    width: calc(min(1020px, 60%) - 220px);
     min-width: 800px;
 }
 
