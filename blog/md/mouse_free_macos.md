@@ -30,19 +30,19 @@ that is the motivation to mouse-free.
 
 ## Vim-mode editor
 
-First of all, I saied `vim-mode editor` instead of a software call `vim`.
-Vim-mode is an powerful editting pattern, which uses the alphanumeric keys and a
+First of all, I said `vim-mode editor` instead of a software call `vim`.
+Vim-mode is an powerful editing pattern, which uses the alphanumeric keys and a
 few function keys, like `ctrl`, `shift` or `tab`, to do all the work of editing,
 navigating, modifying, and searching by using different modes. With vim-mode,
-you can achieve mouse-free for your editting work.
+you can achieve mouse-free for your editing work.
 
-## Quick Launch apps
+## Quick Launch App
 
-During progrmming, maybe we want to google something, so we will switch to the
-browser. Or we want to take a note, loop up someting or chat with others, so we
-need to open other apps. My practise is to launch all the apps by searching and
+During programming, maybe we want to google something, so we will switch to the
+browser. Or we want to take a note, loop up something or chat with others, so we
+need to open other App. My practise is to launch all the App by searching and
 open, using spotlight or its alternative: Alfred. Furthermore, I defined some
-key combination for some commonly used apps, like
+key combination for some commonly used App, like
 
 | Key stroke   | App        |
 | :----------- | :--------- |
@@ -52,7 +52,7 @@ key combination for some commonly used apps, like
 | `Opt-Ctrl-e` | Finder     |
 | `Opt-Ctrl-]` | PDF reader |
 
-So I can quickly switch between these apps without any mouse click. This
+So I can quickly switch between these App without any mouse click. This
 function can be achieved using the Alfred workflow or native Automator software.
 Here is the
 [tutorial](https://learn.adafruit.com/launch-deck-trellis-m4/app-launching) for
@@ -72,7 +72,7 @@ like finder, so I think it deserves the money.
 
 ## Maximize your working area
 
-As I mentioned before, I do not need to click to open apps or any file, so I
+As I mentioned before, I do not need to click to open App or any file, so I
 will hide the dock and this gives my extra working space. Another thing that
 annoys me is the menu bar, so I also hide it.
 
