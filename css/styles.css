@@ -1,6 +1,6 @@
 :root{
     --mono-font: Iosevka, monospace;
-    --sans-serif-font: Arial;
+    --sans-serif-font: "Open sans", Arial;
     --header-font: Raleway, "Trebuchet MS";
     --serif-font: Georgia;
     --cmu-font: "CMU serif";
@@ -59,11 +59,12 @@ h1 {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 25px;
     position: relative;
 }
 
 h3 {
+    font-size: 20px;
     position: relative;
 }
 
@@ -176,6 +177,13 @@ div.research_block:hover {
     transition: transform 0.15s ease-in-out;
 }
 
+.research_block>.research_intro ul>li,
+.research_block>.research_intro p
+{
+    font-family: var(--serif-font);
+    text-align:justify;
+}
+
 p.research_title {
     background-color: transparent;
     font-family: var(--header-font);
@@ -221,6 +229,11 @@ div.projects {
 
 div.research_intro p {
     margin-left: 20px;
+}
+
+.project_intro li{
+    font-family: var(--serif-font);
+    text-align: justify;
 }
 
 div.sidebar_intro img{

@@ -1,6 +1,6 @@
 :root {
     --mono-font: Iosevka, monospace;
-    --sans-serif-font: Arial;
+    --sans-serif-font: "Open sans", Arial;
     --header-font: Raleway, "Trebuchet MS";
     --serif-font: Georgia;
     --cmu-font: "CMU serif";
