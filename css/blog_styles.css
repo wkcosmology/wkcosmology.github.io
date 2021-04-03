@@ -106,15 +106,16 @@
 
 #blog_page * {
     color: var(--blacker-basic);
-    padding-right: 40px;
 }
 
 #blog_page li {
     margin-left: 20px;
+    padding-right: 40px;
 }
 
 #blog_page li p {
     margin-left: 0px;
+    padding-right: 40px;
 }
 
 #blog_content a {
@@ -191,6 +192,7 @@ li {
     margin-right: 0px;
     color: var(--blacker-basic);
     text-align: justify;
+    padding-right: 40px;
 }
 
 #blog_content a {
@@ -198,10 +200,12 @@ li {
 }
 
 #blog_content pre {
+    display: block;
     margin-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
+    padding-right: 40px;
     background-color: var(--pre-color);
     overflow-x: hidden;
     border-radius: 5px 5px 5px 5px;
