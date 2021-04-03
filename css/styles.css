@@ -67,19 +67,25 @@ h3 {
     position: relative;
 }
 
-p.publication {
+.publication {
     color: var(--white-basic);
-    font-size: 20px;
-    font-family: Raleway;
+    font-size: 22px;
+    font-family: var(--serif-font);
+    margin-left: -2px;
+    margin-bottom: 5px;
+    line-height: 27px;
 }
 
 .strong {
-    color: var(--white-basic);
-    font-weight: bold;
+    color: var(--whiter-basic);
+    font-family: var(--mono-font);
 }
 
-p.author {
+.author {
+    display: block;
     color: var(--gray-basic);
+    margin-left: 0px;
+    font-family: var(--mono-font);
 }
 
 .portrait {
@@ -133,9 +139,6 @@ p.author {
     line-height: 40px;
 }
 
-.fade {
-    color: var(--gray-basic);
-}
 
 div.page {
     display: block;
