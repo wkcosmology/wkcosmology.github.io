@@ -176,9 +176,11 @@
     font-weight: "regular";
 }
 
-#blog_content p {
+#blog_content p, li {
     margin-left: 20px;
     font-family: var(--serif-font);
+    font-size: 19px;
+    margin-right: 0px;
     color: var(--blacker-basic);
     text-align: justify;
 }
