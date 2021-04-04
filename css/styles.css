@@ -68,6 +68,56 @@ h3 {
     position: relative;
 }
 
+.page .home_intro p.welcome{
+    font-family: var(--sans-serif-font);
+    font-size: 18px;
+}
+
+.page .home_intro ul>li{
+    list-style: none;
+}
+
+.page .home_intro .guidance_img{
+    height: 1.2em;
+}
+
+.page a.guidance {
+    display: inline-block;
+    background-color: var(--blacker-basic);
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: var(--dark-header-color);
+    font-family: var(--mono-font);
+    font-size: 22px;
+}
+
+.page a.guidance[target="_blank"]::after {
+    display: none;
+}
+
+.page p.guidance{
+    font-family: var(--mono-font);
+    font-size: 16px;
+    color: var(--gray-basic);
+    margin-left: 20px;
+}
+
+.page .home_intro a:hover {
+    zoom: 1;
+    transform: scale(1.2);
+    transition: transform 0.01s ease-in-out;
+    text-decoration: none;
+}
+
+.page .home_intro a:hover>.guidance_img{
+    height: 40px;
+    transform: scale(1.6);
+    margin-top:-20px;
+}
+
 .publication {
     color: var(--white-basic);
     font-size: 22px;
