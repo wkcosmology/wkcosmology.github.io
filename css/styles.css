@@ -97,7 +97,7 @@ h3 {
     padding-left: 50px;
     background-color: var(--blacker-basic);
     box-shadow: 5px 5px 5px var(--blacker-basic);
-    width: 100%;
+    width: calc(100% - 10px);
     display: block;
 }
 
