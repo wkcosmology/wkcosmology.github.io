@@ -336,8 +336,8 @@ div.sidebar_intro:hover{
 a[target="_blank"]::after {
     content: "";
     width: 1em;
-    height: 1em;
-    margin: 0em 0.0em -0.1em 0.2em;
+    height: 0.9em;
+    margin: 0em 0em -0.1em 0.2em;
     background: Url('/image/icon/external_link.png')  no-repeat;
     background-size: contain;
     display: inline-block;

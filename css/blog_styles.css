@@ -87,22 +87,22 @@
     text-align: center;
     font-size: 30px;
     line-height: 35px;
-    font-family: Helvetica;
+    font-family: var(--sans-serif-font);
     font-weight: bold;
 }
 
-.blog_annot {
-    list-style: none;
-    padding-right: 40px;
-}
-
-#blog_page .blog_annot li {
+#blog_page .blog_front p.date{
+    text-align: center;
+    font-family: var(--mono-font);
     color: var(--dark-gray-basic);
-    font-family: var(--sans-serif-font);
-    font-size: 18px;
-    line-height: 20px;
 }
-
+#blog_page .blog_front p.descri{
+    padding-right: 40px;
+    padding-left: 40px;
+    text-align: justify;
+    font-family: var(--mono-font);
+    color: var(--black-basic);
+}
 
 #blog_page * {
     color: var(--blacker-basic);
@@ -320,4 +320,9 @@ th,
 td {
     padding: 8px;
     border: 1px solid var(--black-basic);
+}
+
+#blog_content figcaption {
+    font-family: var(--mono-font);
+    font-size: 16px;
 }

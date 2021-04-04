@@ -4,7 +4,7 @@ const { JSDOM } = jsdom;
 var showdown = require("showdown");
 var fm = require("front-matter");
 var dateFormat = require("dateformat");
-var toc = require('markdown-toc');
+var toc = require("markdown-toc");
 
 showdown.setFlavor("github");
 
@@ -18,6 +18,7 @@ const capitalize = (s) => {
 var homepage = "/Users/wangk/Documents/Project/wkcosmology.github.io";
 var converter = new showdown.Converter({
     simpleLineBreaks: false,
+    openLinksInNewWindow: true,
 });
 var files = fs.readdirSync(homepage + "/blog/md/");
 var blog_json = {};
@@ -42,22 +43,16 @@ for (var i in files) {
     var p_title = doc.createElement("p");
     p_title.className = "blog_title";
     p_title.innerHTML = attr["title"];
-    var ul_annot = doc.createElement("ul");
-    ul_annot.className = "blog_annot";
-    show_annot.forEach((k) => {
-        if (!attr[k]) return;
-        var li = doc.createElement("li");
-        if (k == "date") {
-            li.textContent =
-                capitalize(k) + ": " + dateFormat(attr[k], "mmm. dd, yyyy");
-        } else {
-            li.textContent = capitalize(k) + ": " + attr[k];
-        }
-        ul_annot.appendChild(li);
-    });
-    // append elements to front
+    // add date
+    var p_date = doc.createElement("p");
+    p_date.classList.add("date");
+    p_date.textContent = dateFormat(attr["date"], "mmm. dd, yyyy");
+    var p_descri = doc.createElement("p");
+    p_descri.classList.add("descri");
+    p_descri.textContent = attr["description"];
     front.appendChild(p_title);
-    front.appendChild(ul_annot);
+    front.appendChild(p_date);
+    front.appendChild(p_descri);
     // process the toc
     var md = data.body;
     file_tmp["toc"] = toc(md).json;
