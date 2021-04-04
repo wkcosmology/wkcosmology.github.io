@@ -77,10 +77,6 @@ h3 {
     list-style: none;
 }
 
-.page .home_intro .guidance_img{
-    height: 1.2em;
-}
-
 .page a.guidance {
     display: inline-block;
     background-color: var(--blacker-basic);
@@ -108,14 +104,31 @@ h3 {
 .page .home_intro a:hover {
     zoom: 1;
     transform: scale(1.2);
-    transition: transform 0.01s ease-in-out;
+    transition: transform 0.05s ease-in-out;
     text-decoration: none;
+}
+
+.page .home_intro .guidance_img{
+    height: 1.2em;
+}
+
+.page .home_intro .guidance_gif{
+    height: 1.2em;
+    display:none;
 }
 
 .page .home_intro a:hover>.guidance_img{
     height: 40px;
     transform: scale(1.6);
     margin-top:-20px;
+    display:none
+}
+
+.page .home_intro a:hover>.guidance_gif{
+    height: 40px;
+    transform: scale(1.6);
+    margin-top:-20px;
+    display:inline-block;
 }
 
 .publication {
