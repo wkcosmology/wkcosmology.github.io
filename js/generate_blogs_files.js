@@ -17,7 +17,7 @@ function dateToYMD(date) {
     var d = date.getDate();
     var m = strArray[date.getMonth()];
     var y = date.getFullYear();
-    return "" + m + " " + (d <= 9 ? "0" + d : d) + ", " + y;
+    return "" + m + " " + (d <= 9 ? "0" + d : d);
 }
 
 // global variable: read the json file
@@ -181,12 +181,13 @@ function generate_blogs_files(filter_map) {
         var label = document.createElement("label");
         label.className = "blogs_files_date";
         label.innerHTML = dateToYMD(new Date(entry["date"]));
-        li.appendChild(a);
+        li.appendChild(label);
         // expand the short discription
         var icon = document.createElement("img");
         icon.src = "/image/icon/expand2.png";
         icon.id = "expand";
         li.appendChild(icon);
+        li.appendChild(a);
         icon.addEventListener("click", function () {
             var content = this.parentElement.nextElementSibling;
             if (content.style.display == "block") {
@@ -196,11 +197,10 @@ function generate_blogs_files(filter_map) {
                 content.style.display = "block";
                 this.setAttribute("style", "transform: rotate(90deg)");
             }
-            var label = this.parentElement.previousSibling;
+            var label = this.previousSibling;
             label.classList.toggle("label_toggle");
             this.parentElement.classList.toggle("label_toggle");
         });
-        ul.appendChild(label);
         ul.appendChild(li);
         var p_descri = document.createElement("p");
         p_descri.innerHTML = entry["description"];
