@@ -100,7 +100,7 @@ attempts to do it. The basic idea behind these methods is to detect the
 **overdensity of some tracers**. For example, people are using galaxies
 ([Chiang et al. 2013](https://ui.adsabs.harvard.edu/abs/2013ApJ...779..127C/abstract)),
 Ly-$\alpha$ emitters
-([Chiang et al. 2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...808...37C/abstract))
+([Chiang et al. 2015](https://ui.adsabs.harvard.edu/abs/arXiv:1505.03877))
 or Ly-$\alpha$ absorber
 ([Cai et al. 2016](https://ui.adsabs.harvard.edu/abs/2016ApJ...833..135C/abstract)).
 These methods are restricted by the data available at the time. As I said,
