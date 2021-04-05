@@ -435,6 +435,21 @@ a[target="_blank"]::after {
     display: block;
 }
 
+img#expand{
+    height: 1em;
+    float: left;
+    margin-top: 3px;
+    margin-right: 5px;
+    margin-left: -10px;
+}
+
+img#expand {
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
 #blogs_files {
     display: block;
     margin-top: 40px;
@@ -478,17 +493,17 @@ a[target="_blank"]::after {
     font-family: var(--header-font);
     color: var(--dark-header-color);
     font-weight: 400;
+    padding-left: 0px;
+    margin-left: -5px;
+    display: inline-block;
 }
 
 #blogs_files li{
     padding-top: 5px;
     padding-left: -80px;
-    margin-left: 100px;
+    margin-left: 110px;
     margin-bottom: 20px;
-    list-style-type: "> ";
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--dark-header-color);
+    list-style: none;
 }
 
 #blogs_files .blogs_files_descri {
@@ -506,11 +521,19 @@ a[target="_blank"]::after {
     padding-right: 10px;
 }
 
+#blogs_files img#expand{
+    height: 0.8em;
+    float: left;
+    margin-top: 8px;
+    margin-left: -30px;
+    padding-top: 0px;
+}
+
 #blogs_files li.label_toggle{
     background-color: var(--blacker-basic);
     border-radius: 0px 20px 0px 0px;
     box-shadow: 8px 8px 8px var(--blacker-basic);
-    list-style-type: "v ";
+    list-style: none;
     font-size: 20px;
     font-weight: bold;
     color: var(--dark-header-color);
@@ -525,7 +548,7 @@ a[target="_blank"]::after {
 #blog_category, #blog_tag{
     display: block;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     padding-left: 20px;
 }
 

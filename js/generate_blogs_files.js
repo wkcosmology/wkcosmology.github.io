@@ -49,13 +49,13 @@ function filter_onclick(instance, filter_name) {
 function generate_blogs() {
     var display_elmts = {
         categories: {
-            text: "Categories: ",
+            text: "Categories",
             id: "#blog_category",
             title_class: "blog_cate_title",
             name_class: "blog_cate_name",
         },
         tags: {
-            text: "Tags: ",
+            text: "Tags",
             id: "#blog_tag",
             title_class: "blog_tag_title",
             name_class: "blog_tag_name",
@@ -72,10 +72,27 @@ function generate_blogs() {
         ents = [...new Set(ents)];
 
         var ent_elmt = document.querySelector(opt["id"]);
+        var icon = document.createElement("img");
+        icon.src = "/image/icon/expand.png";
+        icon.id = "expand";
+        ent_elmt.appendChild(icon);
         var ent_tmp = document.createElement("span");
+        icon.addEventListener("click", function () {
+            this.classList.toggle("onclick");
+            var elmt_tmp = this.nextElementSibling.nextElementSibling;
+            if (elmt_tmp.style.display === "none") {
+                elmt_tmp.style.display = "block";
+                this.setAttribute("style", "transform: rotate(90deg)");
+            } else {
+                elmt_tmp.style.display = "none";
+                this.setAttribute("style", "transform: rotate(0deg)");
+            }
+        });
         ent_tmp.className = opt["title_class"];
         ent_tmp.innerHTML = opt["text"];
         ent_elmt.appendChild(ent_tmp);
+        var span_elmts = document.createElement("span");
+        span_elmts.style.display = "none";
         ent_tmp = document.createElement("span");
         ent_tmp.classList.add(opt["name_class"]);
         ent_tmp.classList.add("onclick");
@@ -85,7 +102,7 @@ function generate_blogs() {
             filter_tmp[name] = "__all";
             filter_onclick(this, filter_tmp);
         });
-        ent_elmt.appendChild(ent_tmp);
+        span_elmts.appendChild(ent_tmp);
         ents.forEach((ent) => {
             ent_tmp = document.createElement("span");
             ent_tmp.classList.add(opt["name_class"]);
@@ -95,7 +112,8 @@ function generate_blogs() {
                 filter_tmp[name] = this.innerHTML;
                 filter_onclick(this, filter_tmp);
             });
-            ent_elmt.appendChild(ent_tmp);
+            span_elmts.appendChild(ent_tmp);
+            ent_elmt.appendChild(span_elmts);
         });
     });
 }
@@ -165,16 +183,22 @@ function generate_blogs_files(filter_map) {
         label.innerHTML = dateToYMD(new Date(entry["date"]));
         li.appendChild(a);
         // expand the short discription
-        li.addEventListener("click", function () {
-            var content = this.nextElementSibling;
+        var icon = document.createElement("img");
+        icon.src = "/image/icon/expand2.png";
+        icon.id = "expand";
+        li.appendChild(icon);
+        icon.addEventListener("click", function () {
+            var content = this.parentElement.nextElementSibling;
             if (content.style.display == "block") {
                 content.style.display = "none";
+                this.setAttribute("style", "transform: rotate(0deg)");
             } else if (content.style.display == "none") {
                 content.style.display = "block";
+                this.setAttribute("style", "transform: rotate(90deg)");
             }
-            var label = this.previousSibling;
+            var label = this.parentElement.previousSibling;
             label.classList.toggle("label_toggle");
-            this.classList.toggle("label_toggle");
+            this.parentElement.classList.toggle("label_toggle");
         });
         ul.appendChild(label);
         ul.appendChild(li);
