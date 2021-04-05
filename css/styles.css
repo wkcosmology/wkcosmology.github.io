@@ -77,6 +77,12 @@ h3 {
     list-style: none;
 }
 
+#welcome_word {
+    text-align:center;
+    font-family: var(--mono-font);
+    font-size: 30px;
+}
+
 .page a.guidance {
     display: inline-block;
     background-color: var(--blacker-basic);
@@ -205,7 +211,7 @@ div.page {
     padding-left: 40px;
     padding-bottom: 60px;
     margin-left: 240px;
-    padding-right: calc(100vw - 240px - 800px);
+    padding-right: calc(100vw - 240px - 800px - 100px);
     width: 840px;
     min-height: 100vh;
     background-color: var(--black-basic);
@@ -287,6 +293,13 @@ div.projects {
 
 div.research_intro p {
     margin-left: 20px;
+}
+
+.project_title {
+    font-size: 20px;
+    position: relative;
+    color: var(--header-color);
+    font-family: var(--header-font);
 }
 
 .project_intro>ul>li {
@@ -410,6 +423,7 @@ a[target="_blank"]::after {
     font-family: var(--mono-font);
     margin-top: 0px;
     margin-bottom: 0px;
+    margin-left: 0px;
     color: var(--gray-basic);
 }
 

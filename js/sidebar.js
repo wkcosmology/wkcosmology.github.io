@@ -6,6 +6,7 @@ function display_sidebar() {
         .then((response) => {
             sidebar.innerHTML += response;
             let file = location.href.split("/").pop().split(".")[0];
+            if (file === "") file = "index";
             let select = sidebar.querySelector("#" + file);
             select.className = "select";
         });
@@ -31,9 +32,12 @@ function read_sidebar(ol, sidebar, k, lvl_cur) {
             i = ret[1];
             // add collapsable function
             ol_next.classList.add("collapsed");
-            ret[0].previousElementSibling.addEventListener("click", function(){
-                this.nextElementSibling.classList.toggle("collapsed");
-            })
+            ret[0].previousElementSibling.addEventListener(
+                "click",
+                function () {
+                    this.nextElementSibling.classList.toggle("collapsed");
+                }
+            );
         } else if (sidebar[i]["lvl"] == lvl_cur) {
             var li_tmp = document.createElement("li");
             var a_tmp = document.createElement("a");
