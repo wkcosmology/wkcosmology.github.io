@@ -488,20 +488,20 @@ img#expand {
     color: var(--dark-header-color);
     font-weight: 400;
     padding-left: 0px;
-    margin-left: 0px;
+    margin-left: -5px;
     display: inline-block;
     width: calc(100% - 100px);
 }
 
 #blogs_files li{
     padding-top: 5px;
-    margin-left: -20px;
+    margin-left: -35px;
     margin-bottom: 20px;
     list-style: none;
 }
 
 #blogs_files .blogs_files_descri {
-    margin-left: 55px;
+    margin-left: 35px;
     background-color: var(--blacker-basic);
     margin-top: -20px;
     padding-top: 30px;
@@ -533,7 +533,7 @@ img#expand {
     color: var(--dark-header-color);
     padding-right: 10px;
     padding-left: 20px;
-    margin-left: -40px;
+    margin-left: -55px;
 }
 
 #blogs_files .label_toggle{
@@ -541,24 +541,26 @@ img#expand {
     box-shadow: 8px 8px 8px var(--blacker-basic);
 }
 
-#blog_category, #blog_tag{
+#blog_tag span.blog_tag_block{
     display: block;
     margin-top: 15px;
     margin-bottom: 20px;
     padding-left: 20px;
 }
 
-#blog_category .blog_cate_title, #blog_tag .blog_tag_title{
+#blog_tag .blog_tag_title{
     display: block;
     font-family: var(--mono-font);
     font-size: 20px;
     margin-left: -20px;
 }
 
-#blog_category .blog_cate_name, #blog_tag .blog_tag_name {
-    background-color: black;
+#blog_tag .blog_tag_name {
+    background-color: var(--blacker-basic);
     display: inline-block;
-    font-size: 18px;
+    font-family: var(--mono-font);
+    color: var(--white-basic);
+    font-size: 16px;
     margin-left: 6px;
     margin-right: 6px;
     margin-top: 10px;
@@ -566,20 +568,10 @@ img#expand {
     border-radius: 10px 10px 10px 10px;
 }
 
-#blog_category .blog_cate_name, #blog_tag .blog_tag_name {
-    background-color: var(--blacker-basic);
-    color: var(--whiter-basic);
-    font-size: 18px;
-    margin-left: 6px;
-    margin-right: 6px;
-    padding: 4px 10px 4px 10px;
-    border-radius: 10px 10px 10px 10px;
-}
-
-#blog_category .blog_cate_name.onclick, #blog_tag .blog_tag_name.onclick {
-    background-color: var(--whiter-basic);
+#blog_tag .blog_tag_name.onclick {
+    background-color: var(--white-basic);
     color: var(--blacker-basic);
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 6px;
     margin-right: 6px;
     padding: 4px 10px 4px 10px;

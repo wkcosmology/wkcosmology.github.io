@@ -24,10 +24,14 @@ function dateToYMD(date) {
 var entries = JSON.parse(
     $.getJSON({ url: "/blog/blog_meta.json", async: false }).responseText
 );
+Object.entries(entries).forEach((ent) => {
+    entries[ent[0]]["year"] = [ent[1]["date"].substr(0, 4)];
+});
 
 var filter_cur = {
     categories: "__all",
     tags: "__all",
+    year: "__all",
 };
 
 // filter on click
@@ -48,11 +52,17 @@ function filter_onclick(instance, filter_name) {
 // generate blog tags: means categoties and tags
 function generate_blogs() {
     var display_elmts = {
+        year: {
+            text: "Year",
+            id: "#blog_tag",
+            title_class: "blog_tag_title",
+            name_class: "blog_tag_name",
+        },
         categories: {
             text: "Categories",
-            id: "#blog_category",
-            title_class: "blog_cate_title",
-            name_class: "blog_cate_name",
+            id: "#blog_tag",
+            title_class: "blog_tag_title",
+            name_class: "blog_tag_name",
         },
         tags: {
             text: "Tags",
@@ -62,7 +72,11 @@ function generate_blogs() {
         },
     };
     generate_blogs_files({});
+    var blog_tag = document.querySelector("#blog_tag");
     Object.entries(display_elmts).forEach((ent) => {
+        var ent_elmt = document.createElement("span");
+        ent_elmt.classList.add("blog_tag_block");
+        blog_tag.appendChild(ent_elmt);
         var opt = ent[1];
         var name = ent[0];
         var ents = [];
@@ -70,13 +84,14 @@ function generate_blogs() {
             ents = ents.concat(entries[k][name]);
         }
         ents = [...new Set(ents)];
-
-        var ent_elmt = document.querySelector(opt["id"]);
+        if (name == "year") {
+            ents = ents.sort((a, b) => parseInt(b) - parseInt(a));
+            console.log(ents);
+        }
+        // icon
         var icon = document.createElement("img");
         icon.src = "/image/icon/expand.png";
         icon.id = "expand";
-        ent_elmt.appendChild(icon);
-        var ent_tmp = document.createElement("span");
         icon.addEventListener("click", function () {
             this.classList.toggle("onclick");
             var elmt_tmp = this.nextElementSibling.nextElementSibling;
@@ -88,9 +103,13 @@ function generate_blogs() {
                 this.setAttribute("style", "transform: rotate(0deg)");
             }
         });
-        ent_tmp.className = opt["title_class"];
-        ent_tmp.innerHTML = opt["text"];
-        ent_elmt.appendChild(ent_tmp);
+        ent_elmt.appendChild(icon);
+        // title
+        var title_span = document.createElement("span");
+        title_span.className = opt["title_class"];
+        title_span.innerHTML = opt["text"];
+        ent_elmt.appendChild(title_span);
+        // tags
         var span_elmts = document.createElement("span");
         span_elmts.style.display = "none";
         ent_tmp = document.createElement("span");
@@ -151,8 +170,7 @@ function generate_blogs_files(filter_map) {
             obj[key] = entries_copy[key];
             return obj;
         }, {});
-    var ent2year = (entry) => parseInt(entry["date"].substr(0, 4));
-    var year_cur = ent2year(Object.entries(entries_copy)[0][1]);
+    var year_cur = parseInt(Object.entries(entries_copy)[0][1]["year"]);
     blogs_files_elmt.innerHTML = "";
     var p = document.createElement("p");
     var ul = document.createElement("ul");
@@ -162,7 +180,7 @@ function generate_blogs_files(filter_map) {
     p.appendChild(p_year);
     for (var k in entries_copy) {
         var entry = entries_copy[k];
-        var year_tmp = ent2year(entry);
+        var year_tmp = parseInt(entry["year"]);
         if (year_tmp != year_cur) {
             p.appendChild(ul);
             ul = document.createElement("ul");
