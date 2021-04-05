@@ -11,7 +11,12 @@
             title="no title"
             charset="utf-8"
         />
+        <script
+            charset="utf-8"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        ></script>
         <script charset="utf-8" src="/js/sidebar.js"></script>
+        <script charset="utf-8" src="/js/resource.js"></script>
         <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
     </head>
@@ -24,153 +29,23 @@
             </script>
         </div>
         <div class="page">
-            <h1>Table of content</h1>
-            <ul>
-                <li>
-                    <a href="#softwares">Softwares</a>: My favourite softwares
-                    that may help you
-                </li>
-                <li>
-                    <a href="#myfollowings">My followings</a>: High quality
-                    resources in other homepages
-                </li>
-                <li>
-                    <a href="#books">Books</a>: Book I want to share with you
-                </li>
-            </ul>
+            <h1>Softwares</h1>
+            <div id="softwares"></div>
+            <script charset="utf-8">
+                get_data("#softwares", "softwares", "resource_annot");
+            </script>
 
-            <h1 id="softwares">Softwares</h1>
-            <p>
-                Share some of my favourite softwares to improve you
-                productivity.
-            </p>
-            <ul>
-                <li>
-                    <a href="https://www.alfredapp.com/" target="_blank"
-                        >Alfred 4</a
-                    >: Quick search file; powerful user-defined workflow
-                </li>
-                <li>
-                    <a href="https://mathpix.com/" target="_blank"
-                        >Mathpix Snipping Tool</a
-                    >: Powerful OCR for mathmatical equations
-                </li>
-                <li>
-                    <a href="https://1password.com/" target="_blank"
-                        >1Password</a
-                    >: Power password manager
-                </li>
-                <li>
-                    <a href="https://www.eudic.net/" target="_blank">Eudic</a>:
-                    Powerful customizable dictionary
-                </li>
-                <li>
-                    <a href="https://kapeli.com/dash" target="_blank">Dash</a>:
-                    Powerful off-line documentation for various language
-                </li>
-                <li>
-                    <a href="https://lemon.qq.com/" target="_blank"
-                        >Tencent Lemon</a
-                    >: Powerful Mac cleaner, and free!
-                </li>
-                <li>
-                    <a href="https://rectangleapp.com/" target="_blank"
-                        >Rectangle</a
-                    >: Light-weight window manager
-                </li>
-                <li>
-                    <a
-                        href="https://qspace.awehunt.com/en-us/index.html"
-                        target="_blank"
-                        >QSpace</a
-                    >: A finder with multigrid!
-                </li>
-                <li>
-                    <a href="https://www.zotero.org/" target="_blank">Zotero</a
-                    >: This is THE best literature and book manager, and it is
-                    free!
-                </li>
-                <li>
-                    <a href="https://obsidian.md/" target="_blank">Obsidian</a>:
-                    This is THE best noting app.
-                </li>
-                <li>
-                    <a href="https://www.devontechnologies.com/" target="_blank"
-                        >DEVONthink</a
-                    >: This is THE best file manager for mac OS.
-                </li>
-            </ul>
+            <h1>My followings</h1>
+            <div id="myfollowings"></div>
+            <script charset="utf-8">
+                get_data("#myfollowings", "myfollowings", "myfollowings_annot");
+            </script>
 
-            <h1 id="myfollowings">My followings</h1>
-            <ul>
-                <li>
-                    <a href="https://lig.astro.tsinghua.edu.cn/" target="_blank"
-                        >LIG group homepage</a
-                    >: Homepage of our research group
-                </li>
-                <li>
-                    <a href="https://www.chenyangyao.com/" target="_blank"
-                        >Yangyao Chen</a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="http://astro.tsinghua.edu.cn/~cli/doku.php"
-                        target="_blank"
-                        >Cheng Li</a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="https://campuspress.yale.edu/vdbosch/"
-                        target="_blank"
-                        >Frank van den Bosch</a
-                    >: THE best teaching slides on galaxy formation and
-                    evolution.
-                </li>
-                <li>
-                    <a
-                        href="https://www.mv.helsinki.fi/home/hkurkisu/"
-                        target="_blank"
-                        >Hannu Kurki-Suonio </a
-                    >: Excellent lectures on introductory cosmology
-                </li>
-                <li>
-                    <a href="http://www.personal.psu.edu/duj13/" target="_blank"
-                        >Donghui Jeong</a
-                    >: Excellent thesis on cosmological perturbation theory, and
-                    clear lectures on large scale structure, galaxy formation
-                    and evolution.
-                </li>
-                <li>
-                    <a href="https://yymao.github.io/index.html" target="_blank"
-                        >Yao-Yuan Mao</a
-                    >: A lot of fun wheels.
-                </li>
-            </ul>
-            <h1 id="books">Books</h1>
-            <ul>
-                <li>
-                    <a
-                        href="https://www.amazon.com/Elements-Style-Fourth-William-Strunk-ebook/dp/B07NPN5HTP/ref=sr_1_3?dchild=1&keywords=The+elements+of+style&qid=1617304248&sr=8-3"
-                        >The elements of style</a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="https://www.amazon.com/Fluent-Python-Concise-Effective-Programming/dp/1491946008/ref=sr_1_1?dchild=1&keywords=Fluent+Python&qid=1617304310&sr=8-1"
-                        >Fluent Python: Clear, Concise, and Effective
-                        Programming</a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="https://www.amazon.com/Python-Data-Science-Handbook-Essential/dp/1491912057/ref=sr_1_2?dchild=1&keywords=Python+data+science+handbook%3A+essential+tools+for+working+with+data&qid=1617304393&sr=8-2"
-                        >Python Data Science Handbook: Essential Tools for
-                        Working with Data</a
-                    >
-                </li>
-            </ul>
+            <h1>Books</h1>
+            <span id="books"></span>
+            <script charset="utf-8">
+                get_data("#books", "books", "books_annot");
+            </script>
         </div>
     </body>
 </html>

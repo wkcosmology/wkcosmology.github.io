@@ -1,0 +1,92 @@
+{
+    "softwares": {
+        "Alfred 4": {
+            "url": "https://www.alfredapp.com/",
+            "description": "Quick search file; powerful user-defined workflow"
+        },
+        "Mathpix Snipping Tool": {
+            "url": "https://mathpix.com/",
+            "description": "Powerful OCR for mathmatical equations"
+        },
+        "1Password": {
+            "url": "https://1password.com/",
+            "description": "Power password manager"
+        },
+        "Eudic": {
+            "url": "https://www.eudic.net/",
+            "description": "Powerful customizable dictionary"
+        },
+        "Dash": {
+            "url": "https://kapeli.com/dash",
+            "description": "Powerful off-line documentation for various language"
+        },
+        "Tencent Lemon": {
+            "url": "https://lemon.qq.com/",
+            "description": "Powerful Mac cleaner, and free!"
+        },
+        "Rectangle": {
+            "url": "https://rectangleapp.com/",
+            "description": "Light-weight window manager"
+        },
+        "QSpace": {
+            "url": "https://qspace.awehunt.com/en-us/index.html",
+            "description": "A finder with multigrid!"
+        },
+        "Zotero": {
+            "url": "https://www.zotero.org/",
+            "description": "This is THE best literature and book manager, and it is free!"
+        },
+        "Obsidian": {
+            "url": "https://obsidian.md/",
+            "description": "This is THE best noting app."
+        },
+        "DEVONthink": {
+            "url": "https://www.devontechnologies.com/",
+            "description": "This is THE best file manager for mac OS."
+        }
+    },
+    "myfollowings": {
+        "LIG group homepage": {
+            "url": "https://lig.astro.tsinghua.edu.cn/",
+            "description": "Homepage of our research group"
+        },
+        "Yangyao Chen": {
+            "url": "https://www.chenyangyao.com/",
+            "description": ""
+        },
+        "Cheng Li": {
+            "url": "http://astro.tsinghua.edu.cn/~cli/doku.php",
+            "description": ""
+        },
+        "Frank van den Bosch": {
+            "url": "https://campuspress.yale.edu/vdbosch/",
+            "description": "THE best teaching slides on galaxy formation and evolution."
+        },
+        "Hannu Kurki-Suonio": {
+            "url": "https://www.mv.helsinki.fi/home/hkurkisu/",
+            "description": "Excellent lectures on introductory cosmology"
+        },
+        "Donghui Jeong": {
+            "url": "http://www.personal.psu.edu/duj13/",
+            "description": "Excellent thesis on cosmological perturbation theory, and clear lectures on large scale structure, galaxy formation and evolution."
+        },
+        "Yao-Yuan Mao": {
+            "url": "https://yymao.github.io/index.html",
+            "description": "A lot of interesting wheels."
+        }
+    },
+    "books": {
+        "The elements of style": {
+            "url": "https://www.amazon.com/Elements-Style-Fourth-William-Strunk-ebook/dp/B07NPN5HTP/ref=sr_1_3?dchild=1&keywords=The+elements+of+style&qid=1617304248&sr=8-3",
+            "description": ""
+        },
+        "Fluent Python: Clear, Concise, and Effective Programming": {
+            "url": "https://www.amazon.com/Fluent-Python-Concise-Effective-Programming/dp/1491946008/ref=sr_1_1?dchild=1&keywords=Fluent+Python&qid=1617304310&sr=8-1",
+            "description": ""
+        },
+        "Python Data Science Handbook: Essential Tools for Working with Data": {
+            "url": "https://www.amazon.com/Python-Data-Science-Handbook-Essential/dp/1491912057/ref=sr_1_2?dchild=1&keywords=Python+data+science+handbook%3A+essential+tools+for+working+with+data&qid=1617304393&sr=8-2",
+            "description": ""
+        }
+    }
+}

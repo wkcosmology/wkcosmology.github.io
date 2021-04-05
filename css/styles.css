@@ -406,6 +406,13 @@ a[target="_blank"]::after {
     display: inline-block;
 }
 
+.resource_annot, .myfollowings_annot, .books_annot {
+    font-family: var(--mono-font);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: var(--gray-basic);
+}
+
 #pub_ads_link {
     font-family: var(--header-font);
     margin-top: 15px;
