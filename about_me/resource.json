@@ -52,31 +52,27 @@
     "myfollowings": {
         "LIG group homepage": {
             "url": "https://lig.astro.tsinghua.edu.cn/",
-            "description": "Homepage of our research group"
+            "description": "Homepage of our research group;"
         },
         "Yangyao Chen": {
             "url": "https://www.chenyangyao.com/",
-            "description": ""
-        },
-        "Cheng Li": {
-            "url": "http://astro.tsinghua.edu.cn/~cli/doku.php",
-            "description": ""
+            "description": "My friend; my role model;"
         },
         "Frank van den Bosch": {
             "url": "https://campuspress.yale.edu/vdbosch/",
-            "description": "THE best teaching slides on galaxy formation and evolution."
+            "description": "Great slides; exciting presentation video;"
         },
         "Hannu Kurki-Suonio": {
             "url": "https://www.mv.helsinki.fi/home/hkurkisu/",
-            "description": "Excellent lectures on introductory cosmology"
+            "description": "Great lectures on introductory cosmology;"
         },
         "Donghui Jeong": {
             "url": "http://www.personal.psu.edu/duj13/",
-            "description": "Excellent thesis on cosmological perturbation theory, and clear lectures on large scale structure, galaxy formation and evolution."
+            "description": "Great lectures; excellent PhD thesis;"
         },
         "Yao-Yuan Mao": {
             "url": "https://yymao.github.io/index.html",
-            "description": "A lot of interesting wheels."
+            "description": "Lots of interesting wheels;"
         }
     },
     "books": {
@@ -86,11 +82,11 @@
         },
         "Fluent Python: Clear, Concise, and Effective Programming": {
             "url": "https://www.amazon.com/Fluent-Python-Concise-Effective-Programming/dp/1491946008/ref=sr_1_1?dchild=1&keywords=Fluent+Python&qid=1617304310&sr=8-1",
-            "description": "Your second book on Python;"
+            "description": "My second book on Python; to known Python in depth;"
         },
         "Python Data Science Handbook: Essential Tools for Working with Data": {
             "url": "https://www.amazon.com/Python-Data-Science-Handbook-Essential/dp/1491912057/ref=sr_1_2?dchild=1&keywords=Python+data+science+handbook%3A+essential+tools+for+working+with+data&qid=1617304393&sr=8-2",
-            "description": "Your first book on data analysing with Python; before you read the documentation;"
+            "description": "My first book on data analysing with Python; before I read the documentation;"
         }
     }
 }

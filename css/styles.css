@@ -115,24 +115,20 @@ h3 {
 }
 
 .page .home_intro .guidance_img{
-    height: 1.2em;
+    height: 1em;
 }
 
 .page .home_intro .guidance_gif{
-    height: 1.2em;
     display:none;
 }
 
 .page .home_intro a:hover>.guidance_img{
-    height: 40px;
-    transform: scale(1.6);
-    margin-top:-20px;
     display:none
 }
 
 .page .home_intro a:hover>.guidance_gif{
     height: 40px;
-    transform: scale(1.6);
+    transform: scale(2);
     margin-top:-20px;
     display:inline-block;
 }
@@ -256,7 +252,7 @@ div.research_block:hover {
 p.research_title {
     background-color: transparent;
     font-family: var(--header-font);
-    font-size: 20px;
+    font-size: 25px;
     color: var(--header-color);
 }
 
@@ -529,7 +525,6 @@ img#expand {
     box-shadow: 8px 8px 8px var(--blacker-basic);
     list-style: none;
     font-size: 20px;
-    font-weight: bold;
     color: var(--dark-header-color);
     padding-right: 10px;
     padding-left: 20px;
