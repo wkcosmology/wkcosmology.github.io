@@ -100,7 +100,7 @@ attempts to do it. The basic idea behind these methods is to detect the
 **overdensity of some tracers**. For example, people are using galaxies
 ([Chiang et al. 2013](https://ui.adsabs.harvard.edu/abs/2013ApJ...779..127C/abstract)),
 Ly-$\alpha$ emitters
-([Chiang et al. 2015](https://ui.adsabs.harvard.edu/abs/2014ApJ...782L...3C/abstract))
+([Chiang et al. 2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...808...37C/abstract))
 or Ly-$\alpha$ absorber
 ([Cai et al. 2016](https://ui.adsabs.harvard.edu/abs/2016ApJ...833..135C/abstract)).
 These methods are restricted by the data available at the time. As I said,
@@ -120,7 +120,7 @@ baryonic related stuff to the galaxy group detection process. Then we only need
 to identify the proto-clusters from the galaxy groups or, equivalently, dark
 matter halos.
 
-In this <a href="/aboutme/publication">paper</a>, we developed a proto-cluster
+In this <a href="/about_me/publication.html">paper</a>, we developed a proto-cluster
 finder based on dark matter halo distribution, where the halo catalog can be
 reliably constructed using the galaxy group finding technique
 ([Wang et al. 2020](https://ui.adsabs.harvard.edu/abs/2020MNRAS.499...89W/abstract)).
