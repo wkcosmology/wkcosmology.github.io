@@ -24,121 +24,98 @@ function dateToYMD(date) {
 var entries = JSON.parse(
     $.getJSON({ url: "/blog/blog_meta.json", async: false }).responseText
 );
-var cate_cur = "__all";
-var tag_cur = "__all";
 
-function cate_onclick_helper(instance, click_name) {
+var filter_cur = {
+    categories: "__all",
+    tags: "__all",
+};
+
+// filter on click
+function filter_onclick(instance, filter_name) {
     if (instance.classList.contains("onclick")) return;
     $(instance)
         .siblings()
         .each(function () {
             this.classList.remove("onclick");
         });
-    generate_blogs_helper(click_name, tag_cur);
-    cate_cur = click_name;
+    Object.entries(filter_name).forEach((ent) => {
+        filter_cur[ent[0]] = ent[1];
+    });
+    generate_blogs_files(filter_cur);
     instance.classList.toggle("onclick");
 }
 
-function tag_onclick_helper(instance, click_name) {
-    if (instance.classList.contains("onclick")) return;
-    $(instance)
-        .siblings()
-        .each(function () {
-            this.classList.remove("onclick");
-        });
-    generate_blogs_helper(cate_cur, click_name);
-    tag_cur = click_name;
-    instance.classList.toggle("onclick");
-}
-
+// generate blog tags: means categoties and tags
 function generate_blogs() {
-    // collect the catagories and tags
-    var cates = [];
-    var tags = [];
-    for (var k in entries) {
-        cates = cates.concat(entries[k]["categories"]);
-        tags = tags.concat(entries[k]["tags"]);
-    }
-    cates = [...new Set(cates)];
-    tags = [...new Set(tags)];
-    generate_blogs_helper("__all", "__all");
+    var display_elmts = {
+        categories: {
+            text: "Categories: ",
+            id: "#blog_category",
+            title_class: "blog_cate_title",
+            name_class: "blog_cate_name",
+        },
+        tags: {
+            text: "Tags: ",
+            id: "#blog_tag",
+            title_class: "blog_tag_title",
+            name_class: "blog_tag_name",
+        },
+    };
+    generate_blogs_files({});
+    Object.entries(display_elmts).forEach((ent) => {
+        var opt = ent[1];
+        var name = ent[0];
+        var ents = [];
+        for (var k in entries) {
+            ents = ents.concat(entries[k][name]);
+        }
+        ents = [...new Set(ents)];
 
-    // process the category
-    // here I use cate_tmp to create all the elements, be careful
-    var cate_elmt = document.querySelector("#blog_category");
-    var cate_tmp = document.createElement("span");
-    cate_tmp.classList = "blog_cate_title";
-    cate_tmp.innerHTML = "Categories:";
-    cate_elmt.appendChild(cate_tmp);
-    cate_tmp = document.createElement("span");
-    cate_tmp.classList.add("blog_cate_name");
-    cate_tmp.classList.add("onclick");
-    cate_tmp.innerHTML = "All";
-    cate_tmp.addEventListener("click", function () {
-        cate_onclick_helper(this, "__all");
-    });
-    cate_elmt.appendChild(cate_tmp);
-    cates.forEach((cate) => {
-        cate_tmp = document.createElement("span");
-        cate_tmp.classList.add("blog_cate_name");
-        cate_tmp.innerHTML = cate;
-        cate_tmp.addEventListener("click", function () {
-            cate_onclick_helper(this, this.innerHTML);
+        var ent_elmt = document.querySelector(opt["id"]);
+        var ent_tmp = document.createElement("span");
+        ent_tmp.className = opt["title_class"];
+        ent_tmp.innerHTML = opt["text"];
+        ent_elmt.appendChild(ent_tmp);
+        ent_tmp = document.createElement("span");
+        ent_tmp.classList.add(opt["name_class"]);
+        ent_tmp.classList.add("onclick");
+        ent_tmp.innerHTML = "All";
+        ent_tmp.addEventListener("click", function () {
+            var filter_tmp = {};
+            filter_tmp[name] = "__all";
+            filter_onclick(this, filter_tmp);
         });
-        cate_elmt.appendChild(cate_tmp);
-    });
-
-    // process the tag
-    // here I use tag_tmp to create all the elements, be careful
-    var tag_elmt = document.querySelector("#blog_tag");
-    var tag_tmp = document.createElement("span");
-    tag_tmp.className = "blog_tag_title";
-    tag_tmp.innerHTML = "Tags:";
-    tag_elmt.appendChild(tag_tmp);
-    tag_tmp = document.createElement("span");
-    tag_tmp.classList.add("blog_tag_name");
-    tag_tmp.classList.add("onclick");
-    tag_tmp.innerHTML = "All";
-    tag_tmp.addEventListener("click", function () {
-        tag_onclick_helper(this, "__all");
-    });
-    tag_elmt.appendChild(tag_tmp);
-    tags.forEach((tag) => {
-        tag_tmp = document.createElement("span");
-        tag_tmp.classList.add("blog_tag_name");
-        tag_tmp.innerHTML = tag;
-        tag_tmp.addEventListener("click", function () {
-            tag_onclick_helper(this, this.innerHTML);
+        ent_elmt.appendChild(ent_tmp);
+        ents.forEach((ent) => {
+            ent_tmp = document.createElement("span");
+            ent_tmp.classList.add(opt["name_class"]);
+            ent_tmp.innerHTML = ent;
+            ent_tmp.addEventListener("click", function () {
+                var filter_tmp = {};
+                filter_tmp[name] = this.innerHTML;
+                filter_onclick(this, filter_tmp);
+            });
+            ent_elmt.appendChild(ent_tmp);
         });
-        tag_elmt.appendChild(tag_tmp);
     });
 }
 
 // Combine the html page generated from markdown file with the header and sidebar.
-function generate_blogs_helper(cate, tag) {
+function generate_blogs_files(filter_map) {
     // copy the entries
     entries_copy = JSON.parse(JSON.stringify(entries));
     // filter the cate or tag
-    if (cate !== "__all") {
-        var new_entries = {};
-        for (var k in entries_copy) {
-            if (entries_copy[k]["categories"].includes(cate)) {
-                new_entries[k] = entries_copy[k];
-            }
+    Object.entries(filter_map).forEach((ent) => {
+        var filter_k = ent[0];
+        var filter_v = ent[1];
+        if (filter_v !== "__all") {
+            entries_copy = Object.fromEntries(
+                Object.entries(entries_copy).filter((tmp) =>
+                    tmp[1][ent[0]].includes(filter_v)
+                )
+            );
         }
-        entries_copy = new_entries;
-    }
-
-    if (tag !== "__all") {
-        var new_entries = {};
-        for (var k in entries_copy) {
-            if (entries_copy[k]["tags"].includes(tag)) {
-                new_entries[k] = entries_copy[k];
-            }
-        }
-        entries_copy = new_entries;
-    }
-
+    });
     // create the blog entries
     let blogs_files_elmt = document.querySelector("#blogs_files");
     if (Object.keys(entries_copy).length == 0) {
@@ -187,6 +164,7 @@ function generate_blogs_helper(cate, tag) {
         label.className = "blogs_files_date";
         label.innerHTML = dateToYMD(new Date(entry["date"]));
         li.appendChild(a);
+        // expand the short discription
         li.addEventListener("click", function () {
             var content = this.nextElementSibling;
             if (content.style.display == "block") {
