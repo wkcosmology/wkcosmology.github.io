@@ -236,12 +236,6 @@ div.research_block {
     border-radius: 10px 10px 10px 10px;
 }
 
-div.research_block:hover {
-    zoom: 1;
-    transform: scale(1.02);
-    transition: transform 0.15s ease-in-out;
-}
-
 .research_block>.research_intro ul>li,
 .research_block>.research_intro p
 {
