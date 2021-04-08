@@ -1,0 +1,102 @@
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Kosmos Blog</title>
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/css/blog_styles.css" type="text/css" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/css/hljs.css" type="text/css" title="no title" charset="utf-8">
+        <script charset="utf-8" src="/js/sidebar.js"></script>
+        <link rel="shortcut icon" type="image/png" href="/image/favicon.png">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <script src="/js/mathjax.js" async=""></script>
+        <script charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="blog_sidebar">
+            <span id="blog_sidebar_header"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_header();
+            </script>
+            <span id="blog_sidebar_content"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_content();
+            </script>
+        </div>
+        <div id="blog_page">
+            <div class="blog_front"><p class="blog_title">Vim tutorial-0: Why vim?</p><p class="date">Apr. 06, 2021</p><p class="descri">I will introduce my own experience on vim, and why I choose it.</p></div>
+            <span id="blog_content"><h1 id="some-terminology">Some terminology</h1>
+<ul>
+<li><code>vi</code>: an ancient text editor for Unix operating system created in 1976 by
+Bill Joy.</li>
+<li><code>Vim (Vi improved)</code>: a clone of <code>vi</code> by Bram Moolennaar in 1991. This is
+still updating.</li>
+<li><code>NeoVim</code>: a refactor of traditional Vim, released in 2015.</li>
+</ul>
+<h1 id="why-vim">Why Vim?</h1>
+<h2 id="editing-pattern">Editing pattern</h2>
+<p>Normally, editing code is not just inserting characters. Instead, you need to
+navigate, delete, modify, copy, paste, replace, search and do many other things.
+So, if your editing is so simple that a plain text editor, like TextEdit on mac
+OS, is sufficient, just skip this blog. Otherwise, Vim/NeoVim might provide a
+way to do your job more efficiently.</p>
+<p>The most powerful thing of Vim is its editing pattern, rather than the editor
+itself. For example, many modern popular code editor have implemented vim mode
+using plugin or as built-in functionality, like VS code, Jupyter Notebook, or
+some note-taking App like Obsidian. Even Emacs, the most famous competitor of
+Vim, has vim-mode. All these facts prove that Vim is about the editing pattern,
+instead of a editor itself. Nowadays, people are still actively developing and
+using the editor of Vim/Neovim, because these editors have implemented the
+Vim-editing-pattern to the best.</p>
+<p>Vim is a <a href="https://en.wikipedia.org/wiki/Vi#Interface" rel="noopener noreferrer" target="_blank">modal editor</a>, and this is
+its essence. We know that, in a normal editor, the home row (alphanumerical
+keys) is used to insert characters, so we need to use the modifier keys (<code>Ctrl</code>,
+<code>Alt</code>) or mouse for other functions, like jump or select. In Vim, all these
+functionalities can be done using just the home row. And the trick is to
+interpret the same key differently in different <strong>mode</strong>. For example, <code>h</code> is to
+insert the character <code>h</code> in <code>insert</code> mode, but it is to move cursor left in
+<code>normal</code> mode. <code>w</code> is to move forward by a word in <code>normal</code> mode, but it is to
+write (means save) the buffer to the file in <code>command</code> mode. And you just need
+some extra keys to switch between these modes. Consequently, you can keep your
+hands in the home row for code editing and achieve
+<a href="mouse_free_macos.html" rel="noopener noreferrer" target="_blank">mouse-free</a>.</p>
+<h2 id="highly-customizable">Highly customizable</h2>
+<p>One of the reasons that makes me choose Vim/NeoVim is its high customizalibity.</p>
+<p><strong>Vim is simple and transparent.</strong> Vim is assembled by many basic elements, like
+buffer, window, tab etc. And it has all kinds of public APIs that I can use. For
+example, I can put the file-tree or terminal on the side of the window, below
+it, or just floating on it. Since most of the Vim plugins are built on the APIs
+provided by Vim, one can easily hack into it to change its behavior (except some
+heavy plugins, like YouCompleteMe or coc).</p>
+<p><strong>Vim is well-documented.</strong> In Vim, all the commands and functions are
+well-documented. Most importantly, these APIs are very stable. Moreover, there
+is already a very large Vim plugin ecosystem out there, where you can easily
+install, use and configure them.</p>
+<h2 id="longlived">Longlived</h2>
+<p>I am a stingy guy, so I am not willing to spend so much time to learn something
+I will not use for a long time. I know, there are many popular and modern code
+editors out there, like VS Code, and I tried some of them. However, I have a
+strong believe, as long as coders are still using terminals instead of
+graphic-centric system, or programmers still code by typing, Vim will have many
+users. But I do not have this belief for other editors, except Emacs.</p>
+<h1 id="why-not-vim">Why not Vim?</h1>
+<h2 id="expensive">Expensive</h2>
+<p>It takes a long time to learn Vim for a beginner. The first thing is to break
+the normal editing habit: move without arrow keys, and jump without mouse. One
+need to practise on purpose to form the muscle memory, and it will be
+inconvenient at the beginning. Moreover, it will make you question the
+motivation to learn Vim.</p>
+<h2 id="addictive">Addictive</h2>
+<p>One of the huge problem of Vim is that it can make you addicted to it. Of my own
+experience, once I have been familiar with Vim's motion though <code>h</code>, <code>j</code>, <code>k</code>,
+<code>l</code>, some jump commands, and the usage of text object, I just cannot control
+myself to use these in other editors. As a result, I use the Vim-mode in
+Obsidian, install the Vim extension in JupyterLab etc.</p>
+<h1 id="last-word">Last word</h1>
+<p>Vim is not a silver bullet, and no editor is. It is more like a choice, a hobby,
+or a taste. I will not recommend Vim to anyone. Instead, I will only tell others
+what Vim is, and let himself/herself to judge if it can help. Meanwhile, I will
+not accept any slander to Vim, because I know what I am doing.</p></span>
+        </div>
+    
+
+</body>
