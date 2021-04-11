@@ -1,9 +1,7 @@
 ---
 title: "Vim tutorial-0: Why vim?"
 date: 2021-04-07
-description:
-    I will introduce my own experience on vim, and why I
-    choose it.
+description: I will introduce my own experience on vim, and why I choose it.
 tags: [Vim, Software]
 categories: [Productivity]
 ---
