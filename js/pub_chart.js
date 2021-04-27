@@ -7,7 +7,7 @@ var g3 = {
     y: "0%",
     type: "ring",
     title: {
-        text: "Update: 2021-03-30",
+        text: "Update: 2021-04-26",
         fontColor: "#94918a",
         fontWeight: "normal",
         fontSize: 13,
@@ -97,7 +97,7 @@ var g3 = {
             text: "RAA",
         },
         {
-            values: [3],
+            values: [4],
             "background-color": "#79827b",
             text: "Others",
         },
@@ -173,22 +173,22 @@ var g4 = {
     },
     series: [
         {
-            values: [4],
+            values: [5],
             "background-color": "#937cb9",
             text: "MNRAS",
         },
         {
-            values: [7],
+            values: [9],
             "background-color": "#3c5492",
             text: "ApJ",
         },
         {
-            values: [19],
+            values: [20],
             "background-color": "#01b5ec",
             text: "JCAP",
         },
         {
-            values: [3],
+            values: [4],
             "background-color": "#7cc9e7",
             text: "RAA",
         },
