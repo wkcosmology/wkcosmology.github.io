@@ -77,7 +77,7 @@ var g3 = {
     },
     series: [
         {
-            values: [2],
+            values: [3],
             "background-color": "#937cb9",
             text: "MNRAS",
         },
@@ -173,12 +173,12 @@ var g4 = {
     },
     series: [
         {
-            values: [5],
+            values: [6],
             "background-color": "#937cb9",
             text: "MNRAS",
         },
         {
-            values: [9],
+            values: [11],
             "background-color": "#3c5492",
             text: "ApJ",
         },
