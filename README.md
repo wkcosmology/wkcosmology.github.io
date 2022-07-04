@@ -20,7 +20,7 @@ The other one is the `blog page` with dark sidebar and white page.
 -   `blog page`
     -   `blog_sidebar.html`: html template to generate the sidebar for each blog
         page
-    -   `blog_header.html`: html tempalte to generate the header for each blog
+    -   `blog_header.html`: html template to generate the header for each blog
         page
     -   `blog_meta.json`: generated meta files for the blogs, containing the
         title, path, date and table of content.
@@ -49,4 +49,4 @@ The other one is the `blog page` with dark sidebar and white page.
 -   Write the blog using markdown in `/blog/md/` directory.
 -   run `node generate_md.js` in `/script/` directory to convert the markdown
     file to raw html file.
--   Stage, commoit and push all the chagnes to the github.
+-   Stage, commit and push all the changes to the github.
