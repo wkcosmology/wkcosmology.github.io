@@ -1,10 +1,16 @@
-var fs = require("fs");
-var jsdom = require("jsdom");
+// var fs = require("fs");
+import fs from "fs"
+// var jsdom = require("jsdom");
+import jsdom from "jsdom"
 const { JSDOM } = jsdom;
-var showdown = require("showdown");
-var fm = require("front-matter");
-var dateFormat = require("dateformat");
-var toc = require("markdown-toc");
+// var showdown = require("showdown");
+import showdown from "showdown"
+// var fm = require("front-matter");
+import fm from "front-matter"
+// var dateFormat = require("dateformat");
+import dateFormat from "dateformat"
+// var toc = require("markdown-toc");
+import toc from "markdown-toc"
 
 showdown.setFlavor("github");
 
@@ -15,7 +21,7 @@ const capitalize = (s) => {
 };
 
 // variable
-var homepage = "/Users/wangk/Documents/Project/wkcosmology.github.io";
+var homepage = "/Users/wangk/Project/homepage";
 var converter = new showdown.Converter({
     simpleLineBreaks: false,
     openLinksInNewWindow: true,
@@ -33,7 +39,7 @@ for (var i in files) {
     // process the front matter
     var attr = data.attributes;
     blog_json[files[i]] = {};
-    file_tmp = blog_json[files[i]];
+    var file_tmp = blog_json[files[i]];
     for (var k in data.attributes) {
         file_tmp[k] = data.attributes[k];
     }
