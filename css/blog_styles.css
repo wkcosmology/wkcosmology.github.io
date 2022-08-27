@@ -1,9 +1,9 @@
 :root {
-    --mono-font: Iosevka, monospace;
-    --sans-serif-font: "Open sans", Arial;
+    --mono-font: misc, Iosevka, monospace;
+    --sans-serif-font: misc, "Open sans", Arial;
     --header-font: Raleway, "Trebuchet MS";
-    --serif-font: Georgia;
-    --cmu-font: "CMU serif";
+    --serif-font: misc, Georgia;
+    --cmu-font: misc, "CMU serif";
     --black-basic: #20272d;
     --blue-basic: #152a6e;
     --blacker-basic: #161b1f;

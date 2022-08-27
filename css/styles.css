@@ -1,9 +1,19 @@
+@font-face {
+    font-family: 'misc';
+    src: url('font/miscfs__.woff2') format('woff2'),
+         url('font/miscfs__.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 :root{
-    --mono-font: Iosevka, monospace;
-    --sans-serif-font: "Open sans", Arial;
-    --header-font: Raleway, "Trebuchet MS";
-    --serif-font: Georgia;
-    --cmu-font: "CMU serif";
+    --mono-font: misc, Iosevka, monospace;
+    --sans-serif-font: misc, "Open sans", Arial;
+    --header-font: misc, Raleway, "Trebuchet MS";
+    --annote-font: Raleway, "Trebuchet MS";
+    --serif-font: misc, Georgia;
+    --cmu-font: misc, "CMU serif";
     --black-basic: #20272d;
     --blue-basic: #152a6e;
     --blacker-basic: #161b1f;
@@ -313,7 +323,7 @@ div.sidebar_intro img{
 div.sidebar_intro p{
     margin-left: -5px;
     font-style: italic;
-    font-family: var(--header-font);
+    font-family: var(--annote-font);
     font-size: 15px;
     color: var(--black-basic);
 }
