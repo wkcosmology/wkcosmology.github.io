@@ -1,0 +1,71 @@
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Kosmos Blog</title>
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/css/blog_styles.css" type="text/css" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/css/hljs.css" type="text/css" title="no title" charset="utf-8">
+        <script charset="utf-8" src="/js/sidebar.js"></script>
+        <link rel="shortcut icon" type="image/png" href="/image/favicon.png">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <script src="/js/mathjax.js" async=""></script>
+        <script charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="blog_sidebar">
+            <span id="blog_sidebar_header"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_header();
+            </script>
+            <span id="blog_sidebar_content"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_content();
+            </script>
+        </div>
+        <div id="blog_page">
+            <div class="blog_front"><p class="blog_title">Calculation of galaxy environment indicators</p><p class="date">Sep. 01, 2022</p><p class="descri">The living places of galaxies, so-called galaxy environment, have an impact on the galaxy properties, like their color, star formation activity etc. Thus, the calculation of these indicators is necessary to investigate the galaxy formation and evolution processes. In this blog, I will introduce the algorithm and implementation to calculate these indicators.</p></div>
+            <span id="blog_content"><h1 id="environment-indicators">Environment indicators</h1>
+<h1 id="neighbour-searching">Neighbour searching</h1>
+<h2 id="neighbour-searching-within-some-radius">Neighbour searching within some radius</h2>
+<p><em>TASK:</em> Suppose we have two point samples,</p>
+<p>$$
+\mathcal{X} = { \mathbf x_1, \mathbf x_2, …, \mathbf x_n }~{\rm and}~ \mathcal{Y} = {\mathbf y_1, \mathbf y_2, …, \mathbf y_m}.
+$$</p>
+<p>Now, for each point $\mathbf x_i$ in sample-$\mathcal{X}$, we want to find all
+the points in sample-$\mathbf{Y}$ that satisfy</p>
+<p>$$
+f(\mathbf x_i, \mathbf y_j\mid \mathbf d) &lt; 0
+$$</p>
+<p>This description is a little bit of abstract, so let's see some examples.</p>
+<h3 id="searching-neighbour-in-real-space">Searching neighbour in real space</h3>
+<p>In dark matter simulations, we have acess to the real position of particles, so
+we can calculate the density field on a scale of $r$. For simplicity, here we
+use top-hat filter, so that the local density at $\mathbf y$ can be calculated
+as</p>
+<p>$$
+\rho(\mathbf y\mid r) = \frac{3 }{4\pi r^3}\times \sum_{|\mathbf y - \mathbf x_i|&lt; r}m_i
+$$</p>
+<p>In this case,
+$f(\mathbf x \mathbf y\mid \mathbf d) = | \mathbf x - \mathbf y| - r$.</p>
+<h3 id="searching-neighbor-in-redshift-space">Searching neighbor in redshift space</h3>
+<p>In real galaxy surveys, we can only derive the position of galaxies using the
+relation between redshift and distance, which is subject to the contamination
+from peculiar velocity. This effect is also called as the redshift <em>space
+distortion effect</em>. In this case, we normally want to search neighbors within
+some projected distance threshold and within some distance along the
+line-of-sight.</p>
+<p>Here is one example. For a galaxy $\mathbf x_i$, we want to search its neighbors
+$\mathbf y_j$ which satisfy that</p>
+<p>$$
+r_{\pi} = \frac{\mathbf s\cdot l}{| l|} &lt; \Delta r_{\pi},~~~
+r_p = \sqrt{s^2 - r^2_{\pi}} &lt; \Delta r_p
+$$</p>
+<p>with</p>
+<p>$$
+\mathbf l = (\mathbf x_i + \mathbf y_j) / 2,~~~\mathbf s = \mathbf x_i - \mathbf y_j
+$$</p>
+<p>where $\Delta r_p$ and $\Delta r_{\pi}$ are two predefined thresholds.</p></span>
+        </div>
+    
+
+</body>
