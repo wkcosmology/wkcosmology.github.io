@@ -7,7 +7,7 @@ var g3 = {
     y: "0%",
     type: "ring",
     title: {
-        text: "Update: 2021-04-26",
+        text: "Update: 2023-02-08",
         fontColor: "#94918a",
         fontWeight: "normal",
         fontSize: 13,
@@ -77,7 +77,7 @@ var g3 = {
     },
     series: [
         {
-            values: [3],
+            values: [5],
             "background-color": "#937cb9",
             text: "MNRAS",
         },
@@ -87,17 +87,7 @@ var g3 = {
             text: "ApJ",
         },
         {
-            values: [3],
-            "background-color": "#01b5ec",
-            text: "JCAP",
-        },
-        {
-            values: [1],
-            "background-color": "#7cc9e7",
-            text: "RAA",
-        },
-        {
-            values: [4],
+            values: [11],
             "background-color": "#79827b",
             text: "Others",
         },
@@ -173,27 +163,17 @@ var g4 = {
     },
     series: [
         {
-            values: [6],
+            values: [16],
             "background-color": "#937cb9",
             text: "MNRAS",
         },
         {
-            values: [11],
-            "background-color": "#3c5492",
+            values: [19],
+            "background-color": "#937cb9",
             text: "ApJ",
         },
         {
-            values: [20],
-            "background-color": "#01b5ec",
-            text: "JCAP",
-        },
-        {
-            values: [4],
-            "background-color": "#7cc9e7",
-            text: "RAA",
-        },
-        {
-            values: [15],
+            values: [43],
             "background-color": "#79827b",
             text: "Others",
         },
