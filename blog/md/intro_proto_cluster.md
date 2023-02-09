@@ -4,7 +4,7 @@ date: 2021-04-03
 description:
     Introducing the proto-cluster, its importance to study galaxy evolution, and
     our recent work on its identification.
-tags: ["proto-cluster", galaxy evolution]
+tags: [Protocluster, Galaxy evolution]
 categories: [Astrophysics]
 ---
 
