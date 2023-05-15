@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <title>Resource</title>
+        <title>Tool</title>
         <link
             rel="stylesheet"
             href="../css/styles.css"
@@ -11,7 +11,12 @@
             title="no title"
             charset="utf-8"
         />
+        <script
+            charset="utf-8"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        ></script>
         <script charset="utf-8" src="/js/sidebar.js"></script>
+        <script charset="utf-8" src="/js/tool.js"></script>
         <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
     </head>
@@ -24,7 +29,11 @@
             </script>
         </div>
         <div class="page">
-            I will share some tools with you when I made them.
+            <h1>Softwares</h1>
+            <div id="softwares"></div>
+            <script charset="utf-8">
+                get_data("#softwares", "softwares", "resource_annot");
+            </script>
         </div>
     </body>
 </html>

@@ -7,7 +7,7 @@ var g3 = {
     y: "0%",
     type: "ring",
     title: {
-        text: "Update: 2023-02-08",
+        text: "Update: 2023-05-15",
         fontColor: "#94918a",
         fontWeight: "normal",
         fontSize: 13,
@@ -77,17 +77,17 @@ var g3 = {
     },
     series: [
         {
-            values: [5],
+            values: [7],
             "background-color": "#937cb9",
             text: "MNRAS",
         },
         {
-            values: [1],
+            values: [3],
             "background-color": "#3c5492",
             text: "ApJ",
         },
         {
-            values: [11],
+            values: [8],
             "background-color": "#79827b",
             text: "Others",
         },
@@ -163,17 +163,17 @@ var g4 = {
     },
     series: [
         {
-            values: [16],
+            values: [27],
             "background-color": "#937cb9",
             text: "MNRAS",
         },
         {
-            values: [19],
-            "background-color": "#937cb9",
+            values: [28],
+            "background-color": "#3c5492",
             text: "ApJ",
         },
         {
-            values: [43],
+            values: [34],
             "background-color": "#79827b",
             text: "Others",
         },

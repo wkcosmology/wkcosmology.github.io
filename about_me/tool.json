@@ -1,0 +1,8 @@
+{
+    "softwares": {
+        "HIPP": {
+            "url": "https://github.com/ChenYangyao/hipp",
+            "description": "Excellent c++ utility library for scientific calculation."
+        }
+    }
+}
