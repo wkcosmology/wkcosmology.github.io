@@ -2,7 +2,10 @@
 title: Connect galaxies across cosmic time
 date: 2023-05-30
 description:
-
+    Galaxies observed at different redshifts are causally irrelevant but
+    statistically related. By connecting galaxies across cosmic time in a
+    model-dependent way, one can directly infer the evolution of galaxy
+    properties.
 tags: [Galaxy-halo connection, Galaxy evolution]
 categories: [Astrophysics]
 ---
@@ -32,9 +35,44 @@ patches** of our Universe at different cosmic time.
 
 Our method of connecting galaxies across cosmic time relies on the tight
 correlation between galaxies and their dark matter halos, which is called the
-galaxy-halo connection in literature (See [this blog](./halo_model.html) for the
+galaxy-halo connection in literature (See [this blog](./halo_model.html) for a
 physical picture).
 
+Dark matter halos and their assembly histories, i.e. their progenitors, can be
+generated from pure dark matter numerical simulations and semi-analytical
+methods.
 
+The connection between dark matter halos and galaxies is built upon several
+methods. The first category contains methods based on heuristic assumptions. For
+example, the **subhalo abundance matching** (SHAM) method assumes that more
+massive galaxies tend to live in more massive halos. The **age distribution
+matching** method assumes that, at a given stellar mass, early-formed dark
+matter subhalos prefer to host quiescent galaxies, which can help us to assign
+colors or the star formation rates to subhalos. The second category involves a
+parametric model to populate galaxies into dark matter halos (not subhalos) and,
+then, constrain these parameters using summary statistics, like the stellar mass
+function and the two-point correlation function. The third category is to model
+the formation and evolution of galaxies in dark matter halos, like the
+hydrodynamical simulations, semi-analytical models, and empirical models of
+galaxy formation and evolution (these models will be introduced in a separate
+blog). Finally, there have be many attempts to directly probe the dark matter
+distribution around observed galaxies through gravitational lensing, satellite
+galaxy kinematics, and the kinematics of gas and stars.
 
-# Connect galaxies through subhalo merger trees
+# Connect galaxies across cosmic time
+
+To connect galaxies across cosmic time, we can first populate observed galaxies
+into subhalos at different redshifts leveraging the established galaxy-halo
+connection. Then, we can use the causal link provided by the subhalo merger
+trees to connect these populated galaxies across cosmic time. This is the gist
+of this method.
+
+# Summary in one figure
+
+<figure id="fig1">
+<img src="/blog/image/connect_gals_fig1.jpg" width=740>
+<figcaption>
+<strong> Figure 1.</strong>
+A schematic draw on connecting galaxies across cosmic time.
+</figcaption>
+</figure>

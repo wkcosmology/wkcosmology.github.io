@@ -112,7 +112,7 @@ of the host halo, which will cause the subhalo and the galaxies in it to merge
 with the central galaxy. This interaction is called **dynamical friction**, and
 the final galaxy merger is call **cannibalism**.
 
-# Summay in a figure
+# Summay in one figure
 
 <figure id="fig1">
 <img src="/blog/image/halo_model_fig1.png" width=740>
