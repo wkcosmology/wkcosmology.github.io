@@ -163,17 +163,17 @@ var g4 = {
     },
     series: [
         {
-            values: [27],
+            values: [33],
             "background-color": "#937cb9",
             text: "MNRAS",
         },
         {
-            values: [28],
+            values: [31],
             "background-color": "#3c5492",
             text: "ApJ",
         },
         {
-            values: [34],
+            values: [66],
             "background-color": "#79827b",
             text: "Others",
         },
