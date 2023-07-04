@@ -79,17 +79,17 @@ var g3 = {
         {
             values: [7],
             "background-color": "#937cb9",
-            text: "MNRAS",
+            text: "First-author",
         },
         {
-            values: [3],
+            values: [1],
             "background-color": "#3c5492",
-            text: "ApJ",
+            text: "Corresponding-author",
         },
         {
-            values: [8],
+            values: [10],
             "background-color": "#79827b",
-            text: "Others",
+            text: "Co-author",
         },
     ],
 };
@@ -163,19 +163,19 @@ var g4 = {
     },
     series: [
         {
-            values: [33],
+            values: [46],
             "background-color": "#937cb9",
-            text: "MNRAS",
+            text: "This year",
         },
         {
-            values: [31],
+            values: [69],
             "background-color": "#3c5492",
-            text: "ApJ",
+            text: "Last 5-1 years",
         },
         {
-            values: [66],
+            values: [16],
             "background-color": "#79827b",
-            text: "Others",
+            text: "Before 5 years",
         },
     ],
 };
