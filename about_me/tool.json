@@ -3,6 +3,10 @@
         "HIPP": {
             "url": "https://github.com/ChenYangyao/hipp",
             "description": "Excellent c++ utility library for scientific calculation."
+        },
+        "HaloFactory": {
+            "url": "https://github.com/ChenYangyao/halofactory",
+            "description": "Semi-analytical dark matter halo generators"
         }
     }
 }

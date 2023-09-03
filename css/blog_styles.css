@@ -1,14 +1,14 @@
 :root {
-    --mono-font: misc, Iosevka, monospace;
-    --sans-serif-font: misc, "Open sans", Arial;
-    --header-font: Raleway, "Trebuchet MS";
-    --serif-font: misc, Georgia;
-    --cmu-font: misc, "CMU serif";
+    --mono-font: "Source Sans pro", Iosevka, monospace;
+    --sans-serif-font: "Source Sans pro", "Open sans", Arial;
+    --header-font: "Source Sans pro", "Trebuchet MS";
+    --serif-font: "Source Sans pro", misc, Georgia;
+    --cmu-font: "Source Sans pro", "CMU serif";
     --black-basic: #20272d;
     --blue-basic: #152a6e;
     --blacker-basic: #161b1f;
-    --white-basic: #babcbf;
-    --whiter-basic: #dadada;
+    /* --white-basic: #babcbf; */
+    --white-basic: #ffffff;
     --header-color: #e7f549;
     --dark-header-color: #eae486;
     --gray-basic: #9c9b97;
@@ -100,6 +100,7 @@
     padding-right: 40px;
     padding-left: 40px;
     text-align: justify;
+    font-size: 16px;
     font-family: var(--mono-font);
     color: var(--black-basic);
 }
@@ -212,7 +213,7 @@ ol > li {
 li {
     margin-left: 20px;
     font-family: var(--serif-font);
-    font-size: 19px;
+    font-size: 18px;
     margin-right: 0px;
     color: var(--blacker-basic);
     text-align: justify;

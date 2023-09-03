@@ -77,7 +77,7 @@ var g3 = {
     },
     series: [
         {
-            values: [7],
+            values: [8],
             "background-color": "#937cb9",
             text: "First-author",
         },
@@ -163,7 +163,7 @@ var g4 = {
     },
     series: [
         {
-            values: [46],
+            values: [51],
             "background-color": "#937cb9",
             text: "This year",
         },

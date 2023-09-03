@@ -1,27 +1,43 @@
 @font-face {
+    font-family: 'Source Sans pro';
+    src: url('font/sourcesanspro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fira Code';
+    src: url('font/FiraCode-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: 'misc';
     src: url('font/miscfs__.woff2') format('woff2'),
          url('font/miscfs__.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 :root{
-    --mono-font: misc, Iosevka, monospace;
-    --sans-serif-font: misc, "Open sans", Arial;
-    --header-font: misc, Raleway, "Trebuchet MS";
-    --annote-font: Raleway, "Trebuchet MS";
-    --serif-font: misc, Georgia;
-    --cmu-font: misc, "CMU serif";
+    --header-font: Arial, misc, Raleway, "Trebuchet MS";
+    --annote-font: Arial, "Trebuchet MS";
+
+    --mono-font: "Fira Code", misc, Iosevka, monospace;
+    --sans-serif-font: Arial, "Open sans", Arial;
+    --serif-font: Arial, Georgia;
+    --cmu-font: Arial, "CMU serif";
     --black-basic: #20272d;
     --blue-basic: #152a6e;
     --blacker-basic: #161b1f;
     --white-basic: #babcbf;
+    --link-color: #00FFFF;
+    /* --white-basic: #f0f3f7; */
     --whiter-basic: #dadada;
+    --pure-white-basic: #ffffff;
     --header-color: #e7f549;
     --dark-header-color: #eae486;
     --gray-basic: #9c9b97;
+    /* --gray-basic: #f2f5f7; */
     --dark-gray-basic: #555956;
 }
 
@@ -79,8 +95,8 @@ h3 {
 }
 
 .page .home_intro p.welcome{
-    font-family: var(--sans-serif-font);
     font-size: 18px;
+    font-family: var(--mono-font);
 }
 
 .page .home_intro ul>li{
@@ -145,19 +161,25 @@ h3 {
 
 .publication {
     color: var(--white-basic);
-    font-size: 22px;
-    font-family: var(--serif-font);
+    font-size: 16px;
+    font-family: var(--mono-font);
     margin-left: -2px;
     margin-bottom: 5px;
     line-height: 27px;
+    text-align: left;
+}
+
+.publication .author a, a:link, a:visited{
+    color: var(--link-color);
 }
 
 .strong {
-    color: var(--whiter-basic);
+    color: var(--pure-white-basic);
     font-family: var(--mono-font);
 }
 
 .author {
+    font-size: 16px;
     display: block;
     color: var(--gray-basic);
     margin-left: 0px;
@@ -209,6 +231,29 @@ h3 {
     line-height: 40px;
 }
 
+.aboutme li{
+    font-size: 18px;
+    color: var(--whiter-basic);
+}
+
+.aboutme h1{
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--header-color);
+    /* border: 1px solid var(--head-basic); */
+    border-radius: 0px 30px 30px 0px;
+    background-color: var(--dark-gray-basic);
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.aboutme h1:before{
+    content: "➥ ";
+}
+
 
 div.page {
     display: block;
@@ -251,31 +296,36 @@ div.research_block {
 {
     font-family: var(--serif-font);
     text-align:justify;
+    font-size:16px;
 }
 
 p.research_title {
     background-color: transparent;
     font-family: var(--header-font);
-    font-size: 25px;
+    font-size: 23px;
     color: var(--header-color);
 }
 
 div.research_intro {
     background-color: transparent;
-    font-family: var(--sans-serif-font);
-    font-size: 20px;
+    font-family: var(--header-font);
+    font-size: 18px;
     line-height: 22px;
     margin-left: 10px;
 }
 
 div.research_intro li, p{
     background-color: transparent;
-    font-family: var(--sans-serif-font);
-    font-size: 18px;
+    font-family: var(--header-font);
+    font-size: 20px;
     line-height: 24px;
     margin-left: 10px;
     margin-right: 20px;
-    text-align: justify;
+    text-align: left;
+}
+
+div.research_intro p>strong{
+    color: var(--whiter-basic);
 }
 
 div.research {
@@ -298,7 +348,8 @@ div.research_intro p {
 .project_title {
     font-size: 20px;
     position: relative;
-    color: var(--header-color);
+    color: var(--white-color);
+    font-weight: 100;
     font-family: var(--header-font);
 }
 
@@ -424,6 +475,7 @@ a[target="_blank"]::after {
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 0px;
+    font-size: 16px;
     color: var(--gray-basic);
 }
 
