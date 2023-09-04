@@ -172,7 +172,7 @@ h3 {
     color: var(--whiter-basic);
     font-size: 16px;
     font-family: var(--mono-font);
-    margin-left: -2px;
+    margin-left: 2px;
     margin-bottom: 5px;
     line-height: 24px;
     text-align: left;
