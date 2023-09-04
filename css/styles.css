@@ -31,7 +31,7 @@
     --annote-font: Arial, "Trebuchet MS";
 
     --mono-font: "Fira Code", misc, Iosevka, monospace;
-    --sans-serif-font: Arial, "Open sans", Arial;
+    --sans-serif-font: "Source Sans pro", Arial, "Open sans", Arial;
     --serif-font: Arial, Georgia;
     --cmu-font: Arial, "CMU serif";
     --black-basic: #20272d;
@@ -167,14 +167,19 @@ h3 {
     display:inline-block;
 }
 
-.publication {
-    color: var(--white-basic);
+.publication, .author {
+    display: block;
+    color: var(--whiter-basic);
     font-size: 16px;
     font-family: var(--mono-font);
     margin-left: -2px;
     margin-bottom: 5px;
-    line-height: 27px;
+    line-height: 24px;
     text-align: left;
+}
+
+.author {
+    color: var(--gray-basic);
 }
 
 .publication .author a, a:link, a:visited{
@@ -186,13 +191,6 @@ h3 {
     font-family: var(--mono-font);
 }
 
-.author {
-    font-size: 16px;
-    display: block;
-    color: var(--gray-basic);
-    margin-left: 0px;
-    font-family: var(--mono-font);
-}
 
 .portrait {
     height: 240px;
@@ -240,7 +238,7 @@ h3 {
 }
 
 .aboutme li{
-    font-size: 18px;
+    font-size: 20px;
     color: var(--whiter-basic);
 }
 
@@ -302,9 +300,13 @@ div.research_block {
 .research_block>.research_intro ul>li,
 .research_block>.research_intro p
 {
-    font-family: var(--serif-font);
-    text-align:justify;
-    font-size:16px;
+    font-family: var(--sans-serif-font);
+    background-color: transparent;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 24px;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
 p.research_title {
@@ -323,13 +325,6 @@ div.research_intro {
 }
 
 div.research_intro li, p{
-    background-color: transparent;
-    font-family: var(--header-font);
-    font-size: 20px;
-    line-height: 24px;
-    margin-left: 10px;
-    margin-right: 20px;
-    text-align: left;
 }
 
 div.research_intro p>strong{
@@ -569,10 +564,12 @@ img#expand {
     border-radius: 0px 0px 20px 20px;
     padding-left: 10px;
     color: var(--whiter-basic);
-    font-family: var(--mono-font);
+    font-family: var(--sans-serif-font);
     box-shadow: 8px 8px 8px var(--blacker-basic);
     margin-right: 0px;
     padding-right: 10px;
+    font-size: 18px;
+    text-align: justify;
 }
 
 #blogs_files img#expand{
