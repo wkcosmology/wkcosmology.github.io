@@ -478,6 +478,7 @@ div.sidebar_intro:hover{
 /*     display: inline-block; */
 /* } */
 
+
 .resource_annot, .myfollowings_annot, .books_annot {
     font-family: var(--mono-font);
     margin-top: 0px;
