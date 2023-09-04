@@ -1,9 +1,17 @@
 @font-face {
+    font-family: 'Source Sans pro bold';
+    src: url('font/sourcesanspro-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Source Sans pro';
     src: url('font/sourcesanspro-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Fira Code';
     src: url('font/FiraCode-Regular.woff') format('woff');
