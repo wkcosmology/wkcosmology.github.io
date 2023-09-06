@@ -16,11 +16,11 @@ categories: [Astrophysics]
 # Two-halo galactic conformity
 
 [Kauffmann et al. 2013](https://arxiv.org/abs/1209.3306) first found the
-**two-halo galactic conformity** effect, where galaxies around quiescent central
-galaxies have a higher fraction of quiescence than galaxies around star-forming
-central galaxies, and this correlation extends to several Mpcs. Subsequent
-studies found that this effect is caused by the correlation between the
-quiescent fraction of central galaxies and the large-scale environment
+**two-halo galactic conformity** effect, where _galaxies around quiescent
+central galaxies have a higher fraction of quiescence than galaxies around
+star-forming central galaxies, and this correlation extends to several Mpcs_.
+Subsequent studies found that this effect is caused by the correlation between
+the quiescent fraction of central galaxies and the large-scale environment
 ([Sun et al. 2018](https://arxiv.org/abs/1801.01617)). Similar effects are also
 found in semi-analytical models and hydrodynamical simulations of galaxy
 formation, from which they find that the central galaxies around massive
@@ -92,11 +92,11 @@ as a function of normalized halo-centric distance.
 </figcaption>
 </figure>
 
-The excess quenching of backsplash galaxies compared with other central galaxies
-can cause the two-halo galactic conformity effect. To begin with, the backsplash
-galaxies are clustered around massive halos up to several Mpcs. And these
-backsplash galaxies are more quenched than other non-backsplash galaxies (see
-Fig. 3). Finally, when we select quiescent central galaxies to measure the
+_The excess quenching of backsplash galaxies compared with other central
+galaxies can cause the two-halo galactic conformity effect._ To begin with, the
+backsplash galaxies are clustered around massive halos up to several Mpcs. And
+these backsplash galaxies are more quenched than other non-backsplash galaxies
+(see Fig. 3). Finally, when we select quiescent central galaxies to measure the
 two-halo galactic conformity signal, those backsplash galaxies around massive
 halos are more probable to be selected due to their excessive quiescent
 fraction. Their neighbours (to several Mpcs) are more probable to be backsplash

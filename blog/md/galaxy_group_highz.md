@@ -7,3 +7,15 @@ tags: [Galaxy group]
 categories: [Astrophysics]
 ---
 
+# Galaxy groups and clusters
+
+
+# Group identification
+
+
+# Spatial sampling of high-$z$ galaxy surveys
+
+
+# ML-based group finder
+
+# Summary

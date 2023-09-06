@@ -131,13 +131,13 @@ concentration exhibits strong halo assembly bias effect, while no such effect
 can be observed on the mass accretion history for cluster-size halos (see the
 left panels of Fig. 4, also
 [Jing et al. 2007](https://arxiv.org/abs/astro-ph/0610099) and
-[Mao et al. 2018](https://arxiv.org/abs/1705.03888)). If one believes that the
+[Mao et al. 2018](https://arxiv.org/abs/1705.03888)). _If one believes that the
 halo structure is determined by their assembly history, then why the halo
 concentration ''knows'' the surrounding environment without the mass accretion
-history "knowing" it? Our answer is that the information about the halo assembly
-bias effect is lost during the data compression from halo merger trees to mass
-accretion histories. And Fig. 4 shows that this information is captured by the
-protohalo size history since it strongly correlates to the surrounding
+history "knowing" it?_ Our answer is that the information about the halo
+assembly bias effect is lost during the data compression from halo merger trees
+to mass accretion histories. And Fig. 4 shows that this information is captured
+by the protohalo size history since it strongly correlates to the surrounding
 environment, as halos with larger protohalo size tend to live in denser regions.
 
 # Summary

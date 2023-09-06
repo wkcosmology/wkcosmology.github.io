@@ -6,6 +6,13 @@
 }
 
 @font-face {
+    font-family: 'Source Sans pro it';
+    src: url('font/sourcesanspro-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Source Sans pro';
     src: url('font/sourcesanspro-regular-webfont.woff') format('woff');
     font-weight: normal;

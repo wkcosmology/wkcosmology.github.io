@@ -131,6 +131,10 @@ ol > li {
     font-family: var(--mono-bold-font);
 }
 
+#blog_page p>it {
+    font-family: var(--mono-it-font);
+}
+
 #blog_page blockquote p {
     font-style: italic;
     padding: 0 1em;
