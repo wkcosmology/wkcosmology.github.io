@@ -255,21 +255,21 @@ h3 {
 }
 
 .aboutme h1{
-    display: inline-block;
-    font-size: 22px;
+    /* display: inline-block; */
+    font-size: 25px;
     font-weight: 400;
     color: var(--header-color);
     /* border: 1px solid var(--head-basic); */
-    border-radius: 0px 30px 30px 0px;
-    background-color: var(--dark-gray-basic);
-    padding-left: 10px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    /* border-radius: 0px 30px 30px 0px; */
+    /* background-color: var(--dark-gray-basic); */
+    /* padding-left: 10px; */
+    /* padding-right: 20px; */
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
 }
 
 .aboutme h1:before{
-    content: "➥ ";
+    content: "⏺ ";
 }
 
 
