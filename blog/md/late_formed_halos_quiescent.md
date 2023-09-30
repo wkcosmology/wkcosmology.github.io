@@ -1,12 +1,18 @@
 ---
 title: Late-formed halos prefer to host quiescent central galaxies
-date: 2023-09-23
+date: 2023-09-01
 description:
     How the quenching of central galaxies correlates to secondary halo
-    properties is a major question in the secondary galaxy-halo connection.
+    properties is a major question in the secondary galaxy-halo connection. Here
+    we studied the their relationship using the SDSS galaxy survey and the group
+    catalog constructed with the halo-based group finder, together with the
+    stellar-to-halo mass ratio as the proxy of halo formation time. In short,
+    we found that late-formed halos prefer to host quiescent central galaxies.
 tags: ["Galaxy-halo connection"]
 categories: [Astrophysics]
 ---
+
+This blog is based on [arXiv:2304.07189](https://arxiv.org/abs/2304.07189).
 
 # Halo formation time
 

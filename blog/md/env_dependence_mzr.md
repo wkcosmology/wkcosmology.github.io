@@ -12,6 +12,7 @@ description:
 tags: [Metallicity]
 categories: [Astrophysics]
 ---
+This blog is based on [arXiv:2305.08161](https://arxiv.org/abs/2305.08161).
 
 # Introducing galaxy and metallicity
 

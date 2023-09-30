@@ -23,12 +23,112 @@
             </script>
         </div>
         <div id="blog_page">
-            <div class="blog_front"><p class="blog_title">Identifying galaxy groups at high-z</p><p class="date">Feb. 09, 2023</p><p class="descri">What is galaxy group? How to identify them in our Universe?</p></div>
-            <span id="blog_content"><h1 id="galaxy-groups-and-clusters">Galaxy groups and clusters</h1>
-<h1 id="group-identification">Group identification</h1>
-<h1 id="spatial-sampling-of-high-z-galaxy-surveys">Spatial sampling of high-$z$ galaxy surveys</h1>
-<h1 id="ml-based-group-finder">ML-based group finder</h1>
-<h1 id="summary">Summary</h1></span>
+            <div class="blog_front"><p class="blog_title">Identifying galaxy groups for high redshift spectroscopic surveys</p><p class="date">Sep. 20, 2023</p><p class="descri">This blog introduces major obstacles in identifying galaxy groups in galaxy surveys, especially for the upcoming high-$z$ surveys. We also introduce how to conquer these problems using state-of-the-art statistical learning tools.</p></div>
+            <span id="blog_content"><p>This blog is based on <a href="https://arxiv.org/abs/2006.05426" rel="noopener noreferrer" target="_blank">arXiv:2006.05426</a>.</p>
+<h1 id="galaxy-groups-and-clusters">Galaxy groups and clusters</h1>
+<p><a href="./halo_model.html" rel="noopener noreferrer" target="_blank">This blog</a> introduces how galaxies are formed and evolved in
+dark matter halos, and how halos merge with each other to build galaxy groups
+and clusters. In summary, a galaxy group/cluster is a collection of galaxies
+sharing a common dark matter halo. Therefore, it is straightforward to identify
+galaxy groups in cosmological simulations where the distribution of dark matter
+is accessible. However, identifying galaxy groups in observation is challenging,
+since the distribution of dark matter is unavailable.</p>
+<h1 id="finding-groups-in-observation">Finding groups in observation</h1>
+<p>Most of the methods to identify galaxy groups in observation relies on the
+proximity of member galaxies, while other methods leverage other signature of
+galaxy groups and clusters, such as their X-ray emission or the distortion on
+the background cosmic microwave background, which will discussed in the future.</p>
+<p>The simplistic method to identify galaxy groups is the <strong>Friends-of-Friends
+(FoF)</strong> method. The basic assumption is that two galaxies belong to a common
+galaxy group as long as their distance is below a prior threshold; the threshold
+is referred to as the <strong>linking length</strong>. For instance, if the distance between
+Gal-A and Gal-B is below the threshold, and the distance between Gal-B and Gal-C
+is also below the threshold, then Gal-A, Gal-B, and Gal-C belong to a common
+galaxy groups regardless whether the distance between Gal-A and Gal-C.</p>
+<p>Identifying galaxy groups in observation suffers from two observational effects.
+The first one is the <strong>redshift space distortion</strong> effect, where the
+line-of-sight distance of observed galaxies is contaminated by their peculiar
+velocities. To conquer this effect, we need two parameters for the linking
+lengths: one for the line-of-sight and the other one for the transverse
+direction. Nevertheless, member galaxies in two groups that are close to each
+other on the sphere are likely mixed with each other due to the projection
+effect. The second one is the <strong>spatial sampling</strong> effect, where the targeted
+galaxies has no fiber allocation due to <strong>fiber collision</strong> effect, which will
+be introduced in the next section. This effect can significantly compromise the
+performance of group finders. Following the above instance, if Gal-B is missed
+due to spatial sampling, and the distance between Gal-A and Gal-C does not
+satisfying the grouping criteria, then a group will be fragmented into two
+groups.</p>
+<h1 id="spatial-sampling-of-galaxy-surveys">Spatial sampling of galaxy surveys</h1>
+<p>The spatial sampling effect refers to that some targeted galaxies have no fiber
+allocation due to the <strong>fiber collision</strong> effect. For low-$z$ surveys like SDSS,
+the spectra of galaxies are collected through the fibers plugged on a metal
+plate on the focal plane (see Fig. 1), and the fiber collision effect is that
+two fibers cannot be close to each other since we cannot drill two holes too
+close.</p>
+<figure id="fig1" style="float:left;">
+<img src="/blog/image/sdss_plate.png" width="400px" style="float:left;">
+<figcaption style="margin-top:150px;margin-left:420px">
+<strong> Figure 1.</strong>
+One SDSS plate. Each small hole is matched to one targeted galaxy and
+the spectrum of this galaxy is collected through the fiber plugged into
+this hole.
+</figcaption>
+</figure>
+<p>The situation is different for high-$z$ surveys. Firstly, high-$z$ surveys
+require large telescope since these galaxies are very faint, so it is impossible
+to manually drill the hole and replace the plate for each exposure. We need
+automatic fiber system where the positioning of each fiber is controlled by an
+robotic arm, as shown in Fig. 2. For these systems, each fiber can only move
+within a corresponding circle, so their positioning is more restrained. Even
+though we can mitigate this fiber collision effect through multiple exposure,
+the high inhomogeneity of galaxies on the sky requires $\approx$ 15 exposures to
+get full sampling for crowded regions and $\approx 3$ exposures for void
+regions. Therefore, fulling sampling means a huge waste of fiber times for those
+fibers in void regions. As a compromise, current surveys, like PFS and MOONS,
+will have an avverage spatial sampling rate of 70%, which means about 30%
+targeted galaxies have no spectroscopic observation and this rate is higher in
+crowded regions.</p>
+<figure id="fig1">
+<img src="/blog/image/PFS_fiber.png" width="700">
+<figcaption>
+<strong> Figure 2.</strong>
+<strong>Left panel:</strong> The focal plane of the PFS instrument.
+<strong>Middle panel:</strong> The zoom-in viewpoint, and each fiber can only
+move within each black solid circle. <strong>Right panel:</strong> One fiber,
+which is controlled by two robotic arms.
+</figcaption>
+</figure>
+<h1 id="group-finding-at-high-redshift">Group finding at high redshift</h1>
+<p>Fig. 3 shows the impact of the incomplete spectroscopic redshift surveys on the
+group identification. Here we can see that <em>even through we have identified most
+of the galaxy groups in the spectroscopic sample</em>, which is indicated by the
+high completeness as a function of richness, <em>there are still a significant
+fraction of galaxy groups missed</em>, which is indicated by the low completeness as
+a function of halo mass. We have proposed a method based on the state-of-the-art
+statistical learning tool of random forest to assign galaxies with only
+photometric redshift to spectroscopic groups or as the central galaxy of a new
+group. The performance is shown in solid lines, from which one can see that most
+of the groups are retrieved.</p>
+<figure id="fig1">
+<img src="/blog/image/group_performance_pfs.jpg" width="700">
+<figcaption>
+<strong> Figure 3.</strong>
+The completeness of the identified galaxy group catalog as a function of group
+richness (<strong>left panel</strong>) and halo mass (<strong>middle
+panel</strong>), and the purity of the identified galaxy group catalog
+(<strong>right panel</strong>). In each panel, different colors means different
+sampling strategies: the first four colors are for random sampling with
+different sampling strategy, and the last color is to mimic the PFS survey. The
+dashed lines show the results with only spectroscopic galaxies, and the solid
+lines show the results after incorporating with photometric galaxies.
+</figcaption>
+</figure>
+<h1 id="summary">Summary</h1>
+<p>The upcoming high-$z$ spectroscopic redshift surveys truly pose a serious
+challenge to the identification of cosmic structures. We for the first time
+pointing this problem out and propose a promising solution. Nevertheless, these
+is still many space for improvement.</p></span>
         </div>
     
 

@@ -13,6 +13,8 @@ tags: [Galaxy quenching, Galaxy environment]
 categories: [Astrophysics]
 ---
 
+This blog is based on [arXiv:2304.06886](https://arxiv.org/abs/2304.06886).
+
 # Two-halo galactic conformity
 
 [Kauffmann et al. 2013](https://arxiv.org/abs/1209.3306) first found the

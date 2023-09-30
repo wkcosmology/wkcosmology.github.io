@@ -10,6 +10,8 @@ tags: [Galaxy-halo connection, Galaxy evolution]
 categories: [Astrophysics]
 ---
 
+This blog is based on [arXiv:2211.00485](https://arxiv.org/abs/2211.00485).
+
 # Redshift evolution and causality
 
 Light speed is finite, so it takes finite time before we can see distant

@@ -14,6 +14,8 @@ tags: [Galaxy-halo connection, Dark matter halo, Protocluster]
 categories: [Astrophysics]
 ---
 
+This blog is based on [arXiv:2309.01039](https://arxiv.org/abs/2309.01039).
+
 # Assembly of dark matter halos
 
 Dark matter halos are the building blocks of our Universe, and their assembly

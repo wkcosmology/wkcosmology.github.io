@@ -77,7 +77,7 @@ var g3 = {
     },
     series: [
         {
-            values: [9],
+            values: [10],
             "background-color": "#937cb9",
             text: "First-author",
         },
