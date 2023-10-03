@@ -34,7 +34,7 @@ galaxy group as long as their distance is below a prior threshold; the threshold
 is referred to as the **linking length**. For instance, if the distance between
 Gal-A and Gal-B is below the threshold, and the distance between Gal-B and Gal-C
 is also below the threshold, then Gal-A, Gal-B, and Gal-C belong to a common
-galaxy groups regardless whether the distance between Gal-A and Gal-C.
+galaxy groups regardless of the distance between Gal-A and Gal-C.
 
 Identifying galaxy groups in observation suffers from two observational effects.
 The first one is the **redshift space distortion** effect, where the
@@ -81,9 +81,13 @@ the high inhomogeneity of galaxies on the sky requires $\approx$ 15 exposures to
 get full sampling for crowded regions and $\approx 3$ exposures for void
 regions. Therefore, fulling sampling means a huge waste of fiber times for those
 fibers in void regions. As a compromise, current surveys, like PFS and MOONS,
-will have an avverage spatial sampling rate of 70%, which means about 30%
+will have an average spatial sampling rate of 70%, which means that about 30%
 targeted galaxies have no spectroscopic observation and this rate is higher in
 crowded regions.
+
+Note that since the spatial sampling effect at high-$z$ does not stem from the
+``collision'' between fibers, I prefer to use the general _spatial sampling
+effect_ instead of the _fiber collision effect_.
 
 <figure id="fig1">
 <img src="/blog/image/PFS_fiber.png" width=700>

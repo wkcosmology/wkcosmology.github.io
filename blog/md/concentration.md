@@ -1,6 +1,6 @@
 ---
 title: Estimating the concentration parameter of simulated halos
-date: 2023-09-22
+date: 2023-10-3
 description:
     The radial density distribution of simulated dark matter halos can be
     described a universal NFW profile with two free parameters, i.e. halo mass
