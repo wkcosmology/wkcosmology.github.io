@@ -4,11 +4,11 @@ date: 2023-11-17
 description:
     Feedback processes, arising from stellar wind, SN explosion, and black hole
     accretion, play a critical role in regulating galaxy formation and
-    evolution. Especially the incorporation of feedback processes in
-    Hydrodynamical simulations enable us to numerically produced galaxies very
-    similar to what we seen in our Universe. However, some misunderstandings
-    must be clarified before we blindly use the data product from these
-    hydrodynamical simulations.
+    evolution. The incorporation of feedback processes in Hydrodynamical
+    simulations enables us to numerically produce galaxies very similar to what
+    we see in our Universe. However, some misunderstandings must be clarified
+    before we blindly use the data product from these hydrodynamical
+    simulations.
 tags: [Hydrodynamical simulation]
 categories: [Astrophysics]
 ---
