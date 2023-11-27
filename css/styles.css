@@ -176,7 +176,7 @@ h3 {
 
 .publication, .author {
     display: block;
-    color: var(--whiter-basic);
+    color: var(--pure-white-basic);
     font-size: 16px;
     font-family: var(--mono-font);
     margin-left: 2px;
@@ -189,12 +189,19 @@ h3 {
     color: var(--gray-basic);
 }
 
+.journal {
+    font-size: 16px;
+    font-family: var(--mono-font);
+    color: var(--whiter-basic);
+}
+
 .publication .author a, a:link, a:visited{
     color: var(--link-color);
 }
 
 .strong {
-    color: var(--pure-white-basic);
+    /* color: var(--pure-white-basic); */
+    color: var(--whiter-basic);
     font-family: var(--mono-font);
 }
 
