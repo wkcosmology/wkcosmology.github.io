@@ -668,3 +668,8 @@ img#expand {
     padding: 4px 10px 4px 10px;
     border-radius: 10px 10px 10px 10px;
 }
+
+.youtube {
+    margin-left: 50px;
+    display: block;
+}
