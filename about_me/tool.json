@@ -1,12 +1,109 @@
 {
     "softwares": {
-        "HIPP": {
-            "url": "https://github.com/ChenYangyao/hipp",
-            "description": "Excellent c++ utility library for scientific calculation."
+        "ITC Luncheon at Harvard-Smithsonian Center for Astrophysics": {
+            "video": "https://youtu.be/gDrAeFEnWDU?t=3306",
+            "slide": "https://drive.google.com/file/d/1m9BYkQkbFz007EUFjd2LmA018BuUN9GQ/view?usp=drive_link",
+            "description": "How to connect galaxies across cosmic time",
+            "date": "25 Jan. 2024",
+            "place": "Cambridge"
         },
-        "HaloFactory": {
-            "url": "https://github.com/ChenYangyao/halofactory",
-            "description": "Semi-analytical dark matter halo generators"
+        "Steward/NOIRLab Galaxy Group Talk": {
+            "slide": "https://drive.google.com/file/d/1-N8Sh7oWmzn-qFyLC0qwn-UutuZKQYuy/view?usp=drive_link",
+            "description": "How to connect galaxies across cosmic time?",
+            "date": "22 Jan. 2024",
+            "place": "Tucson"
+        },
+        "Carnegie arXiv Tea": {
+            "slide": "https://arxiv.org/abs/2211.00485",
+            "description": "Relating galaxies across different redshift to study galaxy evolution",
+            "date": "19 Jan. 2024",
+            "place": "Pasadena"
+        },
+        "KIPAC tea talk at Stanford University": {
+            "slide": "https://drive.google.com/file/d/10hwYsioooBpXzdubbAZusVrVRaPvNI-Q/view?usp=drive_link",
+            "description": "Characterizing the assembly of dark matter halos with protohalo size histories",
+            "date": "16 Jan. 2024",
+            "place": "Stanford"
+        },
+        "UC Santa Cruz CGI Seminar - II": {
+            "video": "https://drive.google.com/file/d/1ptepZqoRP2U3SxhlOFsYLt3_FAwjabdW/view?usp=drive_link",
+            "slide": "https://drive.google.com/file/d/1IrtRcsxe6fVz53mLrAW3HlDyFkgHYt9y/view?usp=drive_link",
+            "description": "Central Galaxy Quenching and its Relation to Halo Formation Time & Large-scale Environment",
+            "date": "15 Jan. 2024",
+            "place": "Santa Cruz"
+        },
+        "Galread: Princeton/IAS Galaxy Journal Club": {
+            "slide": "https://arxiv.org/abs/2309.01039",
+            "description": "Characterizing the assembly of dark matter halos with protohalo size histories",
+            "date": "30 Oct. 2024",
+            "place": "Remote"
+        },
+        "The 2nd Shanghai Assembly on Cosmology and Structure Formation": {
+            "slide": "https://drive.google.com/file/d/1VU8-FbzGrNUMCQ4xw3nE6NDYmvaP-XV3/view?usp=drive_link",
+            "description": "Characterizing the assembly of dark matter halos with protohalo size histories",
+            "date": "31 Oct. 2023",
+            "place": "Shanghai"
+        },
+        "UC Santa Cruz CGI Seminar - I": {
+            "video": "https://drive.google.com/file/d/1TU4mfM6JLC682N_ooTcPQRC-fTkqi21m/view?usp=drive_link",
+            "slide": "https://drive.google.com/file/d/1aB0c1TO6eU2WdDAbqr_b6QBzC_npGeox/view?usp=drive_link",
+            "description": "Characterizing the assembly of dark matter halos with protohalo size histories",
+            "date": "24 Oct. 2024",
+            "place": "Remote"
+        },
+        "25th Chinese Astronomical Society Guoshoujing Symposium on Galaxies and Cosmology": {
+            "slide": "https://drive.google.com/file/d/1TLPawHB6uoBIVjcFDyzzD7qRXIYD7mU0/view?usp=drive_link",
+            "description": "Central Galaxy Quenching and its Relation to Halo Formation Time & Large-scale Environment",
+            "date": "20 May 2023",
+            "place": "Huangshan"
+        },
+        "Conference of Star Formation and Nuclei Activity in Galaxies": {
+            "slide": "https://drive.google.com/file/d/19fLzQhY5eQgUxki_Zin6BuKZ3BoFHpnA/view?usp=drive_link",
+            "description": "Central Galaxy Quenching and its Relation to Halo Formation Time & Large-scale Environment",
+            "date": "26 Mar. 2023",
+            "place": "Nanjing"
+        },
+        "Postdoc Science Day at KIAA": {
+            "slide": "https://drive.google.com/file/d/193ZqYI_G6A1VPwRjz1xFv-zq-5JJEArN/view?usp=drive_link",
+            "description": "The Environment Dependence of the Mass-Metallicity Relation",
+            "date": "22 Mar. 2023",
+            "place": "Beijing"
+        },
+        "CSST Galaxy Science Meeting": {
+            "slide": "https://drive.google.com/file/d/1OlaI_AX5Cti3orguGhBd_AFgSmM7Y_xK/view?usp=drive_link",
+            "description": "Central Galaxy Quenching and its Relation to Large-scale Structures",
+            "date": "11 Mar. 2023",
+            "place": "Anqing"
+        },
+        "KIAA-DoA Seminar at Peking University": {
+            "slide": "https://drive.google.com/file/d/1b_xVV3V5HWkJBlDSDJ_29AzlPaPiyDVP/view?usp=drive_link",
+            "description": "Central Galaxy Quenching and its Relation to Halo Formation Time & Large-scale Environment",
+            "date": "07 Mar. 2023",
+            "place": "Beijing"
+        },
+        "Lunch Talk at the Department of Astronomy of Tsinghua University": {
+            "slide": "https://drive.google.com/file/d/1_de4rhGwSr20at8t1_jjthFdB3uu6RYq/view?usp=drive_link",
+            "description": "Relating galaxies across different redshift",
+            "date": "04 Nov. 2022",
+            "place": "Beijing"
+        },
+        "Lunch Talk at Kavli-IPMU": {
+            "slide": "https://drive.google.com/file/d/1tlfjuIPx7rMnSyMYjdPfeYEi8H8gP6n0/view?usp=drive_link",
+            "description": "Finding proto-clusters to trace galaxy evolution",
+            "date": "29 Jun. 2021",
+            "place": "Remote"
+        },
+        "The 11-th Prime Focus Spectrograph collaboration meeting": {
+            "slide": "https://drive.google.com/file/d/1mGPrdVpRcNe62VmXqruyF7qukdhA7sh2/view?usp=drive_link",
+            "description": "Identifying galaxy groups from high-z and incomplete spectroscopic surveys",
+            "date": "09 Dec. 2019",
+            "place": "Pasadena"
+        },
+        "The 10-th Prime Focus Spectrograph collaboration meeting": {
+            "slide": "https://drive.google.com/file/d/17_wdmTA9poGjiyarsKNVWW3eL81vzMPo/view?usp=drive_link",
+            "description": "Identifying galaxy groups from high-z and incomplete spectroscopic surveys",
+            "date": "09 Dec. 2018",
+            "place": "Shanghai"
         }
     }
 }

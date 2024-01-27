@@ -508,13 +508,35 @@ div.sidebar_intro:hover{
 /* } */
 
 
-.resource_annot, .myfollowings_annot, .books_annot {
-    font-family: var(--mono-font);
+.resource_annot, .pre_title, .myfollowings_annot, .books_annot {
+    font-family: var(--sans-serif-font);
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 0px;
-    font-size: 16px;
-    color: var(--gray-basic);
+    font-size: 18px;
+    color: var(--white-basic);
+}
+
+.pre_coord {
+    font-family: var(--sans-serif-font);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-size: 18px;
+    color: var(--white-basic);
+}
+
+.pre_ul {
+    color: var(--dark-header-color);
+}
+
+.pre_place {
+    font-family: var(--sans-serif-font);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-size: 20px;
+    color: var(--dark-header-color);
 }
 
 #pub_ads_link {

@@ -15,8 +15,9 @@ The other one is the `blog page` with dark sidebar and white page.
         -   `resource.html`: introducing the resource
     -   `blog/`
         -   `blog_index.html`: Introducing the blog in the main page
-    -   `tool/`
-        -   `tool_index.html`: This is to share the tools I made in the future
+    -   `presentation/`
+        -   `pre_index.html`: This is to share the slides and video recording of
+            my presentations
 -   `blog page`
     -   `blog_sidebar.html`: html template to generate the sidebar for each blog
         page
