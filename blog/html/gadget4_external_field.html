@@ -1,0 +1,178 @@
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Kosmos Blog</title>
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/css/blog_styles.css" type="text/css" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/css/hljs.css" type="text/css" title="no title" charset="utf-8">
+        <script charset="utf-8" src="/js/sidebar.js"></script>
+        <link rel="shortcut icon" type="image/png" href="/image/favicon.png">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <script src="/js/mathjax.js" async=""></script>
+        <script charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="blog_sidebar">
+            <span id="blog_sidebar_header"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_header();
+            </script>
+            <span id="blog_sidebar_content"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_content();
+            </script>
+        </div>
+        <div id="blog_page">
+            <div class="blog_front"><p class="blog_title">External gravitational field in GADGET-4</p><p class="date">May. 02, 2024</p><p class="descri">Here we introduce how to incorporate with external gravitational field in GADGET-4, a state-of-the-art numerical simulation code for galaxy and structure formation.</p></div>
+            <span id="blog_content"><h1 id="introduction">Introduction</h1>
+<p>In some simulation situations, we want our host system to be analytical instead
+of an analytical N-body system to save time and computational resource. Such
+situations include the tidal stripping effect suffered by a satellite
+subhalo/galaxy in a host halo, or a globular cluster in a host galaxy.</p>
+<p>Since the presence of an external gravitational field affects the most
+fundamental operations in a simulation, which are gravity calculation and orbit
+integration, one need to change the source code to do it.</p>
+<h1 id="builtin-external-field-in-gadget-4">Builtin external field in GADGET-4</h1>
+<p>GADGET-4 provides a builtin external field, which has a Hernquist density
+profile, and it can be configured by changing the configuration file and the
+parameter file.</p>
+<p>In the configuration field, one needs to add</p>
+<pre><code>EXTERNALGRAVITY
+EXTERNALGRAVITY_STATICHQ</code></pre>
+<p>The property of this Hernquist profile could be specified by updating the
+parameter file</p>
+<pre><code>A_StaticHQHalo=5.0
+Mass_StaticHQHalo=100</code></pre>
+<p>Since we changed the configuration file, we need to rebuild the source code
+before we run Gadget.</p>
+<h1 id="user-defined-external-field-in-gadget-4">User-defined external field in GADGET-4</h1>
+<p>Adopting a user-defined external field in GADGET-4 requires not only changing
+the configuration file and the parameter file, but also modifying at least four
+source code files:</p>
+<ol>
+<li><code>src/gravity/grav_external.cc</code></li>
+<li><code>define_extras</code></li>
+<li><code>src/data/allvars.cc</code></li>
+<li><code>src/data/allvars.h</code></li>
+</ol>
+<h2 id="grav_externalcc"><code>grav_external.cc</code></h2>
+<p>This field has a piece of code which looks like</p>
+<pre><code class="c++ language-c++">#ifdef EXTERNALGRAVITY_STATICHQ
+      {
+        vector&lt;double&gt; pos;
+        Sp.nearest_image_intpos_to_pos(Sp.P[target].IntPos, intpos_center, pos.da);
+
+        double r = sqrt(pos.r2());
+
+        double m = All.Mass_StaticHQHalo * pow(r / (r + All.A_StaticHQHalo), 2);
+
+        if(r &gt; 0)
+          Sp.P[target].GravAccel += (-All.G * m / (r * r * r)) * pos;
+
+#if defined(EVALPOTENTIAL) || defined(OUTPUT_POTENTIAL)
+        Sp.P[target].ExtPotential += (-All.G * All.Mass_StaticHQHalo / (r + All.A_StaticHQHalo));
+#endif
+      }
+#endif</code></pre>
+<p>And we need to add similar code snippets for our own density profile. For
+example, here is the code to add a Dekel-Zhao density profile:</p>
+<pre><code class="c++ language-c++">#ifdef EXTERNALGRAVITY_STATICDEKEL
+      {
+        vector&lt;double&gt; pos;
+        Sp.nearest_image_intpos_to_pos(Sp.P[target].IntPos, intpos_center, pos.da);
+
+        double r = sqrt(pos.r2());
+        double x = r / All.Rs_StaticDekelHalo;
+        double c = All.Rvir_StaticDekelHalo / All.Rs_StaticDekelHalo;
+        double a = All.Alpha_StaticDekelHalo;
+
+        auto f=[](double x, double a){return pow(sqrt(x) / (1. + sqrt(x)), 2. * (3. - a));};
+
+        double m = All.Mass_StaticDekelHalo * f(x, a) / f(c, a);
+
+        if(r &gt; 0)
+          Sp.P[target].GravAccel += (-All.G * m / (r * r * r)) * pos;
+
+      }
+#endif</code></pre>
+<p>This profile has four free parameters</p>
+<ol>
+<li><code>Mass_StaticDekelHalo</code> is the mass enclosed in the virial radius;</li>
+<li><code>Rvir_StaticDekelHalo</code> is the virial radius of the halo;</li>
+<li><code>Rs_StaticDekelHalo</code> is the scaling radius of the halo;</li>
+<li><code>Alpha_StaticDekelHalo</code> is the inner logarithmic slope of the halo.</li>
+</ol>
+<p>It is noteworthy that we pass the code related to the potential term, which is
+only related if you want to evaluate and output the potential and has nothing to
+do with the simulation itself.</p>
+<h2 id="define_extras"><code>define_extras</code></h2>
+<p>Since we add a new macro <code>EXTERNALGRAVITY_STATICDEKEL</code> to the source code, we
+need to tell GADGET-4 what we did, which is done by appending a new line in
+<code>define_extras</code>. In our case, it is</p>
+<pre><code>EXTERNALGRAVITY_STATICDEKEL</code></pre>
+<h2 id="allvarsh"><code>allvars.h</code></h2>
+<p>The properties of our density profile will be passed through the parameter file.
+In order to do that, we need to modifying the source code that is responsible
+for reading the parameter file. The first one is <code>allvars.h</code>, from which we
+could find a piece of code for the builtin Hernquist profile:</p>
+<pre><code class="c++ language-c++">#ifdef EXTERNALGRAVITY_STATICHQ
+  double A_StaticHQHalo;
+  double Mass_StaticHQHalo;
+#endif</code></pre>
+<p>And we could append a similar code snippet right after it, which is</p>
+<pre><code class="c++ language-c++">#ifdef EXTERNALGRAVITY_STATICDEKEL
+  double Mass_StaticDekelHalo;
+  double Rvir_StaticDekelHalo;
+  double Rs_StaticDekelHalo;
+  double Alpha_StaticDekelHalo;
+#endif</code></pre>
+<h2 id="allvarscc"><code>allvars.cc</code></h2>
+<p>After changing the header file <code>allvars.h</code>, we also need to update the source
+file <code>allvars.cc</code> accordingly. One can also find a piece of code in <code>allvars.cc</code>
+that is related to the builtin Hernquist profile, which reads</p>
+<pre><code class="c++ language-c++">#ifdef EXTERNALGRAVITY_STATICHQ
+  add_param("A_StaticHQHalo", &amp;A_StaticHQHalo, PARAM_DOUBLE, PARAM_FIXED);
+  add_param("Mass_StaticHQHalo", &amp;Mass_StaticHQHalo, PARAM_DOUBLE, PARAM_FIXED);
+#endif</code></pre>
+<p>And we append our code snippet after it, which gives</p>
+<pre><code class="c++ language-c++">#ifdef EXTERNALGRAVITY_STATICDEKEL
+  add_param("Mass_StaticDekelHalo", &amp;Mass_StaticDekelHalo, PARAM_DOUBLE, PARAM_FIXED);
+  add_param("Rvir_StaticDekelHalo", &amp;Rvir_StaticDekelHalo, PARAM_DOUBLE, PARAM_FIXED);
+  add_param("Rs_StaticDekelHalo", &amp;Rs_StaticDekelHalo, PARAM_DOUBLE, PARAM_FIXED);
+  add_param("Alpha_StaticDekelHalo", &amp;Alpha_StaticDekelHalo, PARAM_DOUBLE, PARAM_FIXED);
+#endif</code></pre>
+<h1 id="configure-and-run">Configure and run</h1>
+<p>After changing the source code, we could activate this profile by appending the
+following to the configuration file</p>
+<pre><code>    EXTERNALGRAVITY
+    EXTERNALGRAVITY_STATICDEKEL</code></pre>
+<p>And we need to re-compile the code to generate a new executable.</p>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>WARNING: According to the GADGET-4's rule, when we add new macros and new
+      parameters to the source code, we also need to add corresponding
+      documentation, otherwise the check in compilation shall not be passed. But
+      we could disable this check by replacing <strong>make</strong> command with <strong>make
+build</strong>.</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+<p>Then we need to assign values to the parameters in our density profile by
+changing the parameter file, which is</p>
+<pre><code>Mass_StaticDekelHalo    1e4
+Rvir_StaticDekelHalo    232.321
+Rs_StaticDekelHalo      23.2321
+Alpha_StaticDekelHalo   0.5</code></pre>
+<p>The units of these quantities are specified by you in the same parameter file.
+Here I am using</p>
+<pre><code>UnitLength_in_cm         3.085678e21   ;  1.0 kpc
+UnitMass_in_g            1.989e41      ;  1.0e8 solar masses
+UnitVelocity_in_cm_per_s 9.7844e5      ;  1 kpc / 100 Myr</code></pre>
+<p>So the aforementioned halo is a $10^{12}\rm M_\odot$ Dekel-Zhao halo with
+$r_{\rm vir}=232.321\rm kpc$, concentration $c\equiv r_{\rm vir}/r_{\rm s}=10$,
+and the inner slope $\alpha=0.5$.</p></span>
+        </div>
+    
+
+</body>
