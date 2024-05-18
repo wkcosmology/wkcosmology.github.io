@@ -77,7 +77,7 @@ var g3 = {
     },
     series: [
         {
-            values: [13],
+            values: [9],
             "background-color": "#937cb9",
             text: "First-author",
         },
@@ -87,7 +87,7 @@ var g3 = {
             text: "Corresponding-author",
         },
         {
-            values: [9],
+            values: [15],
             "background-color": "#79827b",
             text: "Co-author",
         },
@@ -163,19 +163,9 @@ var g4 = {
     },
     series: [
         {
-            values: [85],
+            values: [204],
             "background-color": "#937cb9",
-            text: "This year",
-        },
-        {
-            values: [68],
-            "background-color": "#3c5492",
-            text: "Last 5-1 years",
-        },
-        {
-            values: [16],
-            "background-color": "#79827b",
-            text: "Before 5 years",
+            text: "Citation",
         },
     ],
 };

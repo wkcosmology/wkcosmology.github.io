@@ -1,5 +1,29 @@
 {
     "softwares": {
+        "Galaxy & Cosmology seminar at Tsinghua University": {
+            "slide": "https://drive.google.com/file/d/1VyDvy3rHD7-pB-dgtIrKBi8rXnW8hHkn/view?usp=drive_link",
+            "description": "Dark matter halo and its structure, assembly, and clustering",
+            "date": "08 May 2024",
+            "place": "Beijing"
+        },
+        "Lunch talk at South-Western Institute For Astronomy Research, Yunnan University": {
+            "slide": "https://drive.google.com/file/d/1Y-lErsMxxkHqK4u25QbLRIZBELNQEA81/view?usp=drive_link",
+            "description": "Galaxy formation within and without dark matter halos",
+            "date": "15 Apr. 2024",
+            "place": "Yunnan"
+        },
+        "Conference of the Co-evolution of galactic eco-systems and their large-scale environments": {
+            "slide": "https://drive.google.com/file/d/10bb-PeOiKHO_26D9l1MqslxuvLdF1ZYD/view?usp=drive_link",
+            "description": "Dissecting two-halo galactic conformity effect for central galaxies",
+            "date": "09 Apr. 2024",
+            "place": "Hangzhou"
+        },
+        "Astronomical Seminar at the Huazhong University of Science and Technology": {
+            "slide": "https://drive.google.com/file/d/1H7JEXz6kM87f4pROI2D6G_gIiyXnuWrG/view?usp=drive_link",
+            "description": "Galaxy formation within and without dark matter halos",
+            "date": "12 Mar. 2024",
+            "place": "Wuhan"
+        },
         "ITC Luncheon at Harvard-Smithsonian Center for Astrophysics": {
             "video": "https://youtu.be/gDrAeFEnWDU?t=3306",
             "slide": "https://drive.google.com/file/d/1m9BYkQkbFz007EUFjd2LmA018BuUN9GQ/view?usp=drive_link",
