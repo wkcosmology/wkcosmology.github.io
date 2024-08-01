@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'Avenir';
+    src: url('font/Avenir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Source Sans pro bold';
     src: url('font/sourcesanspro-semibold-webfont.woff') format('woff');
     font-weight: normal;
@@ -34,13 +41,13 @@
 }
 
 :root{
-    --header-font: Arial, misc, Raleway, "Trebuchet MS";
-    --annote-font: Arial, "Trebuchet MS";
+    --header-font: Avenir, Arial, misc, Raleway, "Trebuchet MS";
+    --annote-font: Avenir, Arial, "Trebuchet MS";
 
     --mono-font: "Fira Code", misc, Iosevka, monospace;
-    --sans-serif-font: "Source Sans pro", Arial, "Open sans", Arial;
+    --sans-serif-font: Avenir, "Source Sans pro", Arial, "Open sans", Arial;
     --serif-font: Arial, Georgia;
-    --cmu-font: Arial, "CMU serif";
+    --cmu-font: Avenir, Arial, "CMU serif";
     --black-basic: #20272d;
     --blue-basic: #152a6e;
     --blacker-basic: #161b1f;
@@ -111,7 +118,8 @@ h3 {
 
 .page .home_intro p.welcome{
     font-size: 18px;
-    font-family: var(--mono-font);
+    text-align: justify;
+    font-family: var(--sans-serif-font);
 }
 
 .page .home_intro ul>li{
@@ -120,7 +128,7 @@ h3 {
 
 #welcome_word {
     text-align:center;
-    font-family: var(--mono-font);
+    font-family: var(--sans-serif-font);
     font-size: 30px;
 }
 
@@ -133,7 +141,7 @@ h3 {
     padding-top: 4px;
     padding-bottom: 4px;
     color: var(--dark-header-color);
-    font-family: var(--mono-font);
+    font-family: var(--sans-serif-font);
     font-size: 22px;
 }
 
@@ -142,7 +150,7 @@ h3 {
 }
 
 .page p.guidance{
-    font-family: var(--mono-font);
+    font-family: var(--sans-serif-font);
     font-size: 16px;
     color: var(--gray-basic);
     margin-left: 20px;
@@ -177,8 +185,8 @@ h3 {
 .publication, .author {
     display: block;
     color: var(--pure-white-basic);
-    font-size: 16px;
-    font-family: var(--mono-font);
+    font-size: 19px;
+    font-family: var(--sans-serif-font);
     margin-left: 2px;
     margin-bottom: 5px;
     line-height: 24px;
