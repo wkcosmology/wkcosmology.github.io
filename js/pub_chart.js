@@ -7,7 +7,7 @@ var g3 = {
     y: "0%",
     type: "ring",
     title: {
-        text: "Update: 2023-09-14",
+        text: "Update: 2024-08-01",
         fontColor: "#94918a",
         fontWeight: "normal",
         fontSize: 13,
@@ -82,7 +82,7 @@ var g3 = {
             text: "First-author",
         },
         {
-            values: [1],
+            values: [2],
             "background-color": "#3c5492",
             text: "Corresponding-author",
         },
@@ -163,7 +163,7 @@ var g4 = {
     },
     series: [
         {
-            values: [204],
+            values: [220],
             "background-color": "#937cb9",
             text: "Citation",
         },
