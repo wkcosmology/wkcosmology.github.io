@@ -1,10 +1,9 @@
 :root {
-    --mono-font: "Source Sans pro", Iosevka, monospace;
-    --mono-bold-font: "Source Sans pro bold", Iosevka, monospace;
-    --sans-serif-font: "Source Sans pro", "Open sans", Arial;
-    --header-font: "Source Sans pro", "Trebuchet MS";
-    --serif-font: "Source Sans pro", misc, Georgia;
-    --cmu-font: "Source Sans pro", "CMU serif";
+    --mono-font: Iosevka, monospace;
+    --mono-bold-font: Iosevka, monospace;
+    --sans-serif-font: "Avenir", "Open sans", Arial;
+    --header-font: "Avenir", "Trebuchet MS";
+    --serif-font: "San Francisco", misc, Georgia;
     --black-basic: #20272d;
     --blue-basic: #152a6e;
     --blacker-basic: #161b1f;
@@ -95,7 +94,7 @@
 
 #blog_page .blog_front p.date {
     text-align: center;
-    font-family: var(--mono-font);
+    font-family: var(--sans-serif-font);
     color: var(--dark-gray-basic);
 }
 #blog_page .blog_front p.descri {
@@ -103,7 +102,7 @@
     padding-left: 40px;
     text-align: justify;
     font-size: 16px;
-    font-family: var(--mono-font);
+    font-family: var(--sans-serif-font);
     color: var(--black-basic);
 }
 
@@ -125,14 +124,6 @@ ol > li {
 #blog_page li p {
     margin-left: 0px;
     padding-right: 40px;
-}
-
-#blog_page p>strong {
-    font-family: var(--mono-bold-font);
-}
-
-#blog_page p>it {
-    font-family: var(--mono-it-font);
 }
 
 #blog_page blockquote p {
@@ -223,11 +214,14 @@ ol > li {
 li {
     margin-left: 20px;
     font-family: var(--serif-font);
+    font-family: "Charter";
     font-size: 18px;
     margin-right: 0px;
     color: var(--blacker-basic);
     text-align: justify;
     padding-right: 40px;
+    line-height: 1.4em;
+    font-weight: "regular";
 }
 
 #blog_content a {
@@ -301,7 +295,7 @@ li {
     color: var(--white-basic);
     font-size: 16px;
     line-height: 20px;
-    font-family: var(--mono-font);
+    font-family: var(--sans-serif-font);
     overflow-wrap: break-word;
     word-wrap: break-word;
     margin-left: -5px;
@@ -358,6 +352,6 @@ td {
 }
 
 #blog_content figcaption {
-    font-family: var(--mono-font);
+    font-family: var(--sans-serif-font);
     font-size: 16px;
 }

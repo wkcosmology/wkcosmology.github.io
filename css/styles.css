@@ -1,29 +1,6 @@
 @font-face {
     font-family: 'Avenir';
     src: url('font/Avenir.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Source Sans pro bold';
-    src: url('font/sourcesanspro-semibold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Source Sans pro it';
-    src: url('font/sourcesanspro-italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Source Sans pro';
-    src: url('font/sourcesanspro-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
@@ -32,6 +9,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'misc';
     src: url('font/miscfs__.woff2') format('woff2'),
@@ -199,7 +177,7 @@ h3 {
 
 .journal {
     font-size: 16px;
-    font-family: var(--mono-font);
+    font-family: var(--sans-serif-font);
     color: var(--whiter-basic);
 }
 
@@ -210,7 +188,6 @@ h3 {
 .strong {
     /* color: var(--pure-white-basic); */
     color: var(--whiter-basic);
-    font-family: var(--mono-font);
 }
 
 
@@ -305,7 +282,7 @@ div.page {
     padding-top: 30px;
     padding-left: 20px;
     position: fixed;
-    font-family: var(--mono-font);
+    font-family: var(--sans-serif-font);
     width: 220px;
     height: 100vh;
     background-color: var(--white-basic);
@@ -573,7 +550,6 @@ img#expand {
 #blogs_files {
     display: block;
     margin-top: 40px;
-
 }
 
 .blogs_files_year {
