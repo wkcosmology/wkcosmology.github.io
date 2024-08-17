@@ -77,7 +77,7 @@ var g3 = {
     },
     series: [
         {
-            values: [9],
+            values: [10],
             "background-color": "#937cb9",
             text: "First-author",
         },
@@ -87,7 +87,7 @@ var g3 = {
             text: "Corresponding-author",
         },
         {
-            values: [15],
+            values: [16],
             "background-color": "#79827b",
             text: "Co-author",
         },
