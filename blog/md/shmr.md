@@ -6,9 +6,8 @@ description:
     The stellar mass-halo mass relation of galaxies is deemed one of the most
     fundamental scaling relations in galaxy formation and evolution. Subsequent
     studies found convergent evidence that SHMR profoundly depends on the star
-    formation status of central galaxies, which says that, at a given stellar
-    mass or halo mass, star-forming galaxies have lower stellar mass-to-halo
-    mass ratio than quiescent galaxies.
+    formation status of central galaxies. What is the scientific implication
+    of this result? What can we learn from it?
 tags: [Galaxy-halo connection, Dark matter halo, Galaxy evolution]
 categories: [Astrophysics]
 ---
