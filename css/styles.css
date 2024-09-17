@@ -182,7 +182,8 @@ h3 {
 .journal {
     font-size: 16px;
     font-family: var(--sans-serif-font);
-    color: var(--whiter-basic);
+    color: var(--white-basic);
+    font-weight: 1000;
 }
 
 .publication .author a, a:link, a:visited{
