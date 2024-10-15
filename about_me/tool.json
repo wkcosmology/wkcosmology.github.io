@@ -1,5 +1,11 @@
 {
     "softwares": {
+        "Mock Barcelona 2024": {
+            "slide": "https://drive.google.com/file/d/1oXg0tbHgiRoYZKo8QuX-S7iks33OCf-0/view?usp=sharing",
+            "description": "Stellar mass-halo mass relation to the second order",
+            "date": "08 Oct 2024",
+            "place": "Barcelona"
+        },
         "Galaxy & Cosmology seminar at Tsinghua University": {
             "slide": "https://drive.google.com/file/d/1VyDvy3rHD7-pB-dgtIrKBi8rXnW8hHkn/view?usp=drive_link",
             "description": "Dark matter halo and its structure, assembly, and clustering",
