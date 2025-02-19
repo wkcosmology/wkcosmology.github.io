@@ -87,7 +87,7 @@ var g3 = {
             text: "Corresponding-author",
         },
         {
-            values: [16],
+            values: [17],
             "background-color": "#79827b",
             text: "Co-author",
         },
@@ -163,7 +163,7 @@ var g4 = {
     },
     series: [
         {
-            values: [220],
+            values: [270],
             "background-color": "#937cb9",
             text: "Citation",
         },
