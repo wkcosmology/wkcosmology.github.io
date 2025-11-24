@@ -676,34 +676,3 @@ img#expand {
     margin-left: 50px;
     display: block;
 }
-
-.ads-card {
-    margin: 1.5rem 0;
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    border: 1px solid #3b3b3b;
-    background: #111;
-}
-
-.ads-card h2 {
-    margin-top: 0;
-    font-size: 1.2rem;
-}
-
-.ads-card p {
-    margin: 0.3rem 0 0.8rem;
-    font-size: 0.95rem;
-}
-
-.ads-button {
-    display: inline-block;
-    padding: 0.4rem 0.9rem;
-    border-radius: 6px;
-    border: 1px solid #89b4fa;
-    text-decoration: none;
-    font-size: 0.95rem;
-}
-
-.ads-button:hover {
-    background: #89b4fa22;
-}
