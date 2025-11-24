@@ -10,21 +10,13 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'misc';
-    src: url('font/miscfs__.woff2') format('woff2'),
-         url('font/miscfs__.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 :root{
     --header-font: Avenir, Arial, misc, Raleway, "Trebuchet MS";
     --annote-font: Avenir, Arial, "Trebuchet MS";
 
-    --mono-font: "Fira Code", misc, Iosevka, monospace;
+    --mono-font: "Fira Code", Iosevka, monospace;
     --sans-serif-font: Avenir, "Source Sans pro", Arial, "Open sans", Arial;
-    --serif-font: Arial, Georgia;
+    --serif-font: Georgia;
     --cmu-font: Avenir, Arial, "CMU serif";
     --black-basic: #20272d;
     --blue-basic: #152a6e;
@@ -76,8 +68,8 @@ a:hover {
 h1,
 h2,
 h3 {
-    font-family: var(--sans-serif-font);
-    /*font-family: "Belisa plumilla manual";*/
+    font-family: var(--serif-font);
+    font-weight: 10;
 }
 
 h1,
@@ -111,22 +103,18 @@ h3 {
 
 #welcome_word {
     text-align:center;
-    font-family: var(--sans-serif-font);
-    font-size: 30px;
+    font-family: var(--serif-font);
+    font-size: 40px;
 }
 
 .page a.guidance {
     display: inline-block;
-    /*background-color: var(--blacker-basic);*/
-    /*border-radius: 10px 10px 10px 10px;*/
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 4px;
     padding-bottom: 4px;
     color: var(--dark-header-color);
-    /*font-family: var(--sans-serif-font);*/
-    /*font-family: "BigDonstarve";*/
-    font-family: "Belisa plumilla manual";
+    font-family: var(--serif-font);
     font-size: 35px;
 }
 
@@ -260,7 +248,7 @@ h3 {
 .aboutme h1{
     /* display: inline-block; */
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 10;
     color: var(--header-color);
     /* border: 1px solid var(--head-basic); */
     /* border-radius: 0px 30px 30px 0px; */
@@ -380,7 +368,7 @@ div.research_intro p {
     font-size: 20px;
     position: relative;
     color: var(--white-color);
-    font-weight: 100;
+    font-weight: 10;
     font-family: var(--header-font);
 }
 
@@ -687,4 +675,35 @@ img#expand {
 .youtube {
     margin-left: 50px;
     display: block;
+}
+
+.ads-card {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #3b3b3b;
+    background: #111;
+}
+
+.ads-card h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.ads-card p {
+    margin: 0.3rem 0 0.8rem;
+    font-size: 0.95rem;
+}
+
+.ads-button {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    border: 1px solid #89b4fa;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.ads-button:hover {
+    background: #89b4fa22;
 }

@@ -1,663 +1,649 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Publication</title>
-        <link
-            rel="stylesheet"
-            href="/css/styles.css"
-            type="text/css"
-            title="no title"
-            charset="utf-8"
-        />
-        <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <!-- offline js script -->
-        <script charset="utf-8" src="/js/sidebar.js"></script>
-        <!-- online js script -->
-        <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-    </head>
-    <body>
-        <div class="vertical-line"></div>
-        <div class="sidebar">
-            <span id="sidebar"> </span>
-            <script charset="utf-8">
-                display_sidebar();
-            </script>
-        </div>
-        <div class="page">
-            <a
-                href="https://ui.adsabs.harvard.edu/public-libraries/C0WbFLHuTLOYL0ehaNvugQ"
-                target="_blank"
-                id="pub_ads_link"
-                >Open in SAO/NASA ADS</a
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Publication</title>
+    <link
+      rel="stylesheet"
+      href="/css/styles.css"
+      type="text/css"
+      title="no title"
+      charset="utf-8"
+    />
+    <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!-- offline js script -->
+    <script charset="utf-8" src="/js/sidebar.js"></script>
+    <!-- online js script -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  </head>
+  <body>
+    <div class="vertical-line"></div>
+    <div class="sidebar">
+      <span id="sidebar"> </span>
+      <script charset="utf-8">
+        display_sidebar();
+      </script>
+    </div>
+    <div class="page">
+      <!-- <a -->
+      <!--   href="https://ui.adsabs.harvard.edu/public-libraries/C0WbFLHuTLOYL0ehaNvugQ" -->
+      <!--   target="_blank" -->
+      <!--   id="pub_ads_link" -->
+      <!--   >Open in SAO/NASA ADS</a -->
+      <!-- > -->
+      <div class="ads-card">
+        <h2>SAO/NASA ADS Library</h2>
+        <p>View up-to-date publication list and statistics on ADS.</p>
+        <a
+          href="https://ui.adsabs.harvard.edu/public-libraries/C0WbFLHuTLOYL0ehaNvugQ"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ads-button"
+        >
+          Open Astrophysics Data System
+        </a>
+      </div>
+      <!-- <div id="myChart" class="chart--container"></div> -->
+      <script charset="utf-8" src="/js/pub_chart.js"></script>
+      <h1>First and Corresponding<sup>†</sup> author Papers:</h1>
+      <ol>
+        <li>
+          <p class="publication">
+            An EAGLE's view of the galaxy size evolution across cosmic time
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, Tom Theuns<br />
+            <span class="journal">to be submitted</span>
+            <a href="https://arxiv.org/abs/2510.xxxxx" target="_blank"
+              >arXiv:25xx.xxxxx</a
             >
-            <div id="myChart" class="chart--container"></div>
-            <script charset="utf-8" src="/js/pub_chart.js"></script>
-            <h1>First and Corresponding<sup>†</sup> author Papers:</h1>
-            <ol>
-                <li>
-                    <p class="publication">
-                        The origin of the galaxy size-stellar metallicity
-                        relation: A semi-analytical perspective
-                    </p>
-                    <div class="author">
-                        <span class="strong">Kai Wang<sup>†</sup></span> <br />
-                        <span class="journal">2025, submitted</span>
-                        <a
-                            href="https://arxiv.org/abs/2510.02573"
-                            target="_blank"
-                            >arXiv:2510.02573</a
-                        >
-                        <!-- <a href="/blog/html/shmr.html" target="_blank" -->
-                        <!--     >[Go to the blog]</a -->
-                        <!-- > -->
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Testing galaxy formation models with the stellar
-                        mass-halo mass relations for star-forming and quiescent
-                        galaxies
-                    </p>
-                    <div class="author">
-                        <span class="strong">Kai Wang<sup>†</sup></span
-                        >, Yingjie Peng<sup>†</sup><br />
-                        <span class="journal">2024, ApJ 980 233</span>
-                        <a
-                            href="https://arxiv.org/abs/2408.07743"
-                            target="_blank"
-                            >arXiv:2408.07743</a
-                        >
-                        <a href="/blog/html/shmr.html" target="_blank"
-                            >[Go to the blog]</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Revisiting the fundamental metallicity relation with
-                        observation and simulation
-                    </p>
-                    <div class="author">
-                        Chengyu Ma,
-                        <span class="strong">Kai Wang<sup>†</sup></span
-                        >, Enci Wang<sup>†</sup>, Yingjie Peng, Haochen Jiang,
-                        Haoran Yu, Cheng Jia, Zeyu Chen, Haixin Li, Xu Kong<br />
-                        <span class="journal">2024, ApJL 971 L14</span>
-                        <a
-                            href="https://arxiv.org/abs/2407.21716"
-                            target="_blank"
-                            >arXiv:2407.21716</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Characterizing the assembly of dark matter halos with
-                        protohalo size histories: I. Redshift evolution,
-                        relation to descendant halos, and halo assembly bias
-                    </p>
-                    <div class="author">
-                        <span class="strong">Kai Wang<sup>†</sup></span
-                        >, H.J. Mo, Yangyao Chen, Huiyuan Wang, Xiaohu Yang,
-                        Jiaqi Wang, Yingjie Peng, Zheng Cai<br />
-                        <span class="journal">2024, MNRAS 528 2046</span>
-                        <a
-                            href="https://arxiv.org/abs/2309.01039"
-                            target="_blank"
-                            >arXiv:2309.01039</a
-                        >
-                        <a href="/blog/html/protohalo_size.html" target="_blank"
-                            >[Go to the blog]</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        An efficient and robust method to estimate halo
-                        concentration based on the method of moments
-                    </p>
-                    <div class="author">
-                        <span class="strong">Kai Wang<sup>†</sup></span
-                        >, H.J. Mo, Yangyao Chen, Joop Schaye<br />
-                        <span class="journal">2024, MNRAS 527 10760</span>
-                        <a
-                            href="https://arxiv.org/abs/2310.00200"
-                            target="_blank"
-                            >arXiv:2310.00200</a
-                        >
-                        <a href="/blog/html/concentration.html" target="_blank"
-                            >[Go to the blog]</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Environmental dependence of the mass-metallicity
-                        relation in cosmological hydrodynamical simulations
-                    </p>
-                    <div class="author">
-                        <span class="strong">Kai Wang<sup>†</sup></span
-                        >, Xin Wang<sup>†</sup>, Yangyao Chen<br />
-                        <span class="journal">2023, ApJ 951 66</span>
-                        <a
-                            href="https://arxiv.org/abs/2305.08161"
-                            target="_blank"
-                            >arXiv:2305.08161</a
-                        >
-                        <a
-                            href="/blog/html/env_dependence_mzr.html"
-                            target="_blank"
-                            >[Go to the blog]</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Late-formed halos prefer to host quiescent central
-                        galaxies. I. Observational results
-                    </p>
-                    <div class="author">
-                        <span class="strong">Kai Wang<sup>†</sup></span
-                        >, Yangyao Chen, Qingyang Li, Xiaohu Yang<br />
-                        <span class="journal">2023, MNRAS 522 3188</span>
-                        <a
-                            href="https://arxiv.org/abs/2304.07189"
-                            target="_blank"
-                            >arXiv:2304.07189</a
-                        >
-                        <a
-                            href="/blog/html/late_formed_halos_quiescent.html"
-                            target="_blank"
-                            >[Go to the blog]</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Dissect two-halo galactic conformity effect for central
-                        galaxies: The dependence of star formation activities on
-                        the large-scale environment
-                    </p>
-                    <div class="author">
-                        <span class="strong">Kai Wang<sup>†</sup></span
-                        >, Yingjie Peng<sup>†</sup>, Yangyao Chen <br />
-                        <span class="journal">2023, MNRAS 523 1268</span>
-                        <a
-                            href="https://arxiv.org/abs/2304.06886"
-                            target="_blank"
-                            >arXiv:2304.06886</a
-                        >
-                        <a
-                            href="/blog/html/two_halo_conformity.html"
-                            target="_blank"
-                            >[Go to the blog]</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Relating galaxies across different redshift to study
-                        galaxy evolution
-                    </p>
-                    <div class="author">
-                        <span class="strong">Kai Wang<sup>†</sup></span
-                        >, H.J. Mo, Cheng Li, Yangyao Chen <br />
-                        <span class="journal">2023, MNRAS 520 1774</span>
-                        <a
-                            href="https://arxiv.org/abs/2211.00485"
-                            target="_blank"
-                            >arXiv:2211.00485</a
-                        >
-                        <a
-                            href="/blog/html/connect_galaxies.html"
-                            target="_blank"
-                            >[Go to the blog]</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Finding proto-clusters to trace galaxy evolution: I. The
-                        finder and its performance
-                    </p>
-                    <div class="author">
-                        <span class="strong">Kai Wang<sup>†</sup></span
-                        >, H.J. Mo, Cheng Li, Yangyao Chen <br />
-                        <span class="journal">2021, MNRAS 505 3892</span>
-                        <a
-                            href="https://arxiv.org/abs/2104.12223"
-                            target="_blank"
-                            >arXiv:2104.12223</a
-                        >
-                        <a
-                            href="/blog/html/intro_proto_cluster.html"
-                            target="_blank"
-                            >[Go to the blog]</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Identifying galaxy groups at high redshift from
-                        incomplete spectroscopic data: I. The group finder and
-                        application to zCOSMOS
-                    </p>
-                    <div class="author">
-                        <span class="strong">Kai Wang<sup>†</sup></span
-                        >, H.J. Mo, Cheng Li, Jiacheng Meng, Yangyao Chen <br />
-                        <span class="journal">2020, MNRAS 499 89</span>
-                        <a
-                            href="https://arxiv.org/abs/2006.05426"
-                            target="_blank"
-                            >arXiv:2006.05426</a
-                        >
-                        <a
-                            href="https://github.com/wkcosmology/zCOSMOS-bright_group_catalog"
-                            target="_blank"
-                            >Public group catalog</a
-                        >
-                        <a
-                            href="/blog/html/galaxy_group_highz.html"
-                            target="_blank"
-                            >[Go to the blog]</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Thermal gravitational-wave background in the general
-                        pre-inflationary scenario
-                    </p>
-                    <div class="author">
-                        <span class="strong">Kai Wang</span>, Larissa Santo,
-                        Jun-Qing Xia, Wen Zhao<sup>†</sup> <br />
-                        <span class="journal">2017, JCAP 01 053</span>
-                        <a
-                            href="https://arxiv.org/abs/1608.04189"
-                            target="_blank"
-                            >arXiv:1608.04189</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Smoothing methods comparison for CMB E- and B-mode
-                        separation
-                    </p>
-                    <div class="author">
-                        Yi-Fan Wang,
-                        <span class="strong">Kai Wang<sup>†</sup></span
-                        >, Wen Zhao <br />
-                        <span class="journal"
-                            >2016, Research in Astronomy and Astrophysics 16
-                            4</span
-                        >
-                        <a
-                            href="https://arxiv.org/abs/1511.01220"
-                            target="_blank"
-                            >arXiv:1511.01220</a
-                        >
-                    </div>
-                </li>
-            </ol>
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Local Group Analogues in a cosmological context - I. Relating the
+            velocity structure to the cosmic web
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, Peder Norberg, Louis E. Strigari, et al.<br />
+            <span class="journal">to be submitted</span>
+            <a href="https://arxiv.org/abs/2510.xxxxx" target="_blank"
+              >arXiv:25xx.xxxxx</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Gravitational potential drives the concentration dependence of the
+            stellar mass-halo mass relation
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup>, </span>
+            <span
+              >Joop Schaye, Alejandro Benítez-Llambay, Evgenii Chaikin, Carlos
+              S. Frenk, Filip Huško, Robert J. McGibbon, Sylvia Ploeckinger,
+              Alexander J. Richings, Matthieu Schaller, James W. Trayford</span
+            ><br />
+            <span class="journal">2025, submitted</span>
+            <a href="https://arxiv.org/abs/2510.xxxxx" target="_blank"
+              >arXiv:2510.xxxxx</a
+            >
+            <!-- <a href="/blog/html/shmr.html" target="_blank" -->
+            <!--     >[Go to the blog]</a -->
+            <!-- > -->
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Dissecting the mass quenching in TNG50: Galaxy size determines the
+            quenching mode
+          </p>
+          <div class="author">
+            <span>
+              Haochen Jiang, Enci Wang<sup>†</sup>,
+              <span class="strong">Kai Wang<sup>†</sup></span
+              >, Chengyu Ma, Xu Kong<sup>†</sup>
+            </span>
+            <br />
+            <span class="journal">2025, ApJ accepted</span>
+            <a href="https://arxiv.org/abs/2510.24886" target="_blank"
+              >arXiv:2510.24886</a
+            >
+            <!-- <a href="/blog/html/shmr.html" target="_blank" -->
+            <!--     >[Go to the blog]</a -->
+            <!-- > -->
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            The origin of the galaxy size-stellar metallicity relation: A
+            semi-analytical perspective
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span> <br />
+            <span class="journal">2025, submitted</span>
+            <a href="https://arxiv.org/abs/2510.02573" target="_blank"
+              >arXiv:2510.02573</a
+            >
+            <!-- <a href="/blog/html/shmr.html" target="_blank" -->
+            <!--     >[Go to the blog]</a -->
+            <!-- > -->
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Testing galaxy formation models with the stellar mass-halo mass
+            relations for star-forming and quiescent galaxies
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, Yingjie Peng<sup>†</sup><br />
+            <span class="journal">2024, ApJ 980 233</span>
+            <a href="https://arxiv.org/abs/2408.07743" target="_blank"
+              >arXiv:2408.07743</a
+            >
+            <a href="/blog/html/shmr.html" target="_blank">[Go to the blog]</a>
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Revisiting the fundamental metallicity relation with observation and
+            simulation
+          </p>
+          <div class="author">
+            Chengyu Ma,
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, Enci Wang<sup>†</sup>, Yingjie Peng, Haochen Jiang, Haoran Yu,
+            Cheng Jia, Zeyu Chen, Haixin Li, Xu Kong<br />
+            <span class="journal">2024, ApJL 971 L14</span>
+            <a href="https://arxiv.org/abs/2407.21716" target="_blank"
+              >arXiv:2407.21716</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Characterizing the assembly of dark matter halos with protohalo size
+            histories: I. Redshift evolution, relation to descendant halos, and
+            halo assembly bias
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, H.J. Mo, Yangyao Chen, Huiyuan Wang, Xiaohu Yang, Jiaqi Wang,
+            Yingjie Peng, Zheng Cai<br />
+            <span class="journal">2024, MNRAS 528 2046</span>
+            <a href="https://arxiv.org/abs/2309.01039" target="_blank"
+              >arXiv:2309.01039</a
+            >
+            <a href="/blog/html/protohalo_size.html" target="_blank"
+              >[Go to the blog]</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            An efficient and robust method to estimate halo concentration based
+            on the method of moments
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, H.J. Mo, Yangyao Chen, Joop Schaye<br />
+            <span class="journal">2024, MNRAS 527 10760</span>
+            <a href="https://arxiv.org/abs/2310.00200" target="_blank"
+              >arXiv:2310.00200</a
+            >
+            <a href="/blog/html/concentration.html" target="_blank"
+              >[Go to the blog]</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Environmental dependence of the mass-metallicity relation in
+            cosmological hydrodynamical simulations
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, Xin Wang<sup>†</sup>, Yangyao Chen<br />
+            <span class="journal">2023, ApJ 951 66</span>
+            <a href="https://arxiv.org/abs/2305.08161" target="_blank"
+              >arXiv:2305.08161</a
+            >
+            <a href="/blog/html/env_dependence_mzr.html" target="_blank"
+              >[Go to the blog]</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Late-formed halos prefer to host quiescent central galaxies. I.
+            Observational results
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, Yangyao Chen, Qingyang Li, Xiaohu Yang<br />
+            <span class="journal">2023, MNRAS 522 3188</span>
+            <a href="https://arxiv.org/abs/2304.07189" target="_blank"
+              >arXiv:2304.07189</a
+            >
+            <a
+              href="/blog/html/late_formed_halos_quiescent.html"
+              target="_blank"
+              >[Go to the blog]</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Dissect two-halo galactic conformity effect for central galaxies:
+            The dependence of star formation activities on the large-scale
+            environment
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, Yingjie Peng<sup>†</sup>, Yangyao Chen <br />
+            <span class="journal">2023, MNRAS 523 1268</span>
+            <a href="https://arxiv.org/abs/2304.06886" target="_blank"
+              >arXiv:2304.06886</a
+            >
+            <a href="/blog/html/two_halo_conformity.html" target="_blank"
+              >[Go to the blog]</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Relating galaxies across different redshift to study galaxy
+            evolution
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, H.J. Mo, Cheng Li, Yangyao Chen <br />
+            <span class="journal">2023, MNRAS 520 1774</span>
+            <a href="https://arxiv.org/abs/2211.00485" target="_blank"
+              >arXiv:2211.00485</a
+            >
+            <a href="/blog/html/connect_galaxies.html" target="_blank"
+              >[Go to the blog]</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Finding proto-clusters to trace galaxy evolution: I. The finder and
+            its performance
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, H.J. Mo, Cheng Li, Yangyao Chen <br />
+            <span class="journal">2021, MNRAS 505 3892</span>
+            <a href="https://arxiv.org/abs/2104.12223" target="_blank"
+              >arXiv:2104.12223</a
+            >
+            <a href="/blog/html/intro_proto_cluster.html" target="_blank"
+              >[Go to the blog]</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Identifying galaxy groups at high redshift from incomplete
+            spectroscopic data: I. The group finder and application to zCOSMOS
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, H.J. Mo, Cheng Li, Jiacheng Meng, Yangyao Chen <br />
+            <span class="journal">2020, MNRAS 499 89</span>
+            <a href="https://arxiv.org/abs/2006.05426" target="_blank"
+              >arXiv:2006.05426</a
+            >
+            <a
+              href="https://github.com/wkcosmology/zCOSMOS-bright_group_catalog"
+              target="_blank"
+              >Public group catalog</a
+            >
+            <a href="/blog/html/galaxy_group_highz.html" target="_blank"
+              >[Go to the blog]</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Thermal gravitational-wave background in the general
+            pre-inflationary scenario
+          </p>
+          <div class="author">
+            <span class="strong">Kai Wang</span>, Larissa Santo, Jun-Qing Xia,
+            Wen Zhao<sup>†</sup> <br />
+            <span class="journal">2017, JCAP 01 053</span>
+            <a href="https://arxiv.org/abs/1608.04189" target="_blank"
+              >arXiv:1608.04189</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Smoothing methods comparison for CMB E- and B-mode separation
+          </p>
+          <div class="author">
+            Yi-Fan Wang,
+            <span class="strong">Kai Wang<sup>†</sup></span
+            >, Wen Zhao <br />
+            <span class="journal"
+              >2016, Research in Astronomy and Astrophysics 16 4</span
+            >
+            <a href="https://arxiv.org/abs/1511.01220" target="_blank"
+              >arXiv:1511.01220</a
+            >
+          </div>
+        </li>
+      </ol>
 
-            <h1>Co-author Papers:</h1>
-            <ol>
-                <li>
-                    <p class="publication">
-                        Potential-Driven Metal Cycling: JADES Census of
-                        Gas-Phase Metallicity for galaxies at 1 < z < 7
-                    </p>
-                    <div class="author">
-                        Cheng Jia, Enci Wang, Cheqiu Lyu, Chengyu Ma, Jie Song,
-                        Yangyao Chen, <span class="strong">Kai Wang</span>,
-                        Haoran Yu, Zeyu Chen, Jinyang Wang, Yifan Wang, Xu Kong
-                        <br />
-                        <span class="journal">ApJL 986 L24</span>
-                        <a
-                            href="https://arxiv.org/abs/2504.18820"
-                            target="_blank"
-                            >arXiv:2504.18820</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        The physical origin of positive metallicity radial
-                        gradients in high-redshift galaxies: insights from the
-                        FIRE-2 cosmological hydrodynamic simulations
-                    </p>
-                    <div class="author">
-                        Xunda Sun, Xin Wang, Xiangcheng Ma,
-                        <span class="strong">Kai Wang</span>, Andrew Wetzel,
-                        Claude-André Faucher-Giguère, Philip F. Hopkins, Dušan
-                        Kereš, Russell L. Graf, Andrew Marszewski, Jonathan
-                        Stern, Guochao Sun, Lei Sun, Keyer Thyme
-                        <br />
-                        <span class="journal">ApJ 986 179</span>
-                        <a
-                            href="https://arxiv.org/abs/2409.09290"
-                            target="_blank"
-                            >arXiv:2409.09290</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        From Halos to Galaxies. X: Decoding Galaxy SEDs with
-                        Physical Priors and Accurate Star Formation History
-                        Reconstruction
-                    </p>
-                    <div class="author">
-                        Zeyu Gao, Yingjie Peng,
-                        <span class="strong">Kai Wang</span>, Luis C. Ho, Alvio
-                        Renzini, Anna R. Gallazzi, Filippo Mannucci, Houjun Mo,
-                        Yipeng Jing, Xiaohu Yang, Enci Wang, Dingyi Zhao, Jing
-                        Dou, Qiusheng Gu, Cheqiu Lyu, Roberto Maiolino, Bitao
-                        Wang, Yu-Chen Wang, Bingxiao Xu, Feng Yuan, Xingye Zhu
-                        <br />
-                        <span class="journal">ApJ 979 66</span>
-                        <a
-                            href="https://arxiv.org/abs/2408.07749"
-                            target="_blank"
-                            >arXiv:2408.07749</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Black-Hole-to-Halo Mass Relation From UNIONS Weak
-                        Lensing
-                    </p>
-                    <div class="author">
-                        Qinxun Li, Martin Kilbinger, Wentao Luo,
-                        <span class="strong">Kai Wang</span>, Huiyuan Wang, Anna
-                        Wittje, Hendrik Hildebrandt, Ludovic van Waerbeke,
-                        Michael J. Hudson, Samuel Farrens, Tobias I. Liaudat,
-                        Huiling Liu, Ziwen Zhang, Qingqing Wang, Elisa Russier,
-                        Axel Guinot, Lucie Baumont, Fabian Hervas Peters, Thomas
-                        de Boer, Jiaqi Wang
-                        <br />
-                        <span class="journal">2024, ApJL 969 L25</span>
-                        <a
-                            href="https://arxiv.org/abs/2402.10740"
-                            target="_blank"
-                            >arXiv:2311.07653</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Black holes regulate cold gas accretion in massive
-                        galaxies
-                    </p>
-                    <div class="author">
-                        Tao Wang, Ke Xu, Yuxuan Wu, Yong Shi, David Elbaz, Luis
-                        C. Ho, Zhi-Yu Zhang, Qiusheng Gu, Yijun Wang, Chenggang
-                        Shu, Feng Yuan, Xiaoyang Xia,
-                        <span class="strong">Kai Wang</span> <br />
-                        <span class="journal">2024, Nature</span>
-                        <a
-                            href="https://arxiv.org/abs/2311.07653"
-                            target="_blank"
-                            >arXiv:2311.07653</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        From Halos to Galaxies. IX. Estimate of Halo Assembly
-                        History for SDSS Galaxy Groups
-                    </p>
-                    <div class="author">
-                        Cheqiu Lyu, Yingjie Peng, Yipeng Jing, Xiaohu Yang, Luis
-                        C. Ho, Alvio Renzini, Dingyi Zhao, Filippo Mannucci,
-                        Houjun Mo, <span class="strong">Kai Wang</span>, Bitao
-                        Wang, Bingxiao Xu, Jing Dou, Anna R. Gallazzi, Qiusheng
-                        Gu, Roberto Maiolino, Enci Wang, Feng Yuan
-                        <br />
-                        <span class="journal">2024, ApJ 972 108</span>
-                        <a
-                            href="https://arxiv.org/abs/2407.03409"
-                            target="_blank"
-                            >arXiv:2407.03409</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        From Halos to Galaxies. VII. The Connections Between
-                        Stellar Mass Growth History, Quenching History and Halo
-                        Assembly History for Central Galaxies
-                    </p>
-                    <div class="author">
-                        Cheqiu Lyu, Yingjie Peng, Yipeng Jing, Xiaohu Yang, Luis
-                        C. Ho, Alvio Renzini, Bitao Wang,
-                        <span class="strong">Kai Wang</span>, Bingxiao Xu,
-                        Dingyi Zhao, Jing Dou, Qiusheng Gu, Roberto Maiolino,
-                        Filippo Mannucci, Feng Yuan
-                        <br />
-                        <span class="journal">2023, ApJ 959 5</span>
-                        <a
-                            href="https://arxiv.org/abs/2310.10733"
-                            target="_blank"
-                            >arXiv:2310.10733</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Massive Dark Matter Halos at High Redshift: Implications
-                        for Observations in the JWST Era
-                    </p>
-                    <div class="author">
-                        Yangyao Chen, H.J. Mo,
-                        <span class="strong">Kai Wang</span>
-                        <br />
-                        <span class="journal">2023, MNRAS 526 2542</span>
-                        <a
-                            href="https://arxiv.org/abs/2304.13890"
-                            target="_blank"
-                            >arXiv:2304.13890</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        A Conditional Abundance Matching Method of Extending
-                        Simulated Halo Merger Trees to Resolve Low-Mass
-                        Progenitors and Sub-halos
-                    </p>
-                    <div class="author">
-                        Yangyao Chen, H.J. Mo, Cheng Li,
-                        <span class="strong">Kai Wang</span>, Huiyuan Wang,
-                        Xiaohu Yang
-                        <br />
-                        <span class="journal">2023, MNRAS 525 1254</span>
-                        <a
-                            href="https://arxiv.org/abs/2301.08972"
-                            target="_blank"
-                            >arXiv:2301.08972</a
-                        >
-                    </div>
-                </li>
+      <h1>Co-author Papers:</h1>
+      <ol>
+        <li>
+          <p class="publication">
+            Potential-Driven Metal Cycling: JADES Census of Gas-Phase
+            Metallicity for galaxies at 1 < z < 7
+          </p>
+          <div class="author">
+            Cheng Jia, Enci Wang, Cheqiu Lyu, Chengyu Ma, Jie Song, Yangyao
+            Chen, <span class="strong">Kai Wang</span>, Haoran Yu, Zeyu Chen,
+            Jinyang Wang, Yifan Wang, Xu Kong
+            <br />
+            <span class="journal">ApJL 986 L24</span>
+            <a href="https://arxiv.org/abs/2504.18820" target="_blank"
+              >arXiv:2504.18820</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            The physical origin of positive metallicity radial gradients in
+            high-redshift galaxies: insights from the FIRE-2 cosmological
+            hydrodynamic simulations
+          </p>
+          <div class="author">
+            Xunda Sun, Xin Wang, Xiangcheng Ma,
+            <span class="strong">Kai Wang</span>, Andrew Wetzel, Claude-André
+            Faucher-Giguère, Philip F. Hopkins, Dušan Kereš, Russell L. Graf,
+            Andrew Marszewski, Jonathan Stern, Guochao Sun, Lei Sun, Keyer Thyme
+            <br />
+            <span class="journal">ApJ 986 179</span>
+            <a href="https://arxiv.org/abs/2409.09290" target="_blank"
+              >arXiv:2409.09290</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            From Halos to Galaxies. X: Decoding Galaxy SEDs with Physical Priors
+            and Accurate Star Formation History Reconstruction
+          </p>
+          <div class="author">
+            Zeyu Gao, Yingjie Peng,
+            <span class="strong">Kai Wang</span>, Luis C. Ho, Alvio Renzini,
+            Anna R. Gallazzi, Filippo Mannucci, Houjun Mo, Yipeng Jing, Xiaohu
+            Yang, Enci Wang, Dingyi Zhao, Jing Dou, Qiusheng Gu, Cheqiu Lyu,
+            Roberto Maiolino, Bitao Wang, Yu-Chen Wang, Bingxiao Xu, Feng Yuan,
+            Xingye Zhu
+            <br />
+            <span class="journal">ApJ 979 66</span>
+            <a href="https://arxiv.org/abs/2408.07749" target="_blank"
+              >arXiv:2408.07749</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Black-Hole-to-Halo Mass Relation From UNIONS Weak Lensing
+          </p>
+          <div class="author">
+            Qinxun Li, Martin Kilbinger, Wentao Luo,
+            <span class="strong">Kai Wang</span>, Huiyuan Wang, Anna Wittje,
+            Hendrik Hildebrandt, Ludovic van Waerbeke, Michael J. Hudson, Samuel
+            Farrens, Tobias I. Liaudat, Huiling Liu, Ziwen Zhang, Qingqing Wang,
+            Elisa Russier, Axel Guinot, Lucie Baumont, Fabian Hervas Peters,
+            Thomas de Boer, Jiaqi Wang
+            <br />
+            <span class="journal">2024, ApJL 969 L25</span>
+            <a href="https://arxiv.org/abs/2402.10740" target="_blank"
+              >arXiv:2311.07653</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Black holes regulate cold gas accretion in massive galaxies
+          </p>
+          <div class="author">
+            Tao Wang, Ke Xu, Yuxuan Wu, Yong Shi, David Elbaz, Luis C. Ho,
+            Zhi-Yu Zhang, Qiusheng Gu, Yijun Wang, Chenggang Shu, Feng Yuan,
+            Xiaoyang Xia,
+            <span class="strong">Kai Wang</span> <br />
+            <span class="journal">2024, Nature</span>
+            <a href="https://arxiv.org/abs/2311.07653" target="_blank"
+              >arXiv:2311.07653</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            From Halos to Galaxies. IX. Estimate of Halo Assembly History for
+            SDSS Galaxy Groups
+          </p>
+          <div class="author">
+            Cheqiu Lyu, Yingjie Peng, Yipeng Jing, Xiaohu Yang, Luis C. Ho,
+            Alvio Renzini, Dingyi Zhao, Filippo Mannucci, Houjun Mo,
+            <span class="strong">Kai Wang</span>, Bitao Wang, Bingxiao Xu, Jing
+            Dou, Anna R. Gallazzi, Qiusheng Gu, Roberto Maiolino, Enci Wang,
+            Feng Yuan
+            <br />
+            <span class="journal">2024, ApJ 972 108</span>
+            <a href="https://arxiv.org/abs/2407.03409" target="_blank"
+              >arXiv:2407.03409</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            From Halos to Galaxies. VII. The Connections Between Stellar Mass
+            Growth History, Quenching History and Halo Assembly History for
+            Central Galaxies
+          </p>
+          <div class="author">
+            Cheqiu Lyu, Yingjie Peng, Yipeng Jing, Xiaohu Yang, Luis C. Ho,
+            Alvio Renzini, Bitao Wang,
+            <span class="strong">Kai Wang</span>, Bingxiao Xu, Dingyi Zhao, Jing
+            Dou, Qiusheng Gu, Roberto Maiolino, Filippo Mannucci, Feng Yuan
+            <br />
+            <span class="journal">2023, ApJ 959 5</span>
+            <a href="https://arxiv.org/abs/2310.10733" target="_blank"
+              >arXiv:2310.10733</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Massive Dark Matter Halos at High Redshift: Implications for
+            Observations in the JWST Era
+          </p>
+          <div class="author">
+            Yangyao Chen, H.J. Mo,
+            <span class="strong">Kai Wang</span>
+            <br />
+            <span class="journal">2023, MNRAS 526 2542</span>
+            <a href="https://arxiv.org/abs/2304.13890" target="_blank"
+              >arXiv:2304.13890</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            A Conditional Abundance Matching Method of Extending Simulated Halo
+            Merger Trees to Resolve Low-Mass Progenitors and Sub-halos
+          </p>
+          <div class="author">
+            Yangyao Chen, H.J. Mo, Cheng Li,
+            <span class="strong">Kai Wang</span>, Huiyuan Wang, Xiaohu Yang
+            <br />
+            <span class="journal">2023, MNRAS 525 1254</span>
+            <a href="https://arxiv.org/abs/2301.08972" target="_blank"
+              >arXiv:2301.08972</a
+            >
+          </div>
+        </li>
 
-                <li>
-                    <p class="publication">
-                        Groups and Protocluster Candidates in the CLAUDS and
-                        HSC-SSP Joint Deep Surveys
-                    </p>
-                    <div class="author">
-                        Qingyang Li, Xiaohu Yang, Chengze Liu,...
-                        <span class="strong">Kai Wang</span>,...<br />
-                        <span class="journal">2022, ApJ 933 9</span>
-                        <a
-                            href="https://arxiv.org/abs/2205.05517"
-                            target="_blank"
-                            >arXiv:2205.05517</a
-                        >
-                    </div>
-                </li>
+        <li>
+          <p class="publication">
+            Groups and Protocluster Candidates in the CLAUDS and HSC-SSP Joint
+            Deep Surveys
+          </p>
+          <div class="author">
+            Qingyang Li, Xiaohu Yang, Chengze Liu,...
+            <span class="strong">Kai Wang</span>,...<br />
+            <span class="journal">2022, ApJ 933 9</span>
+            <a href="https://arxiv.org/abs/2205.05517" target="_blank"
+              >arXiv:2205.05517</a
+            >
+          </div>
+        </li>
 
-                <li>
-                    <p class="publication">
-                        MAHGIC: A Model Adapter for the Halo-Galaxy
-                        Inter-Connection
-                    </p>
-                    <div class="author">
-                        Yangyao Chen, H.J. Mo, Cheng Li,
-                        <span class="strong">Kai Wang</span>, Huiyuan Wang,
-                        Xiaohu Yang, Youcai Zhang, Neal Katz
-                        <br />
-                        <span class="journal">2022, MNRAS 507 2510</span>
-                        <a
-                            href="https://arxiv.org/abs/2106.03984"
-                            target="_blank"
-                            >arXiv:2106.03984</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        The clustering of galaxies in the DESI imaging legacy
-                        surveys DR8:I. the luminosity and color dependent
-                        intrinsic clustering
-                    </p>
-                    <div class="author">
-                        Zhaoyu Wang, Haojie Xu, Xiaohu Yang, Y. P. Jing,
-                        <span class="strong">Kai Wang</span>, Hong Guo, Fuyu
-                        Dong, Min He <br />
-                        <span class="journal"
-                            >2021, Sci. China Phys. Mech. Astron. 64
-                            289811</span
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Measuring galaxy abundance and clustering at high
-                        redshift from incomplete spectroscopic data: Tests on
-                        mock catalogs and application to zCOSMOS
-                    </p>
-                    <div class="author">
-                        Jiacheng Meng, Cheng Li, Houjun Mo, Yangyao Chen,
-                        <span class="strong">Kai Wang</span> <br />
-                        <span class="journal">2020, ApJ 964 161</span>
-                        <a
-                            href="https://arxiv.org/abs/2008.13733"
-                            target="_blank"
-                            >arXiv:2008.13733</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        How to empirically model star formation in dark matter
-                        halos: I. Inferences about central galaxies from
-                        numerical simulations
-                    </p>
-                    <div class="author">
-                        Yangyao Chen, H. J. Mo, Cheng Li,
-                        <span class="strong">Kai Wang</span> <br />
-                        <span class="journal">2021, MNRAS 504 4865</span>
-                        <a
-                            href="https://arxiv.org/abs/2009.12467"
-                            target="_blank"
-                            >arXiv:2009.12467</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Relating the structure of dark matter halos to their
-                        assembly and environment
-                    </p>
-                    <div class="author">
-                        Yangyao Chen, H.J. Mo, Cheng Li, Huiyuan Wang, Xiaohu
-                        Yang, Youcai Zhang,
-                        <span class="strong">Kai Wang</span> <br />
-                        <span class="journal">2020, ApJ 899 81</span>
-                        <a
-                            href="https://arxiv.org/abs/2003.05137"
-                            target="_blank"
-                            >arXiv:2003.05137</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Superconducting cosmic strings as sources of
-                        cosmological fast radio bursts
-                    </p>
-                    <div class="author">
-                        Jia-Ni Ye, <span class="strong">Kai Wang</span>, Yi-Fu
-                        Cai <br />
-                        <span class="journal"
-                            >2017, Eur. Phys. J. C 77:720</span
-                        >
-                        <a
-                            href="https://arxiv.org/abs/1705.10956"
-                            target="_blank"
-                            >arXiv:1705.10956</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Statistical imprints of CMB B-type polarization leakage
-                        in an incomplete sky survey analysis
-                    </p>
-                    <div class="author">
-                        Larissa Santo, <span class="strong">Kai Wang</span>,
-                        Yangrui Hu, Wenjuan Fang, Wen Zhao <br />
-                        <span class="journal">2017, JCAP 01 043</span>
-                        <a
-                            href="https://arxiv.org/abs/1612.03564"
-                            target="_blank"
-                            >arXiv:1612.03564</a
-                        >
-                    </div>
-                </li>
-                <li>
-                    <p class="publication">
-                        Probing the statistical properties of CMB $B$-mode
-                        polarization through Minkowski Functionals
-                    </p>
-                    <div class="author">
-                        Larissa Santo, <span class="strong">Kai Wang</span>, Wen
-                        Zhao <br />
-                        <span class="journal">2016, JCAP 07 029</span>
-                        <a
-                            href="https://arxiv.org/abs/1510.07779"
-                            target="_blank"
-                            >arXiv:1510.07779</a
-                        >
-                    </div>
-                </li>
-            </ol>
+        <li>
+          <p class="publication">
+            MAHGIC: A Model Adapter for the Halo-Galaxy Inter-Connection
+          </p>
+          <div class="author">
+            Yangyao Chen, H.J. Mo, Cheng Li,
+            <span class="strong">Kai Wang</span>, Huiyuan Wang, Xiaohu Yang,
+            Youcai Zhang, Neal Katz
+            <br />
+            <span class="journal">2022, MNRAS 507 2510</span>
+            <a href="https://arxiv.org/abs/2106.03984" target="_blank"
+              >arXiv:2106.03984</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            The clustering of galaxies in the DESI imaging legacy surveys DR8:I.
+            the luminosity and color dependent intrinsic clustering
+          </p>
+          <div class="author">
+            Zhaoyu Wang, Haojie Xu, Xiaohu Yang, Y. P. Jing,
+            <span class="strong">Kai Wang</span>, Hong Guo, Fuyu Dong, Min He
+            <br />
+            <span class="journal"
+              >2021, Sci. China Phys. Mech. Astron. 64 289811</span
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Measuring galaxy abundance and clustering at high redshift from
+            incomplete spectroscopic data: Tests on mock catalogs and
+            application to zCOSMOS
+          </p>
+          <div class="author">
+            Jiacheng Meng, Cheng Li, Houjun Mo, Yangyao Chen,
+            <span class="strong">Kai Wang</span> <br />
+            <span class="journal">2020, ApJ 964 161</span>
+            <a href="https://arxiv.org/abs/2008.13733" target="_blank"
+              >arXiv:2008.13733</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            How to empirically model star formation in dark matter halos: I.
+            Inferences about central galaxies from numerical simulations
+          </p>
+          <div class="author">
+            Yangyao Chen, H. J. Mo, Cheng Li,
+            <span class="strong">Kai Wang</span> <br />
+            <span class="journal">2021, MNRAS 504 4865</span>
+            <a href="https://arxiv.org/abs/2009.12467" target="_blank"
+              >arXiv:2009.12467</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Relating the structure of dark matter halos to their assembly and
+            environment
+          </p>
+          <div class="author">
+            Yangyao Chen, H.J. Mo, Cheng Li, Huiyuan Wang, Xiaohu Yang, Youcai
+            Zhang,
+            <span class="strong">Kai Wang</span> <br />
+            <span class="journal">2020, ApJ 899 81</span>
+            <a href="https://arxiv.org/abs/2003.05137" target="_blank"
+              >arXiv:2003.05137</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Superconducting cosmic strings as sources of cosmological fast radio
+            bursts
+          </p>
+          <div class="author">
+            Jia-Ni Ye, <span class="strong">Kai Wang</span>, Yi-Fu Cai <br />
+            <span class="journal">2017, Eur. Phys. J. C 77:720</span>
+            <a href="https://arxiv.org/abs/1705.10956" target="_blank"
+              >arXiv:1705.10956</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Statistical imprints of CMB B-type polarization leakage in an
+            incomplete sky survey analysis
+          </p>
+          <div class="author">
+            Larissa Santo, <span class="strong">Kai Wang</span>, Yangrui Hu,
+            Wenjuan Fang, Wen Zhao <br />
+            <span class="journal">2017, JCAP 01 043</span>
+            <a href="https://arxiv.org/abs/1612.03564" target="_blank"
+              >arXiv:1612.03564</a
+            >
+          </div>
+        </li>
+        <li>
+          <p class="publication">
+            Probing the statistical properties of CMB $B$-mode polarization
+            through Minkowski Functionals
+          </p>
+          <div class="author">
+            Larissa Santo, <span class="strong">Kai Wang</span>, Wen Zhao <br />
+            <span class="journal">2016, JCAP 07 029</span>
+            <a href="https://arxiv.org/abs/1510.07779" target="_blank"
+              >arXiv:1510.07779</a
+            >
+          </div>
+        </li>
+      </ol>
 
-            <h1>Open-source code:</h1>
-            <ol>
-                <li>
-                    <p class="publication">
-                        HIPP: HIgh-Performance Package for scientific
-                        computation
-                    </p>
-                    <div class="author">
-                        Yangyao Chen,
-                        <span class="strong">Kai Wang</span> <br />
-                        <span class="journal">
-                            Astrophysics Source Code Library</span
-                        >
-                        <a href="https://ascl.net/2301.030" target="_blank"
-                            >ascl:2301.030</a
-                        >
-                    </div>
-                </li>
-            </ol>
-        </div>
-    </body>
+      <h1>Open-source code:</h1>
+      <ol>
+        <li>
+          <p class="publication">
+            HIPP: HIgh-Performance Package for scientific computation
+          </p>
+          <div class="author">
+            Yangyao Chen,
+            <span class="strong">Kai Wang</span> <br />
+            <span class="journal"> Astrophysics Source Code Library</span>
+            <a href="https://ascl.net/2301.030" target="_blank"
+              >ascl:2301.030</a
+            >
+          </div>
+        </li>
+      </ol>
+    </div>
+  </body>
 </html>

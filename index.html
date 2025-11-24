@@ -1,201 +1,183 @@
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Kosmos</title>
-        <link
-            rel="stylesheet"
-            href="/css/styles.css"
-            type="text/css"
-            title="no title"
-            charset="utf-8"
-        />
-        <script charset="utf-8" src="/js/sidebar.js"></script>
-        <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-    </head>
-    <body>
-        <div class="vertical-line"></div>
-        <div class="sidebar">
-            <span id="sidebar"></span>
-            <script charset="utf-8">
-                display_sidebar();
-            </script>
-        </div>
-        <div class="page">
-            <h1 id="welcome_word">Welcome to Kosmos!</h1>
-            <div class="home_intro">
-                <h2>Preface:</h2>
-                <p class="welcome">
-                    Hello! I am Kai Wang, a Chinese astrophysicist studying the
-                    formation and evolution of galaxies, and how it is related
-                    to the large-scale structure in our own real Universe and
-                    numerically simulated universes. An overview of my research
-                    is shown in the
-                    <a href="/about_me/research.html">Research</a> page, with
-                    technical details presented in the
-                    <a href="/about_me/publication.html">Publication</a> page
-                    and relaxing reading provided in the
-                    <a href="/blog/blog_index.html">Blog</a>
-                    page.
-                    <br />
-                </p>
-                <h2>Guidance:</h2>
-                <ul>
-                    <li>
-                        <a href="about_me/introduction.html" class="guidance">
-                            <img
-                                src="/image/icon/guidance_aboutme.png"
-                                class="guidance_img"
-                            />
-                            <img
-                                src="/image/icon/guidance_aboutme.gif"
-                                class="guidance_gif"
-                            />
-                            About</a
-                        >
-                        <p class="guidance">
-                            Where I come? Where I go? Who I am?
-                        </p>
-                    </li>
-                    <li>
-                        <a href="about_me/research.html" class="guidance">
-                            <img
-                                src="/image/icon/guidance_research.png"
-                                class="guidance_img"
-                            />
-                            <img
-                                src="/image/icon/guidance_research.gif"
-                                class="guidance_gif"
-                            />
-                            Research</a
-                        >
-                        <p class="guidance">
-                            What I am interested in? What I do for a living?
-                        </p>
-                    </li>
-                    <li>
-                        <a href="about_me/publication.html" class="guidance">
-                            <img
-                                src="/image/icon/guidance_publication.png"
-                                class="guidance_img"
-                            />
-                            <img
-                                src="/image/icon/guidance_publication.gif"
-                                class="guidance_gif"
-                            />
-                            Publication</a
-                        >
-                        <p class="guidance">
-                            What I have accomplished? Who I collaborate with?
-                        </p>
-                    </li>
-                    <li>
-                        <a href="about_me/resource.html" class="guidance">
-                            <img
-                                src="/image/icon/guidance_resource.png"
-                                class="guidance_img"
-                            />
-                            <img
-                                src="/image/icon/guidance_resource.gif"
-                                class="guidance_gif"
-                            />
-                            Resource</a
-                        >
-                        <p class="guidance">What I want to share?</p>
-                    </li>
-                    <li>
-                        <a href="presentation/pre_index.html" class="guidance">
-                            <img
-                                src="/image/icon/guidance_tool.png"
-                                class="guidance_img"
-                            />
-                            <img
-                                src="/image/icon/guidance_tool.gif"
-                                class="guidance_gif"
-                            />
-                            Presentation</a
-                        >
-                        <p class="guidance">What I have presented?</p>
-                    </li>
-                    <li>
-                        <a href="blog/blog_index.html" class="guidance">
-                            <img
-                                src="/image/icon/guidance_blog.png"
-                                class="guidance_img"
-                            />
-                            <img
-                                src="/image/icon/guidance_blog.gif"
-                                class="guidance_gif"
-                            />
-                            Blog</a
-                        >
-                        <p class="guidance">What I have written?</p>
-                    </li>
-                </ul>
-            </div>
-            <!-- <h2>Recent News:</h2> -->
-            <!-- <ul> -->
-            <!--     <li> -->
-            <!--         Our paper -->
-            <!--         <a href="https://arxiv.org/abs/2408.07749" -->
-            <!--             >"From Halos to Galaxies. X: Decoding Galaxy SEDs with -->
-            <!--             Physical Priors and Accurate Star Formation History -->
-            <!--             Reconstruction "</a -->
-            <!--         > -->
-            <!--         is submitted. -- Aug. 16, 2024 -->
-            <!--     </li> -->
-            <!--     <li> -->
-            <!--         Our paper -->
-            <!--         <a href="https://arxiv.org/abs/2408.07743" -->
-            <!--             >"Testing galaxy formation models with the stellar -->
-            <!--             mass-halo mass relations for star-forming and quiescent -->
-            <!--             galaxies "</a -->
-            <!--         > -->
-            <!--         is submitted. -- Aug. 16, 2024 -->
-            <!--     </li> -->
-            <!--     <li> -->
-            <!--         Our paper -->
-            <!--         <a href="https://arxiv.org/abs/2407.21716" -->
-            <!--             >"Revisiting the fundamental metallicity relation with -->
-            <!--             observation and simulation"</a -->
-            <!--         > -->
-            <!--         is accepted by ApJL. -- Jul. 25, 2024 -->
-            <!--     </li> -->
-            <!--     <li> -->
-            <!--         I arrived at Durham and enrolled in the Durham University as -->
-            <!--         a PDRA jointly employed by ICC and CEA. Chatting, -->
-            <!--         disscussion, collaboration are welcome! -- Jul. 1, 2024 -->
-            <!--     </li> -->
-            <!--     <li> -->
-            <!--         I officially take the offer of the postdoctoral research -->
-            <!--         associate in the Institute for Computational Cosmology at -->
-            <!--         Durham University. -- Feb. 14, 2024 -->
-            <!--     </li> -->
-            <!--     <li> -->
-            <!--         Our paper -->
-            <!--         <a href="https://arxiv.org/abs/2309.01039" -->
-            <!--             >"Characterizing the assembly of dark matter halos with -->
-            <!--             protohalo size histories: I. Redshift evolution, -->
-            <!--             relation to descendant halos, and halo assembly bias"</a -->
-            <!--         > -->
-            <!--         is published on MNRAS. -- Jan. 22, 2024 -->
-            <!--     </li> -->
-            <!--     <li> -->
-            <!--         Our paper -->
-            <!--         <a href="https://arxiv.org/abs/2310.00200" -->
-            <!--             >"An efficient and robust method to estimate halo -->
-            <!--             concentration based on the method of moments"</a -->
-            <!--         > -->
-            <!--         is published on MNRAS. -- Dec. 18, 2023 -->
-            <!--     </li> -->
-            <!-- </ul> -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Kosmos</title>
+    <link
+      rel="stylesheet"
+      href="/css/styles.css"
+      type="text/css"
+      title="no title"
+      charset="utf-8"
+    />
+    <script charset="utf-8" src="/js/sidebar.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+  </head>
+  <body>
+    <div class="vertical-line"></div>
+    <div class="sidebar">
+      <span id="sidebar"></span>
+      <script charset="utf-8">
+        display_sidebar();
+      </script>
+    </div>
+    <div class="page">
+      <h1 id="welcome_word">Welcome to Kosmos!</h1>
+      <div class="home_intro">
+        <p class="welcome">
+          Hello! I am Kai Wang, a Chinese astrophysicist studying the formation
+          and evolution of galaxies, and how it is related to the large-scale
+          structure in our own real Universe and numerically simulated
+          universes. An overview of my research is shown in the
+          <a href="/about_me/research.html">Research</a> page, with technical
+          details presented in the
+          <a href="/about_me/publication.html">Publication</a> page and relaxing
+          reading provided in the
+          <a href="/blog/blog_index.html">Blog</a>
+          page.
+          <br />
+        </p>
+        <ul>
+          <li>
+            <a href="about_me/introduction.html" class="guidance">
+              <img
+                src="/image/icon/guidance_aboutme.png"
+                class="guidance_img"
+              />
+              <img
+                src="/image/icon/guidance_aboutme.gif"
+                class="guidance_gif"
+              />
+              About</a
+            >
+            <p class="guidance">Where I come? Where I go? Who I am?</p>
+          </li>
+          <li>
+            <a href="about_me/research.html" class="guidance">
+              <img
+                src="/image/icon/guidance_research.png"
+                class="guidance_img"
+              />
+              <img
+                src="/image/icon/guidance_research.gif"
+                class="guidance_gif"
+              />
+              Research</a
+            >
+            <p class="guidance">
+              What I am interested in? What I do for a living?
+            </p>
+          </li>
+          <li>
+            <a href="about_me/publication.html" class="guidance">
+              <img
+                src="/image/icon/guidance_publication.png"
+                class="guidance_img"
+              />
+              <img
+                src="/image/icon/guidance_publication.gif"
+                class="guidance_gif"
+              />
+              Publication</a
+            >
+            <p class="guidance">
+              What I have accomplished? Who I collaborate with?
+            </p>
+          </li>
+          <li>
+            <a href="about_me/resource.html" class="guidance">
+              <img
+                src="/image/icon/guidance_resource.png"
+                class="guidance_img"
+              />
+              <img
+                src="/image/icon/guidance_resource.gif"
+                class="guidance_gif"
+              />
+              Resource</a
+            >
+            <p class="guidance">What I want to share?</p>
+          </li>
+          <li>
+            <a href="presentation/pre_index.html" class="guidance">
+              <img src="/image/icon/guidance_tool.png" class="guidance_img" />
+              <img src="/image/icon/guidance_tool.gif" class="guidance_gif" />
+              Presentation</a
+            >
+            <p class="guidance">What I have presented?</p>
+          </li>
+          <li>
+            <a href="blog/blog_index.html" class="guidance">
+              <img src="/image/icon/guidance_blog.png" class="guidance_img" />
+              <img src="/image/icon/guidance_blog.gif" class="guidance_gif" />
+              Blog</a
+            >
+            <p class="guidance">What I have written?</p>
+          </li>
+        </ul>
+      </div>
+      <!-- <h2>Recent News:</h2> -->
+      <!-- <ul> -->
+      <!--     <li> -->
+      <!--         Our paper -->
+      <!--         <a href="https://arxiv.org/abs/2408.07749" -->
+      <!--             >"From Halos to Galaxies. X: Decoding Galaxy SEDs with -->
+      <!--             Physical Priors and Accurate Star Formation History -->
+      <!--             Reconstruction "</a -->
+      <!--         > -->
+      <!--         is submitted. -- Aug. 16, 2024 -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--         Our paper -->
+      <!--         <a href="https://arxiv.org/abs/2408.07743" -->
+      <!--             >"Testing galaxy formation models with the stellar -->
+      <!--             mass-halo mass relations for star-forming and quiescent -->
+      <!--             galaxies "</a -->
+      <!--         > -->
+      <!--         is submitted. -- Aug. 16, 2024 -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--         Our paper -->
+      <!--         <a href="https://arxiv.org/abs/2407.21716" -->
+      <!--             >"Revisiting the fundamental metallicity relation with -->
+      <!--             observation and simulation"</a -->
+      <!--         > -->
+      <!--         is accepted by ApJL. -- Jul. 25, 2024 -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--         I arrived at Durham and enrolled in the Durham University as -->
+      <!--         a PDRA jointly employed by ICC and CEA. Chatting, -->
+      <!--         disscussion, collaboration are welcome! -- Jul. 1, 2024 -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--         I officially take the offer of the postdoctoral research -->
+      <!--         associate in the Institute for Computational Cosmology at -->
+      <!--         Durham University. -- Feb. 14, 2024 -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--         Our paper -->
+      <!--         <a href="https://arxiv.org/abs/2309.01039" -->
+      <!--             >"Characterizing the assembly of dark matter halos with -->
+      <!--             protohalo size histories: I. Redshift evolution, -->
+      <!--             relation to descendant halos, and halo assembly bias"</a -->
+      <!--         > -->
+      <!--         is published on MNRAS. -- Jan. 22, 2024 -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--         Our paper -->
+      <!--         <a href="https://arxiv.org/abs/2310.00200" -->
+      <!--             >"An efficient and robust method to estimate halo -->
+      <!--             concentration based on the method of moments"</a -->
+      <!--         > -->
+      <!--         is published on MNRAS. -- Dec. 18, 2023 -->
+      <!--     </li> -->
+      <!-- </ul> -->
 
-            <h2>Contact:</h2>
-            <strong> Email: </strong>
-            <a href="mailto:wkcosmology@gmail.com">wkcosmology@gmail.com</a
-            ><br />
-            <footer>&copy; 2021-2024 Kai Wang, All right reserved.</footer>
-        </div>
-    </body>
+      <h2>Contact:</h2>
+      <strong> Email: </strong>
+      <a href="mailto:wkcosmology@gmail.com">wkcosmology@gmail.com</a><br />
+      <footer>&copy; 2021-2025 Kai Wang, All right reserved.</footer>
+    </div>
+  </body>
 </html>
