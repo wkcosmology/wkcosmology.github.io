@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
 @font-face {
     font-family: 'Avenir';
     src: url('font/Avenir.woff') format('woff');
+    font-display: swap;
 }
 
 @font-face {
@@ -8,60 +11,77 @@
     src: url('font/FiraCode-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
-:root{
-    --header-font: Avenir, Arial, misc, Raleway, "Trebuchet MS";
-    --annote-font: Avenir, Arial, "Trebuchet MS";
 
-    --mono-font: "Fira Code", Iosevka, monospace;
-    --sans-serif-font: Avenir, "Source Sans pro", Arial, "Open sans", Arial;
-    --serif-font: Georgia;
-    --cmu-font: Avenir, Arial, "CMU serif";
-    --black-basic: #20272d;
-    --blue-basic: #152a6e;
-    --blacker-basic: #161b1f;
-    --white-basic: #babcbf;
-    --link-color: #00FFFF;
-    /* --white-basic: #f0f3f7; */
-    --whiter-basic: #dadada;
-    --pure-white-basic: #ffffff;
-    --header-color: #e7f549;
-    --dark-header-color: #eae486;
-    --gray-basic: #9c9b97;
-    /* --gray-basic: #f2f5f7; */
-    --dark-gray-basic: #555956;
+:root{
+    /* ---------- Fonts ---------- */
+    --header-font: Avenir;
+    --annote-font: Avenir;
+    --mono-font: "Fira Code";
+    --sans-serif-font: Avenir;
+    --serif-font: "Merriweather";
+
+    /* ---------- Core Dark Colors ---------- */
+    --color-bg-deep:    #0d1117;  /* WAS --blacker-basic: darkest background (body, deep blocks) */
+    --color-bg-surface: #161b22;  /* WAS --black-basic: main page background */
+    --color-sidebar-link: #1e3a8a;/* WAS --blue-basic: sidebar nav text accent */
+    
+    /* ---------- Text ---------- */
+    --color-text-main:          #d1d5db; /* WAS --white-basic: primary light text */
+    --color-text-strong:        #e5e7eb; /* WAS --whiter-basic: stronger highlight text */
+    --color-text-pure:          #ffffff; /* WAS --pure-white-basic */
+    --color-text-muted:         #9ca3af; /* WAS --gray-basic: annotations */
+    --color-text-muted-strong:  #6b7280; /* WAS --dark-gray-basic */
+
+    /* ---------- Accents ---------- */
+    --color-heading:       #e7f549; /* WAS --header-color: lime-yellow accent */
+    --color-heading-soft:  #d8e354; /* WAS --dark-header-color: softer lime */
+    --color-link:          #22d3ee; /* WAS --link-color: cyan accent */
+
+    /* ---------- Optional UI Borders ---------- */
+    --color-border-soft: #1f2937;   /* WAS --border-color */
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
-}
-
-p,li,div,span {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg-deep);
     font-family: var(--sans-serif-font);
     font-size: 18px;
-    color: var(--white-basic);
+    color: var(--color-text-main);
+}
+
+p,
+li {
+    font-size: 18px;
+    color: var(--color-text-main);
     background-color: transparent;
 }
 
+/* generic inline elements: keep light touch */
+div,
+span {
+    background-color: transparent;
+}
 
 footer{
     font-size: 15px;
     font-family: var(--mono-font);
-    color: var(--gray-basic);
+    color: var(--color-text-muted);
     display: block;
     margin-top: 100px;
 }
 
 a {
     padding: 2px;
-    color: cyan;
+    color: var(--color-link);
     text-decoration: none;
 }
 
 a:hover {
-    color: white;
+    color: var(--color-text-pure);
     text-decoration: underline;
 }
 
@@ -69,12 +89,12 @@ h1,
 h2,
 h3 {
     font-family: var(--serif-font);
-    font-weight: 10;
+    font-weight: 400;
 }
 
 h1,
 h2 {
-    color: var(--header-color);
+    color: var(--color-heading);
 }
 
 h1 {
@@ -91,31 +111,30 @@ h3 {
     position: relative;
 }
 
+/* Home / welcome */
+
 .page .home_intro p.welcome{
     font-size: 18px;
     text-align: justify;
     font-family: var(--sans-serif-font);
 }
 
-.page .home_intro ul>li{
+.page .home_intro ul > li{
     list-style: none;
 }
 
 #welcome_word {
-    text-align:center;
+    text-align: center;
     font-family: var(--serif-font);
     font-size: 40px;
 }
 
 .page a.guidance {
     display: inline-block;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    color: var(--dark-header-color);
+    padding: 4px 15px;
+    color: var(--color-heading-soft);
     font-family: var(--serif-font);
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .page a.guidance[target="_blank"]::after {
@@ -125,12 +144,11 @@ h3 {
 .page p.guidance{
     font-family: var(--sans-serif-font);
     font-size: 16px;
-    color: var(--gray-basic);
+    color: var(--color-text-muted);
     margin-left: 20px;
 }
 
 .page .home_intro a:hover {
-    zoom: 1;
     transform: scale(1.2);
     transition: transform 0.05s ease-in-out;
     text-decoration: none;
@@ -140,27 +158,29 @@ h3 {
     height: 1em;
     width: 1.5em;
     object-fit: cover;
-    /*overflow: hidden;*/
 }
 
 .page .home_intro .guidance_gif{
-    display:none;
+    display: none;
 }
 
-.page .home_intro a:hover>.guidance_img{
-    display:none
+.page .home_intro a:hover > .guidance_img{
+    display: none;
 }
 
-.page .home_intro a:hover>.guidance_gif{
+.page .home_intro a:hover > .guidance_gif{
     height: 55px;
     transform: scale(2);
-    margin-top:-20px;
-    display:inline-block;
+    margin-top: -20px;
+    display: inline-block;
 }
 
-.publication, .author {
+/* Publications */
+
+.publication,
+.author {
     display: block;
-    color: var(--pure-white-basic);
+    color: var(--color-text-pure);
     font-size: 19px;
     font-family: var(--sans-serif-font);
     margin-left: 2px;
@@ -170,25 +190,29 @@ h3 {
 }
 
 .author {
-    color: var(--gray-basic);
+    color: var(--color-text-muted);
 }
 
 .journal {
     font-size: 16px;
     font-family: var(--sans-serif-font);
-    color: var(--white-basic);
+    color: var(--color-text-main);
     font-weight: 1000;
 }
 
-.publication .author a, a:link, a:visited{
-    color: var(--link-color);
+/* scope the special link colour to publication area,
+   not global a:link/a:visited */
+.publication .author a,
+.publication a:link,
+.publication a:visited {
+    color: var(--color-link);
 }
 
 .strong {
-    /* color: var(--pure-white-basic); */
-    color: var(--whiter-basic);
+    color: var(--color-text-strong);
 }
 
+/* Portrait / about */
 
 .portrait {
     height: 240px;
@@ -196,8 +220,8 @@ h3 {
     margin-top: -10px;
     margin-left: -40px;
     padding-left: 50px;
-    background-color: var(--blacker-basic);
-    box-shadow: 5px 5px 5px var(--blacker-basic);
+    background-color: var(--color-bg-deep);
+    box-shadow: 5px 5px 5px var(--color-bg-deep);
     width: calc(100% - 10px);
     display: block;
 }
@@ -205,7 +229,7 @@ h3 {
 .portrait hr{
     margin-top: 240px;
     margin-left: -50px;
-    border: 1px solid var(--blacker-basic);
+    border: 1px solid var(--color-bg-deep);
 }
 
 #portrait_mytag ul{
@@ -217,13 +241,12 @@ h3 {
     font-size: 30px;
 }
 
-
 #portrait_img{
-    float:left;
+    float: left;
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    background-color: var(--white-basic);
+    background-color: var(--color-text-main);
 }
 
 #portrait_mytag {
@@ -237,32 +260,25 @@ h3 {
 
 .aboutme li{
     font-size: 20px;
-    color: var(--whiter-basic);
+    color: var(--color-text-strong);
 }
 
-.aboutme li>a{
+.aboutme li > a{
     font-size: 20px;
-    color: var(--whiter-color);
+    color: var(--color-text-strong);
 }
 
 .aboutme h1{
-    /* display: inline-block; */
     font-size: 25px;
-    font-weight: 10;
-    color: var(--header-color);
-    /* border: 1px solid var(--head-basic); */
-    /* border-radius: 0px 30px 30px 0px; */
-    /* background-color: var(--dark-gray-basic); */
-    /* padding-left: 10px; */
-    /* padding-right: 20px; */
-    /* padding-top: 10px; */
-    /* padding-bottom: 10px; */
+    font-weight: 400;
+    color: var(--color-heading);
 }
 
 .aboutme h1:before{
     content: "⏺ ";
 }
 
+/* Main layout */
 
 div.page {
     display: block;
@@ -274,7 +290,7 @@ div.page {
     padding-right: calc(100vw - 240px - 800px - 100px);
     width: 840px;
     min-height: 100vh;
-    background-color: var(--black-basic);
+    background-color: var(--color-bg-surface);
 }
 
 .sidebar {
@@ -284,33 +300,36 @@ div.page {
     font-family: var(--sans-serif-font);
     width: 220px;
     height: 100vh;
-    background-color: var(--white-basic);
+    background-color: var(--color-text-main);
 }
+
+/* Animations / misc */
 
 .animation img {
     width: 200px;
     height: 150px;
-    position: block;
+    display: block;
     border: 2px solid #000000;
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 30px;
 }
+
+/* Research */
 
 div.research_block {
     background: linear-gradient(rgba(33, 39, 44, 0.8), rgba(33, 39, 44, 0.8)),
-    url("/image/background.jpg");
+                url("/image/background.jpg");
     background-repeat: repeat;
     background-position: center center;
     margin-top: 10px;
     width: 800px;
-    display:block;
+    display: block;
     padding: 10px;
-    border: 1px solid var(--white-basic);
-    border-radius: 10px 10px 10px 10px;
+    border: 1px solid var(--color-text-main);
+    border-radius: 10px;
 }
 
-.research_block>.research_intro ul>li,
-.research_block>.research_intro p
-{
+.research_block > .research_intro ul > li,
+.research_block > .research_intro p {
     font-family: var(--sans-serif-font);
     background-color: transparent;
     text-align: justify;
@@ -320,16 +339,15 @@ div.research_block {
     margin-right: 20px;
 }
 
-.research_intro li>a{
+.research_intro li > a{
     font-size: 18px;
-    /* color: var(--whiter-color); */
 }
 
 p.research_title {
     background-color: transparent;
     font-family: var(--header-font);
     font-size: 23px;
-    color: var(--header-color);
+    color: var(--color-heading);
 }
 
 div.research_intro {
@@ -340,11 +358,13 @@ div.research_intro {
     margin-left: 10px;
 }
 
-div.research_intro li, p{
+/* limit selector to research_intro, avoid global p */
+div.research_intro li,
+div.research_intro p {
 }
 
-div.research_intro p>strong{
-    color: var(--whiter-basic);
+div.research_intro p > strong{
+    color: var(--color-text-strong);
 }
 
 div.research {
@@ -367,22 +387,23 @@ div.research_intro p {
 .project_title {
     font-size: 20px;
     position: relative;
-    color: var(--white-color);
-    font-weight: 10;
+    color: var(--color-text-strong);
+    font-weight: 400;
     font-family: var(--header-font);
 }
 
-.project_intro>ul>li {
+.project_intro > ul > li {
     font-family: var(--serif-font);
     text-align: justify;
     padding-right: 40px;
 }
 
-.project_intro>ul>li>ul>li {
+.project_intro > ul > li > ul > li {
     font-family: var(--serif-font);
     text-align: justify;
-
 }
+
+/* Sidebar */
 
 div.sidebar_intro img{
     height: 180px;
@@ -395,7 +416,7 @@ div.sidebar_intro p{
     font-style: italic;
     font-family: var(--annote-font);
     font-size: 15px;
-    color: var(--black-basic);
+    color: var(--color-bg-surface);
 }
 
 div.sidebar_intro:hover{
@@ -405,8 +426,7 @@ div.sidebar_intro:hover{
 
 .sidebar_intro:hover img{
     text-decoration: none;
-    background: none
-    );
+    background: none;
 }
 
 .sidebar_extern{
@@ -428,23 +448,23 @@ div.sidebar_intro:hover{
 
 .sidebar_navi a{
     font-family: var(--header-font);
-    color: var(--blue-basic);
+    color: var(--color-sidebar-link);
     font-size: 23px;
     line-height: 8px;
     display: block;
-    background-color: var(--white-basic);
+    background-color: var(--color-text-main);
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 .sidebar_navi a.select{
-    color: var(--white-basic);
+    color: var(--color-text-main);
     font-weight: 800;
     text-decoration: none;
-    background-color: var(--black-basic);
-    border-radius: 10px 0px 0px 10px;
+    background-color: var(--color-bg-surface);
+    border-radius: 10px 0 0 10px;
 }
 
 .sidebar_navi a:hover {
@@ -452,16 +472,24 @@ div.sidebar_intro:hover{
     text-decoration: none;
 }
 
+/* Home intro */
+
 .home_intro {
     font-family: var(--header-font);
     font-size: 20px;
     line-height: 40px;
 }
 
-.home_intro a, li, li>a{
+/* be careful: this was global.
+   Keep as-is but know that it affects all li & li>a */
+.home_intro a,
+li,
+li > a {
     font-size: 20px;
     line-height: 30px;
 }
+
+/* Chart */
 
 #myChart {
     margin-top: 15px;
@@ -469,9 +497,9 @@ div.sidebar_intro:hover{
     height: 300px;
     width: 820px;
     min-height: 300px;
-    border: 2px solid var(--blacker-basic);
-    box-shadow: 10px 10px 10px var(--blacker-basic);
-    border-radius: 10px 10px 10px 10px;
+    border: 2px solid var(--color-bg-deep);
+    box-shadow: 10px 10px 10px var(--color-bg-deep);
+    border-radius: 10px;
     display: block;
 }
 
@@ -479,46 +507,40 @@ div.sidebar_intro:hover{
     display: none;
 }
 
-/* a[target="_blank"]::after { */
-/*     content: ""; */
-/*     width: 1em; */
-/*     height: 0.9em; */
-/*     margin: 0em 0em -0.1em 0.2em; */
-/*     background: Url('/image/icon/external_link.png')  no-repeat; */
-/*     background-size: contain; */
-/*     display: inline-block; */
-/* } */
+/* Resources, talks, etc. */
 
-
-.resource_annot, .pre_title, .myfollowings_annot, .books_annot {
+.resource_annot,
+.pre_title,
+.myfollowings_annot,
+.books_annot {
     font-family: var(--sans-serif-font);
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
     font-size: 18px;
-    color: var(--white-basic);
+    color: var(--color-text-main);
 }
 
 .pre_coord {
     font-family: var(--sans-serif-font);
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
     font-size: 18px;
-    color: var(--white-basic);
+    color: var(--color-text-main);
 }
 
 .pre_ul {
-    color: var(--dark-header-color);
+    color: var(--color-heading-soft);
 }
 
 .pre_place {
     font-family: var(--sans-serif-font);
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
     font-size: 20px;
-    color: var(--dark-header-color);
+    color: var(--color-heading-soft);
 }
 
 #pub_ads_link {
@@ -529,18 +551,14 @@ div.sidebar_intro:hover{
     display: block;
 }
 
+/* Blogs list */
+
 img#expand{
     height: 1em;
     float: left;
     margin-top: 3px;
     margin-right: 5px;
     margin-left: -10px;
-}
-
-img#expand {
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
 }
 
@@ -554,14 +572,14 @@ img#expand {
     font-size: 40px;
     font-family: var(--header-font);
     font-weight: 500;
-    margin: 0px;
+    margin: 0;
 }
 
 .blogs_files_year::before{
     content: "";
     width: 1em;
     height: 0.6em;
-    background: Url('/image/icon/time_icon.jpg')  no-repeat;
+    background: Url('/image/icon/time_icon.jpg') no-repeat;
     background-size: contain;
     display: inline-block;
 }
@@ -569,7 +587,7 @@ img#expand {
 #blogs_files .blogs_files_date {
     font-size: 15px;
     font-family: var(--mono-font);
-    color: var(--gray-basic);
+    color: var(--color-text-muted);
     float: left;
     padding-right: 40px;
     padding-top: 1px;
@@ -578,9 +596,9 @@ img#expand {
 #blogs_files li a {
     font-size: 20px;
     font-family: var(--header-font);
-    color: var(--dark-header-color);
+    color: var(--color-heading-soft);
     font-weight: 400;
-    padding-left: 0px;
+    padding-left: 0;
     margin-left: -5px;
     display: inline-block;
     width: calc(100% - 100px);
@@ -595,16 +613,16 @@ img#expand {
 
 #blogs_files .blogs_files_descri {
     margin-left: 35px;
-    background-color: var(--blacker-basic);
+    background-color: var(--color-bg-deep);
     margin-top: -20px;
     padding-top: 30px;
     padding-bottom: 20px;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0 0 20px 20px;
     padding-left: 10px;
-    color: var(--whiter-basic);
+    color: var(--color-text-strong);
     font-family: var(--sans-serif-font);
-    box-shadow: 8px 8px 8px var(--blacker-basic);
-    margin-right: 0px;
+    box-shadow: 8px 8px 8px var(--color-bg-deep);
+    margin-right: 0;
     padding-right: 10px;
     font-size: 18px;
     text-align: justify;
@@ -615,25 +633,27 @@ img#expand {
     float: left;
     margin-top: 8px;
     margin-left: -30px;
-    padding-top: 0px;
+    padding-top: 0;
 }
 
 #blogs_files li.label_toggle{
-    background-color: var(--blacker-basic);
-    border-radius: 20px 20px 0px 20px;
-    box-shadow: 8px 8px 8px var(--blacker-basic);
+    background-color: var(--color-bg-deep);
+    border-radius: 20px 20px 0 20px;
+    box-shadow: 8px 8px 8px var(--color-bg-deep);
     list-style: none;
     font-size: 20px;
-    color: var(--dark-header-color);
+    color: var(--color-heading-soft);
     padding-right: 10px;
     padding-left: 20px;
     margin-left: -55px;
 }
 
 #blogs_files .label_toggle{
-    background-color: var(--blacker-basic);
-    box-shadow: 8px 8px 8px var(--blacker-basic);
+    background-color: var(--color-bg-deep);
+    box-shadow: 8px 8px 8px var(--color-bg-deep);
 }
+
+/* Blog tags */
 
 #blog_tag span.blog_tag_block{
     display: block;
@@ -650,27 +670,29 @@ img#expand {
 }
 
 #blog_tag .blog_tag_name {
-    background-color: var(--blacker-basic);
+    background-color: var(--color-bg-deep);
     display: inline-block;
     font-family: var(--mono-font);
-    color: var(--white-basic);
+    color: var(--color-text-main);
     font-size: 16px;
     margin-left: 6px;
     margin-right: 6px;
     margin-top: 10px;
-    padding: 4px 10px 4px 10px;
-    border-radius: 10px 10px 10px 10px;
+    padding: 4px 10px;
+    border-radius: 10px;
 }
 
 #blog_tag .blog_tag_name.onclick {
-    background-color: var(--white-basic);
-    color: var(--blacker-basic);
+    background-color: var(--color-text-main);
+    color: var(--color-bg-deep);
     font-size: 16px;
     margin-left: 6px;
     margin-right: 6px;
-    padding: 4px 10px 4px 10px;
-    border-radius: 10px 10px 10px 10px;
+    padding: 4px 10px;
+    border-radius: 10px;
 }
+
+/* YouTube embeds */
 
 .youtube {
     margin-left: 50px;
