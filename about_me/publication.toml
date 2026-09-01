@@ -1,0 +1,250 @@
+# Publication list rendered by /about_me/publication.html (via /js/publication.js)
+#
+# Format: TOML-like. Each entry is introduced by [[first_author]], [[coauthor]]
+# or [[opensource]] and is followed by "key = value" lines. Every value is a
+# JSON literal (strings quoted, arrays in brackets), written on a single line.
+#
+# Inline markup allowed in "authors":
+#   **text**  ->  bold / highlighted name  (<span class="strong">)
+#   the "†" character  ->  rendered as a superscript dagger
+#
+# Recognised keys:
+#   title         paper title                                (required)
+#   authors       author list with the markup above          (required)
+#   journal       publication venue / status                 (required)
+#   arxiv         arXiv id; renders a link to arxiv.org/abs/<id>
+#   arxiv_label   override for the visible "arXiv:..." text   (optional)
+#   blog          path to a blog page; renders "[Go to the blog]"
+#   links         extra links as [["text", "url"], ...]
+
+# ---------------------------------------------------------------------------
+# First and corresponding-author papers
+# ---------------------------------------------------------------------------
+
+[[first_author]]
+title = "Local Group Analogues in a cosmological context - I. Relating the velocity structure to the cosmic web"
+authors = "**Kai Wang†**, Peder Norberg, Azadeh Fattahi, Louis E. Strigari"
+journal = "2026, submitted"
+arxiv = "2601.08419"
+
+[[first_author]]
+title = "Gravitational potential drives the concentration dependence of the stellar mass-halo mass relation"
+authors = "**Kai Wang†**, Joop Schaye, Alejandro Benítez-Llambay, Evgenii Chaikin, Carlos S. Frenk, Filip Huško, Robert J. McGibbon, Sylvia Ploeckinger, Alexander J. Richings, Matthieu Schaller, James W. Trayford"
+journal = "2025, MNRAS accepted"
+arxiv = "2511.20165"
+
+[[first_author]]
+title = "Dissecting the mass quenching in TNG50: Galaxy size determines the quenching mode"
+authors = "Haochen Jiang, Enci Wang†, **Kai Wang†**, Chengyu Ma, Xu Kong†"
+journal = "2025, ApJ 994 220"
+arxiv = "2510.24886"
+
+[[first_author]]
+title = "The origin of the galaxy size-stellar metallicity relation - I: A semi-analytical perspective"
+authors = "**Kai Wang†**"
+journal = "2025, MNRAS 545 1"
+arxiv = "2510.02573"
+
+[[first_author]]
+title = "Testing galaxy formation models with the stellar mass-halo mass relations for star-forming and quiescent galaxies"
+authors = "**Kai Wang†**, Yingjie Peng†"
+journal = "2024, ApJ 980 233"
+arxiv = "2408.07743"
+blog = "/blog/html/shmr.html"
+
+[[first_author]]
+title = "Revisiting the fundamental metallicity relation with observation and simulation"
+authors = "Chengyu Ma, **Kai Wang†**, Enci Wang†, Yingjie Peng, Haochen Jiang, Haoran Yu, Cheng Jia, Zeyu Chen, Haixin Li, Xu Kong"
+journal = "2024, ApJL 971 L14"
+arxiv = "2407.21716"
+
+[[first_author]]
+title = "Characterizing the assembly of dark matter halos with protohalo size histories: I. Redshift evolution, relation to descendant halos, and halo assembly bias"
+authors = "**Kai Wang†**, H.J. Mo, Yangyao Chen, Huiyuan Wang, Xiaohu Yang, Jiaqi Wang, Yingjie Peng, Zheng Cai"
+journal = "2024, MNRAS 528 2046"
+arxiv = "2309.01039"
+blog = "/blog/html/protohalo_size.html"
+
+[[first_author]]
+title = "An efficient and robust method to estimate halo concentration based on the method of moments"
+authors = "**Kai Wang†**, H.J. Mo, Yangyao Chen, Joop Schaye"
+journal = "2024, MNRAS 527 10760"
+arxiv = "2310.00200"
+blog = "/blog/html/concentration.html"
+
+[[first_author]]
+title = "Environmental dependence of the mass-metallicity relation in cosmological hydrodynamical simulations"
+authors = "**Kai Wang†**, Xin Wang†, Yangyao Chen"
+journal = "2023, ApJ 951 66"
+arxiv = "2305.08161"
+blog = "/blog/html/env_dependence_mzr.html"
+
+[[first_author]]
+title = "Late-formed halos prefer to host quiescent central galaxies. I. Observational results"
+authors = "**Kai Wang†**, Yangyao Chen, Qingyang Li, Xiaohu Yang"
+journal = "2023, MNRAS 522 3188"
+arxiv = "2304.07189"
+blog = "/blog/html/late_formed_halos_quiescent.html"
+
+[[first_author]]
+title = "Dissect two-halo galactic conformity effect for central galaxies: The dependence of star formation activities on the large-scale environment"
+authors = "**Kai Wang†**, Yingjie Peng†, Yangyao Chen"
+journal = "2023, MNRAS 523 1268"
+arxiv = "2304.06886"
+blog = "/blog/html/two_halo_conformity.html"
+
+[[first_author]]
+title = "Relating galaxies across different redshift to study galaxy evolution"
+authors = "**Kai Wang†**, H.J. Mo, Cheng Li, Yangyao Chen"
+journal = "2023, MNRAS 520 1774"
+arxiv = "2211.00485"
+blog = "/blog/html/connect_galaxies.html"
+
+[[first_author]]
+title = "Finding proto-clusters to trace galaxy evolution: I. The finder and its performance"
+authors = "**Kai Wang†**, H.J. Mo, Cheng Li, Yangyao Chen"
+journal = "2021, MNRAS 505 3892"
+arxiv = "2104.12223"
+blog = "/blog/html/intro_proto_cluster.html"
+
+[[first_author]]
+title = "Identifying galaxy groups at high redshift from incomplete spectroscopic data: I. The group finder and application to zCOSMOS"
+authors = "**Kai Wang†**, H.J. Mo, Cheng Li, Jiacheng Meng, Yangyao Chen"
+journal = "2020, MNRAS 499 89"
+arxiv = "2006.05426"
+blog = "/blog/html/galaxy_group_highz.html"
+links = [["Public group catalog", "https://github.com/wkcosmology/zCOSMOS-bright_group_catalog"]]
+
+[[first_author]]
+title = "Thermal gravitational-wave background in the general pre-inflationary scenario"
+authors = "**Kai Wang**, Larissa Santo, Jun-Qing Xia, Wen Zhao†"
+journal = "2017, JCAP 01 053"
+arxiv = "1608.04189"
+
+[[first_author]]
+title = "Smoothing methods comparison for CMB E- and B-mode separation"
+authors = "Yi-Fan Wang, **Kai Wang†**, Wen Zhao"
+journal = "2016, Research in Astronomy and Astrophysics 16 4"
+arxiv = "1511.01220"
+
+# ---------------------------------------------------------------------------
+# Co-author papers
+# ---------------------------------------------------------------------------
+
+[[coauthor]]
+title = "Potential-Driven Metal Cycling: JADES Census of Gas-Phase Metallicity for galaxies at 1 < z < 7"
+authors = "Cheng Jia, Enci Wang, Cheqiu Lyu, Chengyu Ma, Jie Song, Yangyao Chen, **Kai Wang**, Haoran Yu, Zeyu Chen, Jinyang Wang, Yifan Wang, Xu Kong"
+journal = "ApJL 986 L24"
+arxiv = "2504.18820"
+
+[[coauthor]]
+title = "The physical origin of positive metallicity radial gradients in high-redshift galaxies: insights from the FIRE-2 cosmological hydrodynamic simulations"
+authors = "Xunda Sun, Xin Wang, Xiangcheng Ma, **Kai Wang**, Andrew Wetzel, Claude-André Faucher-Giguère, Philip F. Hopkins, Dušan Kereš, Russell L. Graf, Andrew Marszewski, Jonathan Stern, Guochao Sun, Lei Sun, Keyer Thyme"
+journal = "ApJ 986 179"
+arxiv = "2409.09290"
+
+[[coauthor]]
+title = "From Halos to Galaxies. X: Decoding Galaxy SEDs with Physical Priors and Accurate Star Formation History Reconstruction"
+authors = "Zeyu Gao, Yingjie Peng, **Kai Wang**, Luis C. Ho, Alvio Renzini, Anna R. Gallazzi, Filippo Mannucci, Houjun Mo, Yipeng Jing, Xiaohu Yang, Enci Wang, Dingyi Zhao, Jing Dou, Qiusheng Gu, Cheqiu Lyu, Roberto Maiolino, Bitao Wang, Yu-Chen Wang, Bingxiao Xu, Feng Yuan, Xingye Zhu"
+journal = "ApJ 979 66"
+arxiv = "2408.07749"
+
+[[coauthor]]
+title = "Black-Hole-to-Halo Mass Relation From UNIONS Weak Lensing"
+authors = "Qinxun Li, Martin Kilbinger, Wentao Luo, **Kai Wang**, Huiyuan Wang, Anna Wittje, Hendrik Hildebrandt, Ludovic van Waerbeke, Michael J. Hudson, Samuel Farrens, Tobias I. Liaudat, Huiling Liu, Ziwen Zhang, Qingqing Wang, Elisa Russier, Axel Guinot, Lucie Baumont, Fabian Hervas Peters, Thomas de Boer, Jiaqi Wang"
+journal = "2024, ApJL 969 L25"
+arxiv = "2402.10740"
+arxiv_label = "2311.07653"
+
+[[coauthor]]
+title = "Black holes regulate cold gas accretion in massive galaxies"
+authors = "Tao Wang, Ke Xu, Yuxuan Wu, Yong Shi, David Elbaz, Luis C. Ho, Zhi-Yu Zhang, Qiusheng Gu, Yijun Wang, Chenggang Shu, Feng Yuan, Xiaoyang Xia, **Kai Wang**"
+journal = "2024, Nature"
+arxiv = "2311.07653"
+
+[[coauthor]]
+title = "From Halos to Galaxies. IX. Estimate of Halo Assembly History for SDSS Galaxy Groups"
+authors = "Cheqiu Lyu, Yingjie Peng, Yipeng Jing, Xiaohu Yang, Luis C. Ho, Alvio Renzini, Dingyi Zhao, Filippo Mannucci, Houjun Mo, **Kai Wang**, Bitao Wang, Bingxiao Xu, Jing Dou, Anna R. Gallazzi, Qiusheng Gu, Roberto Maiolino, Enci Wang, Feng Yuan"
+journal = "2024, ApJ 972 108"
+arxiv = "2407.03409"
+
+[[coauthor]]
+title = "From Halos to Galaxies. VII. The Connections Between Stellar Mass Growth History, Quenching History and Halo Assembly History for Central Galaxies"
+authors = "Cheqiu Lyu, Yingjie Peng, Yipeng Jing, Xiaohu Yang, Luis C. Ho, Alvio Renzini, Bitao Wang, **Kai Wang**, Bingxiao Xu, Dingyi Zhao, Jing Dou, Qiusheng Gu, Roberto Maiolino, Filippo Mannucci, Feng Yuan"
+journal = "2023, ApJ 959 5"
+arxiv = "2310.10733"
+
+[[coauthor]]
+title = "Massive Dark Matter Halos at High Redshift: Implications for Observations in the JWST Era"
+authors = "Yangyao Chen, H.J. Mo, **Kai Wang**"
+journal = "2023, MNRAS 526 2542"
+arxiv = "2304.13890"
+
+[[coauthor]]
+title = "A Conditional Abundance Matching Method of Extending Simulated Halo Merger Trees to Resolve Low-Mass Progenitors and Sub-halos"
+authors = "Yangyao Chen, H.J. Mo, Cheng Li, **Kai Wang**, Huiyuan Wang, Xiaohu Yang"
+journal = "2023, MNRAS 525 1254"
+arxiv = "2301.08972"
+
+[[coauthor]]
+title = "Groups and Protocluster Candidates in the CLAUDS and HSC-SSP Joint Deep Surveys"
+authors = "Qingyang Li, Xiaohu Yang, Chengze Liu,... **Kai Wang**,..."
+journal = "2022, ApJ 933 9"
+arxiv = "2205.05517"
+
+[[coauthor]]
+title = "MAHGIC: A Model Adapter for the Halo-Galaxy Inter-Connection"
+authors = "Yangyao Chen, H.J. Mo, Cheng Li, **Kai Wang**, Huiyuan Wang, Xiaohu Yang, Youcai Zhang, Neal Katz"
+journal = "2022, MNRAS 507 2510"
+arxiv = "2106.03984"
+
+[[coauthor]]
+title = "The clustering of galaxies in the DESI imaging legacy surveys DR8:I. the luminosity and color dependent intrinsic clustering"
+authors = "Zhaoyu Wang, Haojie Xu, Xiaohu Yang, Y. P. Jing, **Kai Wang**, Hong Guo, Fuyu Dong, Min He"
+journal = "2021, Sci. China Phys. Mech. Astron. 64 289811"
+
+[[coauthor]]
+title = "Measuring galaxy abundance and clustering at high redshift from incomplete spectroscopic data: Tests on mock catalogs and application to zCOSMOS"
+authors = "Jiacheng Meng, Cheng Li, Houjun Mo, Yangyao Chen, **Kai Wang**"
+journal = "2020, ApJ 964 161"
+arxiv = "2008.13733"
+
+[[coauthor]]
+title = "How to empirically model star formation in dark matter halos: I. Inferences about central galaxies from numerical simulations"
+authors = "Yangyao Chen, H. J. Mo, Cheng Li, **Kai Wang**"
+journal = "2021, MNRAS 504 4865"
+arxiv = "2009.12467"
+
+[[coauthor]]
+title = "Relating the structure of dark matter halos to their assembly and environment"
+authors = "Yangyao Chen, H.J. Mo, Cheng Li, Huiyuan Wang, Xiaohu Yang, Youcai Zhang, **Kai Wang**"
+journal = "2020, ApJ 899 81"
+arxiv = "2003.05137"
+
+[[coauthor]]
+title = "Superconducting cosmic strings as sources of cosmological fast radio bursts"
+authors = "Jia-Ni Ye, **Kai Wang**, Yi-Fu Cai"
+journal = "2017, Eur. Phys. J. C 77:720"
+arxiv = "1705.10956"
+
+[[coauthor]]
+title = "Statistical imprints of CMB B-type polarization leakage in an incomplete sky survey analysis"
+authors = "Larissa Santo, **Kai Wang**, Yangrui Hu, Wenjuan Fang, Wen Zhao"
+journal = "2017, JCAP 01 043"
+arxiv = "1612.03564"
+
+[[coauthor]]
+title = "Probing the statistical properties of CMB $B$-mode polarization through Minkowski Functionals"
+authors = "Larissa Santo, **Kai Wang**, Wen Zhao"
+journal = "2016, JCAP 07 029"
+arxiv = "1510.07779"
+
+# ---------------------------------------------------------------------------
+# Open-source code
+# ---------------------------------------------------------------------------
+
+[[opensource]]
+title = "HIPP: HIgh-Performance Package for scientific computation"
+authors = "Yangyao Chen, **Kai Wang**"
+journal = "Astrophysics Source Code Library"
+links = [["ascl:2301.030", "https://ascl.net/2301.030"]]
