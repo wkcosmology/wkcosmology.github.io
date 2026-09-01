@@ -13,7 +13,6 @@
 #   authors       author list with the markup above          (required)
 #   journal       publication venue / status                 (required)
 #   arxiv         arXiv id; renders a link to arxiv.org/abs/<id>
-#   arxiv_label   override for the visible "arXiv:..." text   (optional)
 #   blog          path to a blog page; renders "[Go to the blog]"
 #   links         extra links as [["text", "url"], ...]
 
@@ -22,15 +21,33 @@
 # ---------------------------------------------------------------------------
 
 [[first_author]]
+title = "Inflow-driven galaxy evolution - I. Revealing the physics of the fundamental metallicity relation"
+authors = "**Kai Wang**, Carlton Baugh, N. F. Boardman, Sownak Bose, Zheng Cai, Shaun Cole, Carlos S. Frenk, Cedric Lacey, Peder Norberg, Yingjie Peng, Isabel Santos-Santos, Amélie Saintonge, Tom Theuns, Enci Wang"
+journal = "2026, submitted to MNRAS"
+arxiv = "2608.04784"
+
+[[first_author]]
+title = "Forged in Quenching: Morphological Transformation across Star-forming and Quiescent Galaxies in EAGLE"
+authors = "**Kai Wang**, Carlton Baugh, Sownak Bose, Shaun Cole, Carlos S. Frenk, Hao Fu, Cedric Lacey, Shengdong Lu, Aaron Ludlow, Peder Norberg, Yingjie Peng, Katy L. Proctor, Isabel Santos-Santos, Francesco Shankar, Tom Theuns, Enci Wang, Tao Wang, Vivienne Wild"
+journal = "2026, submitted to MNRAS"
+arxiv = "kept.onhold"
+
+[[first_author]]
+title = "Ruffled Feathers: Merger-driven galaxy size growth and structural transformation in EAGLE"
+authors = "**Kai Wang**, Carlton Baugh, Sownak Bose, Shaun Cole, Carlos S. Frenk, Cedric Lacey, Shengdong Lu, Peder Norberg, Isabel Santos-Santos, Francesco Shankar, Tom Theuns, Tao Wang"
+journal = "2026, submitted to MNRAS"
+arxiv = "2608.05835"
+
+[[first_author]]
 title = "Local Group Analogues in a cosmological context - I. Relating the velocity structure to the cosmic web"
 authors = "**Kai Wang†**, Peder Norberg, Azadeh Fattahi, Louis E. Strigari"
-journal = "2026, submitted"
+journal = "2026, submitted to MNRAS"
 arxiv = "2601.08419"
 
 [[first_author]]
 title = "Gravitational potential drives the concentration dependence of the stellar mass-halo mass relation"
 authors = "**Kai Wang†**, Joop Schaye, Alejandro Benítez-Llambay, Evgenii Chaikin, Carlos S. Frenk, Filip Huško, Robert J. McGibbon, Sylvia Ploeckinger, Alexander J. Richings, Matthieu Schaller, James W. Trayford"
-journal = "2025, MNRAS accepted"
+journal = "2025, MNRAS 546 2"
 arxiv = "2511.20165"
 
 [[first_author]]
@@ -132,6 +149,30 @@ arxiv = "1511.01220"
 # ---------------------------------------------------------------------------
 
 [[coauthor]]
+title = "Cooler Phases of the Circumgalactic Medium Are More Centrally Concentrated: Constraints from Multiphase Absorption Lines"
+authors = "Weiwen Kong, Zeyu Chen, Enci Wang, Haoran Yu, **Kai Wang**, Dongdong Shi, Cheqiu Lyu, Yuxuan Zhang, Haoyi Zhang, Haowen Guan"
+journal = "ApJ 1006 49"
+arxiv = "2606.04793"
+
+[[coauthor]]
+title = "Beyond the fundamental metallicity relation: galaxy sizes encode the link between inflow and metallicity"
+authors = "N. F. Boardman, V. Wild, D. Scholte, **K. Wang**, N. Vale Asari, A. Saintonge"
+journal = "MNRAS 550 3"
+arxiv = "2606.13124"
+
+[[coauthor]]
+title = "A Census of Quiescent Galaxies across 0.5 < z < 8 with JWST/MIRI: Mass-dependent Number Density Evolution of Quiescent Galaxies in the Early Universe"
+authors = "Tiancheng Yang, Tao Wang, Ke Xu, Hanwen Sun, Luwenjia Zhou, Lizhi Xie, Gabriella De Lucia, Claudia del P. Lagos, **Kai Wang**, Fabio Fontanot, Qi Guo, Yuxuan Wu, Shiying Lu, Longyue Chen, Michaela Hirschmann"
+journal = "ApJL 1000 L42"
+arxiv = "2510.12235"
+
+[[coauthor]]
+title = "The Bigfoot: A footprint of a Coma cluster progenitor at z=3.98"
+authors = "Hanwen Sun, Tao Wang, Emanuele Daddi, Qiaoyang Hao, Ke Xu, David Elbaz, Luwenjia Zhou, Houjun Mo, Huiyuan Wang, Longyue Chen, Yangyao Chen, Shuowen Jin, Yipeng Lyu, Nikolaj Sillassen, **Kai Wang**, Tiancheng Yang"
+journal = "ApJL 993 L49"
+arxiv = "2508.21356"
+
+[[coauthor]]
 title = "Potential-Driven Metal Cycling: JADES Census of Gas-Phase Metallicity for galaxies at 1 < z < 7"
 authors = "Cheng Jia, Enci Wang, Cheqiu Lyu, Chengyu Ma, Jie Song, Yangyao Chen, **Kai Wang**, Haoran Yu, Zeyu Chen, Jinyang Wang, Yifan Wang, Xu Kong"
 journal = "ApJL 986 L24"
@@ -154,7 +195,6 @@ title = "Black-Hole-to-Halo Mass Relation From UNIONS Weak Lensing"
 authors = "Qinxun Li, Martin Kilbinger, Wentao Luo, **Kai Wang**, Huiyuan Wang, Anna Wittje, Hendrik Hildebrandt, Ludovic van Waerbeke, Michael J. Hudson, Samuel Farrens, Tobias I. Liaudat, Huiling Liu, Ziwen Zhang, Qingqing Wang, Elisa Russier, Axel Guinot, Lucie Baumont, Fabian Hervas Peters, Thomas de Boer, Jiaqi Wang"
 journal = "2024, ApJL 969 L25"
 arxiv = "2402.10740"
-arxiv_label = "2311.07653"
 
 [[coauthor]]
 title = "Black holes regulate cold gas accretion in massive galaxies"
@@ -188,7 +228,7 @@ arxiv = "2301.08972"
 
 [[coauthor]]
 title = "Groups and Protocluster Candidates in the CLAUDS and HSC-SSP Joint Deep Surveys"
-authors = "Qingyang Li, Xiaohu Yang, Chengze Liu,... **Kai Wang**,..."
+authors = "Qingyang Li, Xiaohu Yang, Chengze Liu, Yipeng Jing, Min He, Jiasheng Huang, Y. Sophia Dai, Marcin Sawicki, Stephane Arnouts, Stephen Gwyn, Thibaud Moutard, H.J. Mo, **Kai Wang**, Antonios Katsianis, Weiguang Cui, Jiaxin Han, I-Non Chiu, Yizhou Gu, Haojie Xu"
 journal = "2022, ApJ 933 9"
 arxiv = "2205.05517"
 
