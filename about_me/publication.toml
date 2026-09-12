@@ -149,6 +149,12 @@ arxiv = "1511.01220"
 # ---------------------------------------------------------------------------
 
 [[coauthor]]
+title = "No Detectable One-halo Galactic Conformity Signal with Halo-mass Estimates Consistent with Weak-lensing Constraints"
+authors = "Dingyi Zhao, Yingjie Peng, Luis C. Ho, Houjun Mo, Cheqiu Lyu, **Kai Wang**, Yijun Wang, Tao Wang, Jing Dou, Zeyu Gao, Qiusheng Gu, Yukun Liu, Roberto Maiolino, Alvio Renzini, Bitao Wang, Yu-Chen Wang, Bingxiao Xu, Feng Yuan, Kunyao Zhao, Xingye Zhu"
+journal = "Accepted for publication in the ApJL"
+arxiv = "2609.11313"
+
+[[coauthor]]
 title = "Cooler Phases of the Circumgalactic Medium Are More Centrally Concentrated: Constraints from Multiphase Absorption Lines"
 authors = "Weiwen Kong, Zeyu Chen, Enci Wang, Haoran Yu, **Kai Wang**, Dongdong Shi, Cheqiu Lyu, Yuxuan Zhang, Haoyi Zhang, Haowen Guan"
 journal = "ApJ 1006 49"
