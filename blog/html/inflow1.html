@@ -1,0 +1,270 @@
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Kosmos Blog</title>
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/css/blog_styles.css" type="text/css" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/css/hljs.css" type="text/css" title="no title" charset="utf-8">
+        <script charset="utf-8" src="/js/sidebar.js"></script>
+        <link rel="shortcut icon" type="image/png" href="/image/favicon.png">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <script src="/js/mathjax.js" async=""></script>
+        <script charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="blog_sidebar">
+            <span id="blog_sidebar_header"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_header();
+            </script>
+            <span id="blog_sidebar_content"></span>
+            <script charset="utf-8">
+                display_blog_sidebar_content();
+            </script>
+        </div>
+        <div id="blog_page">
+            <div class="blog_front"><p class="blog_title">Why the fundamental metallicity relation exists</p><p class="date">Sep. 12, 2026</p><p class="descri">The fundamental metallicity relation is one of the tightest scaling relations in extragalactic astronomy, and it is conventionally explained by assuming that galaxies sit in equilibrium between inflow, star formation, and outflow. But a galaxy in equilibrium has a metallicity that depends only on its mass-loading factor, so it cannot produce an FMR at all. Here we show that the FMR emerges instead from the transition between the inflow-driven regime and equilibrium, and that its familiar parameterisation is contingent rather than fundamental.</p></div>
+            <span id="blog_content"><p>This blog is based on <a href="https://arxiv.org/abs/2608.04784" rel="noopener noreferrer" target="_blank">arXiv:2608.04784</a>.</p>
+<h1 id="what-is-the-fmr">What is the FMR?</h1>
+<p>The <strong>mass-metallicity relation</strong> (MZR) says that more massive galaxies are more
+metal-rich, and it evolves: at fixed stellar mass, galaxies at higher redshift
+are more metal-poor. The <strong>fundamental metallicity relation</strong> (FMR) is a
+stronger statement. Galaxies populate a tight surface in the three-dimensional
+space of stellar mass, star formation rate, and gas metallicity, and that
+surface is approximately invariant out to at least $z\sim 3$.</p>
+<p>It is common to treat the FMR as nothing more than the anti-correlation between
+SFR and metallicity at fixed stellar mass. That is only part of it. The full
+content of the FMR is that a <em>single</em> parameter $\alpha$ collapses galaxies of
+all masses and all epochs onto one locus,</p>
+<p>$$
+\xi \equiv \log_{10}M_\star - \alpha\log_{10}{\rm SFR},
+$$</p>
+<p>with $\alpha\approx 0.55$. Any explanation that produces the anti-correlation
+but not the redshift-invariant surface is incomplete.</p>
+<h1 id="the-gas-flow-model">The gas flow model</h1>
+<p>Everything in this work follows from two mass-continuity equations,</p>
+<p>$$
+\frac{{\rm d}M_{\rm g}}{{\rm d}t} = \Phi - (1 - R + \eta)\,\epsilon\,M_{\rm g},
+$$</p>
+<p>$$
+\frac{{\rm d}(M_{\rm g}Z_{\rm g})}{{\rm d}t}
+    = y\,\epsilon\,M_{\rm g} - Z_{\rm g}(1 - R + \eta)\,\epsilon\,M_{\rm g},
+$$</p>
+<p>where $\Phi$ is the gas inflow rate, $\epsilon\equiv{\rm SFR}/M_{\rm g}$ is the
+<strong>star formation efficiency</strong>, $\eta$ is the <strong>mass-loading factor</strong>, $R$ is the
+mass return fraction and $y$ is the metal yield. These equations are usually
+called the bathtub model or the gas regulator model, names that reflect a
+historical preoccupation with their equilibrium solutions. We prefer <strong>gas flow
+model</strong>, because they are just continuity equations and nothing obliges their
+solutions to be in equilibrium.</p>
+<p>If $\Phi$, $\epsilon$, and $\eta$ are constants, the system has a closed-form
+solution, and a single timescale controls everything:</p>
+<p>$$
+\tau_{\rm eq} \equiv \frac{1}{(1 - R + \eta)\,\epsilon}.
+$$</p>
+<p>This is the time needed for star formation and outflows to grow large enough to
+balance the inflow. The dimensionless ratio $t/\tau_{\rm eq}$ is then the only
+parameter that determines where a galaxy sits between two limits.</p>
+<h1 id="two-limits">Two limits</h1>
+<p><strong>Equilibrium</strong> ($t\gg\tau_{\rm eq}$) is the assumption behind the gas regulator
+class of models. Here</p>
+<p>$$
+Z_{\rm g} = \frac{y}{1 - R + \eta}.
+$$</p>
+<p>The metallicity depends on the mass-loading factor and nothing else. Not the
+inflow rate, not the stellar mass, not cosmic time.</p>
+<p><strong>Inflow-driven</strong> ($t\ll\tau_{\rm eq}$) is the opposite limit, and it is the one
+we argue most star-forming galaxies actually occupy. Expanding the solution to
+leading order,</p>
+<p>$$
+M_{\rm g} = \Phi t,\qquad Z_{\rm g} = \frac{y\epsilon t}{2},
+    \qquad M_\star = \frac{(1-R)\Phi\epsilon t^2}{2}.
+$$</p>
+<p>Eliminating $t$ and $\Phi$ gives the FMR directly,</p>
+<p>$$
+Z_{\rm g} = \frac{y\,\epsilon}{1 - R}\,\frac{M_\star}{\rm SFR},
+$$</p>
+<p>and substituting ${\rm SFR}=\epsilon M_{\rm g}$ gives the <strong>gaseous FMR</strong>,</p>
+<p>$$
+Z_{\rm g} = \frac{y}{1 - R}\,\frac{M_\star}{M_{\rm g}}.
+$$</p>
+<p>Note what happened: the star formation efficiency cancelled. The gFMR depends
+only on $y$ and $R$, both set by the IMF alone. Metals accumulate in proportion
+to $M_\star$ and are diluted by the gas that keeps arriving, so their ratio is
+fixed by nucleosynthesis. <em>This is why the gFMR is more fundamental than the
+FMR</em>, and the anti-correlation between SFR and metallicity is not driven by
+stochastic accretion at all: at fixed $M_\star$, a galaxy with higher SFR
+assembled its stars faster and had less time to enrich.</p>
+<h1 id="peeling-the-model-back-to-its-core">Peeling the model back to its core</h1>
+<p>The scalings above come from an idealised model. Do they survive when
+$\epsilon$ and $\eta$ are allowed to vary as they do in the real Universe? We
+calibrated a cosmological version of the gas flow model against the evolving
+MZR, the star-forming main sequence, and the stellar mass-halo mass relation,
+and then ran it backwards, stripping out one dependence at a time.</p>
+<figure id="fig1">
+<img src="/blog/image/fmr_physics.svg" width="740">
+<figcaption>
+<strong> Figure 1.</strong>
+Gas metallicity against $\log_{10}M_\star/{\rm SFR}$ under five progressively
+simpler prescriptions for the star formation efficiency and the mass-loading
+factor. Marker shapes denote stellar mass bins, shading denotes redshift. From
+left to right: the fiducial model; $\epsilon$ and $\eta$ depending on stellar
+mass only; $\epsilon$ depending on redshift only; $\epsilon$ constant; both
+constant. In the rightmost panel every galaxy, at every mass and every epoch,
+falls on one universal sequence. (Fig. 6 of the paper.)
+</figcaption>
+</figure>
+<p>The rightmost panel is the result worth pausing on. In a universe where
+$\epsilon$ and $\eta$ are universal constants, the FMR is not a surface at all.
+It is a one-dimensional curve in the $Z_{\rm g}$-$M_\star/{\rm SFR}$ plane, and
+the parameter $\alpha$ is unnecessary.</p>
+<p>That curve is steep at low $M_\star/{\rm SFR}$ and flat at high
+$M_\star/{\rm SFR}$, and we now know why. Since $M_\star/{\rm SFR}\propto t$ and
+$\tau_{\rm eq}$ is constant in this experiment, low $M_\star/{\rm SFR}$ means low
+$t/\tau_{\rm eq}$, hence the inflow-driven regime and the linear scaling
+$Z_{\rm g}\propto\epsilon M_\star/{\rm SFR}$. High $M_\star/{\rm SFR}$ means the
+galaxy has approached equilibrium, where $Z_{\rm g}\to y/(1-R+\eta)$ and further
+increases in $M_\star/{\rm SFR}$ change nothing. <em>The shape of the FMR is a
+direct picture of the transition from inflow-driven evolution to equilibrium.</em></p>
+<p>Reading the panels right to left rebuilds the real Universe. A mass-dependent
+$\eta$ splits the mass bins apart, but only at the flat end, because $\eta$
+enters the metallicity only in equilibrium. A mass-dependent $\epsilon$ splits
+them at all redshifts, because $\epsilon$ multiplies $M_\star/{\rm SFR}$ in the
+inflow-driven scaling. A redshift-dependent $\epsilon$ then separates the
+epochs. The parameter $\alpha&lt;1$ is the horizontal shift that pushes massive
+and high-redshift galaxies back into line, and its numerical value encodes the
+combined mass and redshift dependence of $\epsilon$ and $\eta$.</p>
+<p>So there is no fundamental reason for the FMR to be redshift-invariant. It works
+because $\epsilon(M_\star)$ and $\eta(M_\star)$ happen to be well approximated by
+power laws, and because the redshift evolution of $\epsilon$ is regular enough
+that one $\alpha$ can absorb both offsets at once. <em>The FMR is contingent, not a
+symmetry</em> — which is precisely what makes it a useful constraint on $\epsilon$
+and $\eta$.</p>
+<h1 id="a-closed-form-description-of-the-whole-transition">A closed-form description of the whole transition</h1>
+<p>The controlled experiments establish the hierarchy but do not give an equation.
+For that we return to the ideal model, where the full solution can be written
+using two functions of the evolutionary stage $x\equiv t/\tau_{\rm eq}$:</p>
+<p>$$
+Z_{\rm g} = \frac{y}{1-R}\left(\frac{M_{\rm g}}{M_{\star}}\right)^{-1}
+    {\cal K}_{1}!\left(\frac{t}{\tau_{\rm eq}}\right),
+\qquad
+{\cal K}_{1}(x) = \frac{1 - e^{-x} - x e^{-x}}{x - 1 + e^{-x}}
+$$</p>
+<p>$$
+\frac{1-R+\eta}{1-R}\left(\frac{M_{\rm g}}{M_{\star}}\right)^{-1}
+    = {\cal K}_{2}\left(\frac{t}{\tau_{\rm eq}}\right),
+\qquad
+{\cal K}_{2}(x) = \frac{x - 1 + e^{-x}}{1 - e^{-x}}
+$$</p>
+<p>These two equations convert a measured gas fraction and mass-loading factor into an
+evolutionary stage; then convert that stage into a metallicity.
+Together they relate three quantities, the gas metallicity, the gas fraction,
+and the mass-loading factor, and <em>given any two of them the third follows</em>. That
+is the practical point of the whole framework: it turns metallicity and gas
+fraction measurements into a measurement of $\eta$.</p>
+<p>The limits are the ones we already met. As $t/\tau_{\rm eq}\to 0$,
+$\cal{K}_1\to 1$ and we recover the gFMR, independent of both $\epsilon$ and
+$\eta$. As $t/\tau_{\rm eq}\to\infty$, $\cal{K}_1\to\tau_{\rm eq}/t$ and the
+metallicity saturates at $y/(1-R+\eta)$, now independent of the gas fraction.
+$\cal{K}_1$ interpolates smoothly between them.</p>
+<p>The obvious worry is that equations (4.1) and (4.2) were derived assuming
+constant $\Phi$, $\epsilon$, and $\eta$, none of which holds in a cosmological
+setting. So we tested them.</p>
+<figure id="fig2">
+<img src="/blog/image/ideal_model_explain.svg" width="740">
+<figcaption>
+<strong> Figure 2.</strong>
+The cosmological gas flow model (symbols) compared with the analytic ideal model
+(solid lines). <strong>Left panel:</strong> the FMR. <strong>Right
+panel:</strong> the gFMR. The lines are the median metallicity from equations
+(4.1) and (4.2), taking the gas fraction and mass-loading factor from the
+cosmological model as inputs. (Fig. 9 of the paper.)
+</figcaption>
+</figure>
+<p>The agreement is excellent across four decades of stellar mass and out to
+$z=3$. This is not luck. The inflow rate does not enter any scaling relation
+among $M_\star$, SFR, $M_{\rm g}$, and $Z_{\rm g}$, so its variation is
+irrelevant. And for the quantities that do matter, consider a galaxy growing
+from $M_\star/2$ to $M_\star$: that final doubling supplies half the metals, and
+over it $\epsilon\propto M_\star^{0.33}$ changes by a factor $1.26$ while
+$\eta\propto M_\star^{-0.30}$ changes by $0.81$. The ideal model works because
+$\epsilon$ and $\eta$ vary slowly over the interval that dominates the metal
+budget.</p>
+<h1 id="where-the-equilibrium-model-breaks">Where the equilibrium model breaks</h1>
+<p>This is the part I most want to argue. The equilibrium assumption is not a
+harmless simplification that gets the answer nearly right; it removes the very
+thing the observations are sensitive to.</p>
+<p><strong>It cannot produce an FMR.</strong> In equilibrium $Z_{\rm g}=y/(1-R+\eta)$, so at
+fixed stellar mass there is no SFR dependence whatsoever. No anti-correlation,
+no surface, nothing. The FMR is not a small correction to the equilibrium
+prediction; it is invisible to it.</p>
+<p><strong>It cannot produce an evolving MZR.</strong> Galaxy formation models almost universally
+parameterise $\eta$ as a function of stellar mass or halo circular velocity with
+no redshift dependence. If metallicity depends on $\eta$ alone, it inherits no
+redshift dependence either, and the model predicts an MZR that does not evolve.
+This is a long-standing problem in semi-analytic models, and it is in direct
+conflict with the data.</p>
+<p>Both failures have the same root. <em>The equilibrium assumption erases the memory
+of the accretion history, and the accretion history is exactly what metallicity
+is recording.</em></p>
+<p><strong>It is not even a good approximation for most galaxies.</strong> The starting point of
+the equilibrium models is the exact expression</p>
+<p>$$
+Z_{\rm g} = \frac{y - \epsilon^{-1}\,{\rm d}Z_{\rm g}/{\rm d}t}
+    {(1 - R + \eta) + (1 - R)\mu + \epsilon^{-1}\,{\rm d}\ln\mu/{\rm d}t},
+$$</p>
+<p>with $\mu\equiv M_{\rm g}/M_\star$. The equilibrium approximation consists of
+dropping $\epsilon^{-1}{\rm d}Z_{\rm g}/{\rm d}t$ from the numerator, and the
+only justification ever offered is a linear stability analysis showing that
+departures from equilibrium decay on a timescale $\tau_{\rm eq}$. That
+establishes an equilibrium <em>exists</em>; it says nothing about whether galaxies have
+had time to reach it. When we evaluate the ratio
+$(\epsilon^{-1}{\rm d}Z_{\rm g}/{\rm d}t)/y$ directly in the cosmological model,
+it asymptotes to $0.5$ at low masses and high redshift, exactly the inflow-driven
+prediction from $Z_{\rm g}=y\epsilon t/2$. Dropping the term therefore introduces
+a factor-of-two offset, about $0.3$ dex. For context, the entire observed
+metallicity spread between the highest- and lowest-SFR galaxies at fixed stellar
+mass is $\lesssim 0.3$ dex, and the MZR evolves by only $\lesssim 0.5$ dex from
+$z\sim 0$ to $z\sim 3.3$. The approximation is quantitatively defensible only for
+massive galaxies at low redshift.</p>
+<p><strong>It is internally inconsistent in practice.</strong> Lilly et al. (2013) assume
+${\rm d}Z_{\rm g}/{\rm d}t=0$ for all galaxies and then derive an MZR whose
+normalisation rises with cosmic time at fixed stellar mass. A star-forming galaxy
+growing in mass and moving forward in time along that relation must have
+${\rm d}Z_{\rm g}/{\rm d}t&gt;0$, contradicting the assumption used to derive it.
+Their "ideal regulator" has a related problem: constant $\epsilon$ and $\eta$ do
+not by themselves give ${\rm d}\ln\mu/{\rm d}t=0$, which additionally requires a
+constant specific inflow rate. That condition is used implicitly but is absent
+from the definition and is not justified in general. Their fallback is a
+timescale argument, that the specific inflow rate varies about three times more
+slowly than gas consumption, but the gas consumption timescale there is computed
+from molecular gas alone, whereas atomic gas dominates the reservoir at least to
+$z\sim 1$, and stellar mass return replenishes the reservoir on top of that.
+Correcting both brings the two timescales into the same range and the separation
+disappears.</p>
+<p>None of this means equilibrium is wrong everywhere. It means equilibrium is a
+<em>limit</em>, occupied by massive galaxies at low redshift, and that the interesting
+population lives on the way there.</p>
+<h1 id="summary">Summary</h1>
+<p>The FMR exists because galaxies are caught in transit. Its steep end is the
+inflow-driven regime, where metals accumulate in proportion to $M_\star$ and are
+diluted by inflowing gas; its flat end is equilibrium, where the mass-loading
+factor takes over. The parameter $\alpha$ that collapses the observations is not
+a symmetry of galaxy evolution but a record of how $\epsilon$ and $\eta$ happen
+to depend on stellar mass and redshift, which is why it can be turned around and
+used to constrain them. The gFMR, expressed in gas mass rather than SFR, is the
+more fundamental relation, since the star formation efficiency drops out of both
+the inflow-driven scaling and the pace of the approach to equilibrium. And
+equations (4.1) and (4.2) make all of this quantitative: measure any two of the
+gas metallicity, the gas fraction, and the mass-loading factor, and the third
+follows.</p>
+<p>The practical upshot for semi-analytic models is uncomfortable. Models with high
+mass-loading factors drive galaxies into equilibrium early and then cannot evolve
+their MZR without invoking a redshift-dependent $\eta$, for which there is no
+observational support. Lowering both $\eta$ and $\epsilon$ lengthens
+$\tau_{\rm eq}$, keeps galaxies inflow-driven for longer, and delivers the MZR
+evolution and the FMR from the same physics.</p></span>
+        </div>
+    
+
+</body>
