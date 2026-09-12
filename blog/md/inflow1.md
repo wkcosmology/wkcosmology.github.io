@@ -1,14 +1,15 @@
 ---
-title: Why the fundamental metallicity relation exists
+title: Reveal the physics of the Fundamental Metallicity Relation
 date: 2026-09-12
-description: The fundamental metallicity relation is one of the tightest scaling
-  relations in extragalactic astronomy, and it is conventionally explained by
-  assuming that galaxies sit in equilibrium between inflow, star formation,
-  and outflow. But a galaxy in equilibrium has a metallicity that depends only
-  on its mass-loading factor, so it cannot produce an FMR at all. Here we show
-  that the FMR emerges instead from the transition between the inflow-driven
-  regime and equilibrium, and that its familiar parameterisation is contingent
-  rather than fundamental.
+description:
+    The fundamental metallicity relation is one of the tightest scaling
+    relations in extragalactic astronomy, yet its physics remains unclear.
+    Why galaxies populate a surface parameterised by
+    $\log M_\star - \alpha\log{\rm SFR}$ with $\alpha<1$, and why that surface
+    barely evolves out to $z\sim 3$, have never been satisfactorily explained.
+    Here we use a minimal gas flow model to show that the FMR emerges from the
+    transition between the inflow-driven regime and equilibrium, and that its
+    familiar parameterisation is contingent rather than fundamental.
 tags: [Metallicity, Chemical evolution, Galaxy evolution]
 categories: [Astrophysics]
 ---
@@ -118,7 +119,7 @@ MZR, the star-forming main sequence, and the stellar mass-halo mass relation,
 and then ran it backwards, stripping out one dependence at a time.
 
 <figure id="fig1">
-<img src="/blog/image/fmr_physics.svg" width=740>
+<img src="/blog/image/fmr_physics.jpg" width=740>
 <figcaption>
 <strong> Figure 1.</strong>
 Gas metallicity against $\log_{10}M_\star/{\rm SFR}$ under five progressively
@@ -200,7 +201,7 @@ constant $\Phi$, $\epsilon$, and $\eta$, none of which holds in a cosmological
 setting. So we tested them.
 
 <figure id="fig2">
-<img src="/blog/image/ideal_model_explain.svg" width=740>
+<img src="/blog/image/ideal_model_explain.jpg" width=740>
 <figcaption>
 <strong> Figure 2.</strong>
 The cosmological gas flow model (symbols) compared with the analytic ideal model
