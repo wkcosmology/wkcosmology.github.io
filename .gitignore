@@ -1,6 +1,8 @@
 # my setting
 cosma/*
 cosma/.*
+node_modules/.*
+node_modules/*
 *.o
 *.out
 */*.o
