@@ -42,11 +42,11 @@ but not the redshift-invariant surface is incomplete.
 Everything in this work follows from two mass-continuity equations,
 
 $$
-\frac{{\rm d}M_{\rm g}}{{\rm d}t} = \Phi - (1 - R + \eta)\,\epsilon\,M_{\rm g},
+\frac{ {\rm d}M_{\rm g} }{ {\rm d}t} = \Phi - (1 - R + \eta)\,\epsilon\,M_{\rm g},
 $$
 
 $$
-\frac{{\rm d}(M_{\rm g}Z_{\rm g})}{{\rm d}t}
+\frac{ {\rm d}(M_{\rm g}Z_{\rm g})}{ {\rm d}t}
     = y\,\epsilon\,M_{\rm g} - Z_{\rm g}(1 - R + \eta)\,\epsilon\,M_{\rm g},
 $$
 
@@ -99,7 +99,7 @@ $$
 and substituting ${\rm SFR}=\epsilon M_{\rm g}$ gives the **gaseous FMR**,
 
 $$
-Z_{\rm g} = \frac{y}{1 - R}\,\frac{M_\star}{M_{\rm g}}.
+Z_{\rm g} = \frac{y}{1 - R}\,\frac{M_\star}{M_{\rm g} }.
 $$
 
 Note what happened: the star formation efficiency cancelled. The gFMR depends
@@ -170,17 +170,17 @@ using two functions of the evolutionary stage $x\equiv t/\tau_{\rm eq}$:
 
 
 $$
-Z\_{\rm g} = \frac{y}{1-R}\left(\frac{M\_{\rm g}}{M\_{\star}}\right)^{-1}
-    {\cal K}\_{1}\left(\frac{t}{\tau\_{\rm eq}}\right),
+Z\_{\rm g} = \frac{y}{1-R}\left(\frac{M\_{\rm g} }{M\_{\star} }\right)^{-1}
+    {\cal K}\_{1}\left(\frac{t}{\tau\_{\rm eq} }\right),
 \qquad
-{\cal K}\_{1}(x) = \frac{1 - e^{-x} - x e^{-x}}{x - 1 + e^{-x}}
+{\cal K}\_{1}(x) = \frac{1 - e^{-x} - x e^{-x} }{x - 1 + e^{-x} }
 $$
 
 $$
-\frac{1-R+\eta}{1-R}\left(\frac{M\_{\rm g}}{M\_{\star}}\right)^{-1}
-    = {\cal K}\_{2}\left(\frac{t}{\tau\_{\rm eq}}\right),
+\frac{1-R+\eta}{1-R}\left(\frac{M\_{\rm g} }{M\_{\star} }\right)^{-1}
+    = {\cal K}\_{2}\left(\frac{t}{\tau\_{\rm eq} }\right),
 \qquad
-{\cal K}\_{2}(x) = \frac{x - 1 + e^{-x}}{1 - e^{-x}}
+{\cal K}\_{2}(x) = \frac{x - 1 + e^{-x} }{1 - e^{-x} }
 $$
 
 These two equations convert a measured gas fraction and mass-loading factor into an

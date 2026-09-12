@@ -44,10 +44,10 @@ but not the redshift-invariant surface is incomplete.</p>
 <h1 id="the-gas-flow-model">The gas flow model</h1>
 <p>Everything in this work follows from two mass-continuity equations,</p>
 <p>$$
-\frac{{\rm d}M_{\rm g}}{{\rm d}t} = \Phi - (1 - R + \eta)\,\epsilon\,M_{\rm g},
+\frac{ {\rm d}M_{\rm g} }{ {\rm d}t} = \Phi - (1 - R + \eta)\,\epsilon\,M_{\rm g},
 $$</p>
 <p>$$
-\frac{{\rm d}(M_{\rm g}Z_{\rm g})}{{\rm d}t}
+\frac{ {\rm d}(M_{\rm g}Z_{\rm g})}{ {\rm d}t}
     = y\,\epsilon\,M_{\rm g} - Z_{\rm g}(1 - R + \eta)\,\epsilon\,M_{\rm g},
 $$</p>
 <p>where $\Phi$ is the gas inflow rate, $\epsilon\equiv{\rm SFR}/M_{\rm g}$ is the
@@ -86,7 +86,7 @@ Z_{\rm g} = \frac{y\,\epsilon}{1 - R}\,\frac{M_\star}{\rm SFR},
 $$</p>
 <p>and substituting ${\rm SFR}=\epsilon M_{\rm g}$ gives the <strong>gaseous FMR</strong>,</p>
 <p>$$
-Z_{\rm g} = \frac{y}{1 - R}\,\frac{M_\star}{M_{\rm g}}.
+Z_{\rm g} = \frac{y}{1 - R}\,\frac{M_\star}{M_{\rm g} }.
 $$</p>
 <p>Note what happened: the star formation efficiency cancelled. The gFMR depends
 only on $y$ and $R$, both set by the IMF alone. Metals accumulate in proportion
@@ -145,16 +145,16 @@ and $\eta$.</p>
 For that we return to the ideal model, where the full solution can be written
 using two functions of the evolutionary stage $x\equiv t/\tau_{\rm eq}$:</p>
 <p>$$
-Z_{\rm g} = \frac{y}{1-R}\left(\frac{M_{\rm g}}{M_{\star}}\right)^{-1}
-    {\cal K}_{1}\left(\frac{t}{\tau_{\rm eq}}\right),
+Z_{\rm g} = \frac{y}{1-R}\left(\frac{M_{\rm g} }{M_{\star} }\right)^{-1}
+    {\cal K}_{1}\left(\frac{t}{\tau_{\rm eq} }\right),
 \qquad
-{\cal K}_{1}(x) = \frac{1 - e^{-x} - x e^{-x}}{x - 1 + e^{-x}}
+{\cal K}_{1}(x) = \frac{1 - e^{-x} - x e^{-x} }{x - 1 + e^{-x} }
 $$</p>
 <p>$$
-\frac{1-R+\eta}{1-R}\left(\frac{M_{\rm g}}{M_{\star}}\right)^{-1}
-    = {\cal K}_{2}\left(\frac{t}{\tau_{\rm eq}}\right),
+\frac{1-R+\eta}{1-R}\left(\frac{M_{\rm g} }{M_{\star} }\right)^{-1}
+    = {\cal K}_{2}\left(\frac{t}{\tau_{\rm eq} }\right),
 \qquad
-{\cal K}_{2}(x) = \frac{x - 1 + e^{-x}}{1 - e^{-x}}
+{\cal K}_{2}(x) = \frac{x - 1 + e^{-x} }{1 - e^{-x} }
 $$</p>
 <p>These two equations convert a measured gas fraction and mass-loading factor into an
 evolutionary stage; then convert that stage into a metallicity.
