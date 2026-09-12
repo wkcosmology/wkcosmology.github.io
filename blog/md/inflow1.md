@@ -171,7 +171,7 @@ using two functions of the evolutionary stage $x\equiv t/\tau_{\rm eq}$:
 
 $$
 Z\_{\rm g} = \frac{y}{1-R}\left(\frac{M\_{\rm g}}{M\_{\star}}\right)^{-1}
-    {\cal K}\_{1}\!\left(\frac{t}{\tau\_{\rm eq}}\right),
+    {\cal K}\_{1}\left(\frac{t}{\tau\_{\rm eq}}\right),
 \qquad
 {\cal K}\_{1}(x) = \frac{1 - e^{-x} - x e^{-x}}{x - 1 + e^{-x}}
 $$
