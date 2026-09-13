@@ -14,6 +14,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Anton';
+    src: url('font/Anton-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 :root{
     /* ---------- Fonts ---------- */
@@ -167,11 +175,30 @@ h3 {
     background-color: var(--color-bg-deep);
     box-shadow: 5px 5px 5px var(--color-bg-deep);
     width: 100%;
-    display: flow-root;
+}
+
+.portrait_row {
+    display: flex;
+    align-items: center;
+}
+
+.portrait_half {
+    flex: 1 1 50%;
+    display: flex;
+    min-width: 0;
+}
+
+.portrait_half_left {
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.portrait_half_right {
+    justify-content: flex-start;
+    padding-left: 20px;
 }
 
 .portrait hr{
-    clear: both;
     margin: 20px 0 0;
     border: 1px solid var(--color-bg-deep);
 }
@@ -179,6 +206,7 @@ h3 {
 #portrait_mytag ul{
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 #portrait_mytag strong{
@@ -186,16 +214,12 @@ h3 {
 }
 
 #portrait_img{
-    float: left;
+    flex-shrink: 0;
     height: 200px;
     width: 200px;
-    border-radius: 50%;
+    border-radius: 24px;
     background-color: var(--color-text-main);
-}
-
-#portrait_mytag {
-    float: left;
-    margin-left: 20px;
+    object-fit: cover;
 }
 
 #portrait_mytag li {
@@ -885,4 +909,154 @@ img#expand{
     .youtube {
         margin-left: 0;
     }
+}
+
+/* Galaxy formation wheel */
+
+.wheel_intro {
+    font-family: var(--sans-serif-font);
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--color-text-main);
+    max-width: 640px;
+}
+
+.galaxy_wheel_wrap {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 20px;
+}
+
+.galaxy_wheel {
+    width: min(800px, 100%);
+    height: auto;
+    overflow: visible;
+}
+
+.galaxy_wheel .petal {
+    fill: var(--fill);
+    stroke: var(--color-bg-deep);
+    stroke-width: 3;
+    stroke-linejoin: round;
+    transition: fill 0.18s ease, stroke-width 0.18s ease;
+}
+
+.petal_link {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    transition: transform 0.18s ease;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.petal_link:hover,
+.petal_link:focus-visible {
+    transform: scale(1.09);
+    text-decoration: none;
+}
+
+.petal_link:hover .petal_label,
+.petal_link:focus-visible .petal_label {
+    text-decoration: none;
+}
+
+.petal_link:hover .petal,
+.petal_link:focus-visible .petal {
+    fill: var(--fill-hover);
+    stroke: var(--color-link);
+    stroke-width: 2;
+}
+
+.petal_label {
+    fill: var(--label);
+    font-family: Impact, Anton, Haettenschweiler, "Arial Narrow Bold", var(--header-font), sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    letter-spacing: 0.01em;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.hub_link {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    transition: transform 0.18s ease;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.hub_link:hover,
+.hub_link:focus-visible {
+    transform: scale(1.07);
+    text-decoration: none;
+}
+
+.hub_link:hover .wheel_hub_text,
+.hub_link:focus-visible .wheel_hub_text {
+    text-decoration: none;
+}
+
+.hub_link:hover .wheel_hub,
+.hub_link:focus-visible .wheel_hub {
+    fill: var(--color-border-soft);
+    stroke: var(--color-link);
+}
+
+.wheel_hub {
+    fill: var(--color-bg-surface);
+    stroke: var(--color-border-soft);
+    stroke-width: 2;
+    transition: fill 0.18s ease, stroke 0.18s ease;
+}
+
+.wheel_hub_text {
+    fill: var(--color-heading);
+    font-family: Impact, Anton, Haettenschweiler, "Arial Narrow Bold", var(--header-font), sans-serif;
+    font-weight: 400;
+    font-size: 34px;
+    text-anchor: middle;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.back_link {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-family: var(--sans-serif-font);
+    font-size: 15px;
+    color: var(--color-text-muted);
+}
+
+.back_link:hover {
+    color: var(--color-link);
+}
+
+.coming_soon {
+    font-family: var(--sans-serif-font);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--color-text-muted);
+    margin-top: 20px;
+}
+
+.paper_list li {
+    text-align: left;
+}
+
+.paper_list > li > p.publication {
+    text-align: left;
+    margin-left: 0;
+}
+
+.paper_list .author {
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.paper_list .journal {
+    font-size: 13px;
 }
