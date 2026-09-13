@@ -39,6 +39,46 @@ body {
     #blog_page {
         padding: 10px 16px 40px;
     }
+
+    .blog_title {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    #blog_page .blog_front p.descri {
+        font-size: 14px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    #blog_content p,
+    li {
+        font-size: 15px;
+        line-height: 1.5em;
+        padding-right: 10px;
+    }
+
+    #blog_content h1:before {
+        font-size: 24px;
+    }
+
+    #blog_sidebar_header .sidebar_navi a {
+        font-size: 22px;
+        padding: 12px 16px 12px 28px;
+    }
+
+    #blog_sidebar_content ol > li,
+    #blog_sidebar_content ol > li a {
+        font-size: 14px;
+    }
+
+    #blog_content pre code {
+        font-size: 13px;
+    }
+
+    #blog_content code {
+        font-size: 13px;
+    }
 }
 
 /* MathJax renders each formula as a fixed-width SVG that won't wrap or

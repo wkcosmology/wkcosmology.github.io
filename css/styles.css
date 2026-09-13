@@ -116,6 +116,7 @@ h3 {
 
 .page .home_intro p.welcome{
     font-size: 18px;
+    line-height: 30px;
     text-align: justify;
     font-family: var(--sans-serif-font);
     margin-bottom: 0;
@@ -238,6 +239,123 @@ div.page {
 @media (max-width: 600px) {
     div.page {
         padding: 28px 20px 40px;
+    }
+
+    body,
+    p,
+    li {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 17px;
+    }
+
+    .page .home_intro p.welcome {
+        font-size: 15px;
+    }
+
+    .publication,
+    .author {
+        font-size: 16px;
+        line-height: 21px;
+    }
+
+    .journal {
+        font-size: 13px;
+    }
+
+    #portrait_mytag strong {
+        font-size: 24px;
+    }
+
+    .aboutme li,
+    .aboutme li > a {
+        font-size: 17px;
+    }
+
+    .aboutme h1 {
+        font-size: 21px;
+    }
+
+    .research_block > .research_intro ul > li,
+    .research_block > .research_intro p,
+    .research_intro li > a {
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    p.research_title {
+        font-size: 19px;
+    }
+
+    div.research_intro {
+        font-size: 15px;
+    }
+
+    .project_title {
+        font-size: 17px;
+    }
+
+    .home_intro {
+        font-size: 17px;
+        line-height: 28px;
+    }
+
+    .home_intro a,
+    li,
+    li > a {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .resource_annot,
+    .pre_title,
+    .myfollowings_annot,
+    .books_annot,
+    .pre_coord {
+        font-size: 15px;
+    }
+
+    .pre_place {
+        font-size: 17px;
+    }
+
+    #pub_ads_link {
+        font-size: 18px;
+    }
+
+    .blogs_files_year {
+        font-size: 28px;
+    }
+
+    #blogs_files li a {
+        font-size: 17px;
+    }
+
+    #blogs_files .blogs_files_descri {
+        font-size: 15px;
+    }
+
+    #blogs_files li.label_toggle {
+        font-size: 17px;
+    }
+
+    #blog_tag .blog_tag_title {
+        font-size: 17px;
+    }
+
+    #blog_tag .blog_tag_name,
+    #blog_tag .blog_tag_name.onclick {
+        font-size: 14px;
     }
 }
 
