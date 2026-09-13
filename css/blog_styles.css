@@ -17,18 +17,37 @@
     --pre-color: #ccc7b6;
 }
 
+/* blog_styles.css loads after styles.css, so this overrides the
+   site-wide dark body background just for individual post pages —
+   otherwise the white post column sits in a jarring dark gutter. */
+body {
+    background-color: var(--white-basic);
+}
+
 #blog_page {
     display: block;
     position: relative;
-    padding-top: 10px;
-    padding-left: 40px;
-    padding-bottom: 60px;
-    margin-left: 240px;
-    /* 55px here is the extra padding, I do not know why */
-    padding-right: calc(100vw - 240px - 840px - 55px);
-    width: 840px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 10px 40px 60px;
+    width: min(840px, calc(100% - 52px));
     min-height: 100vh;
     background-color: var(--white-basic);
+}
+
+@media (max-width: 600px) {
+    #blog_page {
+        padding: 10px 16px 40px;
+    }
+}
+
+/* MathJax renders each formula as a fixed-width SVG that won't wrap or
+   shrink on its own; wide equations would otherwise force the whole
+   page to scroll horizontally on narrow screens. */
+mjx-container {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 #blog_sidebar #blog_sidebar_header .sidebar_intro p {
@@ -40,13 +59,42 @@
 }
 
 #blog_sidebar {
-    padding-top: 30px;
-    padding-left: 20px;
+    padding: 30px 0px 24px;
     position: fixed;
+    top: 0;
+    left: 0;
     font-family: var(--mono-font);
-    width: 220px;
-    height: 100%;
+    width: 260px;
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
     background-color: var(--black-basic);
+    z-index: 200;
+    transform: translateX(-238px);
+    transition: transform 0.25s ease-in-out;
+}
+
+#blog_sidebar:hover,
+#blog_sidebar:focus-within {
+    transform: translateX(0);
+}
+
+/* Wide screens: enough room to show the content column and the TOC
+   side-by-side, so the TOC stays open (fully expanded, not collapsed
+   to a rail) as a permanent floating panel instead of a hover-reveal
+   one. Note: generated post pages render in quirks mode (no <!DOCTYPE>
+   in the build output), which breaks `position: sticky` — stick with
+   `fixed` here too and offset #blog_page with a plain margin instead
+   of relying on flex layout to reserve the column. */
+@media (min-width: 1150px) {
+    #blog_sidebar {
+        transform: translateX(0);
+    }
+
+    #blog_page {
+        margin-left: 300px;
+        margin-right: auto;
+    }
 }
 
 #blog_sidebar_header .sidebar_intro p {
@@ -60,18 +108,20 @@
 #blog_sidebar footer {
     font-size: 15px;
     color: var(--white-basic);
+    position: absolute;
     left: 20px;
-    position: fixed;
-    bottom: 20px;
+    bottom: 16px;
 }
 
 #blog_sidebar_header .sidebar_navi a {
     display: block;
+    box-sizing: border-box;
     font-weight: bold;
+    color: var(--black-basic);
     background-color: var(--white-basic);
     font-size: 35px;
-    line-height: 25px;
-    padding-left: 40px;
+    line-height: 1.3;
+    padding: 16px 20px 16px 40px;
     border-radius: 20px 0px 0px 20px;
 }
 
@@ -138,6 +188,13 @@ ol > li {
     padding: 10 10 10 10px;
     box-shadow: 10px 10px 10px var(--gray-basic);
     border-radius: 10px 10px 10px 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#blog_content img {
+    max-width: 100%;
+    height: auto;
 }
 
 #blog_page figcaption {

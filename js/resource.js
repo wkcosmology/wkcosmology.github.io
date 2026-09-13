@@ -1,5 +1,5 @@
 var entries = JSON.parse(
-    $.getJSON({ url: "/about_me/resource.json", async: false }).responseText
+    $.getJSON({ url: "/about/resource.json", async: false }).responseText
 );
 function get_data(elmt_id, name, annot_class) {
     var softwares_elmt = document.querySelector(elmt_id);

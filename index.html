@@ -15,15 +15,33 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
   <body>
-    <div class="vertical-line"></div>
-    <div class="sidebar">
-      <span id="sidebar"></span>
+    <header class="topnav">
+      <div id="topnav"></div>
       <script charset="utf-8">
-        display_sidebar();
+        display_topnav();
       </script>
-    </div>
+    </header>
     <div class="page">
-      <h1 id="welcome_word">Welcome to Kosmos!</h1>
+      <div class="portrait">
+        <img src="/image/photo.jpg" alt="avastar" id="portrait_img"
+        width: 600px; height: auto />
+        <div id="portrait_mytag">
+          <ul>
+            <li><strong id="myname">Kai Wang (王凯)</strong></li>
+            <li>🧐 Ph.D. in Astrophysics</li>
+            <li>🤗 Amateur in Programming</li>
+            <li>😜 Layman in Psychology</li>
+            <li style="color: var(--color-text-strong); font-size: 18px">
+              🔎 Find more in
+              <a href="/about/CV.pdf" style="font-size: 18px"
+                >my Curriculum Vitae</a
+              >
+            </li>
+          </ul>
+        </div>
+        <hr />
+      </div>
+
       <div class="home_intro">
         <p class="welcome">
           Hello! I am Kai Wang, a Chinese astrophysicist studying
@@ -35,157 +53,73 @@
           connections, to ask unusual questions, and to build research projects
           across disciplines and techniques. <br />
         </p>
+      </div>
+
+      <div class="aboutme">
+        <p></p>
+        <h1>Experience:</h1>
         <ul>
           <li>
-            <a href="about_me/introduction.html" class="guidance">
-              <img
-                src="/image/icon/guidance_aboutme.png"
-                class="guidance_img"
-              />
-              <img
-                src="/image/icon/guidance_aboutme.gif"
-                class="guidance_gif"
-              />
-              About</a
+            2024.07 - :<br />
+            Postdoctoral Research Associate,
+            <a href="https://icc.dur.ac.uk/">ICC</a > &
+            <a href="https://astro.dur.ac.uk/cosmology/">CEA</a >,
+            <a href="https://www.dur.ac.uk/"
+              >Durham University</a
             >
-            <p class="guidance">
-              A brief look at where I come from, the path that shaped me, and
-              the curiosity that keeps me moving forward.
-            </p>
           </li>
           <li>
-            <a href="about_me/research.html" class="guidance">
-              <img
-                src="/image/icon/guidance_research.png"
-                class="guidance_img"
-              />
-              <img
-                src="/image/icon/guidance_research.gif"
-                class="guidance_gif"
-              />
-              Research</a
+            2022.07 - 2024.06<br />
+            KIAA fellow,
+            <a href="https://kiaa.pku.edu.cn/index.htm"
+              >The Kavli Institute for Astronomy and
+              Astrophysics</a
+            >,
+            <a href="https://english.pku.edu.cn/"
+              >Peking University</a
             >
-            <p class="guidance">
-              An overview of the questions that fascinate me and the scientific
-              work I pursue to answer them.
-            </p>
+          </li>
+        </ul>
+        <h1>Education:</h1>
+        <ul>
+          <li>
+            2017.09 - 2022.06:<br />
+            PhD,
+            <a href="https://astro.tsinghua.edu.cn/">
+              Department of Astronomy</a
+            >,
+            <a href="https://www.tsinghua.edu.cn/en/"
+              >Tsinghua University</a
+            >
           </li>
           <li>
-            <a href="about_me/publication.html" class="guidance">
-              <img
-                src="/image/icon/guidance_publication.png"
-                class="guidance_img"
-              />
-              <img
-                src="/image/icon/guidance_publication.gif"
-                class="guidance_gif"
-              />
-              Publication</a
+            2019.11 - 2021.10:<br />
+            Visiting Scholar,
+            <a href="https://www.umass.edu/astronomy/"
+              >Department of Astronomy</a
+            >,
+            <a href="https://www.umass.edu/"
+              >University of Massachusetts, Amherst</a
             >
-            <p class="guidance">
-              A collection of my academic work, collaborations, and the ideas we
-              have contributed to the community.
-            </p>
-          </li>
-          <!-- <li> -->
-          <!--   <a href="about_me/resource.html" class="guidance"> -->
-          <!--     <img -->
-          <!--       src="/image/icon/guidance_resource.png" -->
-          <!--       class="guidance_img" -->
-          <!--     /> -->
-          <!--     <img -->
-          <!--       src="/image/icon/guidance_resource.gif" -->
-          <!--       class="guidance_gif" -->
-          <!--     /> -->
-          <!--     Resource</a -->
-          <!--   > -->
-          <!--   <p class="guidance">What I want to share?</p> -->
-          <!-- </li> -->
-          <li>
-            <a href="presentation/pre_index.html" class="guidance">
-              <img src="/image/icon/guidance_tool.png" class="guidance_img" />
-              <img src="/image/icon/guidance_tool.gif" class="guidance_gif" />
-              Presentation</a
-            >
-            <p class="guidance">
-              Slides and recordings from talks I’ve given at conferences and
-              seminars.
-            </p>
           </li>
           <li>
-            <a href="blog/blog_index.html" class="guidance">
-              <img src="/image/icon/guidance_blog.png" class="guidance_img" />
-              <img src="/image/icon/guidance_blog.gif" class="guidance_gif" />
-              Blog</a
+            2013.09 - 2017.06:<br />
+            BS,
+            <a href="http://en.scgy.ustc.edu.cn/"
+              >School of the Gifted Young</a
+            >,
+            <a href="http://en.ustc.edu.cn/"
+              >University of Science and Technology of China</a
             >
-            <p class="guidance">
-              A space where I write informally about science, ideas, and things
-              I find interesting.
-            </p>
+            <br />
           </li>
         </ul>
       </div>
-      <!-- <h2>Recent News:</h2> -->
-      <!-- <ul> -->
-      <!--     <li> -->
-      <!--         Our paper -->
-      <!--         <a href="https://arxiv.org/abs/2408.07749" -->
-      <!--             >"From Halos to Galaxies. X: Decoding Galaxy SEDs with -->
-      <!--             Physical Priors and Accurate Star Formation History -->
-      <!--             Reconstruction "</a -->
-      <!--         > -->
-      <!--         is submitted. -- Aug. 16, 2024 -->
-      <!--     </li> -->
-      <!--     <li> -->
-      <!--         Our paper -->
-      <!--         <a href="https://arxiv.org/abs/2408.07743" -->
-      <!--             >"Testing galaxy formation models with the stellar -->
-      <!--             mass-halo mass relations for star-forming and quiescent -->
-      <!--             galaxies "</a -->
-      <!--         > -->
-      <!--         is submitted. -- Aug. 16, 2024 -->
-      <!--     </li> -->
-      <!--     <li> -->
-      <!--         Our paper -->
-      <!--         <a href="https://arxiv.org/abs/2407.21716" -->
-      <!--             >"Revisiting the fundamental metallicity relation with -->
-      <!--             observation and simulation"</a -->
-      <!--         > -->
-      <!--         is accepted by ApJL. -- Jul. 25, 2024 -->
-      <!--     </li> -->
-      <!--     <li> -->
-      <!--         I arrived at Durham and enrolled in the Durham University as -->
-      <!--         a PDRA jointly employed by ICC and CEA. Chatting, -->
-      <!--         disscussion, collaboration are welcome! -- Jul. 1, 2024 -->
-      <!--     </li> -->
-      <!--     <li> -->
-      <!--         I officially take the offer of the postdoctoral research -->
-      <!--         associate in the Institute for Computational Cosmology at -->
-      <!--         Durham University. -- Feb. 14, 2024 -->
-      <!--     </li> -->
-      <!--     <li> -->
-      <!--         Our paper -->
-      <!--         <a href="https://arxiv.org/abs/2309.01039" -->
-      <!--             >"Characterizing the assembly of dark matter halos with -->
-      <!--             protohalo size histories: I. Redshift evolution, -->
-      <!--             relation to descendant halos, and halo assembly bias"</a -->
-      <!--         > -->
-      <!--         is published on MNRAS. -- Jan. 22, 2024 -->
-      <!--     </li> -->
-      <!--     <li> -->
-      <!--         Our paper -->
-      <!--         <a href="https://arxiv.org/abs/2310.00200" -->
-      <!--             >"An efficient and robust method to estimate halo -->
-      <!--             concentration based on the method of moments"</a -->
-      <!--         > -->
-      <!--         is published on MNRAS. -- Dec. 18, 2023 -->
-      <!--     </li> -->
-      <!-- </ul> -->
 
       <h2>Contact:</h2>
       <strong> Email: </strong>
       <a href="mailto:wkcosmology@gmail.com">wkcosmology@gmail.com</a><br />
-      <footer>&copy; 2021-2025 Kai Wang, All right reserved.</footer>
+      <footer>&copy; 2021-2026 Kai Wang, All right reserved.</footer>
     </div>
   </body>
 </html>

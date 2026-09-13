@@ -11,28 +11,23 @@
             title="no title"
             charset="utf-8"
         />
-        <script
-            charset="utf-8"
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        ></script>
         <script charset="utf-8" src="/js/sidebar.js"></script>
-        <script charset="utf-8" src="/js/tool.js"></script>
+        <script charset="utf-8" src="/js/presentation.js"></script>
         <link rel="shortcut icon" type="image/png" href="/image/favicon.png" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
     </head>
     <body>
-        <div class="vertical-line"></div>
-        <div class="sidebar">
-            <span id="sidebar"></span>
+        <header class="topnav">
+            <div id="topnav"></div>
             <script charset="utf-8">
-                display_sidebar();
+                display_topnav();
             </script>
-        </div>
+        </header>
         <div class="page">
             <h1>Presentations</h1>
             <div id="softwares"></div>
             <script charset="utf-8">
-                get_data("#softwares", "softwares", "pre_title", "pre_place", "pre_coord", "pre_ul");
+                display_presentations();
             </script>
         </div>
     </body>

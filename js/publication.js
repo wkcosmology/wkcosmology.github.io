@@ -1,4 +1,4 @@
-// Render the publication list from /about_me/publication.toml
+// Render the publication list from /about/publication.toml
 //
 // The data file is a small TOML-like format: entries are introduced by
 // [[first_author]] / [[coauthor]] / [[opensource]] and followed by
@@ -104,7 +104,7 @@ function render_pub_section(target_id, entries) {
 }
 
 function display_publications() {
-    fetch("/about_me/publication.toml")
+    fetch("/about/publication.toml")
         .then(function (r) {
             return r.text();
         })

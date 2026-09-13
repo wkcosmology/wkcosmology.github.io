@@ -1,14 +1,32 @@
-// display the sidebar for main page
-function display_sidebar() {
-    let sidebar = document.querySelector("#sidebar");
-    fetch("/sidebar.html")
+// display the sticky top navigation bar for main pages
+function display_topnav() {
+    let topnav = document.querySelector("#topnav");
+    fetch("/partials/topnav.html")
         .then((response) => response.text())
         .then((response) => {
-            sidebar.innerHTML += response;
+            topnav.innerHTML += response;
+
             let file = location.href.split("/").pop().split(".")[0];
             if (file === "") file = "index";
-            let select = sidebar.querySelector("#" + file);
-            select.className = "select";
+            let select = topnav.querySelector("#" + file);
+            if (select) select.className = "select";
+
+            let toggle = topnav.querySelector("#topnav-toggle");
+            let menu = topnav.querySelector("#topnav-menu");
+            toggle.addEventListener("click", function () {
+                let isOpen = menu.classList.toggle("open");
+                toggle.classList.toggle("open", isOpen);
+                toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+
+            // close the mobile menu after a nav link is tapped
+            menu.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function () {
+                    menu.classList.remove("open");
+                    toggle.classList.remove("open");
+                    toggle.setAttribute("aria-expanded", "false");
+                });
+            });
         });
 }
 

@@ -20,13 +20,12 @@
     <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
   </head>
   <body>
-    <div class="vertical-line"></div>
-    <div class="sidebar">
-      <span id="sidebar"> </span>
+    <header class="topnav">
+      <div id="topnav"></div>
       <script charset="utf-8">
-        display_sidebar();
+        display_topnav();
       </script>
-    </div>
+    </header>
     <div class="page">
       <a
         href="https://ui.adsabs.harvard.edu/public-libraries/C0WbFLHuTLOYL0ehaNvugQ"
@@ -37,7 +36,7 @@
       <!-- <div id="myChart" class="chart--container"></div> -->
       <script charset="utf-8" src="/js/pub_chart.js"></script>
 
-      <!-- The entries below are loaded from /about_me/publication.toml -->
+      <!-- The entries below are loaded from /about/publication.toml -->
       <h1>First and Corresponding<sup>&dagger;</sup> author Papers:</h1>
       <ol id="pub-first-author"></ol>
 

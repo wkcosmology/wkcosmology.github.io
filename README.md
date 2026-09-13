@@ -1,53 +1,62 @@
 # Structure of the project
 
-I have two kinds of pages, one is `main page` with white sidebar and dark page.
-The other one is the `blog page` with dark sidebar and white page.
+This is a static site (no build step for the pages themselves) with two kinds
+of pages: the `main pages` (sticky top nav, dark theme) and the `blog pages`
+(hover-reveal table-of-contents rail, light theme).
 
--   `main page`
-    -   `index.html`: Welcom page
-    -   `sidebar.html`: html code for sidebar
-    -   `CNAME`: connect to my website
-    -   `GITHUB-PAGES-SERVER`: Github added, I do not know what it is
-    -   `about_me/`
-        -   `introduction.html`: my introduction and cv
-        -   `publiction.html`: my publication
-        -   `research.html`: introducing the research
-        -   `resource.html`: introducing the resource
-    -   `blog/`
-        -   `blog_index.html`: Introducing the blog in the main page
-    -   `presentation/`
-        -   `pre_index.html`: This is to share the slides and video recording of
-            my presentations
--   `blog page`
-    -   `blog_sidebar.html`: html template to generate the sidebar for each blog
-        page
-    -   `blog_header.html`: html template to generate the header for each blog
-        page
-    -   `blog_meta.json`: generated meta files for the blogs, containing the
-        title, path, date and table of content.
+-   `index.html`: the homepage — doubles as the About page (bio, experience,
+    education, contact)
+-   `partials/`
+    -   `topnav.html`: shared top-nav markup, fetched client-side by
+        `js/sidebar.js` and injected into every main page
+-   `about/`
+    -   `research.html`: research interests
+    -   `publication.html` / `publication.toml`: publication list; the page
+        holds only the section scaffolding, entries live in the `.toml` file
+        and are parsed and rendered client-side by `js/publication.js`
+    -   `resource.html` / `resource.json`: a "resources" page (currently not
+        linked from the nav)
+    -   `CV.pdf`
+-   `presentation/`
+    -   `pre_index.html` / `presentation.toml`: talks/seminars list, same
+        page-scaffolding + data-file pattern as publication, rendered by
+        `js/presentation.js`
+-   `blog/`
+    -   `blog_index.html`: the blog's landing page (year/category/tag filters)
+    -   `blog_header.html`: HTML template used to wrap each generated post
+    -   `blog_sidebar.html`: template for the per-post table-of-contents rail
+    -   `blog_meta.json`: generated metadata for every post (title, path,
+        date, table of contents) — written by `scripts/generate_md.js`
+    -   `md/`: **source of truth** — write new posts here as Markdown
+    -   `html/`: generated output — one full HTML page per post, produced by
+        `scripts/generate_md.js`; do not hand-edit
+    -   `image/`: images referenced by blog posts
 -   `css/`
-    -   `styles.css`: mainly for the styles of `main page`, also used for blog
-        page
-    -   `blog_styles.css`: only used for styles of the `blog page`
--   `js/`
-    -   `sidebar.js`: generate the side for both the `main page` and the
-        `blog page`. For the main page, it only copy and paste the content in
-        the `/sidebar.html`. The `blog page` contains two part, one is the
-        header part which only contains some simple elements, the other one is
-        the content part which is for the table of contents of the blog.
-    -   `generate_blogs_files.js`: This file is to combine the raw html page
-        generated form the markdown file with the header and sidebar to provide
-        a full html page.
-    -   `mathjax.js`: Script directly copied online to configure mathjax
-    -   `pub_chart.js`: Script directly copied online to configure the
-        publication chart.
--   `script/`
-    -   `generate_md.js`: local js file to convert markdown file to raw html
-        file
+    -   `styles.css`: styles for the main pages (top nav, About, Research,
+        Publication, Presentation), also shared by the blog pages
+    -   `blog_styles.css`: styles specific to the blog pages
+    -   `font/`: self-hosted font files used by `styles.css`
+-   `js/` — browser-loaded scripts
+    -   `sidebar.js`: fetches and injects `partials/topnav.html` into main
+        pages, and the blog header/table-of-contents into blog pages
+    -   `publication.js` / `presentation.js`: parse their respective `.toml`
+        data file and render it into the page
+    -   `resource.js`: renders `about/resource.json` on the resources page
+    -   `generate_blogs_files.js`: renders the filterable post list on
+        `blog/blog_index.html` from `blog/blog_meta.json`
+    -   `mathjax.js`: MathJax configuration
+    -   `pub_chart.js`: publication chart configuration
+-   `scripts/` — Node build tooling (not shipped to the site)
+    -   `generate_md.js`: converts `blog/md/*.md` into `blog/html/*.html` and
+        regenerates `blog/blog_meta.json`
+-   `image/`: site-wide images and icons
+-   `CNAME`: custom domain for GitHub Pages
+-   `GITHUB-PAGES-SERVER`: present at the repo root; purpose unknown, left
+    untouched
 
-# Workflow of the blog
+# Workflow for writing a blog post
 
--   Write the blog using markdown in `/blog/md/` directory.
--   run `node generate_md.js` in `/script/` directory to convert the markdown
-    file to raw html file.
--   Stage, commit and push all the changes to the github.
+1.  Write the post in Markdown under `blog/md/`.
+2.  From `scripts/`, run `node generate_md.js` to regenerate the
+    corresponding file(s) in `blog/html/` and `blog/blog_meta.json`.
+3.  Stage, commit, and push.

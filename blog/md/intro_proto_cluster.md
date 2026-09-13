@@ -122,7 +122,7 @@ baryonic related stuff to the galaxy group detection process. Then we only need
 to identify the proto-clusters from the galaxy groups or, equivalently, dark
 matter halos.
 
-In this <a href="/about_me/publication.html">paper</a>, we developed a proto-cluster
+In this <a href="/about/publication.html">paper</a>, we developed a proto-cluster
 finder based on dark matter halo distribution, where the halo catalog can be
 reliably constructed using the galaxy group finding technique
 ([Wang et al. 2020](https://ui.adsabs.harvard.edu/abs/2020MNRAS.499...89W/abstract)).

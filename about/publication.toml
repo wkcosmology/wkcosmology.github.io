@@ -1,4 +1,4 @@
-# Publication list rendered by /about_me/publication.html (via /js/publication.js)
+# Publication list rendered by /about/publication.html (via /js/publication.js)
 #
 # Format: TOML-like. Each entry is introduced by [[first_author]], [[coauthor]]
 # or [[opensource]] and is followed by "key = value" lines. Every value is a
