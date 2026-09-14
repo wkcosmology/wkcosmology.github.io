@@ -226,6 +226,31 @@ h3 {
     line-height: 40px;
 }
 
+/* Below this width the tagline bullets start wrapping to two lines
+   next to the fixed-width portrait photo, so stack text underneath
+   the photo instead of letting it wrap beside it. */
+@media (max-width: 750px) {
+    .portrait_row {
+        flex-direction: column;
+    }
+
+    .portrait_half {
+        flex: none;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .portrait_half_left {
+        padding-right: 0;
+    }
+
+    .portrait_half_right {
+        padding-left: 0;
+        margin-top: 16px;
+        text-align: center;
+    }
+}
+
 .aboutme li{
     font-size: 20px;
     color: var(--color-text-strong);
