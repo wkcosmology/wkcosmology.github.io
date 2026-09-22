@@ -605,6 +605,21 @@ div.page {
 
 /* Research */
 
+
+.research_block > .research_intro figure {
+    text-align: center;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.research_block > .research_intro figure img {
+    display: inline-block;
+    height: auto;
+}
+
+
 div.research_block {
     background: linear-gradient(rgba(33, 39, 44, 0.8), rgba(33, 39, 44, 0.8)),
                 url("/image/background.jpg");
