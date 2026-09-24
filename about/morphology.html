@@ -31,39 +31,81 @@
         <div class="research_intro">
           <p>
             Galaxies in the local Universe fall into a remarkably orderly
-            pattern. A century after Hubble first arranged them along a sequence
-            from smooth spheroids to thin star-forming discs, that sequence
-            remains the organising framework of extragalactic astronomy, and it
-            is far more than a taxonomy: position along it tracks stellar mass,
-            gas content, star formation rate and environment, so morphology and
-            the physics of galaxy growth are bound together. The
-            <strong>Hubble sequence</strong> is a record of how galaxies
-            assembled, written in their structure.
+            pattern on the
+            <strong>Hubble tuning-fork diagram</strong>, which classifies them
+            morphologically as elliptical, lenticular or spiral, with the
+            residual population designated irregular. Ellipticals occupy the
+            left of the diagram, lenticulars sit at the junction, and the
+            spirals divide into two branches according to the presence or
+            absence of a central bar. More remarkable still is that this purely
+            morphological classification correlates strongly with the physical
+            properties of galaxies. Spirals are typically bluer, gas-rich,
+            rotationally supported, and preferentially found in sparse
+            environments, whereas ellipticals are redder, gas-poor,
+            pressure-supported, and preferentially located in dense
+            environments. Establishing the origin of the
+            <strong>Hubble sequence</strong>, and how it relates to the stellar
+            and gaseous content of galaxies, is therefore a key question in
+            astrophysics.
+          </p>
+
+          <figure>
+            <img src="/about/image/demo_hubble_sequence.png" width="100%" />
+            <figcaption>
+              The Hubble sequence across cosmic time. Image credit:
+              <a
+                href="https://science.nasa.gov/asset/hubble/the-hubble-sequence-throughout-the-universes-history/"
+                target="_blank"
+                rel="noopener"
+                >NASA</a
+              >.
+            </figcaption>
+          </figure>
+
+          <p>
+            My approach is to decompose this diversity into a small set of
+            characteristics, ordered by how much of the variance in galaxy
+            structure each one captures, in the spirit of a principal component
+            analysis.
+            <strong>The primary characteristic is galaxy size.</strong> Sizes
+            are far easier to increase than to decrease: stars are
+            collisionless, so a stellar system has few channels through which to
+            dissipate orbital energy and contract. Growth, by contrast, proceeds
+            in two ways. A galaxy can form new stars with higher angular
+            momentum or higher orbital energy, on orbits that reach further out
+            and so enlarge the galaxy from within; or it can merge with another
+            galaxy, converting orbital energy into the internal motions of the
+            remnant. <strong>The secondary characteristics</strong> are the
+            <strong>three-dimensional shape</strong>, running from prolate to
+            oblate, and the <strong>kinematic state</strong>, running from
+            rotation-supported to dispersion-supported. These two are not
+            independent: prolate galaxies are typically dispersion-supported
+            ellipticals, and oblate galaxies typically rotation-supported discs.
+            The notable exception is the bar, which is prolate in shape yet
+            rotation-supported, and that mismatch is much of what makes bars
+            such an interesting structure to study.
           </p>
           <p>
-            Reading that record means following it back in time. Deep imaging,
-            and JWST in particular, now resolves galaxy structure into the first
-            few billion years after the Big Bang, and the picture is not simply
-            one of gradual assembly towards the present-day sequence: settled
-            discs, bars and central concentrations appear earlier than the
-            standard picture of hierarchical structure formation had
-            anticipated. Structure therefore emerges rapidly, and the
-            transformations that reshape it &ndash; mergers, disc instabilities,
-            the growth of bulges, the fading of discs after quenching &ndash;
-            operate throughout cosmic history rather than only at late times.
-          </p>
-          <p>
-            Connecting those transformations to the sequence we observe requires
-            a model, and here the same difficulty arises as elsewhere in galaxy
-            formation. Cosmological hydrodynamical simulations produce
-            morphologies that broadly resemble real galaxies, but the outcome is
-            the sum of many coupled processes, and reproducing the observed mix
-            of morphological types does not by itself reveal which process made
-            a given galaxy what it is. My approach is to dissect the simulations
-            rather than only compare them to data: I decompose morphological
-            change into its physical channels, and use analytic estimators and
-            semi-analytic models to test whether each channel behaves as the
-            underlying physics predicts. The key questions I address are:
+            Modern hydrodynamical galaxy formation simulations produce
+            morphologies that broadly resemble real galaxies, but each one
+            emerges from many coupled processes acting at once, and reproducing
+            the observed mix of morphological types does not by itself reveal
+            which process made a given galaxy what it is. Semi-analytic models
+            make the opposite trade. Rather than following the gas and stellar
+            dynamics directly, they describe each transformation with an
+            explicit physical prescription, and predict how the population as a
+            whole responds: the distribution of sizes, the split between disc
+            and bulge, the fraction of galaxies of each morphological type.
+            Every outcome can therefore be traced back to the prescription that
+            produced it. My approach is to combine the two. I extract the
+            effective prescriptions from the simulations, where the dynamics is
+            resolved and each transformation can be followed galaxy by galaxy,
+            and implement them in a semi-analytic model, whose transparency
+            allows the dominant driver of each morphological characteristic to
+            be identified. The resulting predictions can then be tested against
+            observations, both in the distribution of morphologies and in how
+            morphology correlates with other galaxy properties. The key
+            questions I address are:
           </p>
           <ul>
             <li>
@@ -71,7 +113,7 @@
               cosmic time?
             </li>
             <li>
-              To what extent is galaxy morphology inherited from the assembly
+              To what extent is galaxy morphology determined by the assembly
               history of the host halo?
             </li>
             <li>
@@ -84,8 +126,8 @@
             <li>
               <p class="publication">
                 <a href="https://arxiv.org/abs/2609.16187" target="_blank">
-                Forged in Quenching: Morphological Transformation across
-                Star-forming and Quiescent Galaxies in EAGLE
+                  Forged in Quenching: Morphological Transformation across
+                  Star-forming and Quiescent Galaxies in EAGLE
                 </a>
               </p>
               <div class="author">
