@@ -1083,6 +1083,12 @@ img#expand{
     margin-top: 20px;
 }
 
+/* 1. Target the parent list container to strip default indentation */
+ul.paper_list, ol.paper_list, .paper_list {
+    padding-left: 0;
+    margin-left: 20px; /* Gives just enough room so bullets don't clip off-screen */
+}
+
 .paper_list li {
     text-align: left;
 }
@@ -1093,10 +1099,11 @@ img#expand{
 }
 
 .paper_list .author {
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 15px;
+    line-height: 20px;
 }
 
 .paper_list .journal {
-    font-size: 13px;
+    font-size: 15px;
+    line-height: 20px;
 }
